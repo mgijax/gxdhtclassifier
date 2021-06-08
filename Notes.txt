@@ -1,0 +1,42 @@
+## June 1, 2021
+Created gxdhtclassifier repo in github
+Started work on sdGetKnownSamples.py to pull training/test sets from the db.
+Need to figure out:
+    how to select known "yes"s and "no"s
+        Connie's _user_key = 1064
+        GXD HT ArrayExpress Load _user_key = 1561
+            1257 "no"s have this as "evaluated by"
+        the rest, "yes"s and "no"s and a few "maybe"s are "evaluated by" Connie
+            9506 no
+            3186 yes
+              13 maybe
+    Initially:
+        only take the "connie" ones
+        only take GEO experiments. (those w/ GEO IDs)
+        Use evaluation_state to define "yes" or "no".
+            Don't look at curaton status
+    Need to validate these decisions with Connie
+
+select t.term, u._user_key, count(*)
+from gxd_htexperiment e join voc_term t on (e._evaluationstate_key = t._term_key)
+join mgi_user u on (e._evaluatedby_key = u._user_key)
+group by t.term, u._user_key
+||
+select u.name, count(*)
+from gxd_htexperiment e join mgi_user u on (e._evaluatedby_key = u._user_key)
+group by u._user_key
+||
+select t.term, u.name, count(*)
+from gxd_htexperiment e join voc_term t on (e._evaluationstate_key = t._term_key)
+join mgi_user u on (e._evaluatedby_key = u._user_key)
+join acc_accession a on (a._object_key = e._experiment_key and a._mgitype_key = 42 and a._logicaldb_key = 190)
+group by t.term, u.name
+
+## June 8, 2021
+Initial sdGetKnownSamples.py results
+    Result counts:
+    Tue Jun  8 13:50:41 2021
+    Hitting database bhmgidevdb01.jax.org prod as mgd_public
+    GEO experiments evaluated by Connie
+       2624 Yes	   7305 No	   9929 total
+    Total time:    1.092 seconds
