@@ -18,16 +18,16 @@ import re
 import time
 import argparse
 import db
-#import sampleDataLib
+import htMLsample as mlSampleLib
 from utilsLib import removeNonAscii
 #-----------------------------------
 
-#sampleObjType = sampleDataLib.PrimTriageClassifiedSample
+sampleObjType = mlSampleLib.ClassifiedHtSample
 
 # for the Sample output file
-#outputSampleSet = sampleDataLib.ClassifiedSampleSet(sampleObjType=sampleObjType)
-RECORDEND    = ';;'     #outputSampleSet.getRecordEnd()
-FIELDSEP     = '|'      #sampleObjType.getFieldSep()
+outputSampleSet = mlSampleLib.ClassifiedSampleSet(sampleObjType=sampleObjType)
+RECORDEND    = sampleObjType.getRecordEnd()
+FIELDSEP     = sampleObjType.getFieldSep()
 #-----------------------------------
 
 def getArgs():
@@ -170,16 +170,62 @@ def doCounts():
                                     % (numYes, numNo, numExperiments))
 #-----------------------------------
 
+####################
+def main():
+####################
+    db.set_sqlServer  (args.host)
+    db.set_sqlDatabase(args.db)
+    db.set_sqlUser    ("mgd_public")
+    db.set_sqlPassword("mgdpub")
+
+    loadTmpTable()
+    if args.option == 'counts': doCounts()
+    else: doSamples()
+
+#-----------------------------------
+
 def doSamples():
     '''
     Write known samples to stdout.
     For now, just write from sql results.
-    Need to convert this to use sampleDataLib to write build sample objects
+    Need to convert this to use mlSampleLib to write build sample objects
         and write sample file.
     '''
-    sys.stderr.write("%s\nHitting database %s %s as mgd_public\n" % \
+    startTime = time.time()
+    verbose("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
+    # Build sql
+    if args.nResults != 0:
+        limitClause = 'limit %d\n' % args.nResults
+    else: limitClause =  ''
+    q = """select * from %s\n""" % (TMPTBL)
+    q += limitClause
 
+    # Run sql
+    results = db.sql(q, 'auto')
+
+    # Output results
+    global outputSampleSet
+    verbose("constructing and writing samples:\n")
+    for i,r in enumerate(results):
+        try:
+            sample = sqlRecord2ClassifiedSample(r)
+            outputSampleSet.addSample(sample)
+        except:
+            sys.stderr.write("Error on record %d:\n%s\n" % (i, str(r)))
+            raise
+
+    outputSampleSet.setMetaItem('host', args.host)
+    outputSampleSet.setMetaItem('db', args.db)
+    outputSampleSet.setMetaItem('time', time.strftime("%Y/%m/%d-%H:%M:%S"))
+    outputSampleSet.write(sys.stdout)
+
+    verbose("wrote %d samples:\n" % outputSampleSet.getNumSamples())
+    verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
+
+    return
+
+    ## old style, not using SampleSets
     # Header line
     sys.stdout.write(FIELDSEP.join([ \
                 'geoid',
@@ -191,15 +237,7 @@ def doSamples():
                 'title',
                 'description',
             ]) + RECORDEND + '\n')
-
-    # Build sql
-    if args.nResults != 0: limitClause = 'limit %d\n' % args.nResults
-    else: limitClause =  ''
-    q = """select * from %s\n""" % (TMPTBL)
-    q += limitClause
-
     # Output results
-    results = db.sql(q, 'auto')
     for r in results:
         fields = [ \
                     r['geoid'],
@@ -214,27 +252,34 @@ def doSamples():
         sys.stdout.write(FIELDSEP.join(fields) + RECORDEND + '\n')
 #-----------------------------------
 
+def sqlRecord2ClassifiedSample(r,       # sql Result record
+    ):
+    """
+    Encapsulates knowledge of ClassifiedSample.setFields() field names
+    """
+    newR = {}
+    newSample = sampleObjType()
 
-####################
-def main():
-####################
-    db.set_sqlServer  (args.host)
-    db.set_sqlDatabase(args.db)
-    db.set_sqlUser    ("mgd_public")
-    db.set_sqlPassword("mgdpub")
-    startTime = time.time()
+    newR['knownClassName']    = str(r['knownclassname'])
+    newR['ID']                = str(r['geoid'])
+    newR['curationState']     = str(r['curationstate'])
+    newR['modification_date'] = str(r['modification_date'])
+    newR['titleLength']       = str(r['titlelength'])
+    newR['descriptionLength'] = str(r['descriptionlength'])
+    newR['title']             = cleanUpTextField(r,'title')
+    newR['description']       = cleanUpTextField(r,'description')
 
-    loadTmpTable()
-    if args.option == 'counts': doCounts()
-    else: doSamples()
-
-    verbose("Total time: %8.3f seconds\n\n" % (time.time()-startTime))
+    return newSample.setFields(newR)
 #-----------------------------------
+
 
 def cleanUpTextField(rcd,
                     textFieldName,
     ):
     text = rcd[textFieldName]
+    if text == None:
+        text = ''
+
     if args.maxTextLength:	# handy for debugging
         text = text[:args.maxTextLength]
         text = text.replace('\n', ' ')
