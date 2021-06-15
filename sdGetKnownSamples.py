@@ -8,13 +8,10 @@
             replacing FIELDSEP and RECORDSEP chars in the doc text w/ ' '
 
   Outputs:      Delimited file to stdout
-                See sampleDataLib.ClassifiedSample for output format
+                See htMLsample.ClassifiedSample for output format
 '''
-#-----------------------------------
 import sys
 import os
-import string
-import re
 import time
 import argparse
 import db
@@ -25,7 +22,6 @@ from utilsLib import removeNonAscii
 sampleObjType = mlSampleLib.ClassifiedHtSample
 
 # for the Sample output file
-outputSampleSet = mlSampleLib.ClassifiedSampleSet(sampleObjType=sampleObjType)
 RECORDEND    = sampleObjType.getRecordEnd()
 FIELDSEP     = sampleObjType.getFieldSep()
 #-----------------------------------
@@ -40,7 +36,7 @@ def getArgs():
         help="just run ad hoc test code")
 
     parser.add_argument('option', action='store', default='counts',
-        choices=['counts', 'samples'],
+        choices=['counts', 'geo', 'nongeo',],
         help='which subset of training samples to get or "counts"')
 
     parser.add_argument('-l', '--limit', dest='nResults',
@@ -89,85 +85,145 @@ def getArgs():
 
 args = getArgs()
 
-####################
-# SQL fragments used to build up queries
-TMPTBL = 'tmp_htexp'
-OUTPUT_TITLE  = 'GEO experiments evaluated by Connie'
+#-----------------------------------
+# Supported Sample Sets - each is populated in its own temp table
+GEO_OUTPUT_TITLE  = 'GEO experiments evaluated by Connie'
+GEO_TMPTBL = 'tmp_geoexp'
+NON_GEO_OUTPUT_TITLE  = 'Non-GEO, Yes experiments evaluated by Connie'
+NON_GEO_TMPTBL = 'tmp_nongeoexp'
 
-def loadTmpTable():
+def loadTmpTables():
     '''
     Select the appropriate HT experiments to be used and put them in the
-    TMPTBL. Columns:
+    tmp tables. Columns:
         _experiment_key
-        geoID
-        knownClassName
+        ID (GEO ID if available)
+        knownClassName (evaluation state: "Yes" or "No")
         title
         description
         curationState
+        studytype
+        experimenttype
         modification_date
         titleLength
         descriptionLength
     '''
+    # Populate GEO experiment tmp table
     q = ["""
-        create temporary table %s
-        as
-        select e._experiment_key, a.accid as geoID, t.term as knownClassName,
+        create temporary table %s as
+        select e._experiment_key, a.accid as ID, t.term as knownClassName,
             t2.term as curationState,
+            t3.term as studytype,
+            t4.term as experimenttype,
             to_char(e.modification_date, 'YYYY-MM-DD') as modification_date,
             length(e.name) as titleLength,
             length(e.description) as descriptionLength,
             e.name as title, e.description
         from gxd_htexperiment e
             join voc_term t on (e._evaluationstate_key = t._term_key)
-            join voc_term t2 on (e._curationstate_key = t2._term_key)
+            join voc_term t2 on (e._curationstate_key  = t2._term_key)
+            join voc_term t3 on (e._studytype_key      = t3._term_key)
+            join voc_term t4 on (e._experimenttype_key = t4._term_key)
             join acc_accession a on
                 (a._object_key = e._experiment_key and a._mgitype_key = 42
                 and a._logicaldb_key = 190) -- GEO series
         where
         e._evaluatedby_key = 1064 -- connie
         and t.term in ('Yes', 'No')
-        order by e._experiment_key
-        """ % (TMPTBL),
+        """ % (GEO_TMPTBL),
         """
-        create index tmp_idx1 on %s(geoID)
-        """ % (TMPTBL),
+        create index tmp_idx1 on %s(_experiment_key)
+        """ % (GEO_TMPTBL),
+        ]
+    results = db.sql(q, 'auto')
+
+    # Populate non-GEO, 'Yes' experiment tmp table
+    #  These are additional 'Yes' experiments
+    q = ["""
+        create temporary table %s as
+        select e._experiment_key, a.accid as ID, t.term as knownClassName,
+            t2.term as curationState,
+            t3.term as studytype,
+            t4.term as experimenttype,
+            to_char(e.modification_date, 'YYYY-MM-DD') as modification_date,
+            length(e.name) as titleLength,
+            length(e.description) as descriptionLength,
+            e.name as title, e.description
+        from gxd_htexperiment e
+            join voc_term t on (e._evaluationstate_key = t._term_key)
+            join voc_term t2 on (e._curationstate_key  = t2._term_key)
+            join voc_term t3 on (e._studytype_key      = t3._term_key)
+            join voc_term t4 on (e._experimenttype_key = t4._term_key)
+            join acc_accession a on
+                (a._object_key = e._experiment_key and a._mgitype_key = 42
+                and a._logicaldb_key = 189) -- Array express
+        where
+        e._evaluatedby_key = 1064 -- connie
+        and t.term = 'Yes'
+        and not exists
+        (select 1 from %s te where (te._experiment_key = e._experiment_key))
+        """ % (NON_GEO_TMPTBL, GEO_TMPTBL),
+        """
+        create index tmp_idx2 on %s(_experiment_key)
+        """ % (NON_GEO_TMPTBL),
         ]
     results = db.sql(q, 'auto')
 #-----------------------------------
 
 def doCounts():
     '''
-    Get counts of sample records from db and write them to stdout.
-    Do some validations on the counts of the tmp table of experiments.
+    Get counts of experiment records from tmp tables and write them to stdout.
+    Do some validations to make sure we don't have false assumptions.
     '''
     sys.stdout.write("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
-
+    # Counts from the GEO tmptbl
     q = """select count(*) as num from %s e
-        """ % (TMPTBL)
+        """ % (GEO_TMPTBL)
     numRows = db.sql(q, 'auto')[0]['num']
 
     q = """select count(distinct e._experiment_key) as num from %s e
-        """ % (TMPTBL)
-    numExperiments = db.sql(q, 'auto')[0]['num']
+        """ % (GEO_TMPTBL)
+    numExp = db.sql(q, 'auto')[0]['num']
 
-    assert (numRows == numExperiments), "Some experiment is repeated"
+    assert (numRows == numExp), "Some experiment is repeated"
 
     q = """select count(distinct e._experiment_key) as num from %s e
            where e.knownClassName = 'Yes'
-        """ % (TMPTBL)
+        """ % (GEO_TMPTBL)
     numYes = db.sql(q, 'auto')[0]['num']
 
     q = """select count(distinct e._experiment_key) as num from %s e
            where e.knownClassName = 'No'
-        """ % (TMPTBL)
+        """ % (GEO_TMPTBL)
     numNo = db.sql(q, 'auto')[0]['num']
 
-    assert (numYes + numNo  == numExperiments), "Yes/No counts don't add up"
+    assert (numYes + numNo  == numExp), "Yes/No counts don't add up"
 
-    sys.stdout.write(OUTPUT_TITLE + '\n')
-    sys.stdout.write("%7d Yes\t%7d No\t%7d total\n" \
-                                    % (numYes, numNo, numExperiments))
+    sys.stdout.write(GEO_OUTPUT_TITLE + '\n')
+    sys.stdout.write("%7d (%d%%) Yes\t%7d (%d%%) No\t%7d total\n" \
+            % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
+
+    # Counts from the non-GEO tmptbl
+    q = """select count(*) as num from %s e
+        """ % (NON_GEO_TMPTBL)
+    ngNumRows = db.sql(q, 'auto')[0]['num']
+
+    q = """select count(distinct e._experiment_key) as num from %s e
+        """ % (NON_GEO_TMPTBL)
+    ngNumExp = db.sql(q, 'auto')[0]['num']
+
+    assert (ngNumRows == ngNumExp), "Some non-GEO experiment is repeated"
+
+    sys.stdout.write(NON_GEO_OUTPUT_TITLE + '\n')
+    sys.stdout.write("%7d experiments\n" % (ngNumRows))
+
+    # Totals
+    sys.stdout.write("Total experiments\n")
+    numYes += ngNumExp
+    numExp += ngNumExp
+    sys.stdout.write("%7d (%d%%) Yes\t%7d (%d%%) No\t%7d total\n" \
+            % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
 #-----------------------------------
 
 ####################
@@ -178,40 +234,42 @@ def main():
     db.set_sqlUser    ("mgd_public")
     db.set_sqlPassword("mgdpub")
 
-    loadTmpTable()
+    loadTmpTables()
     if args.option == 'counts': doCounts()
     else: doSamples()
-
 #-----------------------------------
 
 def doSamples():
-    '''
-    Write known samples to stdout.
-    For now, just write from sql results.
-    Need to convert this to use mlSampleLib to write build sample objects
-        and write sample file.
+    ''' Write known samples to stdout.
     '''
     startTime = time.time()
     verbose("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
+    # Which set of samples, which tmp table
+    if args.option == "geo":
+        tmptbl = GEO_TMPTBL
+    elif args.option == "nongeo":
+        tmptbl = NON_GEO_TMPTBL
+    else:
+        sys.stderr.write("Bad option: %s\n" % args.option)
+        exit(5)
+
     # Build sql
+    q = """select * from %s\n""" % (tmptbl)
     if args.nResults != 0:
         limitClause = 'limit %d\n' % args.nResults
-    else: limitClause =  ''
-    q = """select * from %s\n""" % (TMPTBL)
-    q += limitClause
-
-    # Run sql
-    results = db.sql(q, 'auto')
+        q += limitClause
 
     # Output results
-    global outputSampleSet
+    outputSampleSet = mlSampleLib.ClassifiedSampleSet(\
+                                                sampleObjType=sampleObjType)
+    results = db.sql(q, 'auto')
     verbose("constructing and writing samples:\n")
     for i,r in enumerate(results):
         try:
             sample = sqlRecord2ClassifiedSample(r)
             outputSampleSet.addSample(sample)
-        except:
+        except:         # if some error, try to report which record
             sys.stderr.write("Error on record %d:\n%s\n" % (i, str(r)))
             raise
 
@@ -224,32 +282,6 @@ def doSamples():
     verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
 
     return
-
-    ## old style, not using SampleSets
-    # Header line
-    sys.stdout.write(FIELDSEP.join([ \
-                'geoid',
-                'knownclassname',
-                'curationstate',
-                'modification_date',
-                'titlelength',
-                'descriptionlength',
-                'title',
-                'description',
-            ]) + RECORDEND + '\n')
-    # Output results
-    for r in results:
-        fields = [ \
-                    r['geoid'],
-                    r['knownclassname'],
-                    r['curationstate'],
-                    r['modification_date'],
-                    str(r['titlelength']),
-                    str(r['descriptionlength']),
-                    cleanUpTextField(r,'title'),
-                    cleanUpTextField(r,'description'),
-                ]
-        sys.stdout.write(FIELDSEP.join(fields) + RECORDEND + '\n')
 #-----------------------------------
 
 def sqlRecord2ClassifiedSample(r,       # sql Result record
@@ -261,8 +293,10 @@ def sqlRecord2ClassifiedSample(r,       # sql Result record
     newSample = sampleObjType()
 
     newR['knownClassName']    = str(r['knownclassname'])
-    newR['ID']                = str(r['geoid'])
+    newR['ID']                = str(r['id'])
     newR['curationState']     = str(r['curationstate'])
+    newR['studytype']         = str(r['studytype'])
+    newR['experimenttype']    = str(r['experimenttype'])
     newR['modification_date'] = str(r['modification_date'])
     newR['titleLength']       = str(r['titlelength'])
     newR['descriptionLength'] = str(r['descriptionlength'])
@@ -271,7 +305,6 @@ def sqlRecord2ClassifiedSample(r,       # sql Result record
 
     return newSample.setFields(newR)
 #-----------------------------------
-
 
 def cleanUpTextField(rcd,
                     textFieldName,

@@ -40,3 +40,46 @@ Initial sdGetKnownSamples.py results
     GEO experiments evaluated by Connie
        2624 Yes	   7305 No	   9929 total
     Total time:    1.092 seconds
+
+## June 12, 2021
+Initial version of htMLsample.py - module defines Sample classes for HT
+experiments: HtSample and ClassifiedHtSample.
+Used this in sdGetKnownSamples.py to create an initial sample set.
+
+Modified baseSampleDataLib.py in MLtextTools to terminate the #meta lines of
+sample with a '\n' (always) instead of using the recordEnd string that is
+specified in the Sample class. This removed an annoying circularity in needing
+to know the Sample class name to be able to read the #meta line that contained
+the Sample class name. This came out of wanting to use '\n' to end HtSample
+records since they are generally short.
+
+Looking at the initial sample set (same as above):
+    Mon Jun 14 16:30:21 2021
+    Hitting database mgi-adhoc.jax.org mgd as mgd_public
+    GEO experiments evaluated by Connie
+       2624 Yes	   7305 No	   9929 total
+This is roughly 26% / 74% split. Not TOO badly balanced.
+All the records seem to have reasonable length titles and descriptions, except
+one record, GSE15354, has a null description, and that seems to match its 
+record in GEO.
+
+One idea: add additional non-GEO "yes" experiments to balance it better.
+    There are 562 of these experiments evaluated by Connie.
+    I'll include these in the sample set. This gets us to about 30% / 70%
+
+## June 15, 2021
+Have a complete version of sdGetKnownSamples.py
+It outputs two sample sets: 
+    all GEO evaluated by Connie
+    all non-GEO "Yes" experiments evaluted by Connie
+    Tue Jun 15 17:12:19 2021
+Output counts: 
+    Hitting database mgi-adhoc.jax.org mgd as mgd_public
+    GEO experiments evaluated by Connie
+       2624 (26%) Yes	   7305 (73%) No	   9929 total
+    Non-GEO, Yes experiments evaluated by Connie
+        562 experiments
+    Total experiments
+       3186 (30%) Yes	   7305 (69%) No	  10491 total
+Want Connie to review this data set and thinking to complete YAKS-21
+

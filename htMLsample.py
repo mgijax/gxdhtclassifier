@@ -145,19 +145,23 @@ class ClassifiedHtSample (HtSample, ClassifiedSample):
     """
     fieldNames = [ \
             'knownClassName',
-            'ID'            ,
-            'curationState'  ,
-            'modification_date'          ,
-            'titleLength'      ,
-            'descriptionLength'      ,
-            'title'         ,
-            'description'   ,
+            'ID',
+            'curationState',
+            'studytype',
+            'experimenttype'  ,
+            'modification_date',
+            'titleLength',
+            'descriptionLength',
+            'title',
+            'description',
             ]
     extraInfoFieldNames = [ \
-            'curationState'  ,
-            'modification_date'          ,
-            'titleLength'      ,
-            'descriptionLength'      ,
+            'curationState',
+            'studytype',
+            'experimenttype',
+            'modification_date',
+            'titleLength',
+            'descriptionLength',
             ]
     #----------------------
 
