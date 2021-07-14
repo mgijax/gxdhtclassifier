@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#
+#  Configuration.default
+#
+
+#
+#  If the MGICONFIG environment variable does not have a local override,
+#  use the default "live" settings.
+#
+if [ "${MGICONFIG}" = "" ]
+then
+    MGICONFIG=/usr/local/mgi/live/mgiconfig
+    export MGICONFIG
+fi
+
+. ${MGICONFIG}/master.config.sh
+
+PYTHON=$ANACONDAPYTHON
+
+# this is for development. These are likely to change for production
+GXDhtClassifierHome=~/work/gxdhtclassifier # classifier utils installed here
+MLtextTools=~/work/MLtextTools             # MLtextTools installed here
+sampleDataLibParam="--sampledatalib $GXDhtClassifierHome/htMLsample.py"
+

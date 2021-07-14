@@ -83,3 +83,11 @@ Output counts:
        3186 (30%) Yes	   7305 (69%) No	  10491 total
 Want Connie to review this data set and thinking to complete YAKS-21
 
+## July 9, 2021
+Completed splitSamples.py in MLtextTools. Generic script for randomly
+splitting sample files for creating validation and testing sets.
+
+## July 14, 2021
+created sdBuild1Get.sh and sdBuild4Split.sh - wrapper scripts to get sample
+sets from the database and split out training, validation, and test sets.
+These use mgiconfig and a Configuration file.

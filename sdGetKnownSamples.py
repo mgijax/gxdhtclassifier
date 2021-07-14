@@ -264,7 +264,7 @@ def doSamples():
     outputSampleSet = mlSampleLib.ClassifiedSampleSet(\
                                                 sampleObjType=sampleObjType)
     results = db.sql(q, 'auto')
-    verbose("constructing and writing samples:\n")
+    verbose("constructing and writing %s samples:\n" % args.option)
     for i,r in enumerate(results):
         try:
             sample = sqlRecord2ClassifiedSample(r)
