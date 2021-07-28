@@ -16,6 +16,7 @@ import re
 from copy import copy
 from baseSampleDataLib import *
 import utilsLib
+import htFeatureTransform as featureTransform
 #-----------------------------------
 
 FIELDSEP     = '|'      # field separator when reading/writing sample fields
@@ -75,16 +76,17 @@ class HtSample (BaseSample):
         Stem,
         Replace \n with spaces
         '''
+        # NOT IMPLEMENTED
         # This is currently the only preprocessor that uses a stemmer.
         # Would be clearer to import and instantiate one stemmer above,
         # BUT that requires nltk (via anaconda) to be installed on each
         # server we use. This is currently not installed on our linux servers
         # By importing here, we can use RefSample in situations where we don't
         # call this preprocessor, and it will work on our current server setup.
-        global stemmer
-        if not stemmer:
-            import nltk.stem.snowball as nltk
-            stemmer = nltk.EnglishStemmer()
+        #global stemmer
+        #if not stemmer:
+        #    import nltk.stem.snowball as nltk
+        #    stemmer = nltk.EnglishStemmer()
         #------
         #def _removeURLsCleanStem(text):
         #    output = ''
@@ -98,6 +100,34 @@ class HtSample (BaseSample):
         #self.setTitle( _removeURLsCleanStem( self.getTitle()) )
         #self.setAbstract( _removeURLsCleanStem( self.getAbstract()) )
         #self.setExtractedText( _removeURLsCleanStem( self.getExtractedText()) )
+        return self
+    # ---------------------------
+
+    def featureTransform(self):		# preprocessor
+        '''
+        Apply feature text transformations
+        '''
+        self.setTitle(featureTransform.transformText(self.getTitle()))
+        self.setDescription(featureTransform.transformText(self.getDescription()))
+        return self
+    # ---------------------------
+
+    def stem(self):		# preprocessor
+        '''
+        Stem tokens. Also converts everything to lower case
+        '''
+        global stemmer
+        if not stemmer:
+            import nltk.stem.snowball as nltk
+            stemmer = nltk.EnglishStemmer()
+        def _stem(text):
+            stemmedTokens = []
+            for m in token_re.finditer(text):
+                stemmedTokens.append(stemmer.stem(m.group()))
+            return " ".join(stemmedTokens)
+
+        self.setTitle(_stem(self.getTitle()))
+        self.setDescription(_stem(self.getDescription()))
         return self
     # ---------------------------
 
