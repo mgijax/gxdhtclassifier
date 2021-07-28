@@ -91,3 +91,84 @@ splitting sample files for creating validation and testing sets.
 created sdBuild1Get.sh and sdBuild4Split.sh - wrapper scripts to get sample
 sets from the database and split out training, validation, and test sets.
 These use mgiconfig and a Configuration file.
+
+## July 23, 2021
+Added functionality in MLtextTools/tuningReportsLib.py getBestParamsReport()
+to print output of get_params() method. This dumps the Pipeline steps params
+better. (on yaks branch)
+
+Did some tuning of random forest classifier. Overfitting some, mostly played
+with min_samples_split to try to correct overfitting.
+Here is the best run:
+
+### Start Time 2021/07/23-10-17-46  RF.py       index file: index.out
+Random Seeds:   randForClassifier=939   randForSplit=706   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.84      0.88      0.86      2263
+    Train No       0.94      0.92      0.93      4726
+Train (Yes) F2: 0.8730    P: 0.8404    R: 0.8816    NPV: 0.9419
+
+['Yes', 'No']
+[[1995  268]
+ [ 379 4347]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.69      0.75      0.72       528
+    Valid No       0.91      0.88      0.89      1477
+Valid (Yes) F2: 0.7383    P: 0.6947    R: 0.7500    NPV: 0.9080
+
+['Yes', 'No']
+[[ 396  132]
+ [ 174 1303]]
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+This run uses 822 features. No stemming, but remove stop words
+
+Will switch to doing some feature preprocessing: feature transformations.
+
+## July 27, 2021
+Still using RF.
+Still overfitting some, would need to work harder to shrink this.
+In general, seems to do (slightly) better with:
+    binary vectorization (not counts)
+    (1,2) ngrams (better than (1,1) or (1,3))
+    Note: vectorizer removes stop words prior to n-gramming in all cases.
+    100 estimators (tried 50, 125, 150)
+
+Did some feature preprocessing, helped a tiny bit.
+Feature transformations (tumor types, embryonic day, KO, WT, ...)
+
+With no preprocessing:
+### Start Time 2021/07/23-16-46-06  RF.py
+Train (Yes) F2: 0.8730    P: 0.8404    R: 0.8816    NPV: 0.9419
+Valid (Yes) F2: 0.7383    P: 0.6947    R: 0.7500    NPV: 0.9080
+
+With feature transforms:
+### Start Time 2021/07/27-10-12-12  RF.py
+Train (Yes) F2: 0.8701    P: 0.8481    R: 0.8758    NPV: 0.9396
+Valid (Yes) F2: 0.7436    P: 0.7057    R: 0.7538    NPV: 0.9098
+
+With feature transforms and stemming:
+### Start Time 2021/07/27-10-46-34  RF.py
+Train (Yes) F2: 0.8686    P: 0.8423    R: 0.8754    NPV: 0.9392
+Valid (Yes) F2: 0.7557    P: 0.7005    R: 0.7708    NPV: 0.9150
+
+Note the NPV is pretty good (with and w/o any preprocessing).
+Why is recall so much lower?
+Because the validation set is a little unbalanced, so there are fewer positives,
+and therefore fewer predicted true positives compared the number of false
+negatives.
+
+TODO: 1) should review feature transformationsn with Connie and see if they make
+sense to her or if she has other ideas for tranformations.
+2) should try gradient boosted forest, maybe SGD

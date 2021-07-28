@@ -1,0 +1,5 @@
+model=RF
+dataDir=./data/july15/P1
+#baseDir=$dataDir/LegendsPara/Proc1
+mtrun ${model}.py -v --gsverbose --features
+# --rclassifier 939
