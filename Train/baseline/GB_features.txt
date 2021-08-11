@@ -1,0 +1,798 @@
+abil|+0.0000
+ablat|+0.0018
+abnorm|+0.0002
+absenc|+0.0000
+abund|+0.0003
+accompani|+0.0000
+accord|+0.0000
+accumul|+0.0000
+acid|+0.0000
+act|+0.0000
+action|+0.0000
+activ|+0.0000
+acut|+0.0008
+ad|+0.0002
+adapt|+0.0002
+addit|+0.0001
+address|+0.0002
+adipos|+0.0002
+adipos tissu|+0.0000
+adult|+0.0008
+adult mice_|+0.0000
+affect|+0.0000
+affymetrix|+0.0006
+affymetrix genechip|+0.0000
+affymetrix mice_|+0.0003
+affymetrix microarray|+0.0000
+age|+0.0075
+agil|+0.0000
+aim|+0.0000
+al|+0.0002
+allel|+0.0000
+allow|+0.0000
+alpha|+0.0002
+alter|+0.0006
+altern|+0.0002
+amplif|+0.0000
+amplifi|+0.0000
+analys|+0.0000
+analysi|+0.0001
+analysi gene|+0.0000
+analysi perform|+0.0000
+analysi reveal|+0.0000
+analysi use|+0.0000
+analyz|+0.0000
+analyz use|+0.0000
+ani|+0.0000
+anim|+0.0002
+anti|+0.0000
+antibodi|+0.0000
+antigen|+0.0000
+apoptosi|+0.0000
+appear|+0.0004
+appli|+0.0000
+approach|+0.0001
+approxim|+0.0000
+array|+0.0000
+assay|+0.0000
+assess|+0.0000
+associ|+0.0001
+background|+0.0000
+balb|+0.0000
+base|+0.0000
+basi|+0.0000
+becaus|+0.0001
+befor|+0.0000
+behavior|+0.0000
+beta|+0.0033
+better|+0.0001
+bind|+0.0000
+bind protein|+0.0000
+biolog|+0.0000
+biolog replic|+0.0000
+block|+0.0004
+blood|+0.0000
+bodi|+0.0001
+bone|+0.0003
+bone marrow|+0.0014
+brain|+0.0047
+c57bl|+0.0006
+c57bl mice_|+0.0000
+ca|+0.0009
+cancer|+0.0003
+candid|+0.0010
+capac|+0.0000
+captur|+0.0002
+cardiac|+0.0006
+carri|+0.0000
+caus|+0.0000
+cd4|+0.0050
+cdna|+0.0000
+cell|+0.1909
+cell cell|+0.0000
+cell cultur|+0.0000
+cell cycl|+0.0003
+cell differenti|+0.0002
+cell express|+0.0000
+cell isol|+0.0000
+cell line|+0.0030
+cell mice_|+0.0000
+cell popul|+0.0000
+cell prolifer|+0.0000
+cell sort|+0.0000
+cell treat|+0.0000
+cell type|+0.0000
+cell use|+0.0010
+cell_lin|+0.0008
+cellular|+0.0001
+central|+0.0000
+chang|+0.0003
+chang gene|+0.0002
+character|+0.0000
+characterist|+0.0002
+chip|+0.0005
+chip seq|+0.0002
+chromatin|+0.0000
+chromosom|+0.0005
+chronic|+0.0002
+class|+0.0005
+clinic|+0.0000
+clone|+0.0000
+cluster|+0.0000
+code|+0.0024
+collect|+0.0000
+colon|+0.0000
+combin|+0.0000
+common|+0.0000
+compar|+0.0000
+compar gene|+0.0002
+compar wild_typ|+0.0007
+comparison|+0.0000
+complet|+0.0004
+complex|+0.0000
+compon|+0.0000
+comprehens|+0.0000
+concentr|+0.0015
+conclus|+0.0000
+condit|+0.0001
+conduct|+0.0001
+confirm|+0.0000
+consequ|+0.0000
+conserv|+0.0002
+consist|+0.0005
+constitut|+0.0000
+contain|+0.0000
+context|+0.0008
+contrast|+0.0003
+contribut|+0.0000
+control|+0.0028
+control mice_|+0.0000
+coordin|+0.0000
+core|+0.0000
+correl|+0.0000
+correspond|+0.0002
+cortex|+0.0006
+cours|+0.0000
+cre|+0.0004
+creat|+0.0003
+critic|+0.0000
+crna|+0.0000
+cross|+0.0000
+cultur|+0.0183
+current|+0.0000
+cycl|+0.0004
+cytokin|+0.0000
+damag|+0.0006
+data|+0.0005
+dataset|+0.0009
+day|+0.0006
+death|+0.0000
+decreas|+0.0002
+deep|+0.0000
+deep sequenc|+0.0003
+defect|+0.0012
+defici|+0.0024
+defici mice_|+0.0027
+defin|+0.0000
+delet|+0.0011
+demonstr|+0.0004
+dendrit|+0.0000
+depend|+0.0003
+deplet|+0.0004
+deriv|+0.0000
+describ|+0.0000
+design|+0.0000
+despit|+0.0000
+detect|+0.0002
+determin|+0.0000
+develop|+0.0054
+development|+0.0005
+diabet|+0.0001
+did|+0.0000
+diet|+0.0044
+differ|+0.0007
+differenti|+0.0000
+differenti express|+0.0004
+differenti gene|+0.0000
+direct|+0.0000
+diseas|+0.0007
+disord|+0.0006
+display|+0.0000
+disrupt|+0.0019
+dissect|+0.0005
+distinct|+0.0001
+divers|+0.0006
+dna|+0.0000
+domain|+0.0000
+dose|+0.0012
+doubl|+0.0000
+downregul|+0.0000
+downstream|+0.0001
+drive|+0.0002
+driven|+0.0000
+drug|+0.0000
+duplic|+0.0003
+dure|+0.0001
+dye|+0.0002
+dynam|+0.0010
+dysfunct|+0.0002
+earli|+0.0000
+effect|+0.0032
+effector|+0.0003
+effici|+0.0000
+element|+0.0000
+elev|+0.0004
+elucid|+0.0000
+embryo|+0.0098
+embryon|+0.0014
+embryon fibroblast|+0.0003
+embryon stem|+0.0030
+embryonic_day|+0.0358
+embryonic_day mice_|+0.0004
+employ|+0.0000
+encod|+0.0015
+end|+0.0000
+endogen|+0.0000
+enhanc|+0.0017
+enrich|+0.0000
+enzym|+0.0000
+epigenet|+0.0000
+epitheli|+0.0013
+epitheli cell|+0.0000
+epithelium|+0.0000
+es|+0.0000
+es cell|+0.0020
+esc|+0.0006
+essenti|+0.0004
+establish|+0.0000
+et|+0.0000
+et al|+0.0000
+evalu|+0.0000
+event|+0.0000
+evid|+0.0004
+examin|+0.0006
+exhibit|+0.0003
+exon|+0.0002
+experi|+0.0000
+experi overal|+0.0000
+experiment|+0.0000
+explor|+0.0002
+expos|+0.0047
+exposur|+0.0023
+express analysi|+0.0000
+express chang|+0.0000
+express data|+0.0009
+express differ|+0.0000
+express gene|+0.0012
+express level|+0.0000
+express mice_|+0.0000
+express pattern|+0.0005
+express profil|+0.0000
+extens|+0.0000
+extracellular|+0.0000
+extract|+0.0000
+extract hybrid|+0.0003
+fac|+0.0099
+facilit|+0.0000
+factor|+0.0004
+fail|+0.0001
+failur|+0.0000
+famili|+0.0004
+fat|+0.0001
+fate|+0.0000
+featur|+0.0000
+fed|+0.0008
+femal|+0.0012
+femal mice_|+0.0002
+fetal|+0.0000
+fibroblast|+0.0047
+file|+0.0001
+final|+0.0000
+flox|+0.0017
+fluoresc|+0.0000
+fold|+0.0000
+follow|+0.0053
+form|+0.0000
+format|+0.0000
+fraction|+0.0000
+fragment|+0.0000
+free|+0.0013
+frozen|+0.0003
+function|+0.0010
+furthermor|+0.0000
+gain|+0.0002
+gene|+0.0000
+gene differenti|+0.0000
+gene encod|+0.0000
+gene express|+0.0018
+gene involv|+0.0001
+gene regul|+0.0005
+genechip|+0.0000
+genechip mice_|+0.0000
+general|+0.0007
+generat|+0.0000
+genet|+0.0019
+genom|+0.0009
+genom array|+0.0000
+genom wide|+0.0000
+genotyp|+0.0027
+germ|+0.0003
+gfp|+0.0021
+gland|+0.0011
+global|+0.0005
+global gene|+0.0000
+glucos|+0.0000
+goal|+0.0000
+group|+0.0085
+grown|+0.0000
+growth|+0.0000
+growth factor|+0.0000
+harvest|+0.0015
+heart|+0.0016
+hematopoiet|+0.0032
+hepat|+0.0004
+heterozyg|+0.0030
+high|+0.0000
+high fat|+0.0003
+high throughput|+0.0000
+higher|+0.0002
+hippocampus|+0.0007
+histon|+0.0000
+homeostasi|+0.0000
+host|+0.0000
+hour|+0.0016
+howev|+0.0003
+human|+0.0008
+hybrid|+0.0000
+hybrid affymetrix|+0.0004
+hypothesi|+0.0002
+ident|+0.0000
+identif|+0.0000
+identifi|+0.0000
+identifi gene|+0.0004
+ii|+0.0000
+il|+0.0000
+illumina|+0.0002
+immedi|+0.0000
+immun|+0.0000
+immun respons|+0.0000
+impact|+0.0000
+impair|+0.0002
+implic|+0.0000
+import|+0.0000
+improv|+0.0000
+inactiv|+0.0000
+includ|+0.0000
+increas|+0.0000
+independ|+0.0000
+indic|+0.0000
+individu|+0.0000
+induc|+0.0608
+induct|+0.0001
+infect|+0.0173
+inflamm|+0.0004
+inflammatori|+0.0000
+influenc|+0.0000
+inform|+0.0002
+inhibit|+0.0006
+inhibitor|+0.0002
+initi|+0.0002
+inject|+0.0117
+injuri|+0.0004
+insight|+0.0000
+insulin|+0.0002
+integr|+0.0002
+interact|+0.0000
+intestin|+0.0001
+investig|+0.0000
+involv|+0.0001
+isol|+0.0039
+key|+0.0000
+keyword|+0.0013
+kg|+0.0020
+kidney|+0.0008
+kinas|+0.0001
+kit|+0.0000
+knock_out|+0.0251
+knock_out mice_|+0.0153
+knockdown|+0.0021
+known|+0.0006
+label|+0.0000
+lack|+0.0005
+larg|+0.0000
+laser|+0.0000
+late|+0.0000
+later|+0.0000
+lead|+0.0000
+left|+0.0014
+level|+0.0000
+librari|+0.0036
+life|+0.0000
+ligand|+0.0000
+light|+0.0006
+like|+0.0000
+limit|+0.0005
+line|+0.0005
+lineag|+0.0004
+link|+0.0000
+lipid|+0.0002
+litterm|+0.0098
+littl|+0.0000
+liver|+0.0019
+local|+0.0000
+long|+0.0003
+long term|+0.0000
+loss|+0.0004
+low|+0.0002
+lower|+0.0000
+lung|+0.0003
+macrophag|+0.0078
+main|+0.0000
+maintain|+0.0000
+mainten|+0.0000
+major|+0.0000
+male|+0.0076
+male femal|+0.0007
+male mice_|+0.0004
+mammal|+0.0002
+mammalian|+0.0011
+mammari|+0.0000
+mani|+0.0001
+manner|+0.0000
+manufactur|+0.0000
+map|+0.0001
+mark|+0.0000
+marker|+0.0000
+marrow|+0.0000
+match|+0.0003
+matrix|+0.0000
+matur|+0.0000
+measur|+0.0000
+mechan|+0.0001
+mediat|+0.0009
+medium|+0.0000
+mef|+0.0110
+member|+0.0007
+mesenchym|+0.0002
+metabol|+0.0005
+method|+0.0000
+methyl|+0.0000
+mg|+0.0002
+mice_ brain|+0.0005
+mice_ compar|+0.0001
+mice_ develop|+0.0000
+mice_ embryo|+0.0002
+mice_ embryon|+0.0008
+mice_ express|+0.0000
+mice_ fed|+0.0028
+mice_ gene|+0.0002
+mice_ genom|+0.0000
+mice_ liver|+0.0010
+mice_ mice_|+0.0000
+mice_ model|+0.0004
+mice_ strain|+0.0036
+mice_ treat|+0.0001
+mice_ use|+0.0002
+mice_ wild_typ|+0.0007
+microarray|+0.0009
+microarray analysi|+0.0001
+microarray data|+0.0000
+microdissect|+0.0029
+microrna|+0.0000
+mir|+0.0000
+mirna|+0.0006
+ml|+0.0000
+model|+0.0000
+modif|+0.0003
+modifi|+0.0000
+modul|+0.0000
+molecul|+0.0000
+molecular|+0.0002
+molecular mechan|+0.0000
+month|+0.0005
+month old|+0.0018
+moreov|+0.0000
+morpholog|+0.0003
+mrna|+0.0000
+mrna express|+0.0000
+mrna profil|+0.0002
+mrnas|+0.0004
+multipl|+0.0000
+muscl|+0.0005
+mut_mut|+0.0003
+mut_mut mice_|+0.0016
+mutant|+0.0181
+mutant mice_|+0.0051
+mutat|+0.0014
+myeloid|+0.0000
+natur|+0.0000
+negat|+0.0000
+network|+0.0005
+neural|+0.0000
+neuron|+0.0003
+new|+0.0000
+non|+0.0000
+normal|+0.0000
+novel|+0.0002
+nuclear|+0.0000
+null|+0.0003
+null mice_|+0.0086
+number|+0.0002
+obes|+0.0005
+observ|+0.0003
+obtain|+0.0000
+occur|+0.0002
+old|+0.0024
+old mice_|+0.0004
+oncogen|+0.0001
+onli|+0.0000
+onset|+0.0033
+order|+0.0004
+organ|+0.0022
+origin|+0.0000
+overal|+0.0002
+overal design|+0.0000
+overexpress|+0.0017
+overlap|+0.0000
+oxid|+0.0005
+p53|+0.0002
+pair|+0.0005
+parallel|+0.0000
+partial|+0.0000
+particular|+0.0000
+patholog|+0.0007
+pathway|+0.0002
+patient|+0.0000
+pattern|+0.0000
+pcr|+0.0002
+perform|+0.0000
+perform use|+0.0000
+period|+0.0000
+phase|+0.0000
+phenotyp|+0.0002
+physiolog|+0.0001
+platform|+0.0000
+play|+0.0000
+pluripot|+0.0000
+point|+0.0000
+pool|+0.0002
+poor|+0.0000
+popul|+0.0000
+posit|+0.0000
+possibl|+0.0000
+post|+0.0006
+postnat|+0.0087
+potenti|+0.0003
+pre|+0.0000
+precursor|+0.0000
+predict|+0.0000
+prepar|+0.0000
+presenc|+0.0000
+present|+0.0000
+prevent|+0.0000
+previous|+0.0000
+primari|+0.0016
+prior|+0.0000
+pro|+0.0000
+probe|+0.0000
+process|+0.0000
+produc|+0.0006
+product|+0.0000
+profil|+0.0000
+profil array|+0.0061
+profil mice_|+0.0000
+progenitor|+0.0000
+progenitor cell|+0.0000
+program|+0.0002
+progress|+0.0000
+prolifer|+0.0003
+promot|+0.0002
+properti|+0.0000
+propos|+0.0004
+protect|+0.0000
+protein|+0.0000
+protocol|+0.0002
+provid|+0.0010
+purifi|+0.0006
+purpos|+0.0000
+qiagen|+0.0000
+qualiti|+0.0000
+quantit|+0.0000
+rang|+0.0000
+rapid|+0.0000
+rate|+0.0000
+read|+0.0002
+recent|+0.0000
+receptor|+0.0000
+recombin|+0.0000
+recruit|+0.0002
+reduc|+0.0009
+reduct|+0.0000
+refer|+0.0021
+region|+0.0002
+regul|+0.0003
+regul gene|+0.0000
+regulatori|+0.0000
+relat|+0.0000
+relev|+0.0000
+remain|+0.0000
+remodel|+0.0000
+remov|+0.0000
+renew|+0.0008
+repeat|+0.0000
+replic|+0.0000
+report|+0.0000
+repres|+0.0002
+repress|+0.0000
+reprogram|+0.0001
+requir|+0.0000
+research|+0.0010
+resist|+0.0000
+respect|+0.0000
+respons|+0.0069
+restrict|+0.0004
+result|+0.0003
+reveal|+0.0000
+revers|+0.0002
+rna|+0.0007
+rna extract|+0.0000
+rna isol|+0.0000
+rna sampl|+0.0000
+rna seq|+0.0000
+rna sequenc|+0.0000
+rnas|+0.0000
+rneasi|+0.0000
+robust|+0.0000
+role|+0.0008
+sacrif|+0.0002
+sampl|+0.0007
+sampl analyz|+0.0000
+scale|+0.0000
+screen|+0.0000
+second|+0.0000
+select|+0.0000
+self|+0.0006
+self renew|+0.0002
+sensit|+0.0000
+separ|+0.0003
+seq|+0.0000
+seq analysi|+0.0000
+sequenc|+0.0001
+seri|+0.0000
+serum|+0.0001
+serv|+0.0000
+set|+0.0002
+sever|+0.0000
+sex|+0.0000
+share|+0.0000
+short|+0.0000
+shown|+0.0000
+signal|+0.0001
+signal pathway|+0.0003
+signatur|+0.0000
+signific|+0.0002
+silenc|+0.0000
+similar|+0.0000
+sinc|+0.0000
+singl|+0.0000
+singl cell|+0.0022
+site|+0.0003
+skelet|+0.0000
+skelet muscl|+0.0000
+skin|+0.0000
+small|+0.0000
+softwar|+0.0000
+somat|+0.0002
+sort|+0.0209
+speci|+0.0007
+specif|+0.0000
+specif gene|+0.0005
+spleen|+0.0000
+splice|+0.0000
+st|+0.0003
+stage|+0.0039
+standard|+0.0000
+start|+0.0000
+state|+0.0000
+statist|+0.0000
+stem|+0.0100
+stem cell|+0.0095
+step|+0.0000
+stimul|+0.0033
+strain|+0.0062
+strand|+0.0000
+strategi|+0.0000
+stress|+0.0003
+strong|+0.0002
+structur|+0.0005
+studi|+0.0004
+subject|+0.0007
+subsequ|+0.0000
+subset|+0.0005
+suggest|+0.0008
+supplement|+0.0005
+support|+0.0008
+suppress|+0.0000
+surviv|+0.0000
+suscept|+0.0004
+syndrom|+0.0004
+synthesi|+0.0000
+taken|+0.0000
+target|+0.0000
+target gene|+0.0000
+technic|+0.0001
+technolog|+0.0000
+tempor|+0.0000
+term|+0.0000
+termin|+0.0000
+test|+0.0003
+therapeut|+0.0000
+therapi|+0.0000
+therefor|+0.0000
+throughput|+0.0000
+time|+0.0002
+time point|+0.0000
+tissu|+0.0133
+togeth|+0.0000
+total|+0.0000
+total rna|+0.0007
+total sampl|+0.0005
+transcript|+0.0005
+transcript factor|+0.0000
+transcript profil|+0.0004
+transcript regul|+0.0000
+transcriptom|+0.0000
+transcriptom analysi|+0.0000
+transfect|+0.0001
+transform|+0.0002
+transgen|+0.0297
+transgen mice_|+0.0009
+transit|+0.0002
+translat|+0.0000
+treat|+0.0604
+treatment|+0.0381
+trigger|+0.0000
+triplic|+0.0000
+trizol|+0.0000
+tumor_typ|+0.0334
+tumor_typ cell|+0.0002
+tumorigenesi|+0.0000
+type|+0.0001
+unclear|+0.0000
+undergo|+0.0000
+understand|+0.0002
+understood|+0.0000
+uniqu|+0.0000
+unknown|+0.0000
+untreat|+0.0000
+upregul|+0.0000
+use|+0.0003
+use affymetrix|+0.0000
+use illumina|+0.0000
+use mice_|+0.0000
+use microarray|+0.0000
+use rna|+0.0000
+util|+0.0000
+valid|+0.0002
+valu|+0.0002
+various|+0.0000
+vector|+0.0002
+vehicl|+0.0018
+versus|+0.0001
+vitro|+0.0000
+vivo|+0.0000
+vs|+0.0001
+week|+0.0004
+week age|+0.0000
+week old|+0.0000
+weight|+0.0000
+wherea|+0.0000
+wide|+0.0000
+wild_typ|+0.0120
+wild_typ control|+0.0001
+wild_typ litterm|+0.0008
+wild_typ mice_|+0.0014
+wild_typ wild_typ|+0.0000
+wnt|+0.0000
+work|+0.0000
+young|+0.0013

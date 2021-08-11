@@ -1,5 +1,5 @@
 model=RF
-dataDir=./data/july15/P1
+#dataDir=./data/july15/P1
 #baseDir=$dataDir/LegendsPara/Proc1
-mtrun ${model}.py -v --gsverbose --features
+mtrun ${model}.py -v --gsverbose --features --predict
 # --rclassifier 939

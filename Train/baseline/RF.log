@@ -3676,3 +3676,136 @@ Validation Set      :         2005          528         1477          26%
 ValidationSplit: 0.20
 ### End Time 2021/07/28-10-22-28. Total      3.19 seconds
 
+### Start Time 2021/07/28-11-55-47  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/baseline/data/july15/Stemmed/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/baseline/data/july15/Stemmed/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=123   randForSplit=97   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.85      0.88      0.86      2263
+    Train No       0.94      0.92      0.93      4726
+
+    accuracy                           0.91      6989
+   macro avg       0.89      0.90      0.90      6989
+weighted avg       0.91      0.91      0.91      6989
+
+Train (Yes) F2: 0.8723    P: 0.8454    R: 0.8794    NPV: 0.9411
+
+['Yes', 'No']
+[[1990  273]
+ [ 364 4362]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.71      0.77      0.74       528
+    Valid No       0.92      0.89      0.90      1477
+
+    accuracy                           0.86      2005
+   macro avg       0.81      0.83      0.82      2005
+weighted avg       0.86      0.86      0.86      2005
+
+Valid (Yes) F2: 0.7589    P: 0.7083    R: 0.7727    NPV: 0.9160
+
+['Yes', 'No']
+[[ 408  120]
+ [ 168 1309]]
+
+### Note: baseline RF, feature transforms + stemming
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=123, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 123, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0830	cell
++0.0448	treat
++0.0354	induc
++0.0341	tumor_typ
++0.0287	treatment
++0.0251	sort
++0.0232	knock_out
++0.0195	stem
++0.0181	cultur
++0.0176	cell line
++0.0172	fac
++0.0147	infect
++0.0146	embryonic_day
++0.0129	inject
++0.0127	wild_typ
++0.0108	transgen
++0.0106	stem cell
++0.0103	cd4
++0.0098	respons
++0.0093	gfp
+
+### Feature weights: lowest 20
++0.0001	previous
++0.0001	short
++0.0001	crna
++0.0001	known
++0.0001	befor
++0.0001	amplif
++0.0001	cell prolifer
++0.0001	cell cycl
++0.0001	natur
++0.0001	fate
++0.0001	morpholog
++0.0001	deep sequenc
++0.0001	therefor
++0.0001	rneasi
++0.0001	background
++0.0001	technic
++0.0001	analysi reveal
++0.0001	direct
++0.0001	implic
++0.0001	phase
+
+### Vectorizer:   Number of Features: 798
+First 10 features: ['abil', 'ablat', 'abnorm', 'absenc', 'abund', 'accompani', 'accord', 'accumul', 'acid', 'act']
+
+Middle 10 features: ['label', 'lack', 'larg', 'laser', 'late', 'later', 'lead', 'left', 'level', 'librari']
+
+Last 10 features: ['wherea', 'wide', 'wild_typ', 'wild_typ control', 'wild_typ litterm', 'wild_typ mice_', 'wild_typ wild_typ', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 168
+GSE1847
+GSE528
+GSE483
+GSE2515
+GSE4678
+
+### False negatives for Validation set: 120
+GSE3554
+GSE849
+GSE5786
+GSE7020
+GSE3565
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         6989         2263         4726          32%
+Validation Set      :         2005          528         1477          26%
+ValidationSplit: 0.20
+### End Time 2021/07/28-11-55-52. Total      4.62 seconds
+
