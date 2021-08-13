@@ -3,6 +3,7 @@
 """
 #######################################################################
 Author:  Jim
+TODO UPDATE THIS
 Routines for transforming tokens in article text before training/predicting.
 These transformations are intended to reduce dimensionality of the feature set
 (i.e., lower the number of features) AND by collapsing different forms of tokens
@@ -25,6 +26,118 @@ Do this with regex and only one pass through the text...
 
 import sys
 import re
+import unittest
+from utilsLib import TextMapping, TextTransformer
+
+# Questions:
+# early_embryo: should we require 'embryos?' after 'one cell', etc.?
+# collapse +/+ and -/- into just "genotype_"? Include "wild type"?
+# what are FACs? are there various spellings?
+
+# The order of the TextMappings is significant if multiple mappings can
+#   match the same text, e.g., "mouse" & "mouse embryonic fibroblasts".
+#   The earlier TextMapping takes precedence.
+
+KIOmappings = [
+    TextMapping('ko', r'\b(?:ko|knock(?:ed|s)?(?:\s|-)?outs?)\b','__knockout'),
+    TextMapping('ki', r'\b(?:knock(?:ed)?(?:\s|-)?ins?)\b', '__knockin'),
+    TextMapping('kd', r'\b(?:knock(?:ed)?(?:\s|-)?downs?)\b', '__knockdown'),
+    ]
+
+EmbryoMappings = [
+    TextMapping('eday',
+        r'\b(?:(?:e\s?|(?:e(?:mbryonic)?\sdays?\s))\d\d?(?:[.]\d\d?)?)\b',
+                                                            '__embryonicday'),
+    # original:  - too broad, needed to add "stage|embryo" after "cell"
+    # r'\b(?:(?:(?:[1248]|one|two|four|eight)(?:\s|-)cells?)|blastocysts?)\b',
+    TextMapping('ee',
+        r'\b(?:blastocysts?|blastomeres?|' +
+            r'(?:' +
+                r'(?:[1248]|one|two|four|eight)(?:\s|-)cell\s' +
+                r'(?:' +
+                    r'stages?|' +
+                    r'(?:' +
+                        r'(?:(?:mouse|mice|cloned)\s)?embryos?' +
+                    r')' +
+                r')' +
+            r')' +
+        r')\b', '__earlyembryo'),
+    ]
+MiscMappings = [
+    TextMapping('gt', r'\b(?:gene(?:\s|-)?trap(?:ped|s)?)\b', '__genetrap'),
+    TextMapping('wt', r'\b(?:wt|wild(?:\s|-)?types?)\b', '__wildtype'),
+
+                    # include spaces around the replacement token since these
+                    # notations are often not space delimited. E.g., Pax6+/+
+    TextMapping('wt2',r'(?:[+]/[+])', ' __wildtype '),  # combine these into
+    TextMapping('mut',r'(?:-/-)', ' __mut_mut '),        #  'genotype_'?
+
+    TextMapping('esc',
+        r'\b(?:(?:es|embryonic\sstem)(?:\s|-)cells?)\b', '__escell'),
+    TextMapping('mef',
+        r'\b(?:(?:mouse|mice)\sembryo(?:nic)?\sfibroblasts?|mefs?)\b','__mef'),
+
+    TextMapping('mice', r'\b(?:mice|mouse|murine)\b', '__mice'),
+    ]
+
+DefaultMappings = KIOmappings + EmbryoMappings + MiscMappings
+#---------------------------------
+
+class Transformer_tests(unittest.TestCase):
+
+    def test_MiscMappings(self):
+        t = TextTransformer(MiscMappings)
+        text = "there are no mappings here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+
+        text = "start (-/-) -/- +/+, wt mouse end"
+        done = "start ( __mut_mut )  __mut_mut   __wildtype , __wildtype __mice end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+
+        text = "start mouse embryonic fibroblast lines es cell-line MEFs embryonic stem cell lines end"
+        done = "start __mef lines __escell-line __mef __escell lines end"
+        transformed = t.transformText(text)
+        #print('\n' + transformed)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_KIOmappings(self):
+        t = TextTransformer(KIOmappings)
+        text = "there are no kos here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = """but ko's here knockout knock outs knock\nouts knock-out
+                    knockedout knocked\nouts"""
+        done = """but __knockout's here __knockout __knockout __knockout __knockout
+                    __knockout __knockout"""
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_EmbryoMappings(self):
+        t = TextTransformer(EmbryoMappings)
+        text = "there are no embryo mappings here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = "start E14 E14.5. E1.75 e1-5 E\nday 4.5 embryonic day 15-18 E14, end"
+        done = "start __embryonicday __embryonicday. __embryonicday __embryonicday-5 __embryonicday __embryonicday-18 __embryonicday, end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_EarlyEmbryoMappings(self):
+        t = TextTransformer(EmbryoMappings)
+        text = "there are no embryo mappings here, 1-cell, 2 cell, four cell"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
+        done = "start __earlyembryo __earlyembryo __earlyembryo __earlyembryo end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+# end class Transformer_tests ---------------------------------
 
 ##############################################
 # Tumors and tumor types regex - map all to "tumor_type"
@@ -268,129 +381,17 @@ class Mapping (object):
 # Define the dictionary of named Mappings.
 mappings = { 
     # { name: Mapping object }
-    'tt'   : Mapping( r'(?P<tt>' + tumorRe + ')', 'tumor_type'),
-    'cl'   : Mapping( r'(?P<cl>' + cellLinePreRe + ')', 'cell_line'),
-    'cn'   : Mapping( r'(?P<cn>' + cellLineRe + ')', 'cell_line'),
+    'tt'   : Mapping(r'(?P<tt>' + tumorRe + ')', 'tumor_type'),
+    'cl'   : Mapping(r'(?P<cl>' + cellLinePreRe + ')', 'cell_line'),
+    'cn'   : Mapping(r'(?P<cn>' + cellLineRe + ')', 'cell_line'),
 
-    'mice' : Mapping( r'(?P<mice>mice|mouse|mous|murine)', 'mice_'),
 
-    'ko'   : Mapping( r'(?P<ko>ko|knock(?:ed|s)?(?:\s|-)?outs?)', 'knock_out'),
-    'ki'   : Mapping( r'(?P<ki>knock(?:ed)?(?:\s|-)?ins?)', 'knock_in'),
-    'gt'   : Mapping( r'(?P<gt>gene(?:\s|-)?trap(?:ped|s)?)', 'gene_trap'),
-    'wt'   : Mapping( r'(?P<wt>wt|wild(?:\s|-)?types?)', 'wild_type'),
-    'mut'  : Mapping( r'(?P<mut>\W*-/-\W*)', ' mut_mut '),
-
-    #'eday' : Mapping( r'(?P<eday>e[ ]?\d\d?|e(?:mbryonic)? day[ ]\d\d?)',
-    'eday' : Mapping( \
-            r'(?P<eday>(?:e[ ]?|(?:e(?:mbryonic)? day[ ]))\d\d?(?:[.]\d\d?)?)',
-                                                            'embryonic_day'),
-    #'ee'   : Mapping( r'(?P<ee>(?:(?:[1,2,4,8]|one)(?:\s|-)cell)|blastocysts?)',
-    #                                                        'early_embryo'),
-    #'fig'  : Mapping( r'(?P<fig>fig)', 'figure'),
-    					
-    # Remove "A1", "A2", "B1", ...
-    # Text often refers to fig or panel "A1", etc.,
-    # Should this be for all letters? I've only picked a few I've seen in papers
-    # Should we do this at all?
-    # (note e is part of embryonic day above)
-    #'letdig' : Mapping( r'(?P<letdig>[abcdfghs]\d)', ''),
     }
-
-##############################################
-# Combine all the mappings into 1 honking regex string
-#   OR them together with word boundaries around
-# (For some reason factoring out the word boundaries (r'\b') doesn't work right:
-#   bigRegex = r'\b' + '|'.join([ m.regex for m in mappings.values() ]) + r'\b'
-#  Have not looked into why.)
-bigRegex = '|'.join([ r'\b' + m.regex + r'\b' for m in mappings.values() ])
-
-bigRe = re.compile(bigRegex, re.IGNORECASE)
-
-##############################################
-def transformText(text):
-    """
-    Return the transformed text based on the transformations defined above.
-    """
-    toTransform = text
-    transformed = ''
-
-#    debug( "initial: '%s'\n" % toTransform)
-
-    while (True):		# loop for each regex match
-        m = bigRe.search(toTransform)
-        if not m: break		# no match found
-
-        key, start, end = findMatchingGroup(m)
-
-#	debug( 'matching group: %s, %d, %d' % (key, start, end) + '\n')
-        # Would doing this w/o slicing toTransform be faster?
-        transformed += toTransform[:start] + mappings[key].replacement
-        toTransform = toTransform[end:]
-#	debug( "transformed '%s'" % transformed + '\n')
-#	debug( "toTransform '%s'" % toTransform + '\n')
-#	debug('\n')
-
-    transformed += toTransform
-#    debug("final string '%s'" % transformed + '\n')
-
-    return transformed
-#---------------------------------
-
-def findMatchingGroup(m):
-    """
-    Given an re.Match object, m,
-    Find the key (name) of its group that actually matched.
-    Return the key & start & end coords of the matching string
-    """
-    gd = m.groupdict()		# dict of groups in m
-    for k in list(gd.keys()):
-        if gd[k] != None:	# the one that matched something
-            return (k, m.start(k), m.end(k))
-    return (None, None, None) # shouldn't happen since some group should match
 #---------------------------------
 
 def debug(text):
     if False: sys.stdout.write(text)
 #---------------------------------
 
-if __name__ == "__main__":	# ad hoc tests
-    if True:
-        text = "...stuff then ko and knock out mouse and a wt mouse and more text"
-        tests = [
-                'before e12 after',
-                'before E 1 after',
-                'before E day 1 after',
-                'before embryonic day 7 after',
-                'before embryonic day 117 after',
-                'before -/- e12. after',
-                'before tumours and tumor after',
-                'before fig s1 fig a23 g6 after',
-                'before wildtypes wildtype wild type wt Wt wild\ntype wild-types after',
-                'before knockout knocksouts knocked out knock out ko Ko knock\nout knock-outs after',
-                'before knockin knockins knocked-in knock-in knocked in knock ins after',
-                'before 1 cell 1-cell one-cell 2 cell 2-cell blastocyst after',
-                'before genetrap genetraps gene trap gene-traps gene-trap gene-trapped gene trapped after',
-                ]
-
-        for text in tests:
-            print(text)
-            print(transformText(text))
-            print()
-    if True:
-        tests = [	# tumor tests
-                'adenoma fooadenoma xxxinoma xxxinomas neoplasm neoplasias'
-                ]
-
-        for text in tests:
-            print(text)
-            print(transformText(text))
-            print()
-    if True:
-        tests = [	#  cell line prefix tests
-                'B-16, B-16blah. B16 SP2/0 blah f9 F19'
-                ]
-
-        for text in tests:
-            print(text)
-            print(transformText(text))
-            print()
+if __name__ == "__main__":	# automated tests
+    unittest.main()

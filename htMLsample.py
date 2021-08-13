@@ -9,14 +9,10 @@
 #   cd test
 #   python test_htMLsample.py -v
 #
-import sys
-import os.path
-import string
 import re
-from copy import copy
 from baseSampleDataLib import *
 import utilsLib
-import htFeatureTransform as featureTransform
+from htFeatureTransform import TextTransformer, DefaultMappings
 #-----------------------------------
 
 FIELDSEP     = '|'      # field separator when reading/writing sample fields
@@ -28,6 +24,8 @@ urls_re      = re.compile(r'\b(?:https?://|www[.]|doi)\S*',re.IGNORECASE)
 token_re     = re.compile(r'\b([a-z_]\w+)\b',re.IGNORECASE)
 
 stemmer = None		# see preprocessor below
+
+featureTransformer = TextTransformer(DefaultMappings)
 #-----------------------------------
 
 class HtSample (BaseSample):
@@ -107,8 +105,8 @@ class HtSample (BaseSample):
         '''
         Apply feature text transformations
         '''
-        self.setTitle(featureTransform.transformText(self.getTitle()))
-        self.setDescription(featureTransform.transformText(self.getDescription()))
+        self.setTitle(featureTransformer.transformText(self.getTitle()))
+        self.setDescription(featureTransformer.transformText(self.getDescription()))
         return self
     # ---------------------------
 
@@ -166,6 +164,10 @@ class HtSample (BaseSample):
         self.setDescription( 'description...' )
         return self
     # ---------------------------
+
+    @classmethod
+    def getPreprocessorReport(cls):
+        return featureTransformer.getMatchesReport()
 
 # end class HtSample ------------------------
 
