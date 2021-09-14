@@ -3,34 +3,29 @@
 """
 #######################################################################
 Author:  Jim
-TODO UPDATE THIS
-Routines for transforming tokens in article text before training/predicting.
-These transformations are intended to reduce dimensionality of the feature set
-(i.e., lower the number of features) AND by collapsing different forms of tokens
-that mean the same thing (or for which the different forms are not relevant for
-classification), we should improve the classifier's accuracy.
-To some degree, this is becoming a poor man's named entity recognizer.
+TextMappings for gxd ht experiment classification.
+Text transformations that collapse different forms of tokens that for our 
+purposes mean the same thing.
 
-The kinds of transformations include
-    a) mapping/collapsing different tokens to a common one, e.g.,
-        e1, e2, e3, ... --> embryonic_day
-        ko, knock out   --> knockout
+Includes:
+cell line mappings, tumor mappings, embryonic age, etc.
 
-    b) deleting certain tokens that seem meaningless e.g., 
-        a1, a2, ... (these are typically in text referring to Figure a, panel 1)
+Defines a variable:
+    DefaultMappings
+    which is used in the featureTransform preprocessor in  htMLsample.py
 
-Do this with regex and only one pass through the text...
+
+Has automated tests for many of the mappings. To run the tests:
+    python htFeatureTransform.py [-v]
 
 #######################################################################
 """
-
 import sys
 import re
 import unittest
-from utilsLib import TextMapping, TextTransformer
-
+from utilsLib import TextMapping, TextMappingFromStrings, TextMappingFromFile,\
+                        TextTransformer, escAndWordBoundaries
 # Questions:
-# early_embryo: should we require 'embryos?' after 'one cell', etc.?
 # collapse +/+ and -/- into just "genotype_"? Include "wild type"?
 # what are FACs? are there various spellings?
 
@@ -44,15 +39,36 @@ KIOmappings = [
     TextMapping('kd', r'\b(?:knock(?:ed)?(?:\s|-)?downs?)\b', '__knockdown'),
     ]
 
-EmbryoMappings = [
+AgeMappings = [
     TextMapping('eday',
-        r'\b(?:(?:e\s?|(?:e(?:mbryonic)?\sdays?\s))\d\d?(?:[.]\d\d?)?)\b',
-                                                            '__embryonicday'),
-    # original:  - too broad, needed to add "stage|embryo" after "cell"
+        # Original: was too broad
+        # r'\b(?:(?:e\s?|(?:e(?:mbryonic)?\sdays?\s))\d\d?(?:[.]\d\d?)?)\b',
+        # E1 E2 E3 are rarely used & often mean other things
+        r'\b(?:' +
+            r'e\s?\d[.]\d\d?' +    # E single digit w/ decimal place or two
+            r'|e\s?1\d[.]\d\d?' +  # E double digit w/ decimal place or two
+            r'|e\s?[4-9]' +        # E single digit
+            r'|e\s?1[0-9]' +       # E double digits
+            r'|e\s?20' +           # E double digits
+            r'|embryonic\sdays?\s\d\d?(?:[.]\d\d?)?' + # spelled out, opt decim
+        r')\b', '__embryonic_age'),
+    TextMapping('dpc',
+        r'\b(?:' +
+            r'days?\spost\s(?:conception|conceptus|coitum)' +
+            r'|\d\d?dpc' +         # dpc w/ a digit or two before (no space)
+            r'|dpc' +              # dpc as a word by itself
+        r')\b', '__embryonic_age', context=0),
+    TextMapping('ts',
+        r'\b(?:' +
+            r'theiler\sstages?|TS(?:\s|-)?\d\d?' +      
+        r')\b', '__embryonic_age', context=0),
+    # Original:  - too broad, needed to add "stage|embryo" after "cell"
     # r'\b(?:(?:(?:[1248]|one|two|four|eight)(?:\s|-)cells?)|blastocysts?)\b',
     TextMapping('ee',
-        r'\b(?:blastocysts?|blastomeres?|' +
-            r'(?:' +
+        r'\b(?:' +
+            r'blastocysts?|blastomeres?' +
+            r'|(?:(?:early|mid|late)(?:\s|-))?streak|morula|somites?' +
+            r'|(?:' +
                 r'(?:[1248]|one|two|four|eight)(?:\s|-)cell\s' +
                 r'(?:' +
                     r'stages?|' +
@@ -61,8 +77,13 @@ EmbryoMappings = [
                     r')' +
                 r')' +
             r')' +
-        r')\b', '__earlyembryo'),
+        r')\b', '__embryonic_age'),
+    TextMapping('postnatal',
+        r'\b(?:' +
+            r'postnatal|new(?:\s|-)?borns?|adults?|ages?' +
+        r')\b', '__mouse_age', context=0),
     ]
+
 MiscMappings = [
     TextMapping('gt', r'\b(?:gene(?:\s|-)?trap(?:ped|s)?)\b', '__genetrap'),
     TextMapping('wt', r'\b(?:wt|wild(?:\s|-)?types?)\b', '__wildtype'),
@@ -70,7 +91,8 @@ MiscMappings = [
                     # include spaces around the replacement token since these
                     # notations are often not space delimited. E.g., Pax6+/+
     TextMapping('wt2',r'(?:[+]/[+])', ' __wildtype '),  # combine these into
-    TextMapping('mut',r'(?:-/-)', ' __mut_mut '),        #  'genotype_'?
+    TextMapping('mut',r'(?:-/-)', ' __mutant '), #  'genotype_'?
+    TextMapping('mut2', r'\b(?:mutants?|mutations?)\b', '__mutant', context=0),
 
     TextMapping('esc',
         r'\b(?:(?:es|embryonic\sstem)(?:\s|-)cells?)\b', '__escell'),
@@ -79,70 +101,10 @@ MiscMappings = [
 
     TextMapping('mice', r'\b(?:mice|mouse|murine)\b', '__mice'),
     ]
-
-DefaultMappings = KIOmappings + EmbryoMappings + MiscMappings
-#---------------------------------
-
-class Transformer_tests(unittest.TestCase):
-
-    def test_MiscMappings(self):
-        t = TextTransformer(MiscMappings)
-        text = "there are no mappings here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-
-        text = "start (-/-) -/- +/+, wt mouse end"
-        done = "start ( __mut_mut )  __mut_mut   __wildtype , __wildtype __mice end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
-
-        text = "start mouse embryonic fibroblast lines es cell-line MEFs embryonic stem cell lines end"
-        done = "start __mef lines __escell-line __mef __escell lines end"
-        transformed = t.transformText(text)
-        #print('\n' + transformed)
-        self.assertEqual(transformed, done)
-        print('\n' + t.getMatchesReport())
-
-    def test_KIOmappings(self):
-        t = TextTransformer(KIOmappings)
-        text = "there are no kos here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = """but ko's here knockout knock outs knock\nouts knock-out
-                    knockedout knocked\nouts"""
-        done = """but __knockout's here __knockout __knockout __knockout __knockout
-                    __knockout __knockout"""
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
-        print('\n' + t.getMatchesReport())
-
-    def test_EmbryoMappings(self):
-        t = TextTransformer(EmbryoMappings)
-        text = "there are no embryo mappings here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = "start E14 E14.5. E1.75 e1-5 E\nday 4.5 embryonic day 15-18 E14, end"
-        done = "start __embryonicday __embryonicday. __embryonicday __embryonicday-5 __embryonicday __embryonicday-18 __embryonicday, end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
-        print('\n' + t.getMatchesReport())
-
-    def test_EarlyEmbryoMappings(self):
-        t = TextTransformer(EmbryoMappings)
-        text = "there are no embryo mappings here, 1-cell, 2 cell, four cell"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
-        done = "start __earlyembryo __earlyembryo __earlyembryo __earlyembryo end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
-        print('\n' + t.getMatchesReport())
-# end class Transformer_tests ---------------------------------
-
 ##############################################
-# Tumors and tumor types regex - map all to "tumor_type"
-# whole words
-wholeWords = [
+# Tumors and tumor types mappings - map all to "__tumor"
+
+wholeWords = [          # whole words
             'tumor',
             'tumour',
             'hepatoma',
@@ -152,15 +114,13 @@ wholeWords = [
             'neoplasia',
             'neoplasm',
             ]
-# word endings
-endings = [
+endings = [             # word endings
             '[a-z]+inoma',
             '[a-z]+gioma',
             '[a-z]+ocytoma',
             '[a-z]+thelioma',
             ]
-# whole words or endings
-wordsOrEndings = [
+wordsOrEndings = [      # whole words or endings
             '[a-z]*adenoma',
             '[a-z]*sarcoma',
             '[a-z]*lymphoma',
@@ -174,15 +134,18 @@ wordsOrEndings = [
             '[a-z]*fibroma',
             '[a-z]*glioma',
             ]
-tumorRe = '|'.join( wholeWords + endings + wordsOrEndings )
-tumorRe = '(?:' + tumorRe + ')s?'	# optional 's'
+tumorRegex = '|'.join( wholeWords + endings + wordsOrEndings )
+tumorRegex = r'\b(?:(?:' + tumorRegex + r')s?)\b'	# optional 's'
+
+TumorMappings = [ TextMapping('tumor', tumorRegex, '__tumor', context=0), ]
 
 ##############################################
-# Cell line names regex, all map to "cell_line"
-cellLinePrefixes = [
+# Cell line mappings
+# 1) Debbie Krupke's cancer cell line prefixes
+debsCellLinePrefixes = [
             'B-?16', 	# includes 'B16',
             #'DA',      # omit, this matches various words
-            #'F9',	# omit since it overlaps with F9 in figure panes
+            'F9',	# omit since it overlaps with F9 in figure panes
             'Hepa1',
             'K-?1735',
             'L5178Y',
@@ -201,8 +164,11 @@ cellLinePrefixes = [
             'SP2/0',
             'WEHI',
             ]
-cellLinePreRe = '|'.join([ p + r'\S*' for p in cellLinePrefixes ])
-cellLineNames = [ \
+                    # word boundary, prefix, any non-whitespace, word boundary
+debsPreRegex = '|'.join([ r'\b' + p + r'\S*\b' for p in debsCellLinePrefixes ])
+    
+# 2) Debbie Krupke's cancer cell line names
+debsCellLines = [ \
             '1246',
             '14-122',
             '14-166',
@@ -213,7 +179,6 @@ cellLineNames = [ \
             '2C3',
             '320DM',
             '32D',
-            '38C13',
             '38C13',
             '3LL',
             '3SB',
@@ -238,7 +203,6 @@ cellLineNames = [ \
             'C26',
             'C4',
             'C6',
-            'C6',
             'CB101',
             'COLO',
             'CT-2A',
@@ -260,7 +224,6 @@ cellLineNames = [ \
             'FSA',
             'FSa-II',
             'GL26',
-            'GL261',
             'GL261',
             'Gc-4',
             'H1299',
@@ -285,7 +248,6 @@ cellLineNames = [ \
             'LA-N-2',
             'LK35.2',
             'LLC',
-            'LM2',
             'LM2',
             'LM3',
             'LMM3',
@@ -365,29 +327,144 @@ cellLineNames = [ \
             'YAC-1',
             'sarcoma 180',
             ]
-cellLineRe = '|'.join([ p for p in cellLineNames ])
+class DebsCellLineMapping (TextMappingFromStrings):
+    def _str2regex(self, s):
+        # 1st try, just word boundaries and escape regex chars
+        return escAndWordBoundaries(s)
+
+# 3) Cell line names from PRB_celline report
+# TODO: filename should be a config variable or something
+fn = "/Users/jak/work/gxdhtclassifier/PRB_CellLine.txt"
+
+CellLineMappings = [
+            TextMapping('debpre', debsPreRegex, '__cell_line', context=0),
+            DebsCellLineMapping('debcl', debsCellLines,'__cell_line',context=0),
+            TextMappingFromFile('prb_cellline', fn, '__cell_line', context=0), 
+            ]
+
+#############################################
+# DefaultMappings are the mappings used in htMLsample.py featureTransform 
+#   preprocessor
+
+DefaultMappings = KIOmappings + AgeMappings + MiscMappings
+DefaultMappings += TumorMappings
+DefaultMappings += CellLineMappings
 
 ##############################################
-class Mapping (object):
-    """
-    Is a mapping between a regular expression and the text that should replace
-    any text that matches the regex.
-    """
-    def __init__(self, regex, replacement):
-        self.regex = regex
-        self.replacement = replacement
+# Automated tests
 
-##############################################
-# Define the dictionary of named Mappings.
-mappings = { 
-    # { name: Mapping object }
-    'tt'   : Mapping(r'(?P<tt>' + tumorRe + ')', 'tumor_type'),
-    'cl'   : Mapping(r'(?P<cl>' + cellLinePreRe + ')', 'cell_line'),
-    'cn'   : Mapping(r'(?P<cn>' + cellLineRe + ')', 'cell_line'),
+class Transformer_tests(unittest.TestCase):
 
+    def test_MiscMappings(self):
+        t = TextTransformer(MiscMappings)
+        text = "there are no mappings here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
 
-    }
-#---------------------------------
+        text = "start (-/-) -/- +/+, wt mouse mutants end"
+        done = "start ( __mutant )  __mutant   __wildtype , __wildtype __mice __mutant end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+
+        text = "start mouse embryonic fibroblast lines es cell-line MEFs embryonic stem cell lines end"
+        done = "start __mef lines __escell-line __mef __escell lines end"
+        transformed = t.transformText(text)
+        #print('\n' + transformed)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_KIOmappings(self):
+        t = TextTransformer(KIOmappings)
+        text = "there are no kos here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = """but ko's here knockout knock outs knock\nouts knock-out
+                    knockedout knocked\nouts"""
+        done = """but __knockout's here __knockout __knockout __knockout __knockout
+                    __knockout __knockout"""
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_AgeMappings0(self):
+        t = TextTransformer(AgeMappings)
+        text = "there are no mappings here"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+
+    def test_AgeMappings1(self):
+        t = TextTransformer(AgeMappings)
+        text = "start E14 E14.5. E1.75 e4-5 embryonic day 15-18 E14, end"
+        done = "start __embryonic_age __embryonic_age. __embryonic_age __embryonic_age-5 __embryonic_age-18 __embryonic_age, end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_AgeMappings2(self):
+        t = TextTransformer(AgeMappings)
+        text = "start 2.5dpc 5 dpc 12 days post\nconception end"
+        done = "start 2.__embryonic_age 5 __embryonic_age 12 __embryonic_age end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_AgeMappings3(self):
+        t = TextTransformer(AgeMappings)
+        text = "start Theiler stages 4-5 expects 1 TS23 ts 23 ts-2 end"
+        done = "start __embryonic_age 4-5 expects 1 __embryonic_age __embryonic_age __embryonic_age end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_AgeMappings4(self):
+        t = TextTransformer(AgeMappings)
+        text = "start new-borns newborn postnatal adults age end"
+        done = "start __mouse_age __mouse_age __mouse_age __mouse_age __mouse_age end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_AgeMappings5(self):
+        t = TextTransformer(AgeMappings)
+        text = "there are no mappings here, 1-cell, 2 cell, four cell"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
+        done = "start __embryonic_age __embryonic_age __embryonic_age __embryonic_age end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+        print('\n' + t.getMatchesReport())
+
+    def test_TumorMappings(self):
+        t = TextTransformer(TumorMappings)
+        #print('\n')
+        #print(t.getBigRegex()[:70])
+        #print(t.getBigRegex()[-40:])
+        text = "there are no mappings here, 1-cell, 2 cell, four cell"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+
+        text = "start adenocarcinomas, tumours. adenoma end"
+        expected = "start __tumor, __tumor. __tumor end" 
+        self.assertEqual(expected, t.transformText(text))
+        print('\n' + t.getMatchesReport())
+
+    def test_CellLineMappings(self):
+        fn = 'PRB_CellLine.txt'
+        m = TextMappingFromFile('prb_probe', fn, '__cell_line', context=5)
+        t = TextTransformer([m])
+        #print('\n')
+        #print(t.getBigRegex()[:70])
+        #print(t.getBigRegex()[-40:])
+        text = "there are no cellline mappings here, 1-cell, 2 cell, four cell"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+
+        text = "start 14-7fd end"
+        expected =  "start __cell_line end"
+        self.assertEqual(expected, t.transformText(text))
+        print('\n' + t.getMatchesReport())
+# end class Transformer_tests ---------------------------------
 
 def debug(text):
     if False: sys.stdout.write(text)
