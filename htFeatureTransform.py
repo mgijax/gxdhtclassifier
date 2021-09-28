@@ -23,11 +23,8 @@ Has automated tests for many of the mappings. To run the tests:
 import sys
 import re
 import unittest
-from utilsLib import TextMapping, TextMappingFromStrings, TextMappingFromFile,\
+from utilsLib import TextMapping, TextMappingFromStrings, \
                         TextTransformer, escAndWordBoundaries
-# Questions:
-# collapse +/+ and -/- into just "genotype_"? Include "wild type"?
-# what are FACs? are there various spellings?
 
 # The order of the TextMappings is significant if multiple mappings can
 #   match the same text, e.g., "mouse" & "mouse embryonic fibroblasts".
@@ -51,17 +48,17 @@ AgeMappings = [
             r'|e\s?1[0-9]' +       # E double digits
             r'|e\s?20' +           # E double digits
             r'|embryonic\sdays?\s\d\d?(?:[.]\d\d?)?' + # spelled out, opt decim
-        r')\b', '__embryonic_age'),
+        r')\b', '__mouse_age'),
     TextMapping('dpc',
         r'\b(?:' +
             r'days?\spost\s(?:conception|conceptus|coitum)' +
             r'|\d\d?dpc' +         # dpc w/ a digit or two before (no space)
             r'|dpc' +              # dpc as a word by itself
-        r')\b', '__embryonic_age', context=0),
+        r')\b', '__mouse_age', context=0),
     TextMapping('ts',
         r'\b(?:' +
             r'theiler\sstages?|TS(?:\s|-)?\d\d?' +      
-        r')\b', '__embryonic_age', context=0),
+        r')\b', '__mouse_age', context=0),
     # Original:  - too broad, needed to add "stage|embryo" after "cell"
     # r'\b(?:(?:(?:[1248]|one|two|four|eight)(?:\s|-)cells?)|blastocysts?)\b',
     TextMapping('ee',
@@ -77,22 +74,32 @@ AgeMappings = [
                     r')' +
                 r')' +
             r')' +
-        r')\b', '__embryonic_age'),
+        r')\b', '__mouse_age'),
     TextMapping('postnatal',
         r'\b(?:' +
             r'postnatal|new(?:\s|-)?borns?|adults?|ages?' +
         r')\b', '__mouse_age', context=0),
     ]
 
+TreatmentMappings = [
+    TextMapping('treat',
+        r'\b(?:' +
+            r'(?:pre|post|co|un|non)?treated' +
+            r'|(?:pre|post|co)?treatments?' +
+        r')\b', '__treat', context=0),
+    ]
+
 MiscMappings = [
     TextMapping('gt', r'\b(?:gene(?:\s|-)?trap(?:ped|s)?)\b', '__genetrap'),
-    TextMapping('wt', r'\b(?:wt|wild(?:\s|-)?types?)\b', '__wildtype'),
+    TextMapping('wt', r'\b(?:wt|wild(?:\s|-)?types?)\b', '__genotype'),
 
                     # include spaces around the replacement token since these
                     # notations are often not space delimited. E.g., Pax6+/+
-    TextMapping('wt2',r'(?:[+]/[+])', ' __wildtype '),  # combine these into
-    TextMapping('mut',r'(?:-/-)', ' __mutant '), #  'genotype_'?
-    TextMapping('mut2', r'\b(?:mutants?|mutations?)\b', '__mutant', context=0),
+    TextMapping('wt2',r'(?:[-+]/[-+])', ' __genotype '),  # combine these into
+    #TextMapping('mut',r'(?:-/-)', ' __genotype '), #  'genotype_'?
+    TextMapping('mut2', r'\b(?:mutants?|mutations?)\b', '__genotype',context=0),
+    TextMapping('mut3', r'\b(?:(?:hetero|homo)(?:zygous|zygote))\b',
+                                                    '__genotype',context=0),
 
     TextMapping('esc',
         r'\b(?:(?:es|embryonic\sstem)(?:\s|-)cells?)\b', '__escell'),
@@ -212,7 +219,7 @@ debsCellLines = [ \
             'Comma D',
             'D1-DMBA-3',
             'D5',
-            #'E3', # clashes with embryonic day 3
+            #'E3', # Is this usually a cell line?
             'E6496',
             'EL-4',
             'EL4',
@@ -332,21 +339,43 @@ class DebsCellLineMapping (TextMappingFromStrings):
         # 1st try, just word boundaries and escape regex chars
         return escAndWordBoundaries(s)
 
-# 3) Cell line names from PRB_celline report
-# TODO: filename should be a config variable or something
-fn = "/Users/jak/work/gxdhtclassifier/PRB_CellLine.txt"
+# 3) Connie's culled list of cell lines from PRB_Cellline.rpt
+conniesCellLineRegex =  \
+        r'\b(?:' + '|'.join([ \
+            r'BALB(?:\s+|[-/])?3T3',
+            r'3T3',
+            r'C2C12',
+            r'C3H(?:\s+|[-/])?10T1(?:\s+|[-/])?2',
+            r'CHO(?:\s+|[-/])?cells?',
+            r'colon\s+cancer\s+cell(?:\s+|-)?lines?',
+            r'embryonal\s+carcinoma\s+cell(?:\s+|-)?lines?',
+            r'fibroblast\s+cell(?:\s+|-)?lines?',
+            r'HEK293T',
+            r'hybridoma\s+cell(?:\s+|-)?lines?',
+            r'melan[-/]a',
+            r'mltc(?:\s+|[-/])?1',
+            r'myeloma\s+cell(?:\s+|-)?lines?',
+            r'neuro2a',
+            r'nih(?:\s+|[-/])?3t3',
+            r'primary\s+cultures?',
+            r'raw(?:\s+|[-/])?264(?:[.]7)?',
+            r'stem(?:\s+|-)?cell(?:\s+|-)?lines?',
+            r'stromal\s+cell(?:\s+|-)?lines?',
+            r'Swiss(?:\s+|[-/])?3T3',
+            r'cell(?:\s+|-)?lines?',          # catch all at the bottom
+            ]) + r')\b'
 
 CellLineMappings = [
             TextMapping('debpre', debsPreRegex, '__cell_line', context=0),
             DebsCellLineMapping('debcl', debsCellLines,'__cell_line',context=0),
-            TextMappingFromFile('prb_cellline', fn, '__cell_line', context=0), 
+            TextMapping('concl', conniesCellLineRegex, '__cell_line',context=0),
             ]
-
 #############################################
 # DefaultMappings are the mappings used in htMLsample.py featureTransform 
 #   preprocessor
 
 DefaultMappings = KIOmappings + AgeMappings + MiscMappings
+DefaultMappings += TreatmentMappings
 DefaultMappings += TumorMappings
 DefaultMappings += CellLineMappings
 
@@ -362,7 +391,12 @@ class Transformer_tests(unittest.TestCase):
         self.assertEqual(text, transformed)
 
         text = "start (-/-) -/- +/+, wt mouse mutants end"
-        done = "start ( __mutant )  __mutant   __wildtype , __wildtype __mice __mutant end"
+        done = "start ( __genotype )  __genotype   __genotype , __genotype __mice __genotype end"
+        transformed = t.transformText(text)
+        self.assertEqual(transformed, done)
+
+        text = "start (+/-) homozygous for x heterozygous for y end"
+        done = "start ( __genotype ) __genotype for x __genotype for y end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
 
@@ -395,7 +429,7 @@ class Transformer_tests(unittest.TestCase):
     def test_AgeMappings1(self):
         t = TextTransformer(AgeMappings)
         text = "start E14 E14.5. E1.75 e4-5 embryonic day 15-18 E14, end"
-        done = "start __embryonic_age __embryonic_age. __embryonic_age __embryonic_age-5 __embryonic_age-18 __embryonic_age, end"
+        done = "start __mouse_age __mouse_age. __mouse_age __mouse_age-5 __mouse_age-18 __mouse_age, end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
         print('\n' + t.getMatchesReport())
@@ -403,7 +437,7 @@ class Transformer_tests(unittest.TestCase):
     def test_AgeMappings2(self):
         t = TextTransformer(AgeMappings)
         text = "start 2.5dpc 5 dpc 12 days post\nconception end"
-        done = "start 2.__embryonic_age 5 __embryonic_age 12 __embryonic_age end"
+        done = "start 2.__mouse_age 5 __mouse_age 12 __mouse_age end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
         print('\n' + t.getMatchesReport())
@@ -411,26 +445,26 @@ class Transformer_tests(unittest.TestCase):
     def test_AgeMappings3(self):
         t = TextTransformer(AgeMappings)
         text = "start Theiler stages 4-5 expects 1 TS23 ts 23 ts-2 end"
-        done = "start __embryonic_age 4-5 expects 1 __embryonic_age __embryonic_age __embryonic_age end"
+        done = "start __mouse_age 4-5 expects 1 __mouse_age __mouse_age __mouse_age end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
         print('\n' + t.getMatchesReport())
 
     def test_AgeMappings4(self):
         t = TextTransformer(AgeMappings)
-        text = "start new-borns newborn postnatal adults age end"
-        done = "start __mouse_age __mouse_age __mouse_age __mouse_age __mouse_age end"
+        text = "there are no mappings here, 1-cell, 2 cell, four cell"
+        transformed = t.transformText(text)
+        self.assertEqual(text, transformed)
+        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
+        done = "start __mouse_age __mouse_age __mouse_age __mouse_age end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
         print('\n' + t.getMatchesReport())
 
     def test_AgeMappings5(self):
         t = TextTransformer(AgeMappings)
-        text = "there are no mappings here, 1-cell, 2 cell, four cell"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
-        done = "start __embryonic_age __embryonic_age __embryonic_age __embryonic_age end"
+        text = "start new-borns newborn postnatal adults age end"
+        done = "start __mouse_age __mouse_age __mouse_age __mouse_age __mouse_age end"
         transformed = t.transformText(text)
         self.assertEqual(transformed, done)
         print('\n' + t.getMatchesReport())
@@ -449,21 +483,30 @@ class Transformer_tests(unittest.TestCase):
         self.assertEqual(expected, t.transformText(text))
         print('\n' + t.getMatchesReport())
 
-    def test_CellLineMappings(self):
-        fn = 'PRB_CellLine.txt'
-        m = TextMappingFromFile('prb_probe', fn, '__cell_line', context=5)
+    def test_ConniesCellLineMapping(self):
+        m = TextMapping('concl', conniesCellLineRegex, '__cell_line',context=0)
         t = TextTransformer([m])
-        #print('\n')
+        #print()
         #print(t.getBigRegex()[:70])
         #print(t.getBigRegex()[-40:])
-        text = "there are no cellline mappings here, 1-cell, 2 cell, four cell"
+        text = "there are no mappings here, 1-cell, 2 cell, four cell"
         transformed = t.transformText(text)
         self.assertEqual(text, transformed)
 
-        text = "start 14-7fd end"
-        expected =  "start __cell_line end"
+        text = "start BALB 3t3 BALB/3T3 BALB\t 3T3 BALB3T3 BALB-3T3 end"
+        expected =  "start __cell_line __cell_line __cell_line __cell_line __cell_line end"
         self.assertEqual(expected, t.transformText(text))
+
+        text = "start C3H c3h-10T12 C3H 10T1/2 C3H10t1-2 end"
+        expected =  "start C3H __cell_line __cell_line __cell_line end"
+        self.assertEqual(expected, t.transformText(text))
+
+        text = "start stem cell lines stromal cell  line foo cell-line end"
+        expected =  "start __cell_line __cell_line foo __cell_line end"
+        self.assertEqual(expected, t.transformText(text))
+
         print('\n' + t.getMatchesReport())
+
 # end class Transformer_tests ---------------------------------
 
 def debug(text):

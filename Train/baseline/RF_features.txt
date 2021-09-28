@@ -1,790 +1,787 @@
-__cell_lin|1148|+0.0377
-__cell_lin cell|253|+0.0052
-__embryonic_ag|827|+0.0240
-__embryonic_ag __embryonic_ag|161|+0.0023
-__embryonic_ag __mice|149|+0.0009
-__escel|504|+0.0216
-__knockdown|247|+0.0038
-__knockout|1322|+0.0166
-__knockout __mice|718|+0.0129
-__mef|258|+0.0140
-__mice __escel|262|+0.0097
-__mice __mice|169|+0.0004
-__mice __wildtyp|224|+0.0005
+__cell_lin|940|+0.0270
+__cell_lin cell|222|+0.0090
+__escel|504|+0.0210
+__genotyp|3075|+0.0222
+__genotyp __genotyp|464|+0.0015
+__genotyp __knockout|163|+0.0004
+__genotyp __mice|1130|+0.0149
+__genotyp control|197|+0.0006
+__genotyp litterm|166|+0.0012
+__knockdown|247|+0.0024
+__knockout|1322|+0.0168
+__knockout __genotyp|140|+0.0008
+__knockout __mice|717|+0.0091
+__mef|258|+0.0134
+__mice __escel|262|+0.0100
+__mice __genotyp|315|+0.0010
+__mice __mice|169|+0.0006
+__mice __mouse_ag|215|+0.0030
+__mice __treat|224|+0.0057
 __mice brain|148|+0.0004
-__mice compar|222|+0.0002
-__mice develop|158|+0.0004
-__mice embryo|225|+0.0015
-__mice express|191|+0.0006
-__mice fed|148|+0.0016
-__mice gene|302|+0.0003
-__mice genom|454|+0.0001
-__mice liver|263|+0.0004
+__mice compar|222|+0.0003
+__mice develop|158|+0.0003
+__mice embryo|225|+0.0026
+__mice express|191|+0.0007
+__mice fed|148|+0.0013
+__mice gene|302|+0.0001
+__mice genom|454|+0.0002
+__mice liver|263|+0.0003
 __mice model|692|+0.0006
-__mice strain|161|+0.0009
-__mice treat|191|+0.0036
-__mice use|312|+0.0008
-__mouse_ag|1408|+0.0075
-__mouse_ag __mice|265|+0.0003
-__mouse_ag day|155|+0.0010
-__mutant|1681|+0.0105
-__mutant __mice|620|+0.0075
-__tumor|1000|+0.0306
-__tumor cell|191|+0.0026
-__wildtyp|2446|+0.0112
-__wildtyp __mice|587|+0.0021
-__wildtyp __wildtyp|225|+0.0002
-__wildtyp control|153|+0.0005
-__wildtyp litterm|153|+0.0008
+__mice strain|161|+0.0013
+__mice use|312|+0.0005
+__mouse_ag|2104|+0.0360
+__mouse_ag __mice|411|+0.0012
+__mouse_ag __mouse_ag|194|+0.0018
+__mouse_ag day|164|+0.0008
+__treat|1455|+0.0594
+__tumor|1000|+0.0317
+__tumor cell|191|+0.0014
 abil|176|+0.0002
 ablat|168|+0.0008
-abnorm|234|+0.0010
+abnorm|234|+0.0012
 absenc|324|+0.0002
-abund|175|+0.0004
-accompani|160|+0.0002
+abund|175|+0.0005
+accompani|160|+0.0003
 accord|346|+0.0002
-accumul|214|+0.0004
-acid|369|+0.0005
+accumul|214|+0.0005
+acid|369|+0.0004
 act|255|+0.0002
 action|147|+0.0003
-activ|1765|+0.0044
+activ|1765|+0.0050
 acut|261|+0.0019
-ad|192|+0.0004
-adapt|167|+0.0003
-addit|652|+0.0003
+ad|192|+0.0002
+adapt|167|+0.0004
+addit|652|+0.0004
 address|155|+0.0003
 adipos|190|+0.0004
-adipos tissu|157|+0.0003
-affect|532|+0.0002
+adipos tissu|157|+0.0004
+affect|532|+0.0004
 affymetrix|1310|+0.0004
-affymetrix __mice|309|+0.0003
-affymetrix genechip|203|+0.0003
-affymetrix microarray|357|+0.0005
-age|235|+0.0013
+affymetrix __mice|309|+0.0002
+affymetrix genechip|203|+0.0001
+affymetrix microarray|357|+0.0003
+age|235|+0.0009
 agil|295|+0.0002
 aim|309|+0.0003
 al|306|+0.0002
-allel|254|+0.0006
-allow|294|+0.0002
-alpha|178|+0.0003
-alter|779|+0.0006
+allel|254|+0.0004
+allow|294|+0.0003
+alpha|178|+0.0004
+alter|779|+0.0002
 altern|207|+0.0002
-amplif|190|+0.0002
-amplifi|217|+0.0004
-analys|705|+0.0002
-analysi|2819|+0.0006
-analysi gene|174|+0.0007
-analysi perform|206|+0.0002
-analysi reveal|150|+0.0002
-analysi use|181|+0.0002
-analyz|1249|+0.0003
+amplif|190|+0.0001
+amplifi|217|+0.0003
+analys|705|+0.0005
+analysi|2819|+0.0010
+analysi gene|174|+0.0006
+analysi perform|206|+0.0001
+analysi reveal|150|+0.0001
+analysi use|181|+0.0003
+analyz|1249|+0.0002
 analyz use|142|+0.0002
-ani|183|+0.0001
-anim|827|+0.0007
-anti|280|+0.0011
+ani|183|+0.0003
+anim|827|+0.0002
+anti|280|+0.0012
 antibodi|146|+0.0004
-antigen|169|+0.0003
+antigen|169|+0.0007
 apoptosi|251|+0.0002
-appear|170|+0.0003
+appear|170|+0.0005
 appli|191|+0.0003
-approach|376|+0.0003
+approach|376|+0.0004
 approxim|156|+0.0003
-array|1449|+0.0004
+array|1449|+0.0002
 assay|289|+0.0002
-assess|402|+0.0004
-associ|1265|+0.0005
+assess|402|+0.0003
+associ|1265|+0.0002
 background|434|+0.0003
-balb|143|+0.0002
-base|565|+0.0003
-basi|159|+0.0001
+balb|142|+0.0001
+base|565|+0.0002
+basi|159|+0.0003
 becaus|188|+0.0003
-befor|244|+0.0002
-behavior|140|+0.0004
-beta|250|+0.0007
-better|147|+0.0001
-bind|629|+0.0009
-bind protein|168|+0.0001
-biolog|1217|+0.0001
-biolog replic|718|+0.0002
+befor|244|+0.0003
+behavior|140|+0.0002
+beta|250|+0.0005
+better|147|+0.0002
+bind|629|+0.0004
+bind protein|168|+0.0002
+biolog|1217|+0.0002
+biolog replic|718|+0.0004
 block|163|+0.0003
 blood|215|+0.0002
 bodi|314|+0.0002
-bone|408|+0.0024
-bone marrow|313|+0.0050
-brain|581|+0.0023
-c57bl|742|+0.0003
+bone|408|+0.0019
+bone marrow|313|+0.0054
+brain|581|+0.0014
+c57bl|742|+0.0005
 c57bl __mice|369|+0.0002
 ca|184|+0.0002
-cancer|531|+0.0033
+cancer|531|+0.0038
 candid|234|+0.0004
-capac|165|+0.0001
-captur|159|+0.0005
+capac|165|+0.0002
+captur|159|+0.0003
 cardiac|228|+0.0005
-carri|350|+0.0003
+carri|350|+0.0001
 caus|582|+0.0003
-cd4|211|+0.0073
-cdna|302|+0.0001
-cell|3838|+0.0693
-cell __mice|160|+0.0006
-cell cultur|160|+0.0005
-cell cycl|210|+0.0002
-cell differenti|206|+0.0004
-cell express|151|+0.0008
-cell isol|185|+0.0023
-cell popul|143|+0.0007
-cell prolifer|175|+0.0004
-cell sort|189|+0.0049
-cell treat|143|+0.0014
-cell type|379|+0.0005
-cell use|186|+0.0021
+cd4|211|+0.0094
+cdna|302|+0.0002
+cell|3843|+0.0694
+cell __mice|160|+0.0004
+cell __treat|167|+0.0015
+cell cell|141|+0.0005
+cell cultur|161|+0.0004
+cell cycl|210|+0.0001
+cell differenti|208|+0.0004
+cell express|151|+0.0011
+cell isol|185|+0.0018
+cell popul|143|+0.0003
+cell prolifer|175|+0.0002
+cell sort|189|+0.0037
+cell type|379|+0.0004
+cell use|186|+0.0028
 cellular|540|+0.0003
 central|222|+0.0002
-chang|1562|+0.0005
+chang|1562|+0.0002
 chang gene|284|+0.0002
-character|653|+0.0003
-characterist|180|+0.0004
-chip|586|+0.0003
+character|653|+0.0004
+characterist|180|+0.0005
+chip|586|+0.0007
 chip seq|171|+0.0003
 chromatin|354|+0.0006
-chromosom|190|+0.0003
-chronic|224|+0.0016
+chromosom|190|+0.0005
+chronic|224|+0.0020
 class|206|+0.0004
 clinic|188|+0.0002
-clone|158|+0.0006
-cluster|260|+0.0003
-code|245|+0.0003
-collect|703|+0.0004
+clone|158|+0.0004
+cluster|260|+0.0002
+code|245|+0.0005
+collect|703|+0.0006
 colon|160|+0.0005
-combin|404|+0.0004
-common|388|+0.0004
+combin|404|+0.0002
+common|388|+0.0003
 compar|2009|+0.0004
-compar __wildtyp|202|+0.0007
+compar __genotyp|209|+0.0004
 compar gene|258|+0.0002
-comparison|717|+0.0001
-complet|276|+0.0004
-complex|505|+0.0002
-compon|350|+0.0004
-comprehens|190|+0.0002
-concentr|148|+0.0003
+comparison|717|+0.0003
+complet|276|+0.0002
+complex|505|+0.0003
+compon|350|+0.0002
+comprehens|190|+0.0004
+concentr|148|+0.0001
 conclus|273|+0.0002
-condit|1134|+0.0005
-conduct|176|+0.0005
+condit|1134|+0.0004
+conduct|176|+0.0006
 confirm|295|+0.0002
-consequ|208|+0.0002
-conserv|174|+0.0003
-consist|435|+0.0001
-constitut|184|+0.0003
-contain|645|+0.0005
+consequ|208|+0.0004
+conserv|174|+0.0001
+consist|435|+0.0002
+constitut|184|+0.0004
+contain|645|+0.0003
 context|150|+0.0002
 contrast|218|+0.0002
 contribut|478|+0.0005
-control|2604|+0.0023
-control __mice|315|+0.0009
+control|2604|+0.0027
+control __mice|315|+0.0005
 coordin|144|+0.0002
-core|191|+0.0001
-correl|305|+0.0002
-correspond|246|+0.0004
-cortex|199|+0.0007
-cours|163|+0.0002
-cre|445|+0.0004
+core|191|+0.0002
+correl|305|+0.0004
+correspond|246|+0.0003
+cortex|199|+0.0004
+cours|163|+0.0004
+cre|445|+0.0007
 creat|160|+0.0002
 critic|521|+0.0002
-crna|175|+0.0002
-cross|257|+0.0006
-cultur|698|+0.0201
+crna|175|+0.0001
+cross|257|+0.0004
+cultur|690|+0.0209
 current|157|+0.0001
 cycl|380|+0.0002
-cytokin|236|+0.0016
-damag|172|+0.0008
-data|1899|+0.0003
-dataset|175|+0.0001
-day|1391|+0.0006
+cytokin|236|+0.0005
+damag|172|+0.0006
+data|1899|+0.0005
+dataset|175|+0.0003
+day|1391|+0.0007
 death|199|+0.0003
 decreas|457|+0.0002
-deep|163|+0.0001
-deep sequenc|148|+0.0002
+deep|163|+0.0003
+deep sequenc|148|+0.0004
 defect|384|+0.0010
-defici|806|+0.0009
-defici __mice|242|+0.0009
+defici|806|+0.0014
+defici __mice|242|+0.0011
 defin|477|+0.0002
-delet|573|+0.0003
-demonstr|858|+0.0005
-dendrit|144|+0.0008
-depend|838|+0.0008
-deplet|272|+0.0013
-deriv|818|+0.0010
+delet|573|+0.0007
+demonstr|858|+0.0003
+dendrit|144|+0.0005
+depend|838|+0.0007
+deplet|272|+0.0012
+deriv|818|+0.0011
 describ|395|+0.0003
 design|1114|+0.0002
-despit|146|+0.0001
+despit|146|+0.0002
 detect|375|+0.0003
-determin|976|+0.0003
-develop|1903|+0.0027
-development|448|+0.0008
-diabet|177|+0.0005
-did|205|+0.0005
-diet|321|+0.0025
-differ|1552|+0.0002
+determin|976|+0.0004
+develop|1903|+0.0029
+development|448|+0.0009
+diabet|177|+0.0006
+did|205|+0.0010
+diet|321|+0.0023
+differ|1552|+0.0004
 differenti|1939|+0.0006
 differenti express|601|+0.0002
 differenti gene|156|+0.0002
-direct|558|+0.0003
+direct|558|+0.0001
 diseas|833|+0.0004
 disord|227|+0.0005
 display|294|+0.0002
 disrupt|225|+0.0005
-dissect|385|+0.0011
-distinct|546|+0.0007
-divers|189|+0.0004
-dna|616|+0.0002
+dissect|385|+0.0009
+distinct|546|+0.0011
+divers|189|+0.0003
+dna|616|+0.0003
 domain|225|+0.0002
-dose|204|+0.0028
-doubl|256|+0.0004
-downregul|219|+0.0001
-downstream|240|+0.0001
-drive|154|+0.0002
+dose|204|+0.0021
+doubl|256|+0.0005
+downregul|219|+0.0003
+downstream|240|+0.0002
+drive|154|+0.0003
 driven|203|+0.0005
-drug|157|+0.0002
-duplic|229|+0.0004
-dure|1346|+0.0003
-dye|179|+0.0001
+drug|157|+0.0001
+duplic|229|+0.0003
+dure|1346|+0.0006
+dye|179|+0.0002
 dynam|227|+0.0003
-dysfunct|159|+0.0005
-earli|705|+0.0005
-effect|1318|+0.0039
+dysfunct|159|+0.0002
+earli|705|+0.0002
+effect|1318|+0.0044
 effector|150|+0.0006
-effici|192|+0.0003
-element|203|+0.0003
-elev|176|+0.0003
-elucid|181|+0.0002
-embryo|590|+0.0055
-embryon|626|+0.0020
-employ|150|+0.0001
-encod|370|+0.0003
-end|247|+0.0003
-endogen|168|+0.0004
-enhanc|506|+0.0017
+effici|192|+0.0004
+element|203|+0.0002
+elev|176|+0.0002
+elucid|181|+0.0001
+embryo|590|+0.0054
+embryon|626|+0.0028
+employ|150|+0.0002
+encod|370|+0.0002
+end|247|+0.0002
+endogen|168|+0.0003
+enhanc|506|+0.0008
 enrich|473|+0.0004
-enzym|209|+0.0002
-epigenet|269|+0.0005
-epitheli|370|+0.0005
-epitheli cell|201|+0.0004
-epithelium|206|+0.0002
-esc|169|+0.0019
+enzym|209|+0.0004
+epigenet|269|+0.0006
+epitheli|370|+0.0006
+epitheli cell|201|+0.0006
+epithelium|206|+0.0004
+esc|169|+0.0025
 essenti|522|+0.0003
 establish|491|+0.0002
-et|293|+0.0002
+et|293|+0.0001
 et al|273|+0.0002
-evalu|236|+0.0004
-event|216|+0.0003
-evid|281|+0.0003
-examin|796|+0.0011
-exhibit|367|+0.0003
-exon|172|+0.0004
-experi|1715|+0.0004
+evalu|236|+0.0003
+event|216|+0.0002
+evid|281|+0.0001
+examin|796|+0.0006
+exhibit|367|+0.0004
+exon|172|+0.0007
+experi|1715|+0.0006
 experi overal|833|+0.0005
-experiment|364|+0.0002
-explor|202|+0.0003
-expos|240|+0.0038
-exposur|252|+0.0052
-express __mice|253|+0.0003
-express analysi|509|+0.0005
-express chang|396|+0.0002
-express data|654|+0.0006
+experiment|364|+0.0005
+explor|202|+0.0002
+expos|240|+0.0035
+exposur|252|+0.0040
+express __mice|253|+0.0002
+express analysi|509|+0.0004
+express chang|396|+0.0003
+express data|654|+0.0005
 express differ|140|+0.0003
-express gene|564|+0.0005
+express gene|565|+0.0005
 express level|362|+0.0005
-express pattern|304|+0.0002
-express profil|1797|+0.0004
-extens|168|+0.0004
-extracellular|146|+0.0002
-extract|1244|+0.0004
+express pattern|304|+0.0005
+express profil|1797|+0.0005
+extens|168|+0.0003
+extracellular|146|+0.0003
+extract|1244|+0.0002
 extract hybrid|199|+0.0003
-fac|297|+0.0128
-facilit|141|+0.0005
-factor|1431|+0.0004
-fail|140|+0.0002
+fac|297|+0.0122
+facilit|141|+0.0004
+factor|1431|+0.0007
+fail|140|+0.0004
 failur|147|+0.0004
-famili|311|+0.0006
-fat|264|+0.0006
-fate|174|+0.0002
-featur|240|+0.0005
-fed|237|+0.0018
-femal|504|+0.0010
+famili|311|+0.0004
+fat|264|+0.0008
+fate|174|+0.0001
+featur|240|+0.0003
+fed|237|+0.0017
+femal|504|+0.0009
 femal __mice|168|+0.0007
-fetal|210|+0.0004
-fibroblast|218|+0.0031
-file|149|+0.0002
-final|240|+0.0001
-flox|167|+0.0006
-fluoresc|151|+0.0004
-fold|328|+0.0003
-follow|907|+0.0079
-form|363|+0.0002
-format|413|+0.0005
-fraction|167|+0.0002
+fetal|210|+0.0005
+fibroblast|216|+0.0024
+file|149|+0.0001
+final|240|+0.0003
+flox|167|+0.0004
+fluoresc|151|+0.0003
+fold|328|+0.0002
+follow|907|+0.0064
+form|363|+0.0003
+format|413|+0.0002
+fraction|167|+0.0001
 fragment|141|+0.0002
-free|207|+0.0011
+free|207|+0.0014
 frozen|170|+0.0003
-function|1811|+0.0006
-furthermor|286|+0.0004
+function|1811|+0.0004
+furthermor|286|+0.0006
 gain|222|+0.0002
 gene|5198|+0.0005
-gene differenti|195|+0.0002
+gene differenti|195|+0.0001
 gene encod|144|+0.0001
-gene express|3660|+0.0006
-gene involv|271|+0.0002
-gene regul|393|+0.0007
-genechip|409|+0.0003
-genechip __mice|174|+0.0001
-general|175|+0.0003
-generat|1283|+0.0001
-genet|725|+0.0010
-genom|1631|+0.0003
-genom array|209|+0.0003
-genom wide|604|+0.0004
-genotyp|470|+0.0027
-germ|188|+0.0016
-gfp|253|+0.0075
-gland|153|+0.0004
-global|774|+0.0005
-global gene|313|+0.0004
+gene express|3660|+0.0005
+gene involv|271|+0.0003
+gene regul|393|+0.0005
+genechip|409|+0.0002
+genechip __mice|174|+0.0003
+general|175|+0.0002
+generat|1283|+0.0002
+genet|725|+0.0013
+genom|1631|+0.0002
+genom array|209|+0.0002
+genom wide|604|+0.0001
+genotyp|470|+0.0020
+germ|188|+0.0013
+gfp|253|+0.0085
+gland|153|+0.0005
+global|774|+0.0004
+global gene|313|+0.0006
 glucos|184|+0.0003
-goal|242|+0.0004
-group|984|+0.0038
+goal|242|+0.0003
+group|984|+0.0037
 grown|140|+0.0003
 growth|557|+0.0002
 growth factor|167|+0.0002
-harvest|413|+0.0008
-heart|336|+0.0017
-hematopoiet|232|+0.0041
+harvest|413|+0.0014
+heart|336|+0.0012
+hematopoiet|232|+0.0034
 hepat|229|+0.0003
-heterozyg|166|+0.0007
 high|1270|+0.0004
-high fat|145|+0.0004
-high throughput|175|+0.0003
-higher|175|+0.0002
-hippocampus|147|+0.0005
+high fat|145|+0.0007
+high throughput|175|+0.0002
+higher|175|+0.0003
+hippocampus|147|+0.0004
 histon|283|+0.0004
 homeostasi|251|+0.0003
-host|161|+0.0006
-hour|592|+0.0048
-howev|800|+0.0003
-human|979|+0.0004
-hybrid|1170|+0.0003
-hybrid affymetrix|451|+0.0001
-hypothesi|166|+0.0009
-ident|186|+0.0004
-identif|330|+0.0002
-identifi|2168|+0.0001
-identifi gene|449|+0.0003
-ii|226|+0.0004
-il|212|+0.0017
-illumina|422|+0.0003
-immedi|144|+0.0005
-immun|495|+0.0017
+host|161|+0.0010
+hour|592|+0.0058
+howev|800|+0.0002
+human|979|+0.0005
+hybrid|1170|+0.0002
+hybrid affymetrix|451|+0.0003
+hypothesi|166|+0.0007
+ident|186|+0.0002
+identif|330|+0.0003
+identifi|2168|+0.0004
+identifi gene|449|+0.0004
+ii|226|+0.0006
+il|212|+0.0016
+illumina|422|+0.0002
+immedi|144|+0.0007
+immun|495|+0.0019
 immun respons|175|+0.0003
-impact|246|+0.0002
+impact|246|+0.0003
 impair|308|+0.0003
-implic|342|+0.0005
-import|820|+0.0001
+implic|342|+0.0002
+import|820|+0.0002
 improv|177|+0.0002
 inactiv|201|+0.0003
-includ|1245|+0.0003
+includ|1245|+0.0001
 increas|1024|+0.0002
 independ|636|+0.0001
-indic|683|+0.0004
+indic|683|+0.0001
 individu|464|+0.0003
-induc|1641|+0.0381
-induct|405|+0.0042
-infect|375|+0.0148
-inflamm|305|+0.0005
+induc|1641|+0.0385
+induct|405|+0.0035
+infect|375|+0.0108
+inflamm|305|+0.0010
 inflammatori|340|+0.0011
-influenc|242|+0.0003
+influenc|242|+0.0002
 inform|185|+0.0004
-inhibit|456|+0.0047
+inhibit|456|+0.0039
 inhibitor|266|+0.0011
-initi|396|+0.0003
-inject|351|+0.0133
-injuri|191|+0.0014
+initi|396|+0.0002
+inject|351|+0.0123
+injuri|191|+0.0021
 insight|315|+0.0002
-insulin|187|+0.0004
-integr|291|+0.0005
-interact|430|+0.0002
-intestin|243|+0.0007
-investig|878|+0.0004
+insulin|187|+0.0003
+integr|291|+0.0003
+interact|430|+0.0004
+intestin|243|+0.0006
+investig|878|+0.0001
 involv|940|+0.0003
-isol|1480|+0.0008
-key|491|+0.0002
-keyword|319|+0.0003
-kg|189|+0.0038
-kidney|222|+0.0009
+isol|1480|+0.0013
+key|491|+0.0004
+keyword|319|+0.0005
+kg|189|+0.0042
+kidney|222|+0.0007
 kinas|245|+0.0002
-kit|473|+0.0002
+kit|473|+0.0003
 known|623|+0.0002
-label|503|+0.0002
-lack|433|+0.0009
-larg|492|+0.0002
+label|503|+0.0003
+lack|433|+0.0006
+larg|492|+0.0003
 laser|140|+0.0004
 late|183|+0.0003
 later|251|+0.0004
-lead|576|+0.0004
-left|143|+0.0010
-level|1284|+0.0003
-librari|187|+0.0006
+lead|576|+0.0002
+left|143|+0.0009
+level|1284|+0.0004
+librari|187|+0.0003
 life|191|+0.0004
-ligand|144|+0.0003
-light|159|+0.0004
-like|614|+0.0003
-limit|223|+0.0001
-line|335|+0.0002
-lineag|409|+0.0012
-link|334|+0.0006
-lipid|216|+0.0002
-litterm|382|+0.0038
-littl|167|+0.0001
-liver|814|+0.0011
+ligand|144|+0.0004
+light|159|+0.0003
+like|614|+0.0002
+limit|223|+0.0002
+line|331|+0.0003
+lineag|409|+0.0016
+link|334|+0.0002
+lipid|216|+0.0005
+litterm|382|+0.0024
+littl|167|+0.0002
+liver|814|+0.0012
 local|208|+0.0002
-long|344|+0.0005
-long term|141|+0.0005
+long|344|+0.0003
+long term|141|+0.0006
 loss|659|+0.0004
-low|395|+0.0005
-lower|153|+0.0007
-lung|348|+0.0007
-macrophag|278|+0.0063
-main|168|+0.0004
+low|395|+0.0008
+lower|153|+0.0003
+lung|348|+0.0006
+macrophag|278|+0.0061
+main|168|+0.0003
 maintain|419|+0.0003
-mainten|222|+0.0004
-major|455|+0.0001
-male|757|+0.0035
-male __mice|210|+0.0003
-male femal|143|+0.0005
-mammal|142|+0.0005
+mainten|222|+0.0003
+major|455|+0.0003
+male|757|+0.0040
+male __mice|210|+0.0007
+male femal|143|+0.0004
+mammal|142|+0.0007
 mammalian|330|+0.0006
-mammari|167|+0.0006
-mani|436|+0.0001
-manner|194|+0.0004
-manufactur|210|+0.0003
+mammari|167|+0.0003
+mani|436|+0.0004
+manner|194|+0.0002
+manufactur|210|+0.0002
 map|287|+0.0003
-mark|282|+0.0006
-marker|326|+0.0006
-marrow|316|+0.0051
-match|242|+0.0008
+mark|282|+0.0003
+marker|326|+0.0004
+marrow|316|+0.0054
+match|242|+0.0005
 matrix|157|+0.0004
-matur|388|+0.0002
-measur|325|+0.0006
-mechan|1162|+0.0005
+matur|388|+0.0001
+measur|325|+0.0005
+mechan|1162|+0.0004
 mediat|851|+0.0008
-medium|195|+0.0012
-member|173|+0.0002
-mesenchym|177|+0.0003
-metabol|562|+0.0007
-method|477|+0.0003
+medium|195|+0.0015
+member|173|+0.0003
+mesenchym|177|+0.0004
+metabol|562|+0.0005
+method|477|+0.0005
 methyl|222|+0.0003
-mg|205|+0.0017
-microarray|2534|+0.0004
-microarray analysi|812|+0.0005
-microarray data|147|+0.0003
-microdissect|166|+0.0009
+mg|205|+0.0013
+microarray|2534|+0.0005
+microarray analysi|812|+0.0002
+microarray data|147|+0.0001
+microdissect|166|+0.0008
 microrna|333|+0.0006
-mir|176|+0.0001
+mir|176|+0.0002
 mirna|361|+0.0009
-ml|213|+0.0019
-model|1380|+0.0003
-modif|225|+0.0002
-modifi|175|+0.0002
+ml|213|+0.0021
+model|1380|+0.0005
+modif|225|+0.0001
+modifi|175|+0.0001
 modul|407|+0.0003
 molecul|268|+0.0003
-molecular|920|+0.0002
-molecular mechan|268|+0.0005
-month|402|+0.0014
-month old|215|+0.0005
-moreov|232|+0.0001
-morpholog|169|+0.0003
-mrna|875|+0.0003
-mrna express|173|+0.0003
+molecular|920|+0.0003
+molecular mechan|268|+0.0004
+month|402|+0.0013
+month old|215|+0.0007
+moreov|232|+0.0002
+morpholog|169|+0.0002
+mrna|875|+0.0004
+mrna express|173|+0.0002
 mrna profil|162|+0.0003
-mrnas|223|+0.0003
-multipl|484|+0.0004
+mrnas|223|+0.0004
+multipl|484|+0.0003
 muscl|411|+0.0006
-myeloid|149|+0.0007
+myeloid|149|+0.0006
 natur|168|+0.0001
-negat|367|+0.0022
+negat|367|+0.0018
 network|365|+0.0002
-neural|269|+0.0003
-neuron|464|+0.0003
-new|414|+0.0003
+neural|269|+0.0002
+neuron|464|+0.0006
+new|414|+0.0001
 non|739|+0.0005
-normal|917|+0.0004
-novel|682|+0.0003
-nuclear|260|+0.0003
-null|390|+0.0015
+normal|917|+0.0008
+novel|682|+0.0002
+nuclear|260|+0.0002
+null|390|+0.0009
 null __mice|168|+0.0014
 number|560|+0.0002
-obes|174|+0.0007
+obes|174|+0.0006
 observ|604|+0.0005
-obtain|683|+0.0002
-occur|339|+0.0002
-old|803|+0.0033
+obtain|683|+0.0003
+occur|339|+0.0001
+old|803|+0.0015
 old __mice|167|+0.0013
-oncogen|184|+0.0005
-onli|547|+0.0002
-onset|164|+0.0009
-order|397|+0.0002
-organ|384|+0.0013
-origin|245|+0.0003
-overal|948|+0.0005
-overal design|834|+0.0004
-overexpress|320|+0.0033
+oncogen|184|+0.0007
+onli|547|+0.0003
+onset|164|+0.0008
+order|397|+0.0003
+organ|384|+0.0010
+origin|245|+0.0002
+overal|948|+0.0004
+overal design|834|+0.0003
+overexpress|320|+0.0032
 overlap|154|+0.0002
 oxid|212|+0.0003
 p53|146|+0.0003
-pair|257|+0.0004
-parallel|149|+0.0003
-partial|143|+0.0001
-particular|243|+0.0003
-patholog|180|+0.0003
-pathway|1188|+0.0002
-patient|251|+0.0002
-pattern|583|+0.0003
-pcr|269|+0.0002
+pair|257|+0.0002
+parallel|149|+0.0004
+partial|143|+0.0002
+particular|243|+0.0004
+patholog|180|+0.0005
+pathway|1188|+0.0003
+patient|251|+0.0003
+pattern|583|+0.0004
+pcr|269|+0.0001
 perform|1589|+0.0002
-perform use|211|+0.0002
-period|147|+0.0005
+perform use|211|+0.0003
+period|147|+0.0008
 phase|164|+0.0002
-phenotyp|697|+0.0004
+phenotyp|697|+0.0005
 physiolog|285|+0.0004
-platform|204|+0.0002
-play|500|+0.0003
-pluripot|245|+0.0019
-point|548|+0.0002
-pool|757|+0.0009
+platform|204|+0.0004
+play|500|+0.0001
+pluripot|245|+0.0038
+point|548|+0.0004
+pool|757|+0.0005
 poor|230|+0.0001
-popul|478|+0.0015
-posit|413|+0.0006
-possibl|231|+0.0004
-post|473|+0.0007
-potenti|660|+0.0005
-pre|285|+0.0003
-precursor|190|+0.0004
+popul|478|+0.0013
+posit|413|+0.0005
+possibl|231|+0.0003
+post|473|+0.0006
+potenti|660|+0.0002
+pre|285|+0.0004
+precursor|190|+0.0003
 predict|166|+0.0002
-prepar|499|+0.0003
-presenc|295|+0.0012
-present|507|+0.0004
-prevent|239|+0.0003
+prepar|499|+0.0001
+presenc|295|+0.0008
+present|507|+0.0003
+prevent|239|+0.0001
 previous|620|+0.0002
-primari|458|+0.0019
-prior|207|+0.0002
-pro|163|+0.0005
-probe|248|+0.0003
-process|1006|+0.0003
-produc|343|+0.0003
-product|327|+0.0004
-profil|3771|+0.0003
-profil __mice|1109|+0.0001
-profil array|256|+0.0024
-progenitor|473|+0.0011
-progenitor cell|230|+0.0004
-program|443|+0.0004
-progress|437|+0.0007
+primari|448|+0.0021
+prior|207|+0.0004
+pro|163|+0.0007
+probe|248|+0.0001
+process|1006|+0.0002
+produc|343|+0.0005
+product|327|+0.0002
+profil|3771|+0.0002
+profil __mice|1109|+0.0003
+profil array|256|+0.0020
+progenitor|473|+0.0012
+progenitor cell|230|+0.0003
+program|443|+0.0005
+progress|437|+0.0006
 prolifer|574|+0.0007
-promot|790|+0.0036
-properti|150|+0.0002
-propos|194|+0.0003
-protect|237|+0.0004
-protein|1342|+0.0002
-protocol|333|+0.0001
+promot|790|+0.0025
+properti|150|+0.0001
+propos|194|+0.0002
+protect|237|+0.0003
+protein|1342|+0.0004
+protocol|333|+0.0002
 provid|906|+0.0002
-purifi|441|+0.0013
-purpos|164|+0.0004
-qiagen|235|+0.0003
-qualiti|205|+0.0003
-quantit|239|+0.0002
+purifi|441|+0.0015
+purpos|164|+0.0003
+qiagen|235|+0.0004
+qualiti|205|+0.0001
+quantit|239|+0.0001
 rang|151|+0.0003
-rapid|228|+0.0003
+rapid|228|+0.0002
 rate|199|+0.0002
-read|180|+0.0003
-recent|279|+0.0002
-receptor|741|+0.0002
-recombin|145|+0.0002
-recruit|154|+0.0008
-reduc|596|+0.0003
-reduct|181|+0.0002
-refer|326|+0.0010
-region|554|+0.0005
+read|180|+0.0002
+recent|279|+0.0003
+receptor|741|+0.0003
+recombin|145|+0.0003
+recruit|154|+0.0003
+reduc|596|+0.0002
+reduct|181|+0.0003
+refer|326|+0.0008
+region|554|+0.0006
 regul|2431|+0.0005
-regul gene|411|+0.0002
+regul gene|411|+0.0003
 regulatori|532|+0.0004
-relat|812|+0.0003
+relat|812|+0.0004
 relev|189|+0.0002
-remain|531|+0.0003
-remodel|166|+0.0003
-remov|278|+0.0003
-renew|180|+0.0010
-repeat|147|+0.0003
-replic|1335|+0.0002
-report|652|+0.0003
-repres|411|+0.0003
-repress|365|+0.0003
-reprogram|187|+0.0016
-requir|670|+0.0002
-resist|252|+0.0005
-respect|373|+0.0003
-respons|1401|+0.0113
+remain|531|+0.0002
+remodel|166|+0.0004
+remov|278|+0.0002
+renew|180|+0.0012
+repeat|147|+0.0002
+replic|1335|+0.0004
+report|652|+0.0002
+repres|411|+0.0001
+repress|365|+0.0006
+reprogram|187|+0.0010
+requir|670|+0.0004
+resist|252|+0.0003
+respect|373|+0.0002
+respons|1401|+0.0111
 restrict|198|+0.0003
-result|1649|+0.0002
-reveal|1145|+0.0002
+result|1649|+0.0005
+reveal|1145|+0.0001
 revers|226|+0.0003
-rna|3698|+0.0003
-rna extract|925|+0.0004
-rna isol|592|+0.0004
-rna sampl|329|+0.0005
-rna seq|762|+0.0004
-rna sequenc|257|+0.0004
+rna|3698|+0.0004
+rna extract|925|+0.0002
+rna isol|592|+0.0005
+rna sampl|329|+0.0003
+rna seq|762|+0.0005
+rna sequenc|257|+0.0001
 rnas|442|+0.0003
-rneasi|204|+0.0002
-robust|167|+0.0002
-role|1534|+0.0004
-sacrif|233|+0.0003
+rneasi|204|+0.0001
+robust|167|+0.0001
+role|1534|+0.0002
+sacrif|233|+0.0004
 sampl|2278|+0.0004
-sampl analyz|149|+0.0004
-scale|145|+0.0001
+sampl analyz|149|+0.0003
+scale|145|+0.0002
 screen|168|+0.0003
-second|176|+0.0002
+second|176|+0.0003
 select|613|+0.0002
-self|204|+0.0009
-self renew|169|+0.0017
+self|204|+0.0013
+self renew|169|+0.0011
 sensit|270|+0.0003
-separ|324|+0.0002
-seq|972|+0.0004
-seq analysi|140|+0.0004
-sequenc|975|+0.0002
-seri|195|+0.0003
+separ|324|+0.0004
+seq|972|+0.0007
+seq analysi|140|+0.0002
+sequenc|975|+0.0004
+seri|195|+0.0002
 serum|188|+0.0004
-serv|169|+0.0002
-set|631|+0.0002
-sever|784|+0.0003
-sex|163|+0.0003
+serv|169|+0.0003
+set|631|+0.0001
+sever|784|+0.0002
+sex|163|+0.0004
 share|151|+0.0002
 short|144|+0.0002
 shown|286|+0.0002
-signal|1179|+0.0003
+signal|1179|+0.0002
 signal pathway|285|+0.0002
 signatur|339|+0.0009
 signific|872|+0.0002
-silenc|189|+0.0004
-similar|464|+0.0001
+silenc|189|+0.0003
+similar|464|+0.0002
 sinc|165|+0.0002
-singl|553|+0.0006
-singl cell|151|+0.0006
+singl|553|+0.0007
+singl cell|151|+0.0007
 site|393|+0.0002
-skelet|228|+0.0005
+skelet|228|+0.0002
 skelet muscl|190|+0.0003
 skin|206|+0.0001
-small|480|+0.0004
-softwar|176|+0.0003
-somat|151|+0.0002
-sort|534|+0.0260
-speci|180|+0.0005
-specif|1765|+0.0004
-specif gene|214|+0.0001
-spleen|188|+0.0006
+small|480|+0.0001
+softwar|176|+0.0002
+somat|151|+0.0005
+sort|534|+0.0246
+speci|180|+0.0004
+specif|1765|+0.0008
+specif gene|214|+0.0003
+spleen|188|+0.0004
 splice|165|+0.0002
-st|206|+0.0001
-stage|622|+0.0013
+st|206|+0.0002
+stage|622|+0.0009
 standard|209|+0.0002
-start|156|+0.0002
-state|402|+0.0006
-statist|154|+0.0002
-stem|694|+0.0121
-stem cell|568|+0.0071
+start|156|+0.0004
+state|402|+0.0007
+statist|154|+0.0003
+stem|687|+0.0141
+stem cell|567|+0.0089
 step|143|+0.0002
-stimul|398|+0.0061
-strain|440|+0.0035
-strand|147|+0.0002
-strategi|180|+0.0001
-stress|301|+0.0005
-strong|234|+0.0002
-structur|243|+0.0003
+stimul|398|+0.0050
+strain|440|+0.0038
+strand|147|+0.0003
+strategi|180|+0.0002
+stress|301|+0.0007
+strong|234|+0.0001
+structur|243|+0.0008
 studi|2196|+0.0003
-subject|365|+0.0006
-subsequ|256|+0.0003
-subset|283|+0.0012
-suggest|913|+0.0003
+subject|365|+0.0004
+subsequ|256|+0.0004
+subset|283|+0.0010
+suggest|913|+0.0002
 supplement|146|+0.0013
-support|305|+0.0003
-suppress|350|+0.0010
-surviv|291|+0.0003
-suscept|143|+0.0006
-syndrom|157|+0.0003
-synthesi|202|+0.0002
-taken|210|+0.0004
-target|1351|+0.0005
-target gene|376|+0.0002
-technolog|253|+0.0002
-tempor|164|+0.0003
-term|300|+0.0003
-termin|187|+0.0001
-test|507|+0.0005
-therapeut|281|+0.0001
-therapi|178|+0.0005
-therefor|291|+0.0001
-throughput|181|+0.0003
-time|973|+0.0002
+support|305|+0.0002
+suppress|350|+0.0004
+surviv|291|+0.0004
+suscept|143|+0.0003
+syndrom|157|+0.0004
+synthesi|202|+0.0003
+taken|210|+0.0005
+target|1351|+0.0002
+target gene|376|+0.0003
+technolog|253|+0.0001
+tempor|164|+0.0002
+term|300|+0.0004
+termin|187|+0.0002
+test|507|+0.0006
+therapeut|281|+0.0003
+therapi|178|+0.0004
+therefor|291|+0.0003
+throughput|181|+0.0004
+time|973|+0.0003
 time point|418|+0.0003
-tissu|1615|+0.0047
-togeth|359|+0.0003
+tissu|1615|+0.0059
+togeth|359|+0.0002
 total|1910|+0.0003
 total rna|1271|+0.0004
-total sampl|152|+0.0004
-transcript|3487|+0.0003
-transcript factor|840|+0.0002
-transcript profil|1770|+0.0007
-transcript regul|232|+0.0003
+total sampl|152|+0.0006
+transcript|3487|+0.0006
+transcript factor|840|+0.0005
+transcript profil|1770|+0.0012
+transcript regul|232|+0.0001
 transcriptom|1125|+0.0003
 transcriptom analysi|237|+0.0004
-transfect|158|+0.0021
-transform|208|+0.0009
-transgen|593|+0.0107
-transgen __mice|354|+0.0040
-transit|198|+0.0003
+transfect|158|+0.0015
+transform|208|+0.0014
+transgen|593|+0.0129
+transgen __mice|354|+0.0043
+transit|198|+0.0002
 translat|173|+0.0002
-treat|987|+0.0368
-treatment|854|+0.0240
-trigger|158|+0.0002
+trigger|158|+0.0003
 triplic|281|+0.0002
-trizol|205|+0.0003
-tumorigenesi|144|+0.0005
-type|846|+0.0005
-unclear|172|+0.0006
-undergo|154|+0.0003
-understand|508|+0.0002
+trizol|205|+0.0007
+tumorigenesi|144|+0.0007
+type|846|+0.0004
+unclear|172|+0.0005
+undergo|154|+0.0002
+understand|508|+0.0003
 understood|247|+0.0002
-uniqu|278|+0.0001
-unknown|295|+0.0002
-untreat|206|+0.0010
-upregul|312|+0.0004
+uniqu|278|+0.0002
+unknown|295|+0.0005
+upregul|312|+0.0005
 use|3813|+0.0003
-use __mice|177|+0.0002
-use affymetrix|358|+0.0002
+use __mice|177|+0.0003
+use affymetrix|358|+0.0003
 use illumina|203|+0.0002
 use microarray|572|+0.0003
 use rna|188|+0.0002
 util|218|+0.0003
-valid|254|+0.0002
+valid|254|+0.0001
 valu|208|+0.0003
 various|324|+0.0003
-vector|162|+0.0025
-vehicl|189|+0.0054
-versus|255|+0.0001
-vitro|514|+0.0031
-vivo|678|+0.0010
+vector|162|+0.0024
+vehicl|189|+0.0064
+versus|255|+0.0003
+vitro|514|+0.0034
+vivo|678|+0.0005
 vs|521|+0.0004
-week|988|+0.0004
+week|988|+0.0003
 week __mouse_ag|162|+0.0003
-week old|417|+0.0004
-weight|180|+0.0003
-wherea|235|+0.0002
-wide|753|+0.0005
-wnt|160|+0.0001
-work|144|+0.0002
-young|152|+0.0004
+week old|417|+0.0003
+weight|180|+0.0005
+wherea|235|+0.0001
+wide|753|+0.0004
+wnt|160|+0.0003
+work|144|+0.0003
+young|152|+0.0003
