@@ -14,9 +14,10 @@ import sys
 import os
 import time
 import argparse
+import unittest
 import db
 import htMLsample as mlSampleLib
-from utilsLib import removeNonAscii
+from utilsLib import removeNonAscii, TextMapping, TextTransformer
 #-----------------------------------
 
 sampleObjType = mlSampleLib.ClassifiedHtSample
@@ -29,15 +30,12 @@ FIELDSEP     = sampleObjType.getFieldSep()
 def getArgs():
 
     parser = argparse.ArgumentParser( \
-        description='Get GEO known samples, write to stdout')
-
-    parser.add_argument('--test', dest='test', action='store_true',
-        required=False,
-        help="just run ad hoc test code")
+        description='Get SampleSets for training gxdhtclassifier, write to stdout')
 
     parser.add_argument('option', action='store', default='counts',
-        choices=['counts', 'geo', 'nongeo',],
-        help='which subset of training samples to get or "counts"')
+        choices=['counts', 'geo', 'nongeo', 'test'],
+        help='which subset of training samples to get or "counts"' +
+             ' or just run automated tests')
 
     parser.add_argument('-l', '--limit', dest='nResults',
         required=False, type=int, default=0, 		# 0 means ALL
@@ -91,6 +89,7 @@ GEO_OUTPUT_TITLE  = 'GEO experiments evaluated by Connie'
 GEO_TMPTBL = 'tmp_geoexp'
 NON_GEO_OUTPUT_TITLE  = 'Non-GEO, Yes experiments evaluated by Connie'
 NON_GEO_TMPTBL = 'tmp_nongeoexp'
+RAW_SAMPLE_TMPTBL = "tmp_rawsample_text"
 
 def loadTmpTables():
     '''
@@ -108,7 +107,7 @@ def loadTmpTables():
         titleLength
         descriptionLength
     '''
-    # Populate GEO experiment tmp table
+    # Populate GEO_TMPTBL: evaluated GEO experiments
     q = ["""
         create temporary table %s as
         select e._experiment_key, a.accid as ID, t.term as knownClassName,
@@ -137,7 +136,7 @@ def loadTmpTables():
         ]
     results = db.sql(q, 'auto')
 
-    # Populate non-GEO, 'Yes' experiment tmp table
+    # Populate NON_GEO_TMPTBL: evaluated 'Yes' experiments
     #  These are additional 'Yes' experiments
     q = ["""
         create temporary table %s as
@@ -168,6 +167,192 @@ def loadTmpTables():
         """ % (NON_GEO_TMPTBL),
         ]
     results = db.sql(q, 'auto')
+
+    # Populate RAW_SAMPLE_TMPTBL "key:value" pairs for GEO experiments
+    startTime = time.time()
+    #verbose("Building raw sample tmp table...")
+    q = ["""
+        create temporary table %s as
+        select distinct rs._experiment_key, kv.key, kv.value
+        from
+            %s gt join GXD_HTRawSample rs on
+                    (gt._experiment_key = rs._experiment_key)
+            join MGI_KeyValue kv on
+                    (rs._rawsample_key = kv._object_key and _mgitype_key = 47)
+        order by rs._experiment_key, kv.key, kv.value
+        """ % (RAW_SAMPLE_TMPTBL, GEO_TMPTBL),
+        """
+        create index tmp_idx3 on %s(_experiment_key)
+        """ % (RAW_SAMPLE_TMPTBL),
+        ]
+    results = db.sql(q, 'auto')
+    #verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
+#-----------------------------------
+
+class RawSampleTextManager (object):
+    """
+    IS:  a class that knows how to gather and format the raw sample metadata
+        text for experiments
+    HAS: 
+    DOES: getRawSampleText( for an experiment )
+    """
+    def __init__(self, rawSampleTblName):
+        self.experimentDict = {}        # experimentDict[exp_key] is a
+                                        #   set of (field,value) pairs
+                                        #   from the samples of that experiment
+        self.buildExperimentDict(rawSampleTblName)
+    #-----------------------------------
+
+    def buildExperimentDict(self, rawSampleTblName):
+        #verbose("Getting raw sample text from %s\n" % rawSampleTblName)
+
+        q = "select * from %s" % rawSampleTblName
+        results = db.sql(q, 'auto')
+        for i,r in enumerate(results):
+            try:
+                expKey = r['_experiment_key']
+                theSet = self.experimentDict.setdefault(expKey, set())
+
+                field = removeNonAscii(cleanDelimiters(str(r['key']))).strip()
+                value = removeNonAscii(cleanDelimiters(str(r['value']))).strip()
+
+                theSet.add((field, value))
+            except:         # if some error, try to report which record
+                sys.stderr.write("Error on record %d:\n%s\n" % (i, str(r)))
+                raise
+    #-----------------------------------
+
+    def getRawSampleText(self, expKey):
+        if expKey not in self.experimentDict:
+            return ''
+        else: 
+            pairs = self.experimentDict[expKey]
+
+            fieldText = []      # list of formated field/value pairs to include
+            for f,v in sorted(pairs):
+                t = self.fieldValue2Text(f,v)
+                if t:
+                    fieldText.append(t)
+            
+            text = "  ".join(fieldText)
+            return text
+    #-----------------------------------
+
+    # Raw sample field-value text formatting
+    # Mappings used for field-value formatting/conversion
+    NaMapping = TextMapping('na',       # match various forms of N/A
+            r'\A(?:n[.-/]?a|not applicable|not relevant|control|cntrl|ctrl|ctl|no data)[.]?\Z', '')
+
+                                  # match various forms of "untreated"
+    untreatedRegex = str(r'\A(?:' +
+            r'(?:(?:untreated|not treated|no (?:special )?treate?ments?)\b.*)' +
+            r'|(?:(?:nothing|none|no)[.]?)' +
+            r')\Z')
+
+    treatmentFieldMapping = TextMapping('treatment', untreatedRegex, '')
+    treatmentProtFieldMapping = TextMapping('treatmentProt', untreatedRegex, '')
+
+    NaTransformer = TextTransformer([NaMapping])
+    treatmentProtFieldTransformer = TextTransformer([treatmentProtFieldMapping])
+    treatmentFieldTransformer = TextTransformer([treatmentFieldMapping])
+
+    def fieldValue2Text(self, f, v):
+        """
+        Return formated field-value text for the given field,value pair
+            Return '' for "Not Applicable" variations for any field.
+            Return '__untreated;' for 'treatment' and 'treatmentProt' fields
+                whose value means "not treated"
+            Else return 'field : value;'
+        """
+        if self.NaTransformer.transformText(v) == '':
+            return ''
+        elif (f == 'treatmentProt' and
+                self.treatmentProtFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        elif (f == 'treatment' and
+                self.treatmentFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        else:
+            return '%s : %s;' % (f, v)
+    #-----------------------------------
+
+    def getMatchesReport(self):
+        """
+        Return formated report on text mappings applied to raw sample fields
+        """
+        text = "\n"
+        text += self.NaTransformer.getMatchesReport()
+        text += self.treatmentProtFieldTransformer.getMatchesReport()
+        text += self.treatmentFieldTransformer.getMatchesReport()
+        return text
+
+# end class RawSampleTextManager -----------------------------------
+#-----------------------------------
+# Automated unit tests
+
+class RawSampleTextManagerTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.rstm = RawSampleTextManager(RAW_SAMPLE_TMPTBL)
+
+    @classmethod
+    def tearDownClass(cls):
+        print(cls.rstm.getMatchesReport())
+
+    def test_fieldValue2Text_NA(self):
+        r = self.rstm
+        na = ''                 # expected value for a recognized "NA" value
+        self.assertEqual(r.fieldValue2Text('f','NA'), na)
+        self.assertEqual(r.fieldValue2Text('f','N/A'), na)
+        self.assertEqual(r.fieldValue2Text('f','N.A.'), na)
+        self.assertEqual(r.fieldValue2Text('f','NAT'), 'f : NAT;')
+        self.assertEqual(r.fieldValue2Text('f','NA T'), 'f : NA T;')
+        self.assertEqual(r.fieldValue2Text('f','ctrl'), na)
+        self.assertEqual(r.fieldValue2Text('f','Control'), na)
+        self.assertEqual(r.fieldValue2Text('f','Not Applicable.'), na)
+        self.assertEqual(r.fieldValue2Text('treatment','N/A'), na)
+        self.assertEqual(r.fieldValue2Text('treatmentProt','N/A'), na)
+
+    def test_fieldValue2Text_treatment(self):
+        r = self.rstm
+        f = 'treatment'         # treatment field name, some tests w/ this name
+        unt = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated & stuff'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'No special treatments, but'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'No'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'none.'), unt)
+        self.assertNotEqual(r.fieldValue2Text(f,'nothing but..'), unt)
+        
+        # not treatment field
+        f = 'f'
+        self.assertEqual(r.fieldValue2Text(f,'No'), 'f : No;')
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated'),'f : Not Treated;')
+
+    def test_fieldValue2Text_treatmentProt(self):
+        r = self.rstm
+        f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
+        unt = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated & stuff'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'No special treatments, but'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'No'), unt)
+        self.assertEqual(r.fieldValue2Text(f,'none.'), unt)
+        self.assertNotEqual(r.fieldValue2Text(f,'nothing but..'), unt)
+
+        # not treatmentProt field
+        f = 'f'
+        self.assertEqual(r.fieldValue2Text(f,'No'), 'f : No;')
+        self.assertEqual(r.fieldValue2Text(f,'Not Treated'),'f : Not Treated;')
+# end Automated unit tests ------------------------
+#-----------------------------------
+
+def doAutomatedTests():
+
+    sys.stdout.write("%s\nHitting database %s %s as mgd_public\n" % \
+                                        (time.ctime(), args.host, args.db,))
+    sys.stdout.write("Running automated unit tests...\n")
+    unittest.main(argv=[sys.argv[0], '-v'],)
 #-----------------------------------
 
 def doCounts():
@@ -177,7 +362,7 @@ def doCounts():
     '''
     sys.stdout.write("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
-    # Counts from the GEO tmptbl
+    ### Counts from the GEO tmptbl
     q = """select count(*) as num from %s e
         """ % (GEO_TMPTBL)
     numRows = db.sql(q, 'auto')[0]['num']
@@ -204,7 +389,14 @@ def doCounts():
     sys.stdout.write("%7d (%d%%) Yes\t%7d (%d%%) No\t%7d total\n" \
             % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
 
-    # Counts from the non-GEO tmptbl
+    # number of GEO with raw source data    - expected to be most of them
+    q = """select count(distinct e._experiment_key) as num
+            from %s e join %s rs on (e._experiment_key = rs._experiment_key)
+        """ % (GEO_TMPTBL, RAW_SAMPLE_TMPTBL)
+    numRS = db.sql(q, 'auto')[0]['num']
+    sys.stdout.write("%7d have raw sample text\n" % (numRS))
+
+    ### Counts from the non-GEO tmptbl
     q = """select count(*) as num from %s e
         """ % (NON_GEO_TMPTBL)
     ngNumRows = db.sql(q, 'auto')[0]['num']
@@ -218,25 +410,27 @@ def doCounts():
     sys.stdout.write(NON_GEO_OUTPUT_TITLE + '\n')
     sys.stdout.write("%7d experiments\n" % (ngNumRows))
 
-    # Totals
+    # number of non-GEO with raw source data    - expected to be 0
+    q = """select count(distinct e._experiment_key) as num
+            from %s e join %s rs on (e._experiment_key = rs._experiment_key)
+        """ % (NON_GEO_TMPTBL, RAW_SAMPLE_TMPTBL)
+    numRS = db.sql(q, 'auto')[0]['num']
+    sys.stdout.write("%7d have raw sample text\n" % (numRS))
+
+    ### Totals
     sys.stdout.write("Total experiments\n")
     numYes += ngNumExp
     numExp += ngNumExp
     sys.stdout.write("%7d (%d%%) Yes\t%7d (%d%%) No\t%7d total\n" \
             % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
-#-----------------------------------
 
-####################
-def main():
-####################
-    db.set_sqlServer  (args.host)
-    db.set_sqlDatabase(args.db)
-    db.set_sqlUser    ("mgd_public")
-    db.set_sqlPassword("mgdpub")
+    ### Counts from Raw sample tmp table
+    q = """select count(*) as num from %s e
+        """ % (RAW_SAMPLE_TMPTBL)
+    rsNumRows = db.sql(q, 'auto')[0]['num']
 
-    loadTmpTables()
-    if args.option == 'counts': doCounts()
-    else: doSamples()
+    sys.stdout.write(RAW_SAMPLE_TMPTBL + '\n')
+    sys.stdout.write("%9d key/value pairs\n" % (rsNumRows))
 #-----------------------------------
 
 def doSamples():
@@ -245,11 +439,14 @@ def doSamples():
     startTime = time.time()
     verbose("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
+
     # Which set of samples, which tmp table
     if args.option == "geo":
         tmptbl = GEO_TMPTBL
+        rstm = RawSampleTextManager(RAW_SAMPLE_TMPTBL)
     elif args.option == "nongeo":
         tmptbl = NON_GEO_TMPTBL
+        rstm = None       # non-GEO experiments don't have raw samples in db
     else:
         sys.stderr.write("Bad option: %s\n" % args.option)
         exit(5)
@@ -267,7 +464,13 @@ def doSamples():
     verbose("constructing and writing %s samples:\n" % args.option)
     for i,r in enumerate(results):
         try:
-            sample = sqlRecord2ClassifiedSample(r)
+            if rstm:             ## get raw sample text, if any
+                expKey = r['_experiment_key']
+                rawSampleText = rstm.getRawSampleText(expKey)
+            else:
+                rawSampleText = ''
+
+            sample = sqlRecord2ClassifiedSample(r, rawSampleText)
             outputSampleSet.addSample(sample)
         except:         # if some error, try to report which record
             sys.stderr.write("Error on record %d:\n%s\n" % (i, str(r)))
@@ -279,12 +482,15 @@ def doSamples():
     outputSampleSet.write(sys.stdout)
 
     verbose("wrote %d samples:\n" % outputSampleSet.getNumSamples())
+    if rstm:
+        verbose(rstm.getMatchesReport())
     verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
 
     return
 #-----------------------------------
 
-def sqlRecord2ClassifiedSample(r,       # sql Result record
+def sqlRecord2ClassifiedSample(r,               # sql Result record
+                               rawSampleText,   # text from raw sample metadata 
     ):
     """
     Encapsulates knowledge of ClassifiedSample.setFields() field names
@@ -292,6 +498,10 @@ def sqlRecord2ClassifiedSample(r,       # sql Result record
     newR = {}
     newSample = sampleObjType()
 
+    if len(rawSampleText) > 0:          # add separator to mark beginning
+        rawSampleText = " .. " + rawSampleText
+
+    ## populate the Sample fields
     newR['knownClassName']    = str(r['knownclassname'])
     newR['ID']                = str(r['id'])
     newR['curationState']     = str(r['curationstate'])
@@ -301,7 +511,7 @@ def sqlRecord2ClassifiedSample(r,       # sql Result record
     newR['titleLength']       = str(r['titlelength'])
     newR['descriptionLength'] = str(r['descriptionlength'])
     newR['title']             = cleanUpTextField(r,'title')
-    newR['description']       = cleanUpTextField(r,'description')
+    newR['description']       = cleanUpTextField(r,'description') +rawSampleText
 
     return newSample.setFields(newR)
 #-----------------------------------
@@ -333,9 +543,17 @@ def verbose(text):
         sys.stderr.flush()
 #-----------------------------------
 
+def main():
+    db.set_sqlServer  (args.host)
+    db.set_sqlDatabase(args.db)
+    db.set_sqlUser    ("mgd_public")
+    db.set_sqlPassword("mgdpub")
+
+    loadTmpTables()
+
+    if args.option == 'test': doAutomatedTests()
+    elif args.option == 'counts': doCounts()
+    else: doSamples()
+#-----------------------------------
 if __name__ == "__main__":
-    if not (len(sys.argv) > 1 and sys.argv[1] == '--test'):
-        main()
-    else: 			# ad hoc test code
-        if True:	# debug SQL
-            pass
+    main()
