@@ -274,3 +274,38 @@ Feature weights from the training set are here:
 https://docs.google.com/spreadsheets/d/1Y2gowqqLSNuodMEG1qx5JWDUagqa-F_VwNxteV5JkKQ/edit#gid=1717776770
 
 Calling this experimentation DONE and going to move on to adding raw sample metadata text to the experiment titles and descriptions.
+
+## Oct 15, 2021
+Have Raw Sample data in. See 
+http://bhmgiwk01lp.jax.org/mediawiki/index.php/sw:Gxdhtclassifier#Including_Raw_.28biological.29_Sample_meta-data_text_.28.22channel_info.22.29
+
+Field/value processing:
+recognized forms of field:N/A and omit, recogized treatment and treatmentProt
+fields that have flavors of "untreated" and map those to __untreated.
+
+Made enhancements to feature transforms
+    * __untreated - recognize forms of "untreated"
+    * __treated   - forms of "treated"
+    * __escell    - add ESC MESC, optional "(ES)"
+    * __mouse_age (postnatal) - add neonatal and Pn Pnn
+    * __mouse_age (embryonic) - add "fetus" and "fetuses"
+    * __mouse_age (e-day) - remove E14
+    * lots of test code cleanup
+
+RF comparisons:
+No raw sample text:
+2021/09/28-15-04-15     F2PRNPV 0.7601  0.7133  0.7727  0.9163  RF.py no raw
+
+Initial raw sample text but no field/value processing
+2021/09/30-16-54-24     F2PRNPV 0.7863  0.7373  0.7996  0.9300  RF.py 1st raw
+    (note jump in P, R, NPV)
+
+Raw sample text w/ field/value processing and __treated __untreated mappings
+2021/10/15-14-22-37     F2PRNPV 0.7783  0.7650  0.7817  0.9256  RF.py w/ un_tre
+2021/10/15-14-27-05     F2PRNPV 0.7764  0.7631  0.7798  0.9249  RF.py w/ un_tre
+    (note big jump in P)
+
+Raw sample text w/ field/value processing but w/o  __treated __untreated mapping
+2021/10/15-14-32-51     F2PRNPV 0.7809  0.7548  0.7877  0.9271  RF.py no un_tre
+2021/10/15-14-34-51     F2PRNPV 0.7827  0.7635  0.7877  0.9274  RF.py no un_tre
+    (note big jump in P, slightly better in R, NPV)

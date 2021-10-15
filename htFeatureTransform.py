@@ -41,14 +41,16 @@ AgeMappings = [
         # Original: was too broad
         # r'\b(?:(?:e\s?|(?:e(?:mbryonic)?\sdays?\s))\d\d?(?:[.]\d\d?)?)\b',
         # E1 E2 E3 are rarely used & often mean other things
+        # E14 is often a cell line, not an age
         r'\b(?:' +
             r'e\s?\d[.]\d\d?' +    # E single digit w/ decimal place or two
             r'|e\s?1\d[.]\d\d?' +  # E double digit w/ decimal place or two
             r'|e\s?[4-9]' +        # E single digit
-            r'|e\s?1[0-9]' +       # E double digits
+            r'|e\s1\d' +           # E (w/ space) double digits
+            r'|e1[012356789]' +    # E (no space) double digits - omit E14
             r'|e\s?20' +           # E double digits
             r'|embryonic\sdays?\s\d\d?(?:[.]\d\d?)?' + # spelled out, opt decim
-        r')\b', '__mouse_age'),
+        r')\b', '__mouse_age', context=0),
     TextMapping('dpc',
         r'\b(?:' +
             r'days?\spost\s(?:conception|conceptus|coitum)' +
@@ -59,15 +61,13 @@ AgeMappings = [
         r'\b(?:' +
             r'theiler\sstages?|TS(?:\s|-)?\d\d?' +      
         r')\b', '__mouse_age', context=0),
-    # Original:  - too broad, needed to add "stage|embryo" after "cell"
-    # r'\b(?:(?:(?:[1248]|one|two|four|eight)(?:\s|-)cells?)|blastocysts?)\b',
-    TextMapping('ee',
+    TextMapping('ee',   # early embryo
         r'\b(?:' +
-            r'blastocysts?|blastomeres?' +
+            r'blastocysts?|blastomeres?|fetus|fetuses' +
             r'|(?:(?:early|mid|late)(?:\s|-))?streak|morula|somites?' +
             r'|(?:' +
                 r'(?:[1248]|one|two|four|eight)(?:\s|-)cell\s' +
-                r'(?:' +
+                r'(?:' +   # "embryo" or "stage" must come after [1248] cell
                     r'stages?|' +
                     r'(?:' +
                         r'(?:(?:mouse|mice|cloned)\s)?embryos?' +
@@ -77,16 +77,26 @@ AgeMappings = [
         r')\b', '__mouse_age'),
     TextMapping('postnatal',
         r'\b(?:' +
-            r'postnatal|new(?:\s|-)?borns?|adults?|ages?' +
+            r'postnatal|neonatal|new(?:\s|-)?borns?|adults?|ages?' +
+            r'|P\d\d?' +  # note this matches P53 P63 P73 - common gene syn's
         r')\b', '__mouse_age', context=0),
     ]
 
 TreatmentMappings = [
-    TextMapping('treat',
+    TextMapping('untreated',
         r'\b(?:' +
-            r'(?:pre|post|co|un|non)?treated' +
-            r'|(?:pre|post|co)?treatments?' +
-        r')\b', '__treat', context=0),
+        r'(?:untreated|non-?treated)' +
+        r'|(?:not\s(?:(?:pre|post|co)(?:\s|-)?)?treated)' +
+        r'|(?:no\s(?:(?:pre|post|co)(?:\s|-)?)?treate?ments?)' +
+        r'|(?:no\s(?:(?:special||previous|prior|additional)\s)?treate?ments?)' +
+        r'|(?:without\s(?:(?:pre|post|co)(?:\s|-)?)?treate?ments?)' +
+        r'|(?:without\s(?:(?:any|special|previous|prior|additional)\s)?treate?ments?)' +
+        r')\b', '__untreated', context=0),
+    TextMapping('treated',
+        r'\b(?:' +
+        r'(?:(?:(?:pre|post|co)(?:\s|-)?)?treated)' +
+        r'|(?:(?:(?:pre|post|co)(?:\s|-)?)?treate?ments?)' +
+        r')\b', '__treated', context=0),
     ]
 
 MiscMappings = [
@@ -96,13 +106,16 @@ MiscMappings = [
                     # include spaces around the replacement token since these
                     # notations are often not space delimited. E.g., Pax6+/+
     TextMapping('wt2',r'(?:[-+]/[-+])', ' __genotype '),  # combine these into
-    #TextMapping('mut',r'(?:-/-)', ' __genotype '), #  'genotype_'?
     TextMapping('mut2', r'\b(?:mutants?|mutations?)\b', '__genotype',context=0),
     TextMapping('mut3', r'\b(?:(?:hetero|homo)(?:zygous|zygote))\b',
                                                     '__genotype',context=0),
 
     TextMapping('esc',
-        r'\b(?:(?:es|embryonic\sstem)(?:\s|-)cells?)\b', '__escell'),
+        r'\b(?:' +
+            r'(?:es|embryonic\sstem)(?:\s|-)cells?' +
+            r'|embryonic\sstem\s\(es\)\scells?' +
+            r'|ESCs?|MESCs?' +
+        r')\b', '__escell', context=0),
     TextMapping('mef',
         r'\b(?:(?:mouse|mice)\sembryo(?:nic)?\sfibroblasts?|mefs?)\b','__mef'),
 
@@ -387,124 +400,178 @@ class Transformer_tests(unittest.TestCase):
     def test_MiscMappings(self):
         t = TextTransformer(MiscMappings)
         text = "there are no mappings here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
+        self.assertEqual(text, t.transformText(text))
 
-        text = "start (-/-) -/- +/+, wt mouse mutants end"
-        done = "start ( __genotype )  __genotype   __genotype , __genotype __mice __genotype end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s (-/-) -/- +/+, e"
+        expt = "s ( __genotype )  __genotype   __genotype , e"
+        self.assertEqual(t.transformText(text), expt)
 
-        text = "start (+/-) homozygous for x heterozygous for y end"
-        done = "start ( __genotype ) __genotype for x __genotype for y end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s wt mouse mutants e"
+        expt = "s __genotype __mice __genotype e"
+        self.assertEqual(t.transformText(text), expt)
 
-        text = "start mouse embryonic fibroblast lines es cell-line MEFs embryonic stem cell lines end"
-        done = "start __mef lines __escell-line __mef __escell lines end"
-        transformed = t.transformText(text)
-        #print('\n' + transformed)
-        self.assertEqual(transformed, done)
+        text = "s (+/-) homozygous for x heterozygous for y e"
+        expt = "s ( __genotype ) __genotype for x __genotype for y e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s mouse embryonic fibroblast lines es cell-line MEFs e"
+        expt = "s __mef lines __escell-line __mef e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s embryonic stem cell lines es cells es-cells ES cell e"
+        expt = "s __escell lines __escell __escell __escell e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s embryonic stem (ES) cell ESCs MESC ESC e"
+        expt = "s __escell __escell __escell __escell e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
     def test_KIOmappings(self):
         t = TextTransformer(KIOmappings)
         text = "there are no kos here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = """but ko's here knockout knock outs knock\nouts knock-out
-                    knockedout knocked\nouts"""
-        done = """but __knockout's here __knockout __knockout __knockout __knockout
-                    __knockout __knockout"""
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        self.assertEqual(text, t.transformText(text))
+
+        text = "s ko's here knockout knock outs knock\nouts e"
+        expt = "s __knockout's here __knockout __knockout __knockout e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s knock-out knockedout knocked\nouts e"
+        expt = "s __knockout __knockout __knockout e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
     def test_AgeMappings0(self):
         t = TextTransformer(AgeMappings)
         text = "there are no mappings here"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
+        self.assertEqual(text, t.transformText(text))
 
-    def test_AgeMappings1(self):
+    def test_AgeMappings1_eday(self):
         t = TextTransformer(AgeMappings)
-        text = "start E14 E14.5. E1.75 e4-5 embryonic day 15-18 E14, end"
-        done = "start __mouse_age __mouse_age. __mouse_age __mouse_age-5 __mouse_age-18 __mouse_age, end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s E0 E 1. E 2 E3, E0.5 E4-5 E9.75 e"      # single digit
+        expt = "s E0 E 1. E 2 E3, __mouse_age __mouse_age-5 __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s E14 E14.5. E 14 E 14.5 E15-18 e"      # double digits
+        expt = "s E14 __mouse_age. __mouse_age __mouse_age __mouse_age-18 e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s E13 E19 E 16 E 17.5 E20 e"            # double digits
+        expt = "s __mouse_age __mouse_age __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s E21 embryonic days 15-18 embryonic day 14-15 e"
+        expt = "s E21 __mouse_age-18 __mouse_age-15 e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
-    def test_AgeMappings2(self):
+    def test_AgeMappings2_dpc(self):
         t = TextTransformer(AgeMappings)
-        text = "start 2.5dpc 5 dpc 12 days post\nconception end"
-        done = "start 2.__mouse_age 5 __mouse_age 12 __mouse_age end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s 2.5dpc 5 dpc 12 days post\nconception e"
+        expt = "s 2.__mouse_age 5 __mouse_age 12 __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
-    def test_AgeMappings3(self):
+    def test_AgeMappings3_ts(self):
         t = TextTransformer(AgeMappings)
-        text = "start Theiler stages 4-5 expects 1 TS23 ts 23 ts-2 end"
-        done = "start __mouse_age 4-5 expects 1 __mouse_age __mouse_age __mouse_age end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s Theiler stages 4-5 just 1 TS23 ts 23 ts-2 e"
+        expt = "s __mouse_age 4-5 just 1 __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
-    def test_AgeMappings4(self):
+    def test_AgeMappings4_ee(self):
         t = TextTransformer(AgeMappings)
         text = "there are no mappings here, 1-cell, 2 cell, four cell"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
-        text = "start Blastocysts 1-cell embryo one cell embryo 8 cell stage end"
-        done = "start __mouse_age __mouse_age __mouse_age __mouse_age end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        self.assertEqual(text, t.transformText(text))
+        text = "s Blastocysts fetus blastomeres early-streak e"
+        expt = "s __mouse_age __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s 1-cell embryo one cell mice embryos 8 cell stage e"
+        expt = "s __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
-    def test_AgeMappings5(self):
+    def test_AgeMappings5_postnatal(self):
         t = TextTransformer(AgeMappings)
-        text = "start new-borns newborn postnatal adults age end"
-        done = "start __mouse_age __mouse_age __mouse_age __mouse_age __mouse_age end"
-        transformed = t.transformText(text)
-        self.assertEqual(transformed, done)
+        text = "s new-borns newborn postnatal e"
+        expt = "s __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s neonatal adults age e"
+        expt = "s __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s P0 P5 P15 e"
+        expt = "s __mouse_age __mouse_age __mouse_age e"
+        self.assertEqual(t.transformText(text), expt)
+        print('\n' + t.getMatchesReport())
+
+    def test_TreatmentMappings_treated(self):
+        t = TextTransformer(TreatmentMappings)
+        text = "s treated cotreated pre treated post-treated e"
+        expt = "s __treated __treated __treated __treated e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s treatments cotreatment pre treatment post-treatements e"
+        expt = "s __treated __treated __treated __treated e"
+        self.assertEqual(t.transformText(text), expt)
+        print('\n' + t.getMatchesReport())
+
+    def test_TreatmentMappings_untreated(self):
+        t = TextTransformer(TreatmentMappings)
+        text = "s untreated not treated not pre-treated not pretreated e"
+        expt = "s __untreated __untreated __untreated __untreated e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s no pretreatment no co-treatment no post treatements e"
+        expt = "s __untreated __untreated __untreated e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s no special treatment no prior treatments no treatments e"
+        expt = "s __untreated __untreated __untreated e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s without pretreatment without cotreatment without treatments e"
+        expt = "s __untreated __untreated __untreated e"
+        self.assertEqual(t.transformText(text), expt)
+
+        text = "s without special treatment without previous treatments e"
+        expt = "s __untreated __untreated e"
+        self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getMatchesReport())
 
     def test_TumorMappings(self):
         t = TextTransformer(TumorMappings)
-        #print('\n')
         #print(t.getBigRegex()[:70])
         #print(t.getBigRegex()[-40:])
         text = "there are no mappings here, 1-cell, 2 cell, four cell"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
+        self.assertEqual(text, t.transformText(text))
 
-        text = "start adenocarcinomas, tumours. adenoma end"
-        expected = "start __tumor, __tumor. __tumor end" 
-        self.assertEqual(expected, t.transformText(text))
+        text = "s adenocarcinomas, tumours. adenoma e"
+        expt = "s __tumor, __tumor. __tumor e" 
+        self.assertEqual(expt, t.transformText(text))
         print('\n' + t.getMatchesReport())
 
     def test_ConniesCellLineMapping(self):
         m = TextMapping('concl', conniesCellLineRegex, '__cell_line',context=0)
         t = TextTransformer([m])
-        #print()
         #print(t.getBigRegex()[:70])
         #print(t.getBigRegex()[-40:])
         text = "there are no mappings here, 1-cell, 2 cell, four cell"
-        transformed = t.transformText(text)
-        self.assertEqual(text, transformed)
+        self.assertEqual(text, t.transformText(text))
 
-        text = "start BALB 3t3 BALB/3T3 BALB\t 3T3 BALB3T3 BALB-3T3 end"
-        expected =  "start __cell_line __cell_line __cell_line __cell_line __cell_line end"
-        self.assertEqual(expected, t.transformText(text))
+        text = "s BALB 3t3 BALB/3T3 BALB\t 3T3 BALB3T3 BALB-3T3 e"
+        expt = "s __cell_line __cell_line __cell_line __cell_line __cell_line e"
+        self.assertEqual(expt, t.transformText(text))
 
-        text = "start C3H c3h-10T12 C3H 10T1/2 C3H10t1-2 end"
-        expected =  "start C3H __cell_line __cell_line __cell_line end"
-        self.assertEqual(expected, t.transformText(text))
+        text = "s C3H c3h-10T12 C3H 10T1/2 C3H10t1-2 e"
+        expt =  "s C3H __cell_line __cell_line __cell_line e"
+        self.assertEqual(expt, t.transformText(text))
 
-        text = "start stem cell lines stromal cell  line foo cell-line end"
-        expected =  "start __cell_line __cell_line foo __cell_line end"
-        self.assertEqual(expected, t.transformText(text))
-
+        text = "s stem cell lines stromal cell  line foo cell-line e"
+        expt = "s __cell_line __cell_line foo __cell_line e"
+        self.assertEqual(expt, t.transformText(text))
         print('\n' + t.getMatchesReport())
 
 # end class Transformer_tests ---------------------------------
