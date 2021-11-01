@@ -257,6 +257,12 @@ class RawSampleTextManager (object):
     treatmentFieldTransformer = TextTransformer([treatmentFieldMapping])
 
     def fieldValue2Text(self, f, v):
+        return self.fieldValue2Text_justValue(f,v)
+
+    #-----------------------------------
+    # several different ways to format the field:value text to try
+
+    def fieldValue2Text_1(self, f, v):
         """
         Return formated field-value text for the given field,value pair
             Return '' for "Not Applicable" variations for any field.
@@ -276,14 +282,42 @@ class RawSampleTextManager (object):
             return '%s : %s;' % (f, v)
     #-----------------------------------
 
-    def getMatchesReport(self):
+    def fieldValue2Text_justValue(self, f, v):
+        """
+        Return formated field-value text for the given field,value pair
+            Just return the value.
+        """
+        return '%s;' % (v)
+    #-----------------------------------
+
+    def fieldValue2Text_2(self, f, v):
+        """
+        Return formated field-value text for the given field,value pair
+            Return '' for "Not Applicable" variations for any field.
+            Return '__untreated;' for 'treatment' and 'treatmentProt' fields
+                whose value means "not treated"
+            Else return 'value;'
+        """
+        if self.NaTransformer.transformText(v) == '':
+            return ''
+        elif (f == 'treatmentProt' and
+                self.treatmentProtFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        elif (f == 'treatment' and
+                self.treatmentFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        else:
+            return '%s;' % (v)
+    #-----------------------------------
+
+    def getReport(self):
         """
         Return formated report on text mappings applied to raw sample fields
         """
         text = "\n"
-        text += self.NaTransformer.getMatchesReport()
-        text += self.treatmentProtFieldTransformer.getMatchesReport()
-        text += self.treatmentFieldTransformer.getMatchesReport()
+        text += self.NaTransformer.getReport()
+        text += self.treatmentProtFieldTransformer.getReport()
+        text += self.treatmentFieldTransformer.getReport()
         return text
 
 # end class RawSampleTextManager -----------------------------------
@@ -297,53 +331,53 @@ class RawSampleTextManagerTests(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        print(cls.rstm.getMatchesReport())
+        print(cls.rstm.getReport())
 
     def test_fieldValue2Text_NA(self):
         r = self.rstm
         na = ''                 # expected value for a recognized "NA" value
-        self.assertEqual(r.fieldValue2Text('f','NA'), na)
-        self.assertEqual(r.fieldValue2Text('f','N/A'), na)
-        self.assertEqual(r.fieldValue2Text('f','N.A.'), na)
-        self.assertEqual(r.fieldValue2Text('f','NAT'), 'f : NAT;')
-        self.assertEqual(r.fieldValue2Text('f','NA T'), 'f : NA T;')
-        self.assertEqual(r.fieldValue2Text('f','ctrl'), na)
-        self.assertEqual(r.fieldValue2Text('f','Control'), na)
-        self.assertEqual(r.fieldValue2Text('f','Not Applicable.'), na)
-        self.assertEqual(r.fieldValue2Text('treatment','N/A'), na)
-        self.assertEqual(r.fieldValue2Text('treatmentProt','N/A'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','NA'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','N/A'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','N.A.'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','NAT'), 'f : NAT;')
+        self.assertEqual(r.fieldValue2Text_1('f','NA T'), 'f : NA T;')
+        self.assertEqual(r.fieldValue2Text_1('f','ctrl'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','Control'), na)
+        self.assertEqual(r.fieldValue2Text_1('f','Not Applicable.'), na)
+        self.assertEqual(r.fieldValue2Text_1('treatment','N/A'), na)
+        self.assertEqual(r.fieldValue2Text_1('treatmentProt','N/A'), na)
 
     def test_fieldValue2Text_treatment(self):
         r = self.rstm
         f = 'treatment'         # treatment field name, some tests w/ this name
         unt = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated & stuff'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'No special treatments, but'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'No'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'none.'), unt)
-        self.assertNotEqual(r.fieldValue2Text(f,'nothing but..'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated & stuff'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'No special treatments, but'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'No'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'none.'), unt)
+        self.assertNotEqual(r.fieldValue2Text_1(f,'nothing but..'), unt)
         
         # not treatment field
         f = 'f'
-        self.assertEqual(r.fieldValue2Text(f,'No'), 'f : No;')
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated'),'f : Not Treated;')
+        self.assertEqual(r.fieldValue2Text_1(f,'No'), 'f : No;')
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'),'f : Not Treated;')
 
     def test_fieldValue2Text_treatmentProt(self):
         r = self.rstm
         f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
         unt = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated & stuff'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'No special treatments, but'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'No'), unt)
-        self.assertEqual(r.fieldValue2Text(f,'none.'), unt)
-        self.assertNotEqual(r.fieldValue2Text(f,'nothing but..'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated & stuff'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'No special treatments, but'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'No'), unt)
+        self.assertEqual(r.fieldValue2Text_1(f,'none.'), unt)
+        self.assertNotEqual(r.fieldValue2Text_1(f,'nothing but..'), unt)
 
         # not treatmentProt field
         f = 'f'
-        self.assertEqual(r.fieldValue2Text(f,'No'), 'f : No;')
-        self.assertEqual(r.fieldValue2Text(f,'Not Treated'),'f : Not Treated;')
+        self.assertEqual(r.fieldValue2Text_1(f,'No'), 'f : No;')
+        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'),'f : Not Treated;')
 # end Automated unit tests ------------------------
 #-----------------------------------
 
@@ -483,7 +517,7 @@ def doSamples():
 
     verbose("wrote %d samples:\n" % outputSampleSet.getNumSamples())
     if rstm:
-        verbose(rstm.getMatchesReport())
+        verbose(rstm.getReport())
     verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
 
     return

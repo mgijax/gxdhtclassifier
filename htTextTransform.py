@@ -11,12 +11,12 @@ Includes:
 cell line mappings, tumor mappings, embryonic age, etc.
 
 Defines a variable:
-    DefaultMappings
-    which is used in the featureTransform preprocessor in  htMLsample.py
+    AllMappings, AllMappingsButTreatment, ...
+    which are used in the textTransform preprocessors in  htMLsample.py
 
 
 Has automated tests for many of the mappings. To run the tests:
-    python htFeatureTransform.py [-v]
+    python htTextTransform.py [-v]
 
 #######################################################################
 """
@@ -79,6 +79,7 @@ AgeMappings = [
         r'\b(?:' +
             r'postnatal|neonatal|new(?:\s|-)?borns?|adults?|ages?' +
             r'|P\d\d?' +  # note this matches P53 P63 P73 - common gene syn's
+            #r'|P\d' +  # only P<single digit>  ?
         r')\b', '__mouse_age', context=0),
     ]
 
@@ -384,13 +385,20 @@ CellLineMappings = [
             TextMapping('concl', conniesCellLineRegex, '__cell_line',context=0),
             ]
 #############################################
-# DefaultMappings are the mappings used in htMLsample.py featureTransform 
-#   preprocessor
+# Mapping subsets used in htMLsample.py textTransform preprocessor
 
-DefaultMappings = KIOmappings + AgeMappings + MiscMappings
-DefaultMappings += TreatmentMappings
-DefaultMappings += TumorMappings
-DefaultMappings += CellLineMappings
+AllMappings = KIOmappings \
+                + AgeMappings \
+                + MiscMappings  \
+                + TreatmentMappings \
+                + TumorMappings \
+                + CellLineMappings \
+
+AllMappingsButTreatment = KIOmappings \
+                + AgeMappings \
+                + MiscMappings  \
+                + TumorMappings \
+                + CellLineMappings \
 
 ##############################################
 # Automated tests
@@ -425,7 +433,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s embryonic stem (ES) cell ESCs MESC ESC e"
         expt = "s __escell __escell __escell __escell e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_KIOmappings(self):
         t = TextTransformer(KIOmappings)
@@ -439,7 +447,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s knock-out knockedout knocked\nouts e"
         expt = "s __knockout __knockout __knockout e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_AgeMappings0(self):
         t = TextTransformer(AgeMappings)
@@ -463,21 +471,21 @@ class Transformer_tests(unittest.TestCase):
         text = "s E21 embryonic days 15-18 embryonic day 14-15 e"
         expt = "s E21 __mouse_age-18 __mouse_age-15 e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_AgeMappings2_dpc(self):
         t = TextTransformer(AgeMappings)
         text = "s 2.5dpc 5 dpc 12 days post\nconception e"
         expt = "s 2.__mouse_age 5 __mouse_age 12 __mouse_age e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_AgeMappings3_ts(self):
         t = TextTransformer(AgeMappings)
         text = "s Theiler stages 4-5 just 1 TS23 ts 23 ts-2 e"
         expt = "s __mouse_age 4-5 just 1 __mouse_age __mouse_age __mouse_age e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_AgeMappings4_ee(self):
         t = TextTransformer(AgeMappings)
@@ -490,7 +498,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s 1-cell embryo one cell mice embryos 8 cell stage e"
         expt = "s __mouse_age __mouse_age __mouse_age e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_AgeMappings5_postnatal(self):
         t = TextTransformer(AgeMappings)
@@ -505,7 +513,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s P0 P5 P15 e"
         expt = "s __mouse_age __mouse_age __mouse_age e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_TreatmentMappings_treated(self):
         t = TextTransformer(TreatmentMappings)
@@ -516,7 +524,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s treatments cotreatment pre treatment post-treatements e"
         expt = "s __treated __treated __treated __treated e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_TreatmentMappings_untreated(self):
         t = TextTransformer(TreatmentMappings)
@@ -539,7 +547,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s without special treatment without previous treatments e"
         expt = "s __untreated __untreated e"
         self.assertEqual(t.transformText(text), expt)
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_TumorMappings(self):
         t = TextTransformer(TumorMappings)
@@ -551,7 +559,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s adenocarcinomas, tumours. adenoma e"
         expt = "s __tumor, __tumor. __tumor e" 
         self.assertEqual(expt, t.transformText(text))
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
     def test_ConniesCellLineMapping(self):
         m = TextMapping('concl', conniesCellLineRegex, '__cell_line',context=0)
@@ -572,7 +580,7 @@ class Transformer_tests(unittest.TestCase):
         text = "s stem cell lines stromal cell  line foo cell-line e"
         expt = "s __cell_line __cell_line foo __cell_line e"
         self.assertEqual(expt, t.transformText(text))
-        print('\n' + t.getMatchesReport())
+        print('\n' + t.getReport())
 
 # end class Transformer_tests ---------------------------------
 

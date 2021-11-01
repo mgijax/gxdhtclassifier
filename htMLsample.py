@@ -2,7 +2,7 @@
 #
 # Library to support handling of GXD HT experiment records (ML samples)
 # Yikes. By "sample" here, I mean a "sample for a ML classifier", i.e.,
-#   a record with some text to classify
+#   an experiment record with some text to classify
 # NOT a biological sample in a high throughput experiment.
 #
 # There are automated unit tests for this module: JIM NOT YET
@@ -12,20 +12,24 @@
 import re
 from baseSampleDataLib import *
 import utilsLib
-from htFeatureTransform import TextTransformer, DefaultMappings
+from htTextTransform import TextTransformer, AllMappings, \
+                            AllMappingsButTreatment
 #-----------------------------------
 
 FIELDSEP     = '|'      # field separator when reading/writing sample fields
 RECORDEND    = '\n'     # record ending str when reading/writing sample files
 
 #-----------------------------------
-# Regex's sample preprocessors
+# Regex's used in sample preprocessors
 urls_re      = re.compile(r'\b(?:https?://|www[.]|doi)\S*',re.IGNORECASE)
 token_re     = re.compile(r'\b([a-z_]\w+)\b',re.IGNORECASE)
 
 stemmer = None		# see preprocessor below
 
-featureTransformer = TextTransformer(DefaultMappings)
+# Instantiate TextTransformers used by various preprocessors
+textTransformer_all = TextTransformer(AllMappings)
+textTransformer_allButTreatment = TextTransformer(AllMappingsButTreatment)
+
 #-----------------------------------
 
 class HtSample (BaseSample):
@@ -50,6 +54,9 @@ class HtSample (BaseSample):
             ]
     fieldSep  = FIELDSEP
     recordEnd = RECORDEND
+
+    preprocessorsToReport = set()  # set of objects w/ a getReports() method
+                                   #   to include in getPreprocessorReport()
     #----------------------
 
     def constructDoc(self):
@@ -89,7 +96,7 @@ class HtSample (BaseSample):
         #def _removeURLsCleanStem(text):
         #    output = ''
         #    for s in urls_re.split(text): # split and remove URLs
-        #        s = featureTransform.transformText(s).lower()
+        #        s = textTransform.transformText(s).lower()
         #        for m in token_re.finditer(s):
         #            output += " " + stemmer.stem(m.group())
         #    return  output
@@ -101,12 +108,25 @@ class HtSample (BaseSample):
         return self
     # ---------------------------
 
-    def featureTransform(self):		# preprocessor
+    def textTransform_all(self):		# preprocessor
         '''
-        Apply feature text transformations
+        Apply text transformations
         '''
-        self.setTitle(featureTransformer.transformText(self.getTitle()))
-        self.setDescription(featureTransformer.transformText(self.getDescription()))
+        tt = textTransformer_all
+        self.addPreprocessorToReport(tt)
+        self.setTitle(tt.transformText(self.getTitle()))
+        self.setDescription(tt.transformText(self.getDescription()))
+        return self
+    # ---------------------------
+
+    def textTransform_allButTreatment(self):		# preprocessor
+        '''
+        Apply text transformations
+        '''
+        tt = textTransformer_allButTreatment
+        self.addPreprocessorToReport(tt)
+        self.setTitle(tt.transformText(self.getTitle()))
+        self.setDescription(tt.transformText(self.getDescription()))
         return self
     # ---------------------------
 
@@ -166,8 +186,17 @@ class HtSample (BaseSample):
     # ---------------------------
 
     @classmethod
+    def addPreprocessorToReport(cls, processor):
+        cls.preprocessorsToReport.add(processor)
+
+    @classmethod
     def getPreprocessorReport(cls):
-        return featureTransformer.getMatchesReport()
+        """ Return report text from preprocessor objects
+        """
+        text = ''
+        for p in cls.preprocessorsToReport:
+            text += p.getReport() + '\n'
+        return text
 
 # end class HtSample ------------------------
 
