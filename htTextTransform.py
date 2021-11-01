@@ -75,11 +75,11 @@ AgeMappings = [
                 r')' +
             r')' +
         r')\b', '__mouse_age'),
-    TextMapping('postnatal',
+    TextMapping('postnatal',    # 11/1/2021: leave Pnn out of mapping, these are
+                                #   often gene symbols or cell lines
         r'\b(?:' +
             r'postnatal|neonatal|new(?:\s|-)?borns?|adults?|ages?' +
-            r'|P\d\d?' +  # note this matches P53 P63 P73 - common gene syn's
-            #r'|P\d' +  # only P<single digit>  ?
+            #r'|P\d\d?' +  # note this matches P53 P63 P73 - common gene syn's
         r')\b', '__mouse_age', context=0),
     ]
 
@@ -511,7 +511,8 @@ class Transformer_tests(unittest.TestCase):
         self.assertEqual(t.transformText(text), expt)
 
         text = "s P0 P5 P15 e"
-        expt = "s __mouse_age __mouse_age __mouse_age e"
+        expt = "s P0 P5 P15 e"
+        #expt = "s __mouse_age __mouse_age __mouse_age e"
         self.assertEqual(t.transformText(text), expt)
         print('\n' + t.getReport())
 
