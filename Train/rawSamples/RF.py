@@ -37,7 +37,7 @@ parameters={'vectorizer__ngram_range':[(1,2),],
 #       'classifier__min_samples_leaf': [15,],
        'classifier__n_estimators': [100,],
         }
-note='\n'.join(["baseline RF, feature transforms + stemming", ]) + '\n'
+note='\n'.join(["raw sample text, RF, text transforms experiments", ]) + '\n'
 p = tl.TextPipelineTuningHelper( pipeline, parameters,
                     randomSeeds=randomSeeds, note=note,).fit()
 print(p.getReports())

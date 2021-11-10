@@ -309,3 +309,69 @@ Raw sample text w/ field/value processing but w/o  __treated __untreated mapping
 2021/10/15-14-32-51     F2PRNPV 0.7809  0.7548  0.7877  0.9271  RF.py no un_tre
 2021/10/15-14-34-51     F2PRNPV 0.7827  0.7635  0.7877  0.9274  RF.py no un_tre
     (note big jump in P, slightly better in R, NPV)
+
+## Nov 9, 2021
+Set up to try some different ways of processing the raw sample text and text
+transformations after looking at the above results: 
+
+    chg sdGetKnownSamples to leave out field names in raw sample metadata text.
+    (actually, multiple options implemented now, comment out the ones you don't 
+    want)
+    also split TextTransformers so can compare w/ and w/o treatment mappings.
+    add sdBuild3Pre.sh to automate variable preprocessing steps.
+
+One thing I noticed, the Pnn and Pn text transformations for postnatal age was
+matching a lot of gene symbols (e.g., P53) and cell lines, so I took it out.
+It is not a reliable way to detect text talking about age.
+
+a) Do the __treated and __untreated mappings really help or hurt?
+b) Also, what if we just don't include the field names (only include the
+    values), is this better than trying to recognize "Field: N/A"?
+
+Tried the following permutations of field/value processing logic:
+fv_untreat:
+    “field : value”. Removes “N/A” fields, has logic to replace treatment and
+        treatmentProt fields with  “__untreated” if the value is a form of
+        “untreated”
+fv_nountreat:
+    “field : value”.  Removes “N/A” fields, NO __untreated logic
+v_untreat:
+    “value” (doesn’t include the field name), no removing “N/A” fields, 
+    but has logic to replace treatment and treatmentProt fields with 
+    “__untreated” if the value is a form of “untreated”
+v_nountreat:
+    “value” (doesn’t include the field name), no removing “N/A” fields,
+    NO __untreated logic
+
+All data sets split into training, validation, test with the same random
+splitting seed:  123. So the only difference in the data sets is the raw sample
+text.
+
+For each of the above, tried two flavors of text transformations:
+P_all: all textTransformations, including mappings for __untreated and
+        __treated
+
+P_notreat: all textTransformations EXCEPT mappings for __untreated and
+        __treated
+
+Ran 4 tries of RF for each of the above 8 permutations & averaged results.
+Short summary:
+    fv increases P by 2-2.5 points over just v (.8130 vs. .7888)
+    v  increases R by .82 points over fv       (.8046 vs. .7964)
+    NPV is consistent across all:   .9218 - .9239
+    __untreated field logic helps a tiny bit over not doing it.
+    the __untreated/__treated mappings have little effect, but tiny boost
+
+    See:
+    https://docs.google.com/spreadsheets/d/1ywi1sUcpzv7J_cA3iHUZs8iJq-hPWeCusWmVSLDaCJ0/edit#gid=1243456244
+
+    Best results:               F2      P       R       NPV
+    v_untreat_P_all:            0.8014	0.7888	0.8046	0.9239
+    fv_untreat_P_notreat:       0.7996	0.8130	0.7964	0.9220
+
+    I'm inclined to go with the v_untreat_P_all.  Gets P ~.79 R >.80
+    Much better than no raw sample text:               P ~.71 R ~.77
+    Raw sample text, no field: value logic:            P ~.74 R ~.79+
+    Initial field:Value logic w/ __(un)treated         P ~.76 R ~.78
+    Initial field:Value logic w/o __(un)treated        P ~.76 R ~.79
+    

@@ -530,3 +530,4409 @@ Validation Set      :         1993          504         1489          25%
 ValidationSplit: 0.20
 ### End Time 2021/10/15-14-35-01. Total      9.42 seconds
 
+### Start Time 2021/11/08-15-38-50  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=956   randForSplit=241   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8889    P: 0.8806    R: 0.8909    NPV: 0.9492
+
+['Yes', 'No']
+[[1977  242]
+ [ 268 4526]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.79      0.80       550
+    Valid No       0.92      0.93      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7966    P: 0.8048    R: 0.7945    NPV: 0.9210
+
+['Yes', 'No']
+[[ 437  113]
+ [ 106 1318]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=956, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 956, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0528	__treat
++0.0431	cell type
++0.0399	type
++0.0365	transcript profil
++0.0361	keyword
++0.0339	cell
++0.0273	treatmentprot
++0.0265	sort
++0.0246	__mouse_ag
++0.0243	cultur
++0.0234	__cell_lin
++0.0177	induc
++0.0175	musculus treatmentprot
++0.0148	__tumor
++0.0132	infect
++0.0118	inject
++0.0104	overal design
++0.0101	fac
++0.0099	__escel
++0.0096	experi overal
+
+### Feature weights: lowest 20
++0.0000	previous
++0.0000	gene encod
++0.0000	deep sequenc
++0.0000	core
++0.0000	rneasi
++0.0000	recruit
++0.0000	independ
++0.0000	togeth
++0.0000	differenti express
++0.0000	pair
++0.0000	bind protein
++0.0000	deplet
++0.0000	new
++0.0000	technolog
++0.0000	better
++0.0000	patient
++0.0000	scale
++0.0000	recent
++0.0000	downstream
++0.0000	rate
+
+### Vectorizer:   Number of Features: 989
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 106
+GSE19367
+GSE20969
+GSE21822
+GSE20235
+GSE18442
+
+### False negatives for Validation set: 113
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-38-56. Total      6.56 seconds
+
+### Start Time 2021/11/08-15-39-27  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=993   randForSplit=110   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8928    P: 0.8842    R: 0.8950    NPV: 0.9511
+
+['Yes', 'No']
+[[1986  233]
+ [ 260 4534]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.80      0.80       550
+    Valid No       0.92      0.93      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7990    P: 0.8096    R: 0.7964    NPV: 0.9218
+
+['Yes', 'No']
+[[ 438  112]
+ [ 103 1321]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=993, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 993, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0572	__treat
++0.0492	cell
++0.0421	cell type
++0.0344	type
++0.0295	keyword
++0.0285	treatmentprot
++0.0276	transcript profil
++0.0275	induc
++0.0227	__mouse_ag
++0.0204	sort
++0.0196	__cell_lin
++0.0174	__tumor
++0.0172	cultur
++0.0141	musculus treatmentprot
++0.0125	fac
++0.0118	inject
++0.0116	__knockout
++0.0112	experi overal
++0.0111	infect
++0.0105	characterist
+
+### Feature weights: lowest 20
++0.0000	therefor
++0.0000	larg
++0.0000	demonstr
++0.0000	target
++0.0000	buffer
++0.0000	technolog
++0.0000	accord manufactur
++0.0000	termin
++0.0000	progenitor cell
++0.0000	analysi reveal
++0.0000	accord
++0.0000	clinic
++0.0000	similar
++0.0000	despit
++0.0000	microarray analysi
++0.0000	kit
++0.0000	befor
++0.0000	howev
++0.0000	bind protein
++0.0000	short
+
+### Vectorizer:   Number of Features: 989
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 103
+GSE19367
+GSE20969
+GSE21822
+GSE18442
+GSE16377
+
+### False negatives for Validation set: 112
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-39-34. Total      6.40 seconds
+
+### Start Time 2021/11/08-15-39-48  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=27   randForSplit=306   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8873    P: 0.8800    R: 0.8891    NPV: 0.9484
+
+['Yes', 'No']
+[[1973  246]
+ [ 269 4525]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.79      0.80       550
+    Valid No       0.92      0.93      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7950    P: 0.8116    R: 0.7909    NPV: 0.9200
+
+['Yes', 'No']
+[[ 435  115]
+ [ 101 1323]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=27, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 27, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0482	cell
++0.0466	__treat
++0.0382	type
++0.0369	cell type
++0.0351	keyword
++0.0302	transcript profil
++0.0277	__mouse_ag
++0.0252	sort
++0.0233	induc
++0.0216	__tumor
++0.0212	cultur
++0.0200	treatmentprot
++0.0167	__cell_lin
++0.0120	musculus treatmentprot
++0.0119	overal design
++0.0119	__knockout
++0.0114	inject
++0.0109	ml
++0.0107	experi overal
++0.0104	__escel
+
+### Feature weights: lowest 20
++0.0000	robust
++0.0000	step
++0.0000	befor
++0.0000	pattern
++0.0000	like
++0.0000	molecular
++0.0000	agil
++0.0000	togeth
++0.0000	taken
++0.0000	screen
++0.0000	wnt
++0.0000	differenti express
++0.0000	previous
++0.0000	bind protein
++0.0000	standard
++0.0000	technolog
++0.0000	short
++0.0000	transcriptom analysi
++0.0000	everi
++0.0000	rate
+
+### Vectorizer:   Number of Features: 989
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 101
+GSE19367
+GSE20969
+GSE21822
+GSE18442
+GSE16377
+
+### False negatives for Validation set: 115
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-39-55. Total      6.42 seconds
+
+### Start Time 2021/11/08-15-43-33  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=110   randForSplit=6   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8877    P: 0.8839    R: 0.8887    NPV: 0.9483
+
+['Yes', 'No']
+[[1972  247]
+ [ 259 4535]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.82      0.80      0.81       550
+    Valid No       0.92      0.93      0.93      1424
+
+    accuracy                           0.90      1974
+   macro avg       0.87      0.87      0.87      1974
+weighted avg       0.90      0.90      0.90      1974
+
+Valid (Yes) F2: 0.8066    P: 0.8185    R: 0.8036    NPV: 0.9247
+
+['Yes', 'No']
+[[ 442  108]
+ [  98 1326]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=110, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 110, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0545	__treat
++0.0451	cell type
++0.0426	cell
++0.0363	type
++0.0318	treatmentprot
++0.0297	transcript profil
++0.0278	keyword
++0.0254	cultur
++0.0242	sort
++0.0238	induc
++0.0201	__mouse_ag
++0.0200	__cell_lin
++0.0190	__tumor
++0.0132	experi overal
++0.0119	musculus treatmentprot
++0.0117	infect
++0.0114	overal design
++0.0105	inject
++0.0097	__escel
++0.0090	transgen
+
+### Feature weights: lowest 20
++0.0000	self renew
++0.0000	epigenet
++0.0000	dye
++0.0000	pre
++0.0000	domain
++0.0000	polya rna
++0.0000	larg
++0.0000	mir
++0.0000	fate
++0.0000	multipl
++0.0000	fetal
++0.0000	robust
++0.0000	conduct
++0.0000	bind protein
++0.0000	analys
++0.0000	everi
++0.0000	bind
++0.0000	properti
++0.0000	physiolog
++0.0000	balb
+
+### Vectorizer:   Number of Features: 989
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 98
+GSE19367
+GSE20969
+GSE21822
+GSE16377
+GSE16909
+
+### False negatives for Validation set: 108
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE23845
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-43-40. Total      6.37 seconds
+
+### Start Time 2021/11/08-15-46-21  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=59   randForSplit=434   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8920    P: 0.8818    R: 0.8945    NPV: 0.9509
+
+['Yes', 'No']
+[[1985  234]
+ [ 266 4528]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.82      0.80      0.81       550
+    Valid No       0.92      0.93      0.93      1424
+
+    accuracy                           0.90      1974
+   macro avg       0.87      0.87      0.87      1974
+weighted avg       0.89      0.90      0.89      1974
+
+Valid (Yes) F2: 0.8050    P: 0.8182    R: 0.8018    NPV: 0.9240
+
+['Yes', 'No']
+[[ 441  109]
+ [  98 1326]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=59, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 59, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0606	cell
++0.0463	cell type
++0.0369	treatment
++0.0325	keyword
++0.0301	treat
++0.0263	__cell_lin
++0.0247	type
++0.0229	__tumor
++0.0225	induc
++0.0224	sort
++0.0219	transcript profil
++0.0191	__mouse_ag
++0.0190	treatmentprot
++0.0183	cultur
++0.0137	fac
++0.0119	musculus treatmentprot
++0.0114	__escel
++0.0112	profil __mice
++0.0100	infect
++0.0095	experi overal
+
+### Feature weights: lowest 20
++0.0000	alpha
++0.0000	technolog
++0.0000	littl
++0.0000	instruct
++0.0000	transcript factor
++0.0000	independ
++0.0000	altern
++0.0000	initi
++0.0000	work
++0.0000	fraction
++0.0000	recombin
++0.0000	downstream
++0.0000	drug
++0.0000	strand
++0.0000	previous
++0.0000	fate
++0.0000	physiolog
++0.0000	addit
++0.0000	core
++0.0000	stabil
+
+### Vectorizer:   Number of Features: 990
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 98
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 109
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-46-27. Total      6.43 seconds
+
+### Start Time 2021/11/08-15-46-45  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=904   randForSplit=278   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8915    P: 0.8776    R: 0.8950    NPV: 0.9509
+
+['Yes', 'No']
+[[1986  233]
+ [ 277 4517]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.79      0.80       550
+    Valid No       0.92      0.93      0.93      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7955    P: 0.8146    R: 0.7909    NPV: 0.9201
+
+['Yes', 'No']
+[[ 435  115]
+ [  99 1325]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=904, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 904, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0534	cell
++0.0362	cell type
++0.0337	keyword
++0.0333	treatment
++0.0322	type
++0.0280	transcript profil
++0.0279	treatmentprot
++0.0277	induc
++0.0255	cultur
++0.0242	__tumor
++0.0217	__cell_lin
++0.0215	treat
++0.0208	__mouse_ag
++0.0181	sort
++0.0134	fac
++0.0127	ml
++0.0123	profil __mice
++0.0119	musculus treatmentprot
++0.0116	__escel
++0.0112	inject
+
+### Feature weights: lowest 20
++0.0000	littl
++0.0000	splice
++0.0000	genom array
++0.0000	dye
++0.0000	gain
++0.0000	becaus
++0.0000	element
++0.0000	rapid
++0.0000	lymph
++0.0000	carri
++0.0000	direct
++0.0000	basi
++0.0000	essenti
++0.0000	scale
++0.0000	neural
++0.0000	larg
++0.0000	apoptosi
++0.0000	fl
++0.0000	cellular
++0.0000	set
+
+### Vectorizer:   Number of Features: 990
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 99
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 115
+GSE22182
+GSE8610
+GSE1635
+GSE19793
+GSE8552
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-46-52. Total      6.41 seconds
+
+### Start Time 2021/11/08-15-47-02  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=641   randForSplit=160   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.87      0.90      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8922    P: 0.8743    R: 0.8968    NPV: 0.9517
+
+['Yes', 'No']
+[[1990  229]
+ [ 286 4508]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.79      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7960    P: 0.8018    R: 0.7945    NPV: 0.9209
+
+['Yes', 'No']
+[[ 437  113]
+ [ 108 1316]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=641, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 641, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0556	cell
++0.0422	cell type
++0.0312	treatment
++0.0307	keyword
++0.0285	treatmentprot
++0.0285	type
++0.0244	treat
++0.0236	__mouse_ag
++0.0232	induc
++0.0224	transcript profil
++0.0220	__tumor
++0.0213	__cell_lin
++0.0184	cultur
++0.0173	sort
++0.0137	__escel
++0.0124	infect
++0.0120	musculus treatmentprot
++0.0118	overal design
++0.0108	fac
++0.0107	ml
+
+### Feature weights: lowest 20
++0.0000	strand
++0.0000	fate
++0.0000	compar
++0.0000	previous
++0.0000	later
++0.0000	propos
++0.0000	earli
++0.0000	consequ
++0.0000	elucid
++0.0000	basi
++0.0000	demonstr
++0.0000	subsequ
++0.0000	consist
++0.0000	befor
++0.0000	genechip __mice
++0.0000	accord manufactur
++0.0000	fbs
++0.0000	splice
++0.0000	downregul
++0.0000	rate
+
+### Vectorizer:   Number of Features: 990
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 108
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 113
+GSE8610
+GSE22297
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-47-08. Total      6.41 seconds
+
+### Start Time 2021/11/08-15-47-56  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=179   randForSplit=529   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.90      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8935    P: 0.8820    R: 0.8963    NPV: 0.9517
+
+['Yes', 'No']
+[[1989  230]
+ [ 266 4528]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.82      0.80      0.81       550
+    Valid No       0.92      0.93      0.93      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.86      0.87      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8020    P: 0.8175    R: 0.7982    NPV: 0.9228
+
+['Yes', 'No']
+[[ 439  111]
+ [  98 1326]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=179, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 179, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0554	cell
++0.0380	type
++0.0371	cell type
++0.0302	keyword
++0.0290	treatment
++0.0285	treatmentprot
++0.0270	treat
++0.0250	induc
++0.0245	transcript profil
++0.0241	__cell_lin
++0.0232	__tumor
++0.0203	sort
++0.0200	cultur
++0.0195	__mouse_ag
++0.0132	fac
++0.0132	musculus treatmentprot
++0.0120	inject
++0.0117	ml
++0.0114	overal design
++0.0107	infect
+
+### Feature weights: lowest 20
++0.0000	__mice genom
++0.0000	drug
++0.0000	invitrogen
++0.0000	precursor
++0.0000	implic
++0.0000	generat
++0.0000	novel
++0.0000	accord manufactur
++0.0000	array
++0.0000	elucid
++0.0000	analysi perform
++0.0000	partial
++0.0000	deplet
++0.0000	short
++0.0000	polya
++0.0000	contribut
++0.0000	independ
++0.0000	earli
++0.0000	onli
++0.0000	standard
+
+### Vectorizer:   Number of Features: 990
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 98
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 111
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE23845
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-48-02. Total      6.36 seconds
+
+### Start Time 2021/11/08-15-50-40  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=901   randForSplit=925   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.90      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8934    P: 0.8851    R: 0.8954    NPV: 0.9513
+
+['Yes', 'No']
+[[1987  232]
+ [ 258 4536]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.79      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7945    P: 0.8015    R: 0.7927    NPV: 0.9203
+
+['Yes', 'No']
+[[ 436  114]
+ [ 108 1316]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=901, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 901, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0652	cell
++0.0414	cell type
++0.0402	__treat
++0.0352	type
++0.0305	transcript profil
++0.0264	sort
++0.0262	__cell_lin
++0.0246	keyword
++0.0232	induc
++0.0224	treatmentprot
++0.0222	__mouse_ag
++0.0176	__tumor
++0.0169	cultur
++0.0137	musculus treatmentprot
++0.0132	experi overal
++0.0117	inject
++0.0101	ml
++0.0097	__escel
++0.0096	fac
++0.0094	infect
+
+### Feature weights: lowest 20
++0.0000	mechan
++0.0000	microarray analysi
++0.0000	event
++0.0000	bind
++0.0000	immedi
++0.0000	__mice genom
++0.0000	fate
++0.0000	loss
++0.0000	extens
++0.0000	essenti
++0.0000	contribut
++0.0000	basi
++0.0000	manner
++0.0000	understood
++0.0000	compar gene
++0.0000	influenc
++0.0000	kit
++0.0000	properti
++0.0000	end
++0.0000	domain
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 108
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE20235
+
+### False negatives for Validation set: 114
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE23845
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-50-46. Total      6.51 seconds
+
+### Start Time 2021/11/08-15-51-04  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=188   randForSplit=513   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8907    P: 0.8843    R: 0.8923    NPV: 0.9499
+
+['Yes', 'No']
+[[1980  239]
+ [ 259 4535]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.79      0.80       550
+    Valid No       0.92      0.93      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7959    P: 0.8089    R: 0.7927    NPV: 0.9206
+
+['Yes', 'No']
+[[ 436  114]
+ [ 103 1321]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=188, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 188, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0490	cell type
++0.0477	cell
++0.0475	__treat
++0.0352	keyword
++0.0324	type
++0.0312	transcript profil
++0.0279	treatmentprot
++0.0234	__mouse_ag
++0.0233	induc
++0.0209	sort
++0.0190	__cell_lin
++0.0186	cultur
++0.0161	__tumor
++0.0139	overal design
++0.0122	experi overal
++0.0114	inject
++0.0105	musculus treatmentprot
++0.0103	ml
++0.0101	__escel
++0.0097	fac
+
+### Feature weights: lowest 20
++0.0000	core
++0.0000	reagent
++0.0000	fetal
++0.0000	individu
++0.0000	better
++0.0000	particular
++0.0000	immedi
++0.0000	rate
++0.0000	acid
++0.0000	differ
++0.0000	depend
++0.0000	filter
++0.0000	import
++0.0000	transcript regul
++0.0000	use microarray
++0.0000	carri
++0.0000	precursor
++0.0000	technolog
++0.0000	major
++0.0000	fate
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 103
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE20235
+
+### False negatives for Validation set: 114
+GSE22182
+GSE8610
+GSE1635
+GSE19793
+GSE8552
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-51-11. Total      6.37 seconds
+
+### Start Time 2021/11/08-15-51-19  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=454   randForSplit=268   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.90      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8973    P: 0.8868    R: 0.9000    NPV: 0.9534
+
+['Yes', 'No']
+[[1997  222]
+ [ 255 4539]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.81      0.81       550
+    Valid No       0.93      0.93      0.93      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.87      0.87      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8063    P: 0.8099    R: 0.8055    NPV: 0.9250
+
+['Yes', 'No']
+[[ 443  107]
+ [ 104 1320]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=454, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 454, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0514	__treat
++0.0448	cell
++0.0415	cell type
++0.0315	transcript profil
++0.0297	type
++0.0286	keyword
++0.0268	sort
++0.0259	induc
++0.0256	__mouse_ag
++0.0206	cultur
++0.0200	treatmentprot
++0.0185	__tumor
++0.0175	__cell_lin
++0.0131	overal design
++0.0113	__escel
++0.0111	__knockout
++0.0108	inject
++0.0106	fac
++0.0102	experi overal
++0.0102	musculus treatmentprot
+
+### Feature weights: lowest 20
++0.0000	site
++0.0000	cdna
++0.0000	clinic
++0.0000	earli
++0.0000	invitrogen
++0.0000	recent
++0.0000	mainten
++0.0000	scale
++0.0000	kinas
++0.0000	befor
++0.0000	carri
++0.0000	littl
++0.0000	extens
++0.0000	import
++0.0000	inactiv
++0.0000	seri
++0.0000	set
++0.0000	gene encod
++0.0000	mrna
++0.0000	modul
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 104
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 107
+GSE22182
+GSE8610
+GSE1635
+GSE19793
+GSE13208
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-51-26. Total      6.43 seconds
+
+### Start Time 2021/11/08-15-51-36  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=352   randForSplit=976   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.90      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8941    P: 0.8852    R: 0.8963    NPV: 0.9517
+
+['Yes', 'No']
+[[1989  230]
+ [ 258 4536]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.80      0.79       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7958    P: 0.7935    R: 0.7964    NPV: 0.9212
+
+['Yes', 'No']
+[[ 438  112]
+ [ 114 1310]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=352, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 352, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0618	__treat
++0.0503	cell
++0.0384	cell type
++0.0379	transcript profil
++0.0349	type
++0.0326	keyword
++0.0261	cultur
++0.0245	induc
++0.0227	__cell_lin
++0.0222	__mouse_ag
++0.0220	treatmentprot
++0.0201	sort
++0.0184	__tumor
++0.0130	experi overal
++0.0112	fac
++0.0103	infect
++0.0100	musculus treatmentprot
++0.0095	transgen
++0.0094	inject
++0.0094	__knockout
+
+### Feature weights: lowest 20
++0.0000	includ
++0.0000	central
++0.0000	togeth
++0.0000	regul gene
++0.0000	correspond
++0.0000	short
++0.0000	howev
++0.0000	point
++0.0000	properti
++0.0000	gain
++0.0000	downregul
++0.0000	mrna
++0.0000	littl
++0.0000	recombin
++0.0000	capac
++0.0000	acid
++0.0000	demonstr
++0.0000	dye
++0.0000	prepar
++0.0000	replic sourc
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inhibit', 'inhibitor', 'initi', 'inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 114
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 112
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-51-42. Total      6.35 seconds
+
+### Start Time 2021/11/08-15-52-53  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=101   randForSplit=473   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8889    P: 0.8860    R: 0.8896    NPV: 0.9488
+
+['Yes', 'No']
+[[1974  245]
+ [ 254 4540]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.79      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7942    P: 0.8000    R: 0.7927    NPV: 0.9202
+
+['Yes', 'No']
+[[ 436  114]
+ [ 109 1315]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=101, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 101, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0622	cell type
++0.0502	cell
++0.0388	keyword
++0.0357	transcript profil
++0.0347	treatment
++0.0339	type
++0.0262	induc
++0.0229	__cell_lin
++0.0194	sort
++0.0181	cultur
++0.0176	__mouse_ag
++0.0170	treatmentprot
++0.0166	__tumor
++0.0158	treat
++0.0133	fac
++0.0115	__genotyp
++0.0105	transgen
++0.0097	__escel
++0.0096	__knockout
++0.0095	musculus treatmentprot
+
+### Feature weights: lowest 20
++0.0000	transcript regul
++0.0000	patient
++0.0000	rapid
++0.0000	depend
++0.0000	interact
++0.0000	extens
++0.0000	possibl
++0.0000	technolog
++0.0000	establish
++0.0000	littl
++0.0000	conclus
++0.0000	carri
++0.0000	stabil
++0.0000	undergo
++0.0000	filter
++0.0000	insight
++0.0000	differ
++0.0000	origin
++0.0000	subsequ
++0.0000	howev
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 109
+GSE19367
+GSE20969
+GSE21822
+GSE18442
+GSE16377
+
+### False negatives for Validation set: 114
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-52-59. Total      6.43 seconds
+
+### Start Time 2021/11/08-15-53-10  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=96   randForSplit=865   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.87      0.89      0.88      2219
+    Train No       0.95      0.94      0.94      4794
+
+    accuracy                           0.92      7013
+   macro avg       0.91      0.91      0.91      7013
+weighted avg       0.92      0.92      0.92      7013
+
+Train (Yes) F2: 0.8829    P: 0.8744    R: 0.8851    NPV: 0.9465
+
+['Yes', 'No']
+[[1964  255]
+ [ 282 4512]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.79      0.79       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7886    P: 0.8015    R: 0.7855    NPV: 0.9178
+
+['Yes', 'No']
+[[ 432  118]
+ [ 107 1317]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=96, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 96, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0616	cell type
++0.0434	cell
++0.0389	transcript profil
++0.0389	treat
++0.0346	keyword
++0.0307	type
++0.0253	treatmentprot
++0.0241	treatment
++0.0223	__mouse_ag
++0.0221	induc
++0.0221	__cell_lin
++0.0200	__tumor
++0.0197	sort
++0.0179	cultur
++0.0143	musculus treatmentprot
++0.0105	overal design
++0.0101	infect
++0.0098	__escel
++0.0097	experi overal
++0.0089	__knockout
+
+### Feature weights: lowest 20
++0.0000	short
++0.0000	drug
++0.0000	compar gene
++0.0000	translat
++0.0000	perform
++0.0000	investig
++0.0000	splice
++0.0000	manner
++0.0000	histon
++0.0000	surfac
++0.0000	pair
++0.0000	act
++0.0000	standard
++0.0000	recruit
++0.0000	recent
++0.0000	point
++0.0000	accord
++0.0000	suggest
++0.0000	site
++0.0000	origin
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 107
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 118
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-53-16. Total      6.52 seconds
+
+### Start Time 2021/11/08-15-53-23  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=852   randForSplit=654   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8901    P: 0.8797    R: 0.8927    NPV: 0.9500
+
+['Yes', 'No']
+[[1981  238]
+ [ 271 4523]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.81      0.80      0.80       550
+    Valid No       0.92      0.93      0.93      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.87      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8005    P: 0.8100    R: 0.7982    NPV: 0.9225
+
+['Yes', 'No']
+[[ 439  111]
+ [ 103 1321]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=852, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 852, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0577	cell
++0.0428	cell type
++0.0390	treat
++0.0327	transcript profil
++0.0319	keyword
++0.0278	__mouse_ag
++0.0257	type
++0.0256	induc
++0.0241	__cell_lin
++0.0232	__tumor
++0.0228	treatmentprot
++0.0206	sort
++0.0205	treatment
++0.0161	cultur
++0.0124	musculus treatmentprot
++0.0117	experi overal
++0.0111	ml
++0.0103	__genotyp
++0.0099	infect
++0.0096	transgen
+
+### Feature weights: lowest 20
++0.0000	overlap
++0.0000	duplic
++0.0000	exhibit
++0.0000	reagent
++0.0000	label
++0.0000	sinc
++0.0000	na
++0.0000	common
++0.0000	amplifi
++0.0000	set
++0.0000	littl
++0.0000	technolog
++0.0000	read
++0.0000	sever
++0.0000	conclus
++0.0000	insight
++0.0000	cell cycl
++0.0000	ligand
++0.0000	bind protein
++0.0000	event
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 103
+GSE19367
+GSE20969
+GSE21822
+GSE18442
+GSE16377
+
+### False negatives for Validation set: 111
+GSE22182
+GSE8610
+GSE22297
+GSE1635
+GSE23845
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-53-30. Total      6.56 seconds
+
+### Start Time 2021/11/08-15-53-40  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/fv_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=667   randForSplit=679   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.91      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8877    P: 0.8752    R: 0.8909    NPV: 0.9491
+
+['Yes', 'No']
+[[1977  242]
+ [ 282 4512]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.80      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8009    P: 0.8044    R: 0.8000    NPV: 0.9229
+
+['Yes', 'No']
+[[ 440  110]
+ [ 107 1317]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=667, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 667, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0527	cell
++0.0446	cell type
++0.0382	type
++0.0373	keyword
++0.0331	treatment
++0.0268	transcript profil
++0.0266	treat
++0.0262	induc
++0.0240	treatmentprot
++0.0235	sort
++0.0214	__tumor
++0.0184	__mouse_ag
++0.0180	__cell_lin
++0.0143	cultur
++0.0133	musculus treatmentprot
++0.0118	fac
++0.0115	ml
++0.0112	__escel
++0.0108	overal design
++0.0103	inject
+
+### Feature weights: lowest 20
++0.0000	evid
++0.0000	origin
++0.0000	generat
++0.0000	transcript factor
++0.0000	downstream
++0.0000	endogen
++0.0000	__mice genom
++0.0000	fate
++0.0000	encod
++0.0000	strand
++0.0000	abil
++0.0000	ligand
++0.0000	fl
++0.0000	character
++0.0000	regul gene
++0.0000	despit
++0.0000	differenti express
++0.0000	shown
++0.0000	conclus
++0.0000	befor
+
+### Vectorizer:   Number of Features: 991
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp control']
+
+Middle 10 features: ['inject', 'injuri', 'insight', 'instruct', 'insulin', 'integr', 'interact', 'intestin', 'intraperiton', 'investig']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week gender', 'week old', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 107
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE18442
+
+### False negatives for Validation set: 110
+GSE22182
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-53-47. Total      6.68 seconds
+
+### Start Time 2021/11/08-15-55-07  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=587   randForSplit=774   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8881    P: 0.8805    R: 0.8900    NPV: 0.9488
+
+['Yes', 'No']
+[[1975  244]
+ [ 268 4526]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.81      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8035    P: 0.7886    R: 0.8073    NPV: 0.9249
+
+['Yes', 'No']
+[[ 444  106]
+ [ 119 1305]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=587, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 587, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0543	cell
++0.0491	__treat
++0.0383	transcript profil
++0.0346	keyword
++0.0299	cultur
++0.0298	sort
++0.0286	__mouse_ag
++0.0245	induc
++0.0232	__cell_lin
++0.0217	__tumor
++0.0177	ml
++0.0142	fac
++0.0139	__escel
++0.0137	inject
++0.0127	infect
++0.0118	overal design
++0.0117	__genotyp __mice
++0.0105	__mef
++0.0105	__mice __escel
++0.0102	experi overal
+
+### Feature weights: lowest 20
++0.0000	reduc
++0.0000	analysi perform
++0.0000	encod
++0.0000	event
++0.0000	analysi reveal
++0.0000	technic
++0.0000	shown
++0.0000	addit
++0.0000	improv
++0.0000	clinic
++0.0000	altern
++0.0000	known
++0.0000	ligand
++0.0000	provid
++0.0000	higher
++0.0000	precursor
++0.0000	screen
++0.0000	fate
++0.0000	buffer
++0.0000	carri
+
+### Vectorizer:   Number of Features: 944
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 119
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 106
+GSE8610
+GSE19793
+GSE4011
+GSE1875
+GSE21749
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-55-13. Total      5.96 seconds
+
+### Start Time 2021/11/08-15-55-21  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=846   randForSplit=858   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.90      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8959    P: 0.8854    R: 0.8986    NPV: 0.9527
+
+['Yes', 'No']
+[[1994  225]
+ [ 258 4536]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.81      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8020    P: 0.7883    R: 0.8055    NPV: 0.9242
+
+['Yes', 'No']
+[[ 443  107]
+ [ 119 1305]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=846, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 846, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0449	__treat
++0.0413	transcript profil
++0.0385	cell
++0.0348	keyword
++0.0347	__mouse_ag
++0.0302	induc
++0.0281	sort
++0.0276	cultur
++0.0196	__cell_lin
++0.0186	__tumor
++0.0152	overal design
++0.0151	infect
++0.0150	__escel
++0.0127	fac
++0.0125	ml
++0.0118	inject
++0.0108	profil __mice
++0.0107	__genotyp __mice
++0.0098	__mef
++0.0094	transgen
+
+### Feature weights: lowest 20
++0.0001	complet
++0.0001	cell cycl
++0.0001	core
++0.0001	fraction
++0.0001	natur
++0.0001	therefor
++0.0001	short
++0.0001	conclus
++0.0001	scale
++0.0001	approach
++0.0000	conduct
++0.0000	splice
++0.0000	rate
++0.0000	cdna
++0.0000	play
++0.0000	analysi reveal
++0.0000	contribut
++0.0000	protein
++0.0000	clinic
++0.0000	higher
+
+### Vectorizer:   Number of Features: 944
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 119
+GSE19367
+GSE20969
+GSE21822
+GSE24219
+GSE24190
+
+### False negatives for Validation set: 107
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE17141
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-55-27. Total      5.94 seconds
+
+### Start Time 2021/11/08-15-55-33  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=769   randForSplit=925   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8920    P: 0.8837    R: 0.8941    NPV: 0.9507
+
+['Yes', 'No']
+[[1984  235]
+ [ 261 4533]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.80      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8004    P: 0.7946    R: 0.8018    NPV: 0.9232
+
+['Yes', 'No']
+[[ 441  109]
+ [ 114 1310]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=769, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 769, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0532	__treat
++0.0435	transcript profil
++0.0427	cell
++0.0331	induc
++0.0308	keyword
++0.0293	cultur
++0.0278	__mouse_ag
++0.0264	sort
++0.0260	__tumor
++0.0212	__cell_lin
++0.0165	__escel
++0.0158	fac
++0.0132	infect
++0.0118	ml
++0.0117	overal design
++0.0117	experi overal
++0.0110	__knockout
++0.0105	__genotyp
++0.0096	profil __mice
++0.0096	__genotyp __mice
+
+### Feature weights: lowest 20
++0.0001	describ
++0.0001	insight
++0.0001	strong
++0.0001	member
++0.0001	prepar
++0.0000	conclus
++0.0000	densiti
++0.0000	extens
++0.0000	carri
++0.0000	fl
++0.0000	kinas
++0.0000	larg
++0.0000	compar
++0.0000	strand
++0.0000	site
++0.0000	screen
++0.0000	analysi perform
++0.0000	associ
++0.0000	inactiv
++0.0000	apoptosi
+
+### Vectorizer:   Number of Features: 944
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 114
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 109
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-55-38. Total      5.92 seconds
+
+### Start Time 2021/11/08-15-55-44  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=154   randForSplit=204   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.87      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8908    P: 0.8745    R: 0.8950    NPV: 0.9509
+
+['Yes', 'No']
+[[1986  233]
+ [ 285 4509]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.80      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.86      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7996    P: 0.7837    R: 0.8036    NPV: 0.9234
+
+['Yes', 'No']
+[[ 442  108]
+ [ 122 1302]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=154, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 154, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0440	__treat
++0.0431	cell
++0.0352	induc
++0.0352	transcript profil
++0.0341	keyword
++0.0304	sort
++0.0269	__mouse_ag
++0.0243	cultur
++0.0239	__tumor
++0.0208	__cell_lin
++0.0195	ml
++0.0160	infect
++0.0158	__escel
++0.0135	fac
++0.0132	__knockout
++0.0129	experi overal
++0.0128	profil __mice
++0.0106	__mef
++0.0102	gfp
++0.0099	inject
+
+### Feature weights: lowest 20
++0.0001	involv
++0.0001	buffer
++0.0001	includ
++0.0001	prolifer
++0.0001	moreov
++0.0001	alpha
++0.0001	downstream
++0.0001	lead
++0.0000	splice
++0.0000	unknown
++0.0000	natur
++0.0000	undergo
++0.0000	common
++0.0000	wherea
++0.0000	applic
++0.0000	precursor
++0.0000	therefor
++0.0000	fate
++0.0000	drug
++0.0000	amplifi
+
+### Vectorizer:   Number of Features: 944
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 122
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 108
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-55-50. Total      5.93 seconds
+
+### Start Time 2021/11/08-15-56-49  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=524   randForSplit=603   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8896    P: 0.8788    R: 0.8923    NPV: 0.9498
+
+['Yes', 'No']
+[[1980  239]
+ [ 273 4521]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.80      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8010    P: 0.7907    R: 0.8036    NPV: 0.9237
+
+['Yes', 'No']
+[[ 442  108]
+ [ 117 1307]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=524, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 524, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0583	cell
++0.0442	transcript profil
++0.0391	keyword
++0.0372	treat
++0.0353	cultur
++0.0299	induc
++0.0280	sort
++0.0259	__mouse_ag
++0.0217	__cell_lin
++0.0214	__tumor
++0.0155	treatment
++0.0125	__escel
++0.0123	inject
++0.0118	infect
++0.0110	experi overal
++0.0110	gfp
++0.0109	ml
++0.0107	transgen
++0.0103	cd4
++0.0094	stem
+
+### Feature weights: lowest 20
++0.0000	cortic
++0.0000	downstream
++0.0000	rapid
++0.0000	translat
++0.0000	buffer
++0.0000	loss
++0.0000	coordin
++0.0000	complet
++0.0000	rate
++0.0000	amplifi
++0.0000	clinic
++0.0000	mir
++0.0000	cell differenti
++0.0000	technolog
++0.0000	togeth
++0.0000	event
++0.0000	rna prepar
++0.0000	basi
++0.0000	new
++0.0000	suggest
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 117
+GSE19367
+GSE20969
+GSE24492
+GSE21822
+GSE24190
+
+### False negatives for Validation set: 108
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE17141
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-56-55. Total      5.99 seconds
+
+### Start Time 2021/11/08-15-57-06  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=451   randForSplit=949   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.87      0.90      0.89      2219
+    Train No       0.96      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8984    P: 0.8749    R: 0.9045    NPV: 0.9551
+
+['Yes', 'No']
+[[2007  212]
+ [ 287 4507]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.77      0.80      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.85      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7948    P: 0.7746    R: 0.8000    NPV: 0.9218
+
+['Yes', 'No']
+[[ 440  110]
+ [ 128 1296]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=451, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 451, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0611	cell
++0.0486	transcript profil
++0.0355	treat
++0.0288	keyword
++0.0282	__mouse_ag
++0.0274	sort
++0.0266	cultur
++0.0264	induc
++0.0234	__tumor
++0.0233	__cell_lin
++0.0217	treatment
++0.0151	__escel
++0.0139	fac
++0.0117	overal design
++0.0116	__genotyp
++0.0111	infect
++0.0101	ml
++0.0100	inject
++0.0097	gfp
++0.0096	__mef
+
+### Feature weights: lowest 20
++0.0001	receptor
++0.0001	recombin
++0.0000	applic
++0.0000	contrast
++0.0000	qualiti
++0.0000	wnt
++0.0000	despit
++0.0000	pcr
++0.0000	hybrid affymetrix
++0.0000	event
++0.0000	fraction
++0.0000	therefor
++0.0000	origin
++0.0000	densiti
++0.0000	suggest
++0.0000	balb
++0.0000	potenti
++0.0000	involv
++0.0000	demonstr
++0.0000	trigger
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 128
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 110
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE17141
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-57-12. Total      5.98 seconds
+
+### Start Time 2021/11/08-15-57-19  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=880   randForSplit=608   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8882    P: 0.8790    R: 0.8905    NPV: 0.9490
+
+['Yes', 'No']
+[[1976  243]
+ [ 272 4522]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.81      0.80       550
+    Valid No       0.93      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8062    P: 0.7946    R: 0.8091    NPV: 0.9257
+
+['Yes', 'No']
+[[ 445  105]
+ [ 115 1309]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=880, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 880, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0502	cell
++0.0362	transcript profil
++0.0324	treat
++0.0321	cultur
++0.0315	induc
++0.0310	keyword
++0.0278	sort
++0.0258	__mouse_ag
++0.0250	__tumor
++0.0228	__cell_lin
++0.0201	treatment
++0.0172	fac
++0.0155	__escel
++0.0151	infect
++0.0140	overal design
++0.0123	ml
++0.0112	__genotyp __mice
++0.0110	inject
++0.0102	bone marrow
++0.0097	cd4
+
+### Feature weights: lowest 20
++0.0001	densiti
++0.0001	cellular
++0.0000	mrnas
++0.0000	strong
++0.0000	step
++0.0000	littl
++0.0000	coordin
++0.0000	origin
++0.0000	rate
++0.0000	versus
++0.0000	cell popul
++0.0000	trizol
++0.0000	rneasi
++0.0000	suggest
++0.0000	cell cycl
++0.0000	action
++0.0000	cell differenti
++0.0000	occur
++0.0000	event
++0.0000	dye
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 115
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 105
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-57-25. Total      5.97 seconds
+
+### Start Time 2021/11/08-15-57-32  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=333   randForSplit=504   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.91      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8866    P: 0.8765    R: 0.8891    NPV: 0.9483
+
+['Yes', 'No']
+[[1973  246]
+ [ 278 4516]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.81      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.86      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.8005    P: 0.7813    R: 0.8055    NPV: 0.9240
+
+['Yes', 'No']
+[[ 443  107]
+ [ 124 1300]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=333, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 333, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0573	cell
++0.0376	keyword
++0.0369	treat
++0.0331	transcript profil
++0.0315	cultur
++0.0295	induc
++0.0293	__mouse_ag
++0.0242	sort
++0.0229	__tumor
++0.0193	__cell_lin
++0.0185	treatment
++0.0160	__escel
++0.0146	infect
++0.0139	experi overal
++0.0119	overal design
++0.0118	fac
++0.0100	inject
++0.0099	__genotyp __mice
++0.0096	gfp
++0.0095	ml
+
+### Feature weights: lowest 20
++0.0000	applic
++0.0000	transcript factor
++0.0000	therapeut
++0.0000	order
++0.0000	subsequ
++0.0000	buffer
++0.0000	creat
++0.0000	better
++0.0000	prolifer
++0.0000	establish
++0.0000	cell cycl
++0.0000	signal pathway
++0.0000	reduc
++0.0000	apoptosi
++0.0000	femal total
++0.0000	act
++0.0000	accord
++0.0000	phase
++0.0000	rneasi
++0.0000	rate
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 124
+GSE19367
+GSE20969
+GSE24492
+GSE21822
+GSE24190
+
+### False negatives for Validation set: 107
+GSE8610
+GSE19079
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-57-38. Total      5.97 seconds
+
+### Start Time 2021/11/08-15-58-37  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=519   randForSplit=521   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8904    P: 0.8866    R: 0.8914    NPV: 0.9496
+
+['Yes', 'No']
+[[1978  241]
+ [ 253 4541]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.80      0.80      0.80       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8006    P: 0.8029    R: 0.8000    NPV: 0.9229
+
+['Yes', 'No']
+[[ 440  110]
+ [ 108 1316]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=519, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 519, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0492	__treat
++0.0436	cell
++0.0412	keyword
++0.0334	induc
++0.0297	transcript profil
++0.0285	sort
++0.0255	__cell_lin
++0.0251	cultur
++0.0216	__mouse_ag
++0.0206	__tumor
++0.0168	__escel
++0.0155	ml
++0.0146	infect
++0.0144	fac
++0.0144	experi overal
++0.0124	__knockout
++0.0107	inject
++0.0103	overal design
++0.0103	__mice __escel
++0.0099	transgen
+
+### Feature weights: lowest 20
++0.0001	correl
++0.0001	use microarray
++0.0001	fraction
++0.0001	buffer
++0.0001	togeth
++0.0001	densiti
++0.0001	precursor
++0.0001	multipl
++0.0001	acid
++0.0000	gain
++0.0000	oligonucleotid
++0.0000	lipid
++0.0000	accord manufactur
++0.0000	essenti
++0.0000	short
++0.0000	pre
++0.0000	file
++0.0000	larg
++0.0000	conclus
++0.0000	associ
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['individu', 'induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 108
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 110
+GSE8610
+GSE19079
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-58-43. Total      5.98 seconds
+
+### Start Time 2021/11/08-15-58-49  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=51   randForSplit=771   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.90      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8946    P: 0.8876    R: 0.8963    NPV: 0.9518
+
+['Yes', 'No']
+[[1989  230]
+ [ 252 4542]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.82      0.80       550
+    Valid No       0.93      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.87      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.8113    P: 0.7919    R: 0.8164    NPV: 0.9282
+
+['Yes', 'No']
+[[ 449  101]
+ [ 118 1306]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=51, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 51, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0526	cell
++0.0462	__treat
++0.0340	keyword
++0.0329	sort
++0.0305	transcript profil
++0.0277	induc
++0.0263	cultur
++0.0259	__mouse_ag
++0.0241	__tumor
++0.0179	__cell_lin
++0.0149	__knockout
++0.0147	ml
++0.0133	fac
++0.0123	infect
++0.0113	__mef
++0.0112	__escel
++0.0102	__genotyp
++0.0101	medium
++0.0101	gfp
++0.0101	experi overal
+
+### Feature weights: lowest 20
++0.0001	encod
++0.0001	ligand
++0.0001	screen
++0.0001	scan
++0.0001	respect
++0.0001	prolifer
++0.0000	consist
++0.0000	clinic
++0.0000	limit
++0.0000	cdna
++0.0000	central
++0.0000	cell cell
++0.0000	technolog
++0.0000	therapi
++0.0000	robust
++0.0000	mir
++0.0000	onli
++0.0000	short
++0.0000	modul
++0.0000	phase
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['individu', 'induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 118
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 101
+GSE8610
+GSE1635
+GSE19793
+GSE4011
+GSE1875
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-58-55. Total      5.95 seconds
+
+### Start Time 2021/11/08-15-59-01  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=992   randForSplit=280   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.89      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8887    P: 0.8852    R: 0.8896    NPV: 0.9488
+
+['Yes', 'No']
+[[1974  245]
+ [ 256 4538]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.79      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.85      0.85      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7904    P: 0.7814    R: 0.7927    NPV: 0.9195
+
+['Yes', 'No']
+[[ 436  114]
+ [ 122 1302]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=992, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 992, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0463	__treat
++0.0458	cell
++0.0403	transcript profil
++0.0393	keyword
++0.0306	induc
++0.0276	sort
++0.0242	__mouse_ag
++0.0236	__tumor
++0.0208	cultur
++0.0187	__cell_lin
++0.0155	__knockout
++0.0148	infect
++0.0145	__escel
++0.0132	overal design
++0.0126	ml
++0.0123	inject
++0.0115	__mef
++0.0108	profil __mice
++0.0100	hour
++0.0099	__genotyp __mice
+
+### Feature weights: lowest 20
++0.0001	duplic
++0.0001	__mice genom
++0.0001	contribut
++0.0001	current
++0.0001	defin
++0.0001	use affymetrix
++0.0001	creat
++0.0001	recombin
++0.0001	establish
++0.0000	affect
++0.0000	sensit
++0.0000	clinic
++0.0000	cdna
++0.0000	ca
++0.0000	unknown
++0.0000	analysi use
++0.0000	seri
++0.0000	prepar
++0.0000	qiagen
++0.0000	apoptosi
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['individu', 'induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 122
+GSE19367
+GSE20969
+GSE24492
+GSE21822
+GSE24190
+
+### False negatives for Validation set: 114
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-59-07. Total      5.86 seconds
+
+### Start Time 2021/11/08-15-59-13  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_all/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=386   randForSplit=145   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.95      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8908    P: 0.8832    R: 0.8927    NPV: 0.9501
+
+['Yes', 'No']
+[[1981  238]
+ [ 262 4532]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.80      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.85      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7966    P: 0.7764    R: 0.8018    NPV: 0.9225
+
+['Yes', 'No']
+[[ 441  109]
+ [ 127 1297]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=386, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 386, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0520	cell
++0.0480	__treat
++0.0353	induc
++0.0350	transcript profil
++0.0322	cultur
++0.0281	keyword
++0.0266	__mouse_ag
++0.0258	sort
++0.0250	__tumor
++0.0183	fac
++0.0177	__cell_lin
++0.0156	infect
++0.0142	__escel
++0.0140	ml
++0.0131	experi overal
++0.0119	inject
++0.0113	__knockout
++0.0108	overal design
++0.0106	__mef
++0.0104	bone marrow
+
+### Feature weights: lowest 20
++0.0000	cell popul
++0.0000	despit
++0.0000	__mice sacrif
++0.0000	fraction
++0.0000	major
++0.0000	import
++0.0000	correl
++0.0000	elucid
++0.0000	site
++0.0000	oligonucleotid
++0.0000	precursor
++0.0000	applic
++0.0000	overlap
++0.0000	befor
++0.0000	display
++0.0000	rate
++0.0000	technolog
++0.0000	dye
++0.0000	hybrid affymetrix
++0.0000	buffer
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['individu', 'induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 127
+GSE19367
+GSE20969
+GSE21822
+GSE24219
+GSE24190
+
+### False negatives for Validation set: 109
+GSE8610
+GSE23845
+GSE19793
+GSE4011
+GSE1875
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-15-59-19. Total      6.00 seconds
+
+### Start Time 2021/11/08-16-00-16  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=476   randForSplit=318   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8903    P: 0.8804    R: 0.8927    NPV: 0.9500
+
+['Yes', 'No']
+[[1981  238]
+ [ 269 4525]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.79      0.79       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7943    P: 0.7931    R: 0.7945    NPV: 0.9206
+
+['Yes', 'No']
+[[ 437  113]
+ [ 114 1310]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=476, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 476, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0502	cell
++0.0372	keyword
++0.0334	induc
++0.0329	treat
++0.0327	transcript profil
++0.0298	cultur
++0.0261	sort
++0.0254	__mouse_ag
++0.0233	__tumor
++0.0225	__cell_lin
++0.0166	__escel
++0.0161	fac
++0.0156	infect
++0.0147	treatment
++0.0135	overal design
++0.0133	inject
++0.0131	ml
++0.0114	profil __mice
++0.0108	__knockout
++0.0104	__mef
+
+### Feature weights: lowest 20
++0.0001	translat
++0.0001	dysregul
++0.0000	applic
++0.0000	facilit
++0.0000	point
++0.0000	precursor
++0.0000	oligonucleotid
++0.0000	day __mice
++0.0000	contribut
++0.0000	densiti
++0.0000	cellular
++0.0000	ligand
++0.0000	screen
++0.0000	undergo
++0.0000	buffer
++0.0000	kit
++0.0000	ident
++0.0000	al
++0.0000	divers
++0.0000	amplifi
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 114
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 113
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE17141
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-16-00-22. Total      6.02 seconds
+
+### Start Time 2021/11/08-16-00-28  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=568   randForSplit=597   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.90      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8964    P: 0.8825    R: 0.9000    NPV: 0.9533
+
+['Yes', 'No']
+[[1997  222]
+ [ 266 4528]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.81      0.80       550
+    Valid No       0.93      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.86      1974
+weighted avg       0.89      0.88      0.89      1974
+
+Valid (Yes) F2: 0.8063    P: 0.7815    R: 0.8127    NPV: 0.9265
+
+['Yes', 'No']
+[[ 447  103]
+ [ 125 1299]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=568, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 568, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0652	cell
++0.0378	treat
++0.0331	keyword
++0.0325	transcript profil
++0.0302	induc
++0.0263	__mouse_ag
++0.0249	cultur
++0.0235	sort
++0.0224	__tumor
++0.0220	__cell_lin
++0.0154	__escel
++0.0142	experi overal
++0.0139	treatment
++0.0137	infect
++0.0135	profil __mice
++0.0132	fac
++0.0125	__genotyp
++0.0104	gfp
++0.0100	inject
++0.0100	ml
+
+### Feature weights: lowest 20
++0.0001	previous
++0.0001	time point
++0.0001	unclear
++0.0001	inactiv
++0.0001	contain
++0.0001	softwar
++0.0001	poor
++0.0001	cell cycl
++0.0001	genom array
++0.0000	exhibit
++0.0000	larg
++0.0000	microarray data
++0.0000	analyz
++0.0000	elucid
++0.0000	involv
++0.0000	gene encod
++0.0000	splice
++0.0000	buffer
++0.0000	mrnas
++0.0000	gain
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 125
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 103
+GSE8610
+GSE1635
+GSE19793
+GSE17141
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-16-00-34. Total      5.93 seconds
+
+### Start Time 2021/11/08-16-00-40  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=275   randForSplit=471   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.90      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8962    P: 0.8832    R: 0.8995    NPV: 0.9531
+
+['Yes', 'No']
+[[1996  223]
+ [ 264 4530]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.80      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.86      0.85      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7975    P: 0.7805    R: 0.8018    NPV: 0.9226
+
+['Yes', 'No']
+[[ 441  109]
+ [ 124 1300]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=275, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 275, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0549	cell
++0.0415	transcript profil
++0.0403	treat
++0.0358	keyword
++0.0269	__mouse_ag
++0.0267	cultur
++0.0266	induc
++0.0258	sort
++0.0216	__tumor
++0.0174	fac
++0.0163	__cell_lin
++0.0161	overal design
++0.0160	__escel
++0.0148	infect
++0.0137	ml
++0.0129	inject
++0.0110	treatment
++0.0108	__genotyp
++0.0105	__knockout
++0.0102	marrow
+
+### Feature weights: lowest 20
++0.0001	pre
++0.0001	howev
++0.0001	investig
++0.0001	process
++0.0001	result
++0.0001	prepar
++0.0001	inflamm
++0.0001	downstream
++0.0000	patholog
++0.0000	similar
++0.0000	receptor
++0.0000	precursor
++0.0000	invitrogen
++0.0000	remain
++0.0000	gene encod
++0.0000	oligonucleotid
++0.0000	analyz use
++0.0000	larg
++0.0000	strong
++0.0000	rate
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 124
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 109
+GSE8610
+GSE1635
+GSE23845
+GSE19793
+GSE17141
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-16-00-46. Total      5.93 seconds
+
+### Start Time 2021/11/08-16-00-54  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=837   randForSplit=585   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.88      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.91      0.92      0.91      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8860    P: 0.8787    R: 0.8878    NPV: 0.9478
+
+['Yes', 'No']
+[[1970  249]
+ [ 272 4522]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.79      0.80      0.79       550
+    Valid No       0.92      0.92      0.92      1424
+
+    accuracy                           0.89      1974
+   macro avg       0.86      0.86      0.86      1974
+weighted avg       0.89      0.89      0.89      1974
+
+Valid (Yes) F2: 0.7967    P: 0.7910    R: 0.7982    NPV: 0.9218
+
+['Yes', 'No']
+[[ 439  111]
+ [ 116 1308]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=837, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 837, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0451	cell
++0.0397	keyword
++0.0385	transcript profil
++0.0365	induc
++0.0360	treat
++0.0291	cultur
++0.0266	sort
++0.0255	__tumor
++0.0254	__mouse_ag
++0.0248	__cell_lin
++0.0154	infect
++0.0137	__escel
++0.0135	fac
++0.0134	experi overal
++0.0129	treatment
++0.0121	__genotyp __mice
++0.0117	ml
++0.0110	__mef
++0.0106	gfp
++0.0104	inject
+
+### Feature weights: lowest 20
++0.0001	wnt
++0.0001	coordin
++0.0001	use __mice
++0.0001	recombin
++0.0001	undergo
++0.0001	critic
++0.0000	day __mice
++0.0000	strand
++0.0000	signal pathway
++0.0000	report
++0.0000	unclear
++0.0000	propos
++0.0000	subsequ
++0.0000	ligand
++0.0000	util
++0.0000	contain
++0.0000	scan
++0.0000	rate
++0.0000	carri
++0.0000	analysi perform
+
+### Vectorizer:   Number of Features: 945
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi', 'inject', 'injuri']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 116
+GSE19367
+GSE20969
+GSE24492
+GSE21822
+GSE24219
+
+### False negatives for Validation set: 111
+GSE8610
+GSE1635
+GSE19793
+GSE17141
+GSE4011
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+ValidationSplit: 0.20
+### End Time 2021/11/08-16-00-59. Total      5.90 seconds
+
+### Start Time 2021/11/09-13-52-33  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/valSet.txt
+Test data path:       /Users/jak/work/gxdhtclassifier/Train/rawSamples/data/v_untreat/P_all/testSet.txt
+Random Seeds:	randForClassifier=198   randForSplit=908   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.88      0.89      0.89      2219
+    Train No       0.95      0.94      0.95      4794
+
+    accuracy                           0.93      7013
+   macro avg       0.92      0.92      0.92      7013
+weighted avg       0.93      0.93      0.93      7013
+
+Train (Yes) F2: 0.8894    P: 0.8815    R: 0.8914    NPV: 0.9495
+
+['Yes', 'No']
+[[1978  241]
+ [ 266 4528]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.78      0.79      0.79       550
+    Valid No       0.92      0.91      0.92      1424
+
+    accuracy                           0.88      1974
+   macro avg       0.85      0.85      0.85      1974
+weighted avg       0.88      0.88      0.88      1974
+
+Valid (Yes) F2: 0.7889    P: 0.7810    R: 0.7909    NPV: 0.9188
+
+['Yes', 'No']
+[[ 435  115]
+ [ 122 1302]]
+
+### Metrics: Test Set
+              precision    recall  f1-score   support
+
+   Test  Yes       0.79      0.78      0.78       426
+    Test  No       0.91      0.92      0.92      1081
+
+    accuracy                           0.88      1507
+   macro avg       0.85      0.85      0.85      1507
+weighted avg       0.88      0.88      0.88      1507
+
+Test  (Yes) F2: 0.7796    P: 0.7900    R: 0.7770    NPV: 0.9127
+
+['Yes', 'No']
+[[331  95]
+ [ 88 993]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.02
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.02, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.02, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=198, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 198, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0562	cell
++0.0479	__treat
++0.0409	transcript profil
++0.0337	keyword
++0.0304	induc
++0.0297	cultur
++0.0253	sort
++0.0242	__mouse_ag
++0.0237	__cell_lin
++0.0225	__tumor
++0.0216	__escel
++0.0133	ml
++0.0126	inject
++0.0117	experi overal
++0.0117	cd4
++0.0116	fac
++0.0107	overal design
++0.0106	infect
++0.0106	__genotyp
++0.0100	__mef
+
+### Feature weights: lowest 20
++0.0001	ligand
++0.0001	differ
++0.0001	demonstr
++0.0001	self renew
++0.0001	extens
++0.0001	compar
++0.0001	altern
++0.0000	seri
++0.0000	cre
++0.0000	various
++0.0000	caus
++0.0000	origin
++0.0000	event
++0.0000	fate
++0.0000	work
++0.0000	conduct
++0.0000	famili
++0.0000	better
++0.0000	sinc
++0.0000	accord manufactur
+
+### Vectorizer:   Number of Features: 944
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin cell', '__escel', '__escel __escel', '__genotyp', '__genotyp __genotyp', '__genotyp __knockout', '__genotyp __mice', '__genotyp c57bl']
+
+Middle 10 features: ['induc', 'induct', 'infect', 'inflamm', 'inflammatori', 'influenc', 'inform', 'inhibit', 'inhibitor', 'initi']
+
+Last 10 features: ['week', 'week __mouse_ag', 'week old', 'week week', 'weight', 'wherea', 'wide', 'wnt', 'work', 'young']
+
+### False positives for Validation set: 122
+GSE19367
+GSE20969
+GSE21822
+GSE24190
+GSE22473
+
+### False negatives for Validation set: 115
+GSE8610
+GSE19079
+GSE1635
+GSE23845
+GSE19793
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7013         2219         4794          32%
+Validation Set      :         1974          550         1424          28%
+Test Set            :         1507          426         1081          28%
+ValidationSplit: 0.20
+### End Time 2021/11/09-13-52-42. Total      9.81 seconds
+
