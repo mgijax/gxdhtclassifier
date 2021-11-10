@@ -7,6 +7,8 @@
             replacing non-ascii chars with ' '
             replacing FIELDSEP and RECORDSEP chars in the doc text w/ ' '
 
+            To run automated tests: python sdGetKnownSamples.py test
+
   Outputs:      Delimited file to stdout
                 See htMLsample.ClassifiedSample for output format
 '''
@@ -197,6 +199,12 @@ class RawSampleTextManager (object):
     DOES: getRawSampleText( for an experiment )
     """
     def __init__(self, rawSampleTblName):
+        """
+            rawSampletTblName needs to be a table in the db with columns:
+                '_experiment_key'       - the key of a ht experiment
+                'key'                   - field name describing a raw sample
+                'value'                 - value of the field
+        """
         self.experimentDict = {}        # experimentDict[exp_key] is a
                                         #   set of (field,value) pairs
                                         #   from the samples of that experiment
@@ -257,12 +265,19 @@ class RawSampleTextManager (object):
     treatmentFieldTransformer = TextTransformer([treatmentFieldMapping])
 
     def fieldValue2Text(self, f, v):
-        return self.fieldValue2Text_justValue(f,v)
+        """ Return the formated field-value text"""
+        # Tried various ideas.
+        # See https://mgi-jira.atlassian.net/browse/YAKS-306
+        return self.fieldValue2Text_v_untreat(f,v)      # using this method
+
+        #return self.fieldValue2Text_fv_untreat(f,v)
+        #return self.fieldValue2Text_fv_nountreat(f,v)
+        #return self.fieldValue2Text_v_nountreat(f,v)
 
     #-----------------------------------
     # several different ways to format the field:value text to try
 
-    def fieldValue2Text_1(self, f, v):
+    def fieldValue2Text_fv_untreat(self, f, v):
         """
         Return formated field-value text for the given field,value pair
             Return '' for "Not Applicable" variations for any field.
@@ -282,7 +297,19 @@ class RawSampleTextManager (object):
             return '%s : %s;' % (f, v)
     #-----------------------------------
 
-    def fieldValue2Text_justValue(self, f, v):
+    def fieldValue2Text_fv_nountreat(self, f, v):
+        """
+        Return formated field-value text for the given field,value pair
+            Return '' for "Not Applicable" variations for any field.
+            Else return 'field : value;'
+        """
+        if self.NaTransformer.transformText(v) == '':
+            return ''
+        else:
+            return '%s : %s;' % (f, v)
+    #-----------------------------------
+
+    def fieldValue2Text_v_nountreat(self, f, v):
         """
         Return formated field-value text for the given field,value pair
             Just return the value.
@@ -290,17 +317,14 @@ class RawSampleTextManager (object):
         return '%s;' % (v)
     #-----------------------------------
 
-    def fieldValue2Text_2(self, f, v):
+    def fieldValue2Text_v_untreat(self, f, v):
         """
         Return formated field-value text for the given field,value pair
-            Return '' for "Not Applicable" variations for any field.
             Return '__untreated;' for 'treatment' and 'treatmentProt' fields
                 whose value means "not treated"
             Else return 'value;'
         """
-        if self.NaTransformer.transformText(v) == '':
-            return ''
-        elif (f == 'treatmentProt' and
+        if (f == 'treatmentProt' and
                 self.treatmentProtFieldTransformer.transformText(v) == ''):
             return '__untreated;'
         elif (f == 'treatment' and
@@ -333,51 +357,80 @@ class RawSampleTextManagerTests(unittest.TestCase):
     def tearDownClass(cls):
         print(cls.rstm.getReport())
 
-    def test_fieldValue2Text_NA(self):
+    def test_fieldValue2Text_fv_untreat_NA(self):
         r = self.rstm
         na = ''                 # expected value for a recognized "NA" value
-        self.assertEqual(r.fieldValue2Text_1('f','NA'), na)
-        self.assertEqual(r.fieldValue2Text_1('f','N/A'), na)
-        self.assertEqual(r.fieldValue2Text_1('f','N.A.'), na)
-        self.assertEqual(r.fieldValue2Text_1('f','NAT'), 'f : NAT;')
-        self.assertEqual(r.fieldValue2Text_1('f','NA T'), 'f : NA T;')
-        self.assertEqual(r.fieldValue2Text_1('f','ctrl'), na)
-        self.assertEqual(r.fieldValue2Text_1('f','Control'), na)
-        self.assertEqual(r.fieldValue2Text_1('f','Not Applicable.'), na)
-        self.assertEqual(r.fieldValue2Text_1('treatment','N/A'), na)
-        self.assertEqual(r.fieldValue2Text_1('treatmentProt','N/A'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NA'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','N/A'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','N.A.'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NAT'), 'f : NAT;')
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NA T'), 'f : NA T;')
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','ctrl'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','Control'), na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('f','Not Applicable.'),na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('treatment','N/A'),na)
+        self.assertEqual(r.fieldValue2Text_fv_untreat('treatmentProt','N/A'),na)
 
-    def test_fieldValue2Text_treatment(self):
+    def test_fieldValue2Text_fv_untreat_treatment(self):
         r = self.rstm
         f = 'treatment'         # treatment field name, some tests w/ this name
-        unt = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated & stuff'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'No special treatments, but'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'No'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'none.'), unt)
-        self.assertNotEqual(r.fieldValue2Text_1(f,'nothing but..'), unt)
+        u = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated & foo'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No special treatments, but'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'none.'), u)
+        self.assertNotEqual(r.fieldValue2Text_fv_untreat(f,'nothing but..'), u)
         
         # not treatment field
         f = 'f'
-        self.assertEqual(r.fieldValue2Text_1(f,'No'), 'f : No;')
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'),'f : Not Treated;')
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), 'f : No;')
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'),'f : untreated;')
 
-    def test_fieldValue2Text_treatmentProt(self):
+    def test_fieldValue2Text_fv_untreat_treatmentProt(self):
         r = self.rstm
         f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
-        unt = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated & stuff'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'No special treatments, but'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'No'), unt)
-        self.assertEqual(r.fieldValue2Text_1(f,'none.'), unt)
-        self.assertNotEqual(r.fieldValue2Text_1(f,'nothing but..'), unt)
+        u = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated & foo'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No special treatments, but'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), u)
+        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'none.'), u)
+        self.assertNotEqual(r.fieldValue2Text_fv_untreat(f,'nothing but..'), u)
 
-        # not treatmentProt field
-        f = 'f'
-        self.assertEqual(r.fieldValue2Text_1(f,'No'), 'f : No;')
-        self.assertEqual(r.fieldValue2Text_1(f,'Not Treated'),'f : Not Treated;')
+    def test_fieldValue2Text_v_untreat_basic(self):
+        r = self.rstm
+        f = 'foo'       # arbitrary field name
+        v = 'some value'
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,v), v +';')
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), 'Not Treated;')
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'NA'), 'NA;')
+
+    def test_fieldValue2Text_v_untreat_treatmentProt(self):
+        r = self.rstm
+        f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
+        u = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'untreated'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated & foo'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No special treatments, but'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'none.'), u)
+        self.assertNotEqual(r.fieldValue2Text_v_untreat(f,'nothing but..'), u)
+
+    def test_fieldValue2Text_v_untreat_treatment(self):
+        r = self.rstm
+        f = 'treatment'       # treatment field name, some tests w/ this name
+        u = '__untreated;'    # expected value for "untreated" value
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'untreated'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated & foo'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No special treatments, but'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No'), u)
+        self.assertEqual(r.fieldValue2Text_v_untreat(f,'none.'), u)
+        self.assertNotEqual(r.fieldValue2Text_v_untreat(f,'nothing but..'), u)
 # end Automated unit tests ------------------------
 #-----------------------------------
 
