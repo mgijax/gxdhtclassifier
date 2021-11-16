@@ -19,6 +19,7 @@ import argparse
 import unittest
 import db
 import htMLsample as mlSampleLib
+import htRawSampleTextManager
 from utilsLib import removeNonAscii, TextMapping, TextTransformer
 #-----------------------------------
 
@@ -77,7 +78,7 @@ def getArgs():
         args.host = 'bhmgidevdb01.jax.org'
         args.db = 'prod'
     else:
-        args.host = args.server + '.jax.org'
+        args.host = args.server
         args.db = args.database
 
     return args
@@ -91,7 +92,6 @@ GEO_OUTPUT_TITLE  = 'GEO experiments evaluated by Connie'
 GEO_TMPTBL = 'tmp_geoexp'
 NON_GEO_OUTPUT_TITLE  = 'Non-GEO, Yes experiments evaluated by Connie'
 NON_GEO_TMPTBL = 'tmp_nongeoexp'
-RAW_SAMPLE_TMPTBL = "tmp_rawsample_text"
 
 def loadTmpTables():
     '''
@@ -169,272 +169,12 @@ def loadTmpTables():
         """ % (NON_GEO_TMPTBL),
         ]
     results = db.sql(q, 'auto')
-
-    # Populate RAW_SAMPLE_TMPTBL "key:value" pairs for GEO experiments
-    startTime = time.time()
-    #verbose("Building raw sample tmp table...")
-    q = ["""
-        create temporary table %s as
-        select distinct rs._experiment_key, kv.key, kv.value
-        from
-            %s gt join GXD_HTRawSample rs on
-                    (gt._experiment_key = rs._experiment_key)
-            join MGI_KeyValue kv on
-                    (rs._rawsample_key = kv._object_key and _mgitype_key = 47)
-        order by rs._experiment_key, kv.key, kv.value
-        """ % (RAW_SAMPLE_TMPTBL, GEO_TMPTBL),
-        """
-        create index tmp_idx3 on %s(_experiment_key)
-        """ % (RAW_SAMPLE_TMPTBL),
-        ]
-    results = db.sql(q, 'auto')
-    #verbose("%8.3f seconds\n\n" %  (time.time()-startTime))
-#-----------------------------------
-
-class RawSampleTextManager (object):
-    """
-    IS:  a class that knows how to gather and format the raw sample metadata
-        text for experiments
-    HAS: 
-    DOES: getRawSampleText( for an experiment )
-    """
-    def __init__(self, rawSampleTblName):
-        """
-            rawSampletTblName needs to be a table in the db with columns:
-                '_experiment_key'       - the key of a ht experiment
-                'key'                   - field name describing a raw sample
-                'value'                 - value of the field
-        """
-        self.experimentDict = {}        # experimentDict[exp_key] is a
-                                        #   set of (field,value) pairs
-                                        #   from the samples of that experiment
-        self.buildExperimentDict(rawSampleTblName)
-    #-----------------------------------
-
-    def buildExperimentDict(self, rawSampleTblName):
-        #verbose("Getting raw sample text from %s\n" % rawSampleTblName)
-
-        q = "select * from %s" % rawSampleTblName
-        results = db.sql(q, 'auto')
-        for i,r in enumerate(results):
-            try:
-                expKey = r['_experiment_key']
-                theSet = self.experimentDict.setdefault(expKey, set())
-
-                field = removeNonAscii(cleanDelimiters(str(r['key']))).strip()
-                value = removeNonAscii(cleanDelimiters(str(r['value']))).strip()
-
-                theSet.add((field, value))
-            except:         # if some error, try to report which record
-                sys.stderr.write("Error on record %d:\n%s\n" % (i, str(r)))
-                raise
-    #-----------------------------------
-
-    def getRawSampleText(self, expKey):
-        if expKey not in self.experimentDict:
-            return ''
-        else: 
-            pairs = self.experimentDict[expKey]
-
-            fieldText = []      # list of formated field/value pairs to include
-            for f,v in sorted(pairs):
-                t = self.fieldValue2Text(f,v)
-                if t:
-                    fieldText.append(t)
-            
-            text = "  ".join(fieldText)
-            return text
-    #-----------------------------------
-
-    # Raw sample field-value text formatting
-    # Mappings used for field-value formatting/conversion
-    NaMapping = TextMapping('na',       # match various forms of N/A
-            r'\A(?:n[.-/]?a|not applicable|not relevant|control|cntrl|ctrl|ctl|no data)[.]?\Z', '')
-
-                                  # match various forms of "untreated"
-    untreatedRegex = str(r'\A(?:' +
-            r'(?:(?:untreated|not treated|no (?:special )?treate?ments?)\b.*)' +
-            r'|(?:(?:nothing|none|no)[.]?)' +
-            r')\Z')
-
-    treatmentFieldMapping = TextMapping('treatment', untreatedRegex, '')
-    treatmentProtFieldMapping = TextMapping('treatmentProt', untreatedRegex, '')
-
-    NaTransformer = TextTransformer([NaMapping])
-    treatmentProtFieldTransformer = TextTransformer([treatmentProtFieldMapping])
-    treatmentFieldTransformer = TextTransformer([treatmentFieldMapping])
-
-    def fieldValue2Text(self, f, v):
-        """ Return the formated field-value text"""
-        # Tried various ideas.
-        # See https://mgi-jira.atlassian.net/browse/YAKS-306
-        return self.fieldValue2Text_v_untreat(f,v)      # using this method
-
-        #return self.fieldValue2Text_fv_untreat(f,v)
-        #return self.fieldValue2Text_fv_nountreat(f,v)
-        #return self.fieldValue2Text_v_nountreat(f,v)
-
-    #-----------------------------------
-    # several different ways to format the field:value text to try
-
-    def fieldValue2Text_fv_untreat(self, f, v):
-        """
-        Return formated field-value text for the given field,value pair
-            Return '' for "Not Applicable" variations for any field.
-            Return '__untreated;' for 'treatment' and 'treatmentProt' fields
-                whose value means "not treated"
-            Else return 'field : value;'
-        """
-        if self.NaTransformer.transformText(v) == '':
-            return ''
-        elif (f == 'treatmentProt' and
-                self.treatmentProtFieldTransformer.transformText(v) == ''):
-            return '__untreated;'
-        elif (f == 'treatment' and
-                self.treatmentFieldTransformer.transformText(v) == ''):
-            return '__untreated;'
-        else:
-            return '%s : %s;' % (f, v)
-    #-----------------------------------
-
-    def fieldValue2Text_fv_nountreat(self, f, v):
-        """
-        Return formated field-value text for the given field,value pair
-            Return '' for "Not Applicable" variations for any field.
-            Else return 'field : value;'
-        """
-        if self.NaTransformer.transformText(v) == '':
-            return ''
-        else:
-            return '%s : %s;' % (f, v)
-    #-----------------------------------
-
-    def fieldValue2Text_v_nountreat(self, f, v):
-        """
-        Return formated field-value text for the given field,value pair
-            Just return the value.
-        """
-        return '%s;' % (v)
-    #-----------------------------------
-
-    def fieldValue2Text_v_untreat(self, f, v):
-        """
-        Return formated field-value text for the given field,value pair
-            Return '__untreated;' for 'treatment' and 'treatmentProt' fields
-                whose value means "not treated"
-            Else return 'value;'
-        """
-        if (f == 'treatmentProt' and
-                self.treatmentProtFieldTransformer.transformText(v) == ''):
-            return '__untreated;'
-        elif (f == 'treatment' and
-                self.treatmentFieldTransformer.transformText(v) == ''):
-            return '__untreated;'
-        else:
-            return '%s;' % (v)
-    #-----------------------------------
-
-    def getReport(self):
-        """
-        Return formated report on text mappings applied to raw sample fields
-        """
-        text = "\n"
-        text += self.NaTransformer.getReport()
-        text += self.treatmentProtFieldTransformer.getReport()
-        text += self.treatmentFieldTransformer.getReport()
-        return text
-
-# end class RawSampleTextManager -----------------------------------
-#-----------------------------------
-# Automated unit tests
-
-class RawSampleTextManagerTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.rstm = RawSampleTextManager(RAW_SAMPLE_TMPTBL)
-
-    @classmethod
-    def tearDownClass(cls):
-        print(cls.rstm.getReport())
-
-    def test_fieldValue2Text_fv_untreat_NA(self):
-        r = self.rstm
-        na = ''                 # expected value for a recognized "NA" value
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NA'), na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','N/A'), na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','N.A.'), na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NAT'), 'f : NAT;')
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','NA T'), 'f : NA T;')
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','ctrl'), na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','Control'), na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('f','Not Applicable.'),na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('treatment','N/A'),na)
-        self.assertEqual(r.fieldValue2Text_fv_untreat('treatmentProt','N/A'),na)
-
-    def test_fieldValue2Text_fv_untreat_treatment(self):
-        r = self.rstm
-        f = 'treatment'         # treatment field name, some tests w/ this name
-        u = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated & foo'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No special treatments, but'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'none.'), u)
-        self.assertNotEqual(r.fieldValue2Text_fv_untreat(f,'nothing but..'), u)
-        
-        # not treatment field
-        f = 'f'
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), 'f : No;')
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'),'f : untreated;')
-
-    def test_fieldValue2Text_fv_untreat_treatmentProt(self):
-        r = self.rstm
-        f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
-        u = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'untreated'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'Not Treated & foo'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No special treatments, but'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'No'), u)
-        self.assertEqual(r.fieldValue2Text_fv_untreat(f,'none.'), u)
-        self.assertNotEqual(r.fieldValue2Text_fv_untreat(f,'nothing but..'), u)
-
-    def test_fieldValue2Text_v_untreat_basic(self):
-        r = self.rstm
-        f = 'foo'       # arbitrary field name
-        v = 'some value'
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,v), v +';')
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), 'Not Treated;')
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'NA'), 'NA;')
-
-    def test_fieldValue2Text_v_untreat_treatmentProt(self):
-        r = self.rstm
-        f = 'treatmentProt'  # treatmentProt field name, some tests w/ this name
-        u = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'untreated'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated & foo'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No special treatments, but'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'none.'), u)
-        self.assertNotEqual(r.fieldValue2Text_v_untreat(f,'nothing but..'), u)
-
-    def test_fieldValue2Text_v_untreat_treatment(self):
-        r = self.rstm
-        f = 'treatment'       # treatment field name, some tests w/ this name
-        u = '__untreated;'    # expected value for "untreated" value
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'untreated'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'Not Treated & foo'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No special treatments, but'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'No'), u)
-        self.assertEqual(r.fieldValue2Text_v_untreat(f,'none.'), u)
-        self.assertNotEqual(r.fieldValue2Text_v_untreat(f,'nothing but..'), u)
-# end Automated unit tests ------------------------
 #-----------------------------------
 
 def doAutomatedTests():
+
+    sys.stdout.write("No automated tests at this time\n")
+    return
 
     sys.stdout.write("%s\nHitting database %s %s as mgd_public\n" % \
                                         (time.ctime(), args.host, args.db,))
@@ -477,10 +217,8 @@ def doCounts():
             % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
 
     # number of GEO with raw source data    - expected to be most of them
-    q = """select count(distinct e._experiment_key) as num
-            from %s e join %s rs on (e._experiment_key = rs._experiment_key)
-        """ % (GEO_TMPTBL, RAW_SAMPLE_TMPTBL)
-    numRS = db.sql(q, 'auto')[0]['num']
+    rstm = htRawSampleTextManager.RawSampleTextManager(db,expTbl=GEO_TMPTBL)
+    numRS = rstm.getNumExperiments()
     sys.stdout.write("%7d have raw sample text\n" % (numRS))
 
     ### Counts from the non-GEO tmptbl
@@ -497,12 +235,8 @@ def doCounts():
     sys.stdout.write(NON_GEO_OUTPUT_TITLE + '\n')
     sys.stdout.write("%7d experiments\n" % (ngNumRows))
 
-    # number of non-GEO with raw source data    - expected to be 0
-    q = """select count(distinct e._experiment_key) as num
-            from %s e join %s rs on (e._experiment_key = rs._experiment_key)
-        """ % (NON_GEO_TMPTBL, RAW_SAMPLE_TMPTBL)
-    numRS = db.sql(q, 'auto')[0]['num']
-    sys.stdout.write("%7d have raw sample text\n" % (numRS))
+    # number of non-GEO with raw source data
+    sys.stdout.write("%7d have raw sample text\n" % (0))
 
     ### Totals
     sys.stdout.write("Total experiments\n")
@@ -511,13 +245,9 @@ def doCounts():
     sys.stdout.write("%7d (%d%%) Yes\t%7d (%d%%) No\t%7d total\n" \
             % (numYes, 100*(numYes/numExp), numNo, 100*(numNo/numExp), numExp))
 
-    ### Counts from Raw sample tmp table
-    q = """select count(*) as num from %s e
-        """ % (RAW_SAMPLE_TMPTBL)
-    rsNumRows = db.sql(q, 'auto')[0]['num']
-
-    sys.stdout.write(RAW_SAMPLE_TMPTBL + '\n')
-    sys.stdout.write("%9d key/value pairs\n" % (rsNumRows))
+    ### Counts of Raw sample text data
+    sys.stdout.write("Number of distinct raw sample field value pairs\n")
+    sys.stdout.write("%9d key/value pairs\n" % (rstm.getNumFieldValuePairs()))
 #-----------------------------------
 
 def doSamples():
@@ -530,7 +260,7 @@ def doSamples():
     # Which set of samples, which tmp table
     if args.option == "geo":
         tmptbl = GEO_TMPTBL
-        rstm = RawSampleTextManager(RAW_SAMPLE_TMPTBL)
+        rstm = htRawSampleTextManager.RawSampleTextManager(db,expTbl=GEO_TMPTBL)
     elif args.option == "nongeo":
         tmptbl = NON_GEO_TMPTBL
         rstm = None       # non-GEO experiments don't have raw samples in db

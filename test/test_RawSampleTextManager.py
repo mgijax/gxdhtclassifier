@@ -14,10 +14,16 @@ from htRawSampleTextManager import RawSampleTextManager
 import db
 
 # get database settings from the env
-db.set_sqlServer  (os.environ.get('PG_DBSERVER', 'mgi-testdb4.jax.org'))
-db.set_sqlDatabase(os.environ.get('PG_DBNAME', 'jak'))
+
+dbServer = os.environ.get('PG_DBSERVER', 'mgi-testdb4.jax.org')
+dbName   = os.environ.get('PG_DBNAME', 'jak')
+
+db.set_sqlServer  (dbServer)
+db.set_sqlDatabase(dbName)
 db.set_sqlUser    ("mgd_public")
 db.set_sqlPassword("mgdpub")
+
+sys.stderr.write("Hitting %s.%s\n" % (dbServer, dbName))
 
 #######################################
 
