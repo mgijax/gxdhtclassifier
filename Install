@@ -74,4 +74,16 @@ do
     fi
 done
 
+#
+# Copy trained model, gxdhtclassifier.pkl to library directory
+#
+TRAINED_MODEL=Train/gxdhtclassifier.pkl
+chmod 664 ${TRAINED_MODEL}
+cp -p ${TRAINED_MODEL} ${LIBRARY_DIRECTORY}
+if [ $? -ne 0 ]
+then
+    echo "Cannot copy ${TRAINED_MODEL} to ${LIBRARY_DIRECTORY}"
+    exit 1
+fi
+
 exit 0

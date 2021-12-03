@@ -375,3 +375,8 @@ Short summary:
     Initial field:Value logic w/ __(un)treated         P ~.76 R ~.78
     Initial field:Value logic w/o __(un)treated        P ~.76 R ~.79
     
+Dec 3, 2021
+Renamed Train directory to ModelDev directory (which is more accurate).
+Added new Train directory where we train the actual classifier, pkl file.
+Updated Install script to install the pkl file in python_anaconda with the rest
+of the python modules.
