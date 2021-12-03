@@ -21,6 +21,6 @@ PYTHON=$ANACONDAPYTHON
 # this is for development. These are likely to change for production
 GXDhtClassifierHome=~/work/gxdhtclassifier # classifier utils installed here
 MLtextTools=~/work/MLtextTools             # MLtextTools installed here
-sampleDataLibParam="--sampledatalib $GXDhtClassifierHome/htMLsample.py"
 
+sampleDataLibParam="--sampledatalib $GXDhtClassifierHome/htMLsample.py"
 export PYTHONPATH=${GXDhtClassifierHome}:${MLtextTools}:${PYTHONPATH}

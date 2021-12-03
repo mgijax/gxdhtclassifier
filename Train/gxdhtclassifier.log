@@ -1,0 +1,13 @@
+Fri Dec  3 11:51:27 EST 2021
+Importing model source file '/Users/jak/work/gxdhtclassifier/gxdhtclassifier.py'
+Reading '/Users/jak/work/gxdhtclassifier/Train/data/P_all/trainSet.txt' ...
+Sample type 'ClassifiedHtSample'
+Reading '/Users/jak/work/gxdhtclassifier/Train/data/P_all/valSet.txt' ...
+Sample type 'ClassifiedHtSample'
+Reading '/Users/jak/work/gxdhtclassifier/Train/data/P_all/testSet.txt' ...
+Sample type 'ClassifiedHtSample'
+...done 10494 total documents.
+Training...
+Done
+Trained model written to '/Users/jak/work/gxdhtclassifier/Train/gxdhtclassifier.pkl'
+Top weighted features written to '/Users/jak/work/gxdhtclassifier/Train/gxdhtclassifier.features.txt'

@@ -1,0 +1,49 @@
+Mon Nov  8 13:37:53 EST 2021
+### randomly selecting test set
+Reading ./geo
+Sample type: ClassifiedHtSample
+...done. Total time:    0.168 seconds
+
+Summary:  Retaining random set of samples
+Mon Nov  8 13:37:54 2021
+Fraction: 0.150   Seed: 123   Sample type: ClassifiedHtSample
+Input files: ['./geo']
+
+Input Totals:
+9925 samples: 2626 positive (26.5%) 7299 negative (73.5%)
+
+Retained file 'testSet.txt': (15.184% of inputs)
+1507 samples: 426 positive (28.3%) 1081 negative (71.7%)
+
+Leftover file 'LeftoversTest.txt': (84.816% of inputs)
+8418 samples: 2200 positive (26.1%) 6218 negative (73.9%)
+
+### randomly selecting validation set
+Reading LeftoversTest.txt
+Sample type: ClassifiedHtSample
+...done. Total time:    0.154 seconds
+
+Summary:  Retaining random set of samples
+Mon Nov  8 13:37:54 2021
+Fraction: 0.235   Seed: 123   Sample type: ClassifiedHtSample
+Input files: ['LeftoversTest.txt']
+
+Input Totals:
+8418 samples: 2200 positive (26.1%) 6218 negative (73.9%)
+
+Retained file 'valSet.txt': (23.450% of inputs)
+1974 samples: 550 positive (27.9%) 1424 negative (72.1%)
+
+Leftover file 'LeftoversVal.txt': (76.550% of inputs)
+6444 samples: 1650 positive (25.6%) 4794 negative (74.4%)
+
+### concatenating leftovers to  training set
+Preprocessing steps: 
+Preprocessing 'LeftoversVal.txt'
+Sample type: ClassifiedHtSample
+...done. 6444 samples, 0 marked as reject
+Preprocessing './nongeo'
+...done. 569 samples, 0 marked as reject
+Samples read: 7013 	 Samples written: 7013
+Total time:    0.142 seconds
+

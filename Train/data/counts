@@ -1,0 +1,12 @@
+Mon Nov  8 13:34:10 2021
+Hitting database mgi-testdb4.jax.org jak as mgd_public
+GEO experiments evaluated by Connie
+   2626 (26%) Yes	   7299 (73%) No	   9925 total
+   9924 have raw sample text
+Non-GEO, Yes experiments evaluated by Connie
+    569 experiments
+      0 have raw sample text
+Total experiments
+   3195 (30%) Yes	   7299 (69%) No	  10494 total
+tmp_rawsample_text
+   180190 key/value pairs

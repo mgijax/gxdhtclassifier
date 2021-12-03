@@ -1,5 +1,5 @@
 #!/bin/bash
-# train the gxdhtClassifier to create gxdhtClassfier.pkl and associated files
+# train the gxdhtclassifier to create gxdhtclassifier.pkl and associated files
 
 #######################################
 function Usage() {
@@ -13,7 +13,9 @@ $0 --data name [--model basename]
     Puts all generated files into the current directory.
 
     --data	directory holding the training data sample files
-    --model     filename of the model source. Default: gxdhtClassifier.py
+                We assume these are preprocessed sample files.
+
+    --model     filename of the model source. Default: gxdhtclassifier.py
 ENDTEXT
     exit 5
 }
@@ -23,13 +25,13 @@ ENDTEXT
 baseDir=`dirname $0`
 . $baseDir/Configuration
 
-trainingFiles="trainSet.txt valSet.txt testSet.txt"
+trainingFiles="trainSet.txt valSet.txt testSet.txt"     # Preprocessed files
 
 #######################################
 # cmdline options
 #######################################
 dataDir=""
-modelSource="gxdhtClassifier.py"
+modelSource="gxdhtclassifier.py"
 
 while [ $# -gt 0 ]; do
     case "$1" in

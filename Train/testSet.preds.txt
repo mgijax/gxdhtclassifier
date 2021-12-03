@@ -1,0 +1,1508 @@
+ID|Pred Class|Confidence|Abs Value|True Class|FP/FN|curationState|studytype|experimenttype|modification_date|titleLength|descriptionLength
+GSE1611|Yes|0.706|0.706|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-13|139|281
+GSE9954|Yes|0.595|0.595|Yes|TP|Done|Baseline|transcription profiling by array|2021-08-05|77|224
+GSE642|Yes|0.955|0.955|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-25|143|143
+GSE97|Yes|0.582|0.582|Yes|TP|Done|Baseline|transcription profiling by array|2020-06-01|204|1177
+GSE4063|Yes|0.887|0.887|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-21|108|215
+GSE128|Yes|0.949|0.949|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-22|68|295
+GSE7381|Yes|0.956|0.956|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-12|107|1612
+GSE977|Yes|0.702|0.702|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-23|87|96
+GSE929|Yes|0.706|0.706|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-15|120|742
+GSE897|Yes|0.955|0.955|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-02-17|111|82
+GSE3129|Yes|0.953|0.953|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-13|130|537
+GSE4612|Yes|0.729|0.729|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-14|207|967
+GSE1363|Yes|0.876|0.876|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-02-17|110|602
+GSE6443|Yes|0.775|0.775|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-12|177|1579
+GSE454|Yes|0.946|0.946|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-22|148|151
+GSE4120|Yes|0.837|0.837|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-14|182|684
+GSE1912|Yes|0.913|0.913|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-06|111|155
+GSE3895|Yes|0.969|0.969|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-11|148|1422
+GSE3544|Yes|0.929|0.929|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-14|148|212
+GSE1749|Yes|0.786|0.786|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-24|106|1430
+GSE1624|Yes|0.964|0.964|Yes|TP|Done|Baseline|transcription profiling by array|2017-04-19|55|76
+GSE2198|Yes|0.882|0.882|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-18|153|1097
+GSE3327|Yes|0.977|0.977|Yes|TP|Done|Baseline|transcription profiling by array|2017-02-22|123|138
+GSE2507|Yes|0.894|0.894|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-04-18|93|796
+GSE2362|Yes|0.712|0.712|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-20|254|1755
+GSE4034|Yes|0.759|0.759|Yes|TP|Done|Baseline|transcription profiling by array|2019-04-17|224|3608
+GSE2867|Yes|0.684|0.684|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-24|119|2314
+GSE22608|No|-0.623|0.623|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-01-11|116|420
+GSE10989|Yes|0.504|0.504|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-05|92|868
+GSE24775|No|-0.519|0.519|Yes|FN|Done|Baseline|transcription profiling by array|2018-07-31|112|2588
+GSE20880|Yes|0.658|0.658|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-26|80|2613
+GSE14802|Yes|0.631|0.631|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|106|1975
+GSE21954|Yes|0.678|0.678|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-27|90|1676
+GSE24851|Yes|0.578|0.578|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-20|77|235
+GSE20423|Yes|0.764|0.764|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-30|98|1030
+GSE24320|Yes|0.836|0.836|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-12-17|131|1777
+GSE22893|Yes|0.890|0.890|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|53|297
+GSE21542|Yes|0.569|0.569|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-24|95|2261
+GSE23700|Yes|0.926|0.926|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-29|94|635
+GSE22115|Yes|0.854|0.854|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-03|113|1058
+GSE22616|Yes|0.810|0.810|Yes|TP|Done|Baseline|transcription profiling by array|2017-02-22|95|1242
+GSE22131|Yes|0.874|0.874|Yes|TP|Done|Baseline|RNA-Seq|2017-09-18|163|798
+GSE17934|Yes|0.915|0.915|Yes|TP|Done|Baseline|transcription profiling by array|2017-09-22|63|334
+GSE21358|Yes|0.667|0.667|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-07|136|2173
+GSE9581|Yes|0.515|0.515|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-21|56|3346
+GSE8355|Yes|0.781|0.781|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-20|78|1335
+GSE18774|Yes|0.613|0.613|Yes|TP|Done|Baseline|transcription profiling by array|2019-04-04|48|1655
+GSE15835|No|-0.507|0.507|Yes|FN|Done|Baseline|transcription profiling by array|2018-02-21|33|1859
+GSE15496|Yes|0.722|0.722|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-18|62|2796
+GSE22125|Yes|0.693|0.693|Yes|TP|Done|Baseline|transcription profiling by array|2017-07-27|72|696
+GSE6952|Yes|0.586|0.586|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-18|77|164
+GSE2402|Yes|0.577|0.577|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-13|54|366
+GSE16744|Yes|0.816|0.816|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-21|97|1443
+GSE12293|Yes|0.611|0.611|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-19|179|645
+GSE12847|Yes|0.664|0.664|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-21|75|2524
+GSE21523|No|-0.638|0.638|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-11-30|94|1692
+GSE10602|Yes|0.676|0.676|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-19|81|202
+GSE8942|Yes|0.629|0.629|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-20|61|432
+GSE8339|Yes|0.514|0.514|Yes|TP|Done|Baseline|transcription profiling by array|2017-09-19|30|256
+GSE15228|Yes|0.715|0.715|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|82|911
+GSE16780|Yes|0.755|0.755|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-16|53|229
+GSE15336|Yes|0.719|0.719|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-26|63|1928
+GSE12503|Yes|0.522|0.522|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|88|1789
+GSE12942|Yes|0.615|0.615|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-22|116|1514
+GSE8358|Yes|0.545|0.545|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-21|66|340
+GSE18062|Yes|0.545|0.545|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-01-10|60|380
+GSE14971|Yes|0.660|0.660|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|60|267
+GSE14872|Yes|0.756|0.756|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-21|95|1771
+GSE14871|Yes|0.756|0.756|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-20|95|1771
+GSE19597|Yes|0.555|0.555|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-26|69|1197
+GSE15293|Yes|0.642|0.642|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-04-18|102|1133
+GSE18304|Yes|0.942|0.942|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-21|114|255
+GSE19513|Yes|0.885|0.885|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-11|41|550
+GSE19626|Yes|0.743|0.743|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-21|71|420
+GSE14906|Yes|0.911|0.911|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|83|869
+GSE19172|Yes|0.664|0.664|Yes|TP|Done|Baseline|RNA-Seq|2019-02-19|55|303
+GSE19454|Yes|0.965|0.965|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|90|500
+GSE14216|Yes|0.952|0.952|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|76|1676
+GSE19286|Yes|0.771|0.771|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-09|108|1388
+GSE16647|Yes|0.780|0.780|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|55|723
+GSE15832|Yes|0.537|0.537|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-06|23|2181
+GSE13752|Yes|0.656|0.656|Yes|TP|Done|Baseline|transcription profiling by array|2019-06-04|57|672
+GSE13746|Yes|0.652|0.652|Yes|TP|Done|Baseline|transcription profiling by array|2019-06-04|59|680
+GSE15872|Yes|0.931|0.931|Yes|TP|Done|Baseline|transcription profiling by array|2017-02-15|98|1375
+GSE18290|Yes|0.662|0.662|Yes|TP|Done|Baseline|transcription profiling by array|2017-04-18|64|993
+GSE14270|Yes|0.953|0.953|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-19|149|549
+GSE3594|Yes|0.927|0.927|Yes|TP|Done|Baseline|transcription profiling by array|2017-02-23|148|1651
+GSE11381|Yes|0.817|0.817|Yes|TP|Done|Baseline|transcription profiling by array|2019-04-17|56|934
+GSE17319|Yes|0.627|0.627|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2017-10-24|134|1581
+GSE13579|Yes|0.772|0.772|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|59|1714
+GSE11426|Yes|0.810|0.810|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-17|82|1171
+GSE4623|Yes|0.831|0.831|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-02-16|58|4962
+GSE15748|Yes|0.715|0.715|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-23|45|291
+GSE14059|Yes|0.934|0.934|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|93|1926
+GSE15315|No|-0.562|0.562|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-11-28|68|1153
+GSE12412|Yes|0.979|0.979|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|110|550
+GSE11998|Yes|0.508|0.508|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-26|76|1413
+GSE11992|Yes|0.912|0.912|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-24|71|577
+GSE13583|Yes|0.891|0.891|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-17|68|594
+GSE11005|No|-0.518|0.518|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-12-17|140|2650
+GSE13984|Yes|0.720|0.720|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-27|61|806
+GSE10634|Yes|0.807|0.807|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-03-03|73|2096
+GSE7759|Yes|0.829|0.829|Yes|TP|Done|Baseline|transcription profiling by array|2017-09-14|120|2427
+GSE12049|Yes|0.963|0.963|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-10|85|1570
+GSE8307|Yes|0.924|0.924|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-15|105|1397
+GSE11063|Yes|0.668|0.668|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-19|106|1382
+GSE11291|Yes|0.793|0.793|Yes|TP|Done|Baseline|transcription profiling by array|2018-12-14|153|1144
+GSE11035|Yes|0.821|0.821|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-21|80|1892
+GSE9668|Yes|0.911|0.911|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-19|111|1105
+GSE9375|Yes|0.895|0.895|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-04-18|91|1887
+GSE9330|Yes|0.819|0.819|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-24|86|3727
+GSE9123|Yes|0.892|0.892|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-24|149|1340
+GSE8434|Yes|0.978|0.978|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-24|93|457
+GSE8249|Yes|0.705|0.705|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-01-15|119|1988
+GSE7657|Yes|0.885|0.885|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-15|129|1447
+GSE7564|Yes|0.898|0.898|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|202|1800
+GSE7187|Yes|0.868|0.868|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-02|112|1291
+GSE7155|Yes|0.876|0.876|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-17|56|1335
+GSE6934|Yes|0.918|0.918|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-02-08|119|1018
+GSE6079|Yes|0.977|0.977|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-14|77|448
+GSE6030|Yes|0.959|0.959|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-12|87|647
+GSE5510|Yes|0.855|0.855|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-12|66|1432
+GSE4752|Yes|0.714|0.714|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-14|90|3607
+GSE4603|Yes|0.905|0.905|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-19|51|2008
+GSE4411|Yes|0.725|0.725|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-14|83|3549
+GSE4307|Yes|0.686|0.686|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-08|113|1470
+GSE3676|Yes|0.902|0.902|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-13|63|2503
+GSE3116|Yes|0.956|0.956|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-11|74|1643
+GSE2148|Yes|0.959|0.959|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-06|62|41
+GSE328|Yes|0.959|0.959|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-06|38|97
+GSE11220|Yes|0.941|0.941|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-09|109|614
+GSE10965|Yes|0.981|0.981|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-28|96|737
+GSE1852|Yes|0.948|0.948|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-11|58|33
+GSE11596|Yes|0.736|0.736|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-26|97|2049
+GSE10202|Yes|0.879|0.879|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-20|190|2052
+GSE9629|Yes|0.704|0.704|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-24|97|420
+GSE49237|Yes|0.914|0.914|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-06|65|445
+GSE46481|No|-0.515|0.515|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-03-22|74|1923
+GSE39946|Yes|0.886|0.886|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-07-24|47|383
+GSE52348|Yes|0.832|0.832|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-15|70|1571
+GSE52542|Yes|0.561|0.561|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2021-08-05|63|1393
+GSE19329|Yes|0.588|0.588|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-04-16|99|290
+GSE52038|Yes|0.523|0.523|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-15|126|512
+GSE43893|Yes|0.913|0.913|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-08-24|54|265
+GSE50807|Yes|0.648|0.648|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-12|53|1766
+GSE49973|Yes|0.576|0.576|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-02|60|437
+GSE51144|No|-0.510|0.510|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-02-14|98|1144
+GSE43034|Yes|0.897|0.897|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-05|103|531
+GSE49229|Yes|0.958|0.958|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-28|54|547
+GSE49699|Yes|0.716|0.716|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-25|72|3629
+GSE50379|Yes|0.790|0.790|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-08|194|835
+GSE40090|Yes|0.701|0.701|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-23|45|465
+GSE42775|Yes|0.914|0.914|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-05|117|599
+GSE49707|Yes|0.789|0.789|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-10|58|281
+GSE49283|Yes|0.616|0.616|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-08|88|1127
+GSE34378|Yes|0.823|0.823|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-21|16|256
+GSE44651|No|-0.615|0.615|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-01-08|97|2387
+GSE39062|Yes|0.586|0.586|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-30|80|551
+GSE47089|Yes|0.963|0.963|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2017-10-10|120|204
+GSE40398|Yes|0.598|0.598|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-05|106|1579
+GSE42237|Yes|0.695|0.695|Yes|TP|Done|Baseline|RNA-Seq|2019-02-19|66|1267
+GSE47065|Yes|0.917|0.917|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-06|69|318
+GSE46796|Yes|0.865|0.865|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-07|99|584
+GSE45897|Yes|0.810|0.810|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-10|105|980
+GSE40480|Yes|0.537|0.537|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-31|66|1771
+GSE38301|Yes|0.858|0.858|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-04-16|50|258
+GSE14512|Yes|0.632|0.632|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-19|166|2218
+GSE43578|Yes|0.820|0.820|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-07-07|84|2535
+GSE39605|Yes|0.830|0.830|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-01-31|71|1145
+GSE45494|No|-0.652|0.652|Yes|FN|Done|Baseline|transcription profiling by array|2018-01-23|43|1236
+GSE45049|Yes|0.808|0.808|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-18|123|1121
+GSE39769|Yes|0.808|0.808|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-28|71|691
+GSE44605|Yes|0.641|0.641|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-06|84|1535
+GSE41823|Yes|0.821|0.821|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-05|50|668
+GSE39859|Yes|0.684|0.684|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-09|133|1893
+GSE35593|No|-0.620|0.620|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-08-09|141|1161
+GSE41945|Yes|0.917|0.917|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-05|66|666
+GSE27630|Yes|0.562|0.562|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-05|79|1767
+GSE38365|Yes|0.617|0.617|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-30|102|1788
+GSE43951|Yes|0.882|0.882|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-01-19|160|621
+GSE29541|Yes|0.787|0.787|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-28|149|2232
+GSE40439|Yes|0.774|0.774|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-15|116|1248
+GSE37387|Yes|0.715|0.715|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-24|32|517
+GSE37191|No|-0.607|0.607|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-01-10|95|3465
+GSE21219|Yes|0.687|0.687|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-17|55|376
+GSE36514|Yes|0.834|0.834|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-29|83|1198
+GSE34071|Yes|0.822|0.822|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-22|57|700
+GSE32951|Yes|0.625|0.625|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-02-26|99|1414
+GSE38120|Yes|0.706|0.706|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-16|20|496
+GSE41821|Yes|0.778|0.778|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-01|76|1340
+GSE41807|Yes|0.605|0.605|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-02|90|815
+GSE33589|Yes|0.772|0.772|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-02|96|923
+GSE39313|No|-0.532|0.532|Yes|FN|Done|Baseline|transcription profiling by array|2019-05-28|53|1097
+GSE41418|No|-0.641|0.641|Yes|FN|Done|Baseline|transcription profiling by array|2018-12-10|88|807
+GSE41380|Yes|0.851|0.851|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-18|75|342
+GSE36408|Yes|0.804|0.804|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-22|81|717
+GSE36697|Yes|0.534|0.534|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-29|107|1144
+GSE39973|Yes|0.618|0.618|Yes|TP|Done|Baseline|transcription profiling by array|2019-01-07|132|2321
+GSE40531|No|-0.673|0.673|Yes|FN|Done|Baseline|transcription profiling by array|2018-08-09|54|703
+GSE36741|Yes|0.811|0.811|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-29|144|388
+GSE32103|Yes|0.847|0.847|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-02|86|450
+GSE30836|Yes|0.636|0.636|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-15|106|2200
+GSE32583|Yes|0.510|0.510|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-21|92|1709
+GSE28640|Yes|0.864|0.864|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-19|30|827
+GSE39632|Yes|0.527|0.527|Yes|TP|Done|Baseline|transcription profiling by array|2019-01-11|132|1698
+GSE35734|Yes|0.805|0.805|Yes|TP|Done|Baseline|transcription profiling by array|2017-04-18|66|623
+GSE30411|Yes|0.500|0.500|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-10|72|424
+GSE37514|Yes|0.798|0.798|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-30|78|728
+GSE31692|Yes|0.658|0.658|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-17|65|1092
+GSE36025|Yes|0.597|0.597|Yes|TP|Done|Baseline|RNA-Seq|2019-01-03|47|2091
+GSE33979|Yes|0.666|0.666|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2017-07-25|83|1469
+GSE33138|Yes|0.723|0.723|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-15|61|562
+GSE31646|Yes|0.888|0.888|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-21|63|362
+GSE30773|Yes|0.654|0.654|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-21|54|242
+GSE36312|Yes|0.780|0.780|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-09|39|163
+GSE31940|Yes|0.932|0.932|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-21|60|293
+GSE32334|Yes|0.688|0.688|Yes|TP|Done|Baseline|transcription profiling by array|2017-02-22|71|1319
+GSE33457|Yes|0.653|0.653|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-11|67|2063
+GSE26486|Yes|0.604|0.604|Yes|TP|Done|Baseline|transcription profiling by array|2019-06-04|65|1437
+GSE32963|Yes|0.795|0.795|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-28|84|874
+GSE22881|No|-0.583|0.583|Yes|FN|Done|Baseline|transcription profiling by array|2019-01-08|42|1846
+GSE30793|No|-0.604|0.604|Yes|FN|Done|Baseline|transcription profiling by array|2018-01-11|75|366
+GSE34278|Yes|0.786|0.786|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-24|150|487
+GSE22959|Yes|0.594|0.594|Yes|TP|Done|Baseline|RNA-Seq|2018-01-03|130|429
+GSE29192|Yes|0.698|0.698|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-20|116|1138
+GSE27016|Yes|0.886|0.886|Yes|TP|Done|Baseline|RNA-Seq|2018-08-07|62|833
+GSE22989|Yes|0.912|0.912|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-02-15|71|901
+GSE11659|Yes|0.559|0.559|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-19|97|984
+GSE32051|Yes|0.681|0.681|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-02|67|1146
+GSE29551|Yes|0.696|0.696|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-05|66|1258
+GSE32271|Yes|0.931|0.931|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-02|35|693
+GSE30657|Yes|0.765|0.765|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-11-21|53|847
+GSE31074|Yes|0.671|0.671|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-21|74|421
+GSE31251|Yes|0.774|0.774|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-06-05|51|668
+GSE30244|Yes|0.718|0.718|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-29|51|943
+GSE31752|No|-0.604|0.604|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-12-21|96|1713
+GSE16496|Yes|0.764|0.764|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-19|48|1503
+GSE31098|No|-0.528|0.528|Yes|FN|Done|Baseline|transcription profiling by array|2019-06-04|72|446
+GSE26699|Yes|0.860|0.860|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-19|32|904
+GSE30873|No|-0.532|0.532|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-12-20|58|585
+GSE29289|Yes|0.581|0.581|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-30|132|172
+GSE22828|Yes|0.874|0.874|Yes|TP|Done|Baseline|transcription profiling by array|2017-04-18|90|455
+GSE26615|Yes|0.778|0.778|Yes|TP|Done|Baseline|transcription profiling by array|2018-12-19|97|724
+GSE26240|Yes|0.598|0.598|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-01-15|100|991
+GSE27891|Yes|0.881|0.881|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-10|84|411
+GSE27979|Yes|0.714|0.714|Yes|TP|Done|Baseline|RNA-Seq|2018-01-10|73|1774
+GSE26076|Yes|0.744|0.744|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-28|117|1935
+GSE29091|Yes|0.866|0.866|Yes|TP|Done|Baseline|transcription profiling by array|2017-09-28|60|526
+GSE29538|Yes|0.582|0.582|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-08-21|125|733
+GSE24691|Yes|0.652|0.652|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-15|58|420
+GSE24513|No|-0.523|0.523|Yes|FN|Done|Baseline|transcription profiling by array|2018-07-31|50|838
+GSE27088|Yes|0.822|0.822|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-19|109|1011
+GSE28496|Yes|0.658|0.658|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-10|117|1138
+GSE28643|No|-0.559|0.559|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-01-15|46|531
+GSE26299|Yes|0.522|0.522|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-04-18|44|1827
+GSE25076|Yes|0.587|0.587|Yes|TP|Done|Baseline|transcription profiling by array|2019-01-04|101|691
+GSE24122|Yes|0.867|0.867|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|66|504
+GSE28207|Yes|0.856|0.856|Yes|TP|Done|Baseline|RNA-Seq|2018-01-10|95|225
+GSE27568|Yes|0.801|0.801|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-05-11|25|562
+GSE27483|No|-0.540|0.540|Yes|FN|Done|Baseline|transcription profiling by array|2018-10-16|62|2130
+GSE19633|Yes|0.748|0.748|Yes|TP|Done|Baseline|transcription profiling by array|2017-01-16|120|1105
+GSE26816|Yes|0.788|0.788|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-28|123|682
+GSE26743|Yes|0.649|0.649|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-28|122|2533
+GSE23497|Yes|0.759|0.759|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-11|101|2100
+GSE84665|Yes|0.727|0.727|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-02-21|81|1665
+GSE84063|Yes|0.823|0.823|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-04|84|1596
+GSE74904|Yes|0.734|0.734|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-31|79|240
+GSE77126|Yes|0.613|0.613|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-31|144|2370
+GSE71042|Yes|0.755|0.755|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-01|75|2231
+GSE74570|Yes|0.717|0.717|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-01|91|1348
+GSE69635|Yes|0.900|0.900|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-16|78|132
+GSE70656|Yes|0.920|0.920|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-30|53|383
+GSE83992|Yes|0.663|0.663|Yes|TP|Done|Baseline|RNA-Seq|2018-03-02|59|1631
+GSE80119|Yes|0.526|0.526|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-15|86|843
+GSE72196|Yes|0.794|0.794|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-01|89|175
+GSE67238|Yes|0.749|0.749|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-15|64|1036
+GSE71872|Yes|0.902|0.902|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-02-20|101|165
+GSE55497|Yes|0.662|0.662|Yes|TP|Done|Baseline|transcription profiling by array|2018-01-25|102|296
+GSE82978|Yes|0.916|0.916|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|41|275
+GSE82976|Yes|0.946|0.946|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|54|264
+GSE82923|Yes|0.924|0.924|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|37|274
+GSE82880|Yes|0.928|0.928|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|40|277
+GSE82478|Yes|0.930|0.930|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|36|271
+GSE82441|Yes|0.928|0.928|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|41|278
+GSE82423|Yes|0.928|0.928|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|59|280
+GSE76079|Yes|0.633|0.633|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-19|113|1517
+GSE79926|Yes|0.787|0.787|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-11|96|1563
+GSE76552|Yes|0.782|0.782|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-01|95|1555
+GSE81976|Yes|0.645|0.645|Yes|TP|Done|Baseline|transcription profiling by array|2018-02-21|59|1325
+GSE70605|Yes|0.545|0.545|Yes|TP|Done|Baseline|RNA-Seq|2019-12-30|112|1237
+GSE77821|Yes|0.751|0.751|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-31|64|953
+GSE77817|Yes|0.903|0.903|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-31|60|928
+GSE71647|Yes|0.697|0.697|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-16|99|498
+GSE67803|Yes|0.774|0.774|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-15|89|1203
+GSE75083|Yes|0.767|0.767|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-19|104|1512
+GSE70501|No|-0.588|0.588|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-03-28|133|834
+GSE70514|Yes|0.505|0.505|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-13|65|2480
+GSE68155|No|-0.645|0.645|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-02-19|101|346
+GSE72726|Yes|0.818|0.818|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-02-20|138|769
+GSE78274|Yes|0.919|0.919|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-27|88|953
+GSE77980|Yes|0.589|0.589|Yes|TP|Done|Baseline|RNA-Seq|2019-01-03|89|1238
+GSE65772|Yes|0.914|0.914|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-27|85|968
+GSE65769|Yes|0.922|0.922|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-27|87|970
+GSE75615|No|-0.666|0.666|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-07-08|117|1602
+GSE64760|Yes|0.826|0.826|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|102|755
+GSE73594|Yes|0.646|0.646|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-28|59|331
+GSE75613|No|-0.539|0.539|Yes|FN|Done|Baseline|RNA-Seq|2019-05-31|109|1337
+GSE69204|Yes|0.835|0.835|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-10-24|72|889
+GSE40085|Yes|0.896|0.896|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-31|48|724
+GSE74683|Yes|0.754|0.754|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-02-20|87|1239
+GSE66366|Yes|0.569|0.569|Yes|TP|Done|Baseline|RNA-Seq|2018-08-10|151|1798
+GSE63576|Yes|0.694|0.694|Yes|TP|Done|Baseline|RNA-Seq|2018-02-19|110|1978
+GSE73715|Yes|0.918|0.918|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-07|73|426
+GSE72165|Yes|0.876|0.876|Yes|TP|Done|Baseline|RNA-Seq|2017-09-11|70|396
+GSE68382|Yes|0.663|0.663|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-12-10|140|299
+GSE73503|Yes|0.921|0.921|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-27|91|974
+GSE62556|Yes|0.773|0.773|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-25|61|1002
+GSE72658|Yes|0.775|0.775|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-28|99|386
+GSE57516|Yes|0.663|0.663|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-22|96|2306
+GSE69241|Yes|0.811|0.811|Yes|TP|Done|Baseline|RNA-Seq|2019-02-19|103|980
+GSE60451|Yes|0.727|0.727|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2021-03-16|46|807
+GSE71485|No|-0.506|0.506|Yes|FN|Done|Baseline|RNA-Seq|2019-07-08|103|1329
+GSE62023|Yes|0.723|0.723|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-26|75|664
+GSE68368|Yes|0.700|0.700|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-02-20|126|1093
+GSE49705|No|-0.581|0.581|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-01-09|66|857
+GSE70659|Yes|0.798|0.798|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-28|65|1122
+GSE12480|Yes|0.558|0.558|Yes|TP|Done|Baseline|transcription profiling by array|2018-04-19|105|1915
+GSE65352|Yes|0.754|0.754|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-15|88|893
+GSE70213|Yes|0.758|0.758|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-30|51|1270
+GSE62263|Yes|0.523|0.523|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-26|97|1192
+GSE69374|Yes|0.916|0.916|Yes|TP|Done|Baseline|RNA-Seq|2018-02-20|52|201
+GSE58271|Yes|0.738|0.738|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-05-30|118|1157
+GSE64138|No|-0.544|0.544|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-04-17|69|1699
+GSE63472|Yes|0.786|0.786|Yes|TP|Done|Baseline|RNA-Seq|2019-06-04|60|380
+GSE68984|Yes|0.520|0.520|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-02-21|74|1104
+GSE65500|Yes|0.752|0.752|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-15|137|1989
+GSE37468|Yes|0.613|0.613|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-19|89|1855
+GSE68169|Yes|0.675|0.675|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|32|2188
+GSE66686|Yes|0.506|0.506|Yes|TP|Done|Baseline|RNA-Seq|2018-08-10|132|1183
+GSE45035|Yes|0.527|0.527|Yes|TP|Done|Baseline|transcription profiling by array|2019-01-09|97|873
+GSE67904|Yes|0.811|0.811|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|68|235
+GSE63772|Yes|0.839|0.839|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-28|108|454
+GSE60078|Yes|0.657|0.657|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-20|96|1780
+GSE63643|Yes|0.752|0.752|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|89|353
+GSE65686|Yes|0.632|0.632|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-25|101|690
+GSE66440|Yes|0.804|0.804|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-13|132|183
+GSE60769|Yes|0.680|0.680|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-21|30|612
+GSE61991|No|-0.516|0.516|Yes|FN|Done|Baseline|RNA-Seq|2018-02-28|96|1792
+GSE62536|Yes|0.918|0.918|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|65|700
+GSE55060|No|-0.550|0.550|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-04-04|45|1163
+GSE65754|Yes|0.652|0.652|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-27|140|1062
+GSE35779|Yes|0.532|0.532|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-25|130|198
+GSE35778|Yes|0.791|0.791|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-22|93|178
+GSE47536|Yes|0.832|0.832|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-11|61|615
+GSE57514|Yes|0.513|0.513|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-22|92|1185
+GSE59460|Yes|0.860|0.860|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-08|179|1318
+GSE53917|No|-0.537|0.537|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2019-04-04|54|1057
+GSE63143|Yes|0.908|0.908|Yes|TP|Done|Baseline|RNA-Seq|2019-06-04|49|457
+GSE41985|Yes|0.747|0.747|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-01-18|97|1642
+GSE53877|Yes|0.730|0.730|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-20|55|898
+GSE52080|Yes|0.874|0.874|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-01-08|34|274
+GSE62594|Yes|0.763|0.763|Yes|TP|Done|Baseline|transcription profiling by array|2019-05-31|151|1730
+GSE57809|Yes|0.770|0.770|Yes|TP|Done|Baseline|RNA-Seq|2018-08-02|70|1138
+GSE62487|No|-0.601|0.601|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-03-12|81|939
+GSE61329|Yes|0.801|0.801|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-12|105|1229
+GSE62362|No|-0.572|0.572|Yes|FN|Done|Baseline|transcription profiling by array|2019-01-07|183|1596
+GSE38219|Yes|0.748|0.748|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-07|97|1383
+GSE38218|Yes|0.748|0.748|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-07|96|1383
+GSE62069|Yes|0.943|0.943|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-09|68|475
+GSE61939|Yes|0.525|0.525|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-11|125|2234
+GSE57782|Yes|0.678|0.678|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-22|68|738
+GSE34896|Yes|0.620|0.620|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-25|41|1242
+GSE60150|Yes|0.714|0.714|Yes|TP|Done|Baseline|transcription profiling by array|2020-10-13|78|599
+GSE61647|Yes|0.876|0.876|Yes|TP|Done|Baseline|transcription profiling by array|2018-08-02|54|236
+GSE58308|Yes|0.742|0.742|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-07|79|1556
+GSE33161|Yes|0.653|0.653|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-10-02|94|1723
+GSE45118|Yes|0.568|0.568|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-06|84|912
+GSE55744|Yes|0.907|0.907|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-03-13|89|372
+GSE32697|No|-0.573|0.573|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2018-12-10|230|1032
+GSE47155|Yes|0.797|0.797|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-04-16|133|1614
+GSE60505|Yes|0.758|0.758|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-04-17|113|1383
+GSE50862|Yes|0.716|0.716|Yes|TP|Done|Baseline|transcription profiling by array|2019-01-04|92|1493
+GSE50859|Yes|0.768|0.768|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-01-24|98|1511
+GSE55376|Yes|0.854|0.854|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-21|144|399
+GSE60058|Yes|0.944|0.944|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2017-09-08|51|182
+GSE49785|Yes|0.626|0.626|Yes|TP|Done|Baseline|transcription profiling by array|2018-10-25|118|2210
+GSE49383|Yes|0.864|0.864|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-11|62|2030
+GSE58727|Yes|0.910|0.910|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-22|51|434
+GSE37952|Yes|0.768|0.768|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-04-17|78|637
+GSE55581|Yes|0.578|0.578|Yes|TP|Done|Baseline|RNA-Seq|2019-02-18|48|1131
+GSE53427|Yes|0.771|0.771|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-20|60|249
+GSE59305|Yes|0.812|0.812|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|72|395
+GSE59304|Yes|0.801|0.801|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|67|389
+GSE59303|Yes|0.796|0.796|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-03-14|69|393
+GSE48590|No|-0.671|0.671|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2019-02-08|74|574
+GSE45319|Yes|0.647|0.647|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-08-28|86|1426
+GSE45684|Yes|0.691|0.691|Yes|TP|Done|Baseline|RNA-Seq|2019-04-17|205|1446
+GSE58073|Yes|0.911|0.911|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-22|53|668
+GSE50561|No|-0.535|0.535|Yes|FN|Done|Baseline|RNA-Seq|2019-07-03|55|678
+GSE47606|Yes|0.787|0.787|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-07|78|951
+GSE47005|Yes|0.809|0.809|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-07|78|1206
+GSE39953|Yes|0.501|0.501|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-01-09|28|635
+GSE51712|Yes|0.504|0.504|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-15|76|1785
+GSE55965|Yes|0.790|0.790|Yes|TP|Done|Baseline|transcription profiling by array|2017-09-07|57|970
+GSE55788|Yes|0.863|0.863|Yes|TP|Done|Baseline|RNA-Seq|2018-08-02|81|913
+GSE54982|Yes|0.887|0.887|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2018-01-25|54|452
+GSE54426|Yes|0.722|0.722|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-20|140|2260
+GSE42671|Yes|0.885|0.885|Yes|TP|Done|Baseline|RNA-Seq|2018-08-23|83|1367
+GSE55162|No|-0.652|0.652|Yes|FN|Done|Baseline|transcription profiling by array|2018-08-02|96|1975
+GSE54976|No|-0.529|0.529|Yes|FN|Done|WT vs. Mutant|transcription profiling by array|2017-09-07|73|2627
+GSE50687|Yes|0.826|0.826|Yes|TP|Done|Baseline|transcription profiling by array|2019-02-21|74|1195
+GSE52006|Yes|0.769|0.769|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-15|82|1685
+GSE45719|Yes|0.558|0.558|Yes|TP|Done|Baseline|RNA-Seq|2018-01-24|90|955
+GSE51650|Yes|0.897|0.897|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-19|62|925
+GSE50426|Yes|0.863|0.863|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2019-02-08|65|542
+GSE41895|Yes|0.950|0.950|Yes|TP|Done|WT vs. Mutant|transcription profiling by array|2018-04-16|115|287
+GSE41222|Yes|0.851|0.851|Yes|TP|Done|Baseline|RNA-Seq|2017-07-28|49|777
+GSE79500|Yes|0.650|0.650|Yes|TP|Done|Baseline|RNA-Seq|2019-03-01|190|1682
+GSE84345|Yes|0.580|0.580|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-05-31|155|1357
+GSE74679|Yes|0.849|0.849|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-04-05|123|1093
+GSE63031|No|-0.657|0.657|Yes|FN|Done|Baseline|RNA-Seq|2019-07-08|68|392
+GSE61066|Yes|0.882|0.882|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-22|98|2350
+GSE60402|Yes|0.795|0.795|Yes|TP|Done|WT vs. Mutant|RNA-Seq|2019-02-22|135|955
+GSE60817|Yes|0.832|0.832|Yes|TP|Done|Baseline|RNA-Seq|2018-04-16|68|619
+GSE60415|No|-0.596|0.596|Yes|FN|Done|WT vs. Mutant|RNA-Seq|2018-01-26|109|2170
+GSE78183|Yes|0.516|0.516|Yes|TP|Done|Baseline|RNA-Seq|2018-08-13|147|1363
+GSE25766|No|-0.582|0.582|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|1144
+GSE23873|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|1509
+GSE25465|No|-0.923|0.923|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|516
+GSE23322|No|-0.811|0.811|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|4233
+GSE19855|No|-0.774|0.774|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|1733
+GSE22879|Yes|0.518|0.518|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|379
+GSE24256|No|-0.805|0.805|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|1106
+GSE20465|No|-0.677|0.677|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|2003
+GSE18789|No|-0.797|0.797|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|962
+GSE18996|No|-0.848|0.848|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|913
+GSE17603|No|-0.757|0.757|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|1238
+GSE21548|No|-0.902|0.902|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|2148
+GSE20696|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|43|195
+GSE22005|No|-0.885|0.885|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|379
+GSE18245|No|-0.933|0.933|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|75|712
+GSE21180|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|89|1116
+GSE24210|No|-0.940|0.940|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|962
+GSE24088|No|-0.808|0.808|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|3363
+GSE23782|No|-0.654|0.654|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|308
+GSE9047|No|-0.694|0.694|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|1146
+GSE23914|No|-0.541|0.541|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|129|2568
+GSE21013|No|-0.657|0.657|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|1173
+GSE23860|No|-0.732|0.732|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|563
+GSE23714|No|-0.859|0.859|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|1370
+GSE20517|No|-0.882|0.882|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|548
+GSE23600|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1208
+GSE23538|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|327
+GSE17570|No|-0.896|0.896|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|1171
+GSE17404|No|-0.888|0.888|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|149|1704
+GSE21761|No|-0.922|0.922|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|116|1983
+GSE15401|No|-0.817|0.817|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1508
+GSE19581|No|-0.704|0.704|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|806
+GSE21755|No|-0.850|0.850|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|1835
+GSE23006|Yes|0.564|0.564|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|719
+GSE22938|No|-0.909|0.909|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|1316
+GSE18607|No|-0.925|0.925|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|1097
+GSE22196|No|-0.800|0.800|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|35|1497
+GSE20683|No|-0.769|0.769|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|35|901
+GSE22506|No|-0.638|0.638|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|145|1352
+GSE21069|No|-0.694|0.694|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|142|2284
+GSE22418|Yes|0.544|0.544|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|132|2400
+GSE20525|No|-0.697|0.697|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|369
+GSE21630|No|-0.721|0.721|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|68|1458
+GSE22128|No|-0.915|0.915|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|47|342
+GSE17702|No|-0.658|0.658|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|1834
+GSE21064|No|-0.928|0.928|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|1402
+GSE21994|No|-0.801|0.801|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|138|2388
+GSE21512|No|-0.866|0.866|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|140|1745
+GSE13743|No|-0.857|0.857|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|1215
+GSE21584|No|-0.863|0.863|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|129|1059
+GSE18813|No|-0.937|0.937|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|1441
+GSE15901|No|-0.642|0.642|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|1882
+GSE15894|No|-0.682|0.682|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|1859
+GSE21137|Yes|0.536|0.536|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|2094
+GSE21161|No|-0.550|0.550|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|1233
+GSE21237|No|-0.816|0.816|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|2366
+GSE20646|No|-0.654|0.654|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|2147
+GSE21087|Yes|0.571|0.571|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|883
+GSE21060|No|-0.781|0.781|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|1550
+GSE21027|No|-0.982|0.982|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|991
+GSE20054|No|-0.771|0.771|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|1589
+GSE17322|No|-0.824|0.824|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|626
+GSE7399|No|-0.664|0.664|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|427
+GSE20645|No|-0.799|0.799|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|716
+GSE15129|No|-0.580|0.580|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|1977
+GSE20570|No|-0.684|0.684|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|2256
+GSE17140|No|-0.973|0.973|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|275
+GSE20349|No|-0.880|0.880|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|43|1081
+GSE20316|No|-0.686|0.686|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|1960
+GSE19732|No|-0.849|0.849|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|695
+GSE18740|No|-0.942|0.942|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|402
+GSE19695|No|-0.634|0.634|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|801
+GSE19474|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1428
+GSE8452|No|-0.863|0.863|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|1497
+GSE19421|No|-0.942|0.942|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|983
+GSE13840|No|-0.678|0.678|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|1598
+GSE19073|No|-0.682|0.682|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|219
+GSE17076|No|-0.682|0.682|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|452
+GSE10854|No|-0.917|0.917|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|1378
+GSE19104|No|-0.527|0.527|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|34|2421
+GSE16779|No|-0.728|0.728|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|42|500
+GSE15943|No|-0.692|0.692|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|2208
+GSE18785|No|-0.768|0.768|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|1881
+GSE18746|No|-0.760|0.760|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|40|1203
+GSE18348|No|-0.709|0.709|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|1890
+GSE18547|No|-0.854|0.854|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|1372
+GSE16174|No|-0.707|0.707|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|25|1496
+GSE14559|No|-0.855|0.855|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|111|2452
+GSE10011|No|-0.980|0.980|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1077
+GSE17994|No|-0.655|0.655|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|1886
+GSE13908|No|-0.563|0.563|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|791
+GSE17879|No|-0.951|0.951|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|1612
+GSE17509|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|2323
+GSE11727|No|-0.945|0.945|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1529
+GSE12426|No|-0.855|0.855|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|37|1067
+GSE16516|No|-0.827|0.827|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|111|2618
+GSE17330|No|-0.800|0.800|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|1669
+GSE17102|No|-0.831|0.831|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|41|549
+GSE17004|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|958
+GSE16948|No|-0.915|0.915|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|2048
+GSE16902|No|-0.615|0.615|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|47|679
+GSE14339|No|-0.815|0.815|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|2296
+GSE15883|No|-0.883|0.883|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|805
+GSE13614|No|-0.759|0.759|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|116|1918
+GSE13278|No|-0.982|0.982|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|764
+GSE12601|No|-0.660|0.660|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|2120
+GSE12067|No|-0.929|0.929|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|1832
+GSE16023|No|-0.551|0.551|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|101|1379
+GSE12465|No|-0.810|0.810|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|2202
+GSE15633|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|1748
+GSE15354|Yes|0.671|0.671|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|969
+GSE15809|No|-0.926|0.926|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|433
+GSE11288|No|-0.865|0.865|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|770
+GSE15754|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1977
+GSE14585|No|-0.717|0.717|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|1501
+GSE15638|No|-0.776|0.776|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|866
+GSE11420|No|-0.857|0.857|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|572
+GSE14219|No|-0.859|0.859|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|1100
+GSE11936|No|-0.583|0.583|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|2599
+GSE13567|No|-0.950|0.950|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|615
+GSE15349|No|-0.587|0.587|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|1382
+GSE14088|No|-0.917|0.917|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1612
+GSE11037|No|-0.760|0.760|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|819
+GSE9978|No|-0.882|0.882|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|24|653
+GSE10656|No|-0.602|0.602|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|109|1934
+GSE10970|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|2742
+GSE7863|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|2176
+GSE14030|No|-0.736|0.736|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|1984
+GSE10741|No|-0.887|0.887|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|112|1778
+GSE9433|No|-0.778|0.778|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|40|1199
+GSE13250|No|-0.956|0.956|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|25|476
+GSE10532|No|-0.954|0.954|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|236
+GSE14344|No|-0.935|0.935|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|1253
+GSE14424|No|-0.536|0.536|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|2119
+GSE13143|No|-0.867|0.867|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|907
+GSE12421|No|-0.849|0.849|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|1839
+GSE10344|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|37|898
+GSE10168|No|-0.951|0.951|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|706
+GSE13946|No|-0.849|0.849|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|279
+GSE13264|No|-0.670|0.670|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|1136
+GSE10084|No|-0.888|0.888|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|444
+GSE12498|No|-0.765|0.765|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|2157
+GSE13553|No|-0.705|0.705|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|1988
+GSE13379|No|-0.833|0.833|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|1889
+GSE13409|No|-0.978|0.978|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|497
+GSE13336|No|-0.586|0.586|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|1597
+GSE13298|No|-0.685|0.685|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|943
+GSE9428|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|590
+GSE7707|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|883
+GSE11680|No|-0.557|0.557|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|1023
+GSE9525|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|1919
+GSE12321|No|-0.782|0.782|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|1047
+GSE12707|Yes|0.658|0.658|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|448
+GSE11726|No|-0.701|0.701|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|818
+GSE9242|No|-0.651|0.651|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|3182
+GSE12176|No|-0.898|0.898|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|434
+GSE12156|No|-0.850|0.850|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|272
+GSE12441|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|2040
+GSE12387|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|718
+GSE11703|No|-0.926|0.926|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|1173
+GSE11137|No|-0.561|0.561|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|14|2964
+GSE11018|No|-0.701|0.701|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|1945
+GSE10954|No|-0.750|0.750|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1017
+GSE11557|No|-0.855|0.855|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|451
+GSE10772|No|-0.891|0.891|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|2229
+GSE11434|No|-0.843|0.843|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|921
+GSE11343|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1618
+GSE7690|No|-0.841|0.841|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|1092
+GSE10081|Yes|0.584|0.584|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|31|452
+GSE9146|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|36|513
+GSE8947|No|-0.811|0.811|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|621
+GSE5245|No|-0.946|0.946|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|951
+GSE10909|No|-0.947|0.947|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|630
+GSE10682|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|3625
+GSE8349|No|-0.642|0.642|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1299
+GSE10182|No|-0.909|0.909|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|514
+GSE8566|No|-0.778|0.778|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|28|1673
+GSE7215|No|-0.925|0.925|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|2101
+GSE10534|No|-0.862|0.862|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|1640
+GSE9810|No|-0.822|0.822|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|2314
+GSE8682|No|-0.927|0.927|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|652
+GSE6689|No|-0.818|0.818|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|48|911
+GSE10002|Yes|0.516|0.516|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|111|1608
+GSE7528|No|-0.863|0.863|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|981
+GSE7141|No|-0.877|0.877|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|381
+GSE8513|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|3142
+GSE6540|No|-0.795|0.795|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|813
+GSE9104|No|-0.929|0.929|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1127
+GSE8753|No|-0.692|0.692|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1009
+GSE8025|No|-0.819|0.819|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|2526
+GSE8524|No|-0.600|0.600|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|2143
+GSE9558|No|-0.797|0.797|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|103|1435
+GSE5766|No|-0.864|0.864|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1602
+GSE7775|No|-0.596|0.596|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|3010
+GSE5503|No|-0.852|0.852|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|399
+GSE9247|No|-0.876|0.876|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|2928
+GSE7875|No|-0.763|0.763|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|2063
+GSE4822|No|-0.618|0.618|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|105|1870
+GSE8662|No|-0.744|0.744|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|3342
+GSE5907|No|-0.662|0.662|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|489
+GSE6939|No|-0.956|0.956|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|738
+GSE6957|No|-0.738|0.738|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|2124
+GSE5319|No|-0.639|0.639|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|3076
+GSE6686|No|-0.834|0.834|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|3138
+GSE5475|No|-0.674|0.674|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|2482
+GSE7768|No|-0.907|0.907|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|1231
+GSE8006|No|-0.717|0.717|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|35|2143
+GSE7507|No|-0.964|0.964|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|188
+GSE6815|No|-0.751|0.751|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|3021
+GSE4915|No|-0.862|0.862|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|1717
+GSE6858|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|47|588
+GSE7069|No|-0.813|0.813|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|3341
+GSE7424|No|-0.706|0.706|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|841
+GSE7404|No|-0.822|0.822|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|610
+GSE7194|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|1905
+GSE6961|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|1232
+GSE6837|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|313
+GSE5912|No|-0.704|0.704|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|1958
+GSE5413|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|1927
+GSE4658|No|-0.854|0.854|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|32|510
+GSE6581|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|836
+GSE6194|No|-0.755|0.755|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|751
+GSE6006|No|-0.922|0.922|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|389
+GSE6003|No|-0.879|0.879|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|275
+GSE4712|No|-0.887|0.887|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|37|767
+GSE4819|No|-0.955|0.955|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|726
+GSE5777|No|-0.644|0.644|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|1873
+GSE5562|No|-0.813|0.813|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1425
+GSE5128|No|-0.859|0.859|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|1913
+GSE5663|No|-0.784|0.784|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|1366
+GSE5500|No|-0.586|0.586|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|1856
+GSE5463|No|-0.907|0.907|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|2254
+GSE3079|No|-0.875|0.875|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|1068
+GSE5112|No|-0.918|0.918|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|911
+GSE5309|No|-0.738|0.738|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|4059
+GSE4648|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|3403
+GSE5042|No|-0.627|0.627|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|1883
+GSE5041|No|-0.822|0.822|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1503
+GSE5077|Yes|0.616|0.616|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|378
+GSE4479|No|-0.856|0.856|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|1009
+GSE4811|No|-0.902|0.902|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|747
+GSE4694|No|-0.969|0.969|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|31|857
+GSE4710|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|1591
+GSE4664|No|-0.821|0.821|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|673
+GSE2515|No|-0.688|0.688|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|16|110
+GSE3925|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|548
+GSE4332|No|-0.782|0.782|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|1346
+GSE4410|No|-0.948|0.948|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|1087
+GSE4390|No|-0.676|0.676|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|1189
+GSE4266|No|-0.694|0.694|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|481
+GSE4265|No|-0.694|0.694|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|479
+GSE3691|No|-0.912|0.912|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|898
+GSE3260|No|-0.817|0.817|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|444
+GSE2558|No|-0.819|0.819|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|5848
+GSE2376|No|-0.779|0.779|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|528
+GSE3181|No|-0.720|0.720|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|32|1252
+GSE2514|No|-0.802|0.802|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|11|28
+GSE3771|No|-0.934|0.934|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|376
+GSE3766|No|-0.885|0.885|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|22|121
+GSE3195|No|-0.814|0.814|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|1107
+GSE3235|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|24|280
+GSE2746|No|-0.852|0.852|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|33|1053
+GSE2565|No|-0.778|0.778|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|35|2189
+GSE2869|No|-0.517|0.517|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|25|3580
+GSE2850|No|-0.583|0.583|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1784
+GSE2426|No|-0.758|0.758|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|5616
+GSE2333|No|-0.941|0.941|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|719
+GSE2323|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|16|121
+GSE2278|No|-0.786|0.786|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|25|275
+GSE1576|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|477
+GSE273|No|-0.580|0.580|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|23|98
+GSE1659|No|-0.764|0.764|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|4224
+GSE1921|No|-0.876|0.876|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|41|133
+GSE1680|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|617
+GSE1948|No|-0.762|0.762|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|35|348
+GSE1873|No|-0.753|0.753|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|1492
+GSE692|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|43|115
+GSE1501|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|4482
+GSE1556|Yes|0.574|0.574|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|341
+GSE1419|No|-0.903|0.903|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|172
+GSE1131|No|-0.960|0.960|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|810
+GSE989|No|-0.960|0.960|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|30|641
+GSE587|No|-0.838|0.838|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|441
+GSE611|Yes|0.544|0.544|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|31|371
+GSE582|No|-0.806|0.806|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|38|1434
+GSE415|No|-0.735|0.735|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|34|419
+GSE478|No|-0.782|0.782|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|326
+GSE106|No|-0.741|0.741|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|25|491
+GSE51|No|-0.704|0.704|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|29|66
+GSE62606|No|-0.556|0.556|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|778
+GSE76853|No|-0.826|0.826|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|100|1527
+GSE75416|No|-0.709|0.709|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|379
+GSE84987|No|-0.881|0.881|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|92|1372
+GSE32090|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|776
+GSE67517|No|-0.535|0.535|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|92|330
+GSE76932|No|-0.947|0.947|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|92|429
+GSE76133|Yes|0.585|0.585|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|68|248
+GSE77881|No|-0.564|0.564|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|298
+GSE85968|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|105|712
+GSE85931|No|-0.857|0.857|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|100|1102
+GSE71170|Yes|0.511|0.511|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|165|230
+GSE50145|No|-0.731|0.731|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|109|2335
+GSE77851|No|-0.794|0.794|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|152|361
+GSE81760|No|-0.662|0.662|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|75|1412
+GSE76988|No|-0.771|0.771|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|96|2374
+GSE85076|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|112|1384
+GSE79862|No|-0.862|0.862|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|125|517
+GSE77693|No|-0.793|0.793|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|79|1852
+GSE84946|No|-0.808|0.808|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|100|304
+GSE84534|No|-0.548|0.548|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|56|1012
+GSE74558|No|-0.842|0.842|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|1558
+GSE83873|No|-0.890|0.890|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|96|1405
+GSE79651|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|102|513
+GSE63535|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1352
+GSE60595|No|-0.762|0.762|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|1104
+GSE84564|No|-0.810|0.810|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|32|439
+GSE84562|No|-0.797|0.797|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|734
+GSE84551|No|-0.834|0.834|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|391
+GSE71831|No|-0.754|0.754|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|102|2429
+GSE77098|No|-0.770|0.770|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|1199
+GSE59459|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|1827
+GSE70700|No|-0.693|0.693|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|128|1111
+GSE81329|No|-0.946|0.946|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|75|281
+GSE79525|No|-0.948|0.948|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|141|317
+GSE75604|No|-0.560|0.560|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|1936
+GSE71631|No|-0.717|0.717|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|141|961
+GSE70195|No|-0.512|0.512|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|1277
+GSE76276|No|-0.802|0.802|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|152|783
+GSE70189|No|-0.929|0.929|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|38|315
+GSE79008|No|-0.704|0.704|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|1159
+GSE71873|No|-0.735|0.735|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|116|454
+GSE78153|No|-0.744|0.744|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|686
+GSE72139|Yes|0.520|0.520|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|1179
+GSE81432|No|-0.674|0.674|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|116|547
+GSE83562|No|-0.880|0.880|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|384
+GSE81849|No|-0.951|0.951|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|56|672
+GSE76356|No|-0.911|0.911|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|74|1702
+GSE62730|No|-0.961|0.961|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|235|311
+GSE83202|Yes|0.618|0.618|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|437
+GSE81298|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|105|349
+GSE79410|No|-0.549|0.549|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|1081
+GSE75449|No|-0.678|0.678|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|1553
+GSE75113|No|-0.739|0.739|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|84|2797
+GSE74696|No|-0.684|0.684|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|319
+GSE73392|No|-0.673|0.673|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|321
+GSE70016|No|-0.765|0.765|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|2682
+GSE82031|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|76|1238
+GSE81615|No|-0.892|0.892|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|1449
+GSE48467|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|125|893
+GSE80087|No|-0.830|0.830|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|60|410
+GSE80063|No|-0.746|0.746|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|46|500
+GSE71493|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|181
+GSE78203|Yes|0.504|0.504|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|2138
+GSE68837|No|-0.911|0.911|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|1658
+GSE66963|No|-0.561|0.561|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|948
+GSE52260|No|-0.798|0.798|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|76|1631
+GSE70538|No|-0.613|0.613|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|88|1059
+GSE69616|No|-0.672|0.672|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|896
+GSE79858|No|-0.930|0.930|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|1521
+GSE79737|No|-0.789|0.789|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|133|581
+GSE66372|No|-0.791|0.791|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|152|898
+GSE79650|No|-0.933|0.933|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|769
+GSE71637|No|-0.696|0.696|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|152|1202
+GSE77303|No|-0.936|0.936|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|122|1010
+GSE77847|No|-0.744|0.744|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|164|1683
+GSE77423|No|-0.875|0.875|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|522
+GSE77419|No|-0.956|0.956|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|582
+GSE77271|No|-0.845|0.845|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|842
+GSE69926|No|-0.815|0.815|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|114|2184
+GSE68902|No|-0.901|0.901|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|78|1418
+GSE79248|No|-0.731|0.731|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|131|1402
+GSE63653|No|-0.842|0.842|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|464
+GSE78841|No|-0.856|0.856|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|390
+GSE76217|No|-0.815|0.815|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|85|361
+GSE76033|No|-0.760|0.760|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|149|2256
+GSE77734|No|-0.910|0.910|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|98|157
+GSE75871|No|-0.785|0.785|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1899
+GSE78170|No|-0.751|0.751|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|630
+GSE71628|Yes|0.551|0.551|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|760
+GSE65987|No|-0.659|0.659|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|116|1407
+GSE77256|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|101|548
+GSE76840|No|-0.963|0.963|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|78|513
+GSE76548|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|192|1716
+GSE77192|No|-0.782|0.782|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|140|756
+GSE51012|Yes|0.501|0.501|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|562
+GSE77843|No|-0.824|0.824|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|1587
+GSE72210|No|-0.727|0.727|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|153|1249
+GSE65859|No|-0.787|0.787|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|705
+GSE74533|No|-0.658|0.658|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|57|525
+GSE61024|No|-0.651|0.651|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|79|456
+GSE70981|No|-0.761|0.761|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|51|1461
+GSE76889|No|-0.907|0.907|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|126|1378
+GSE76010|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|2136
+GSE37597|No|-0.595|0.595|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|2050
+GSE76749|No|-0.914|0.914|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|111|1008
+GSE76733|No|-0.826|0.826|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|66|382
+GSE53352|No|-0.814|0.814|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|149|2724
+GSE76693|No|-0.717|0.717|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|1608
+GSE76602|No|-0.946|0.946|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|122|1059
+GSE76592|No|-0.637|0.637|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|1216
+GSE74855|No|-0.746|0.746|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|87|644
+GSE73574|Yes|0.503|0.503|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|44|1324
+GSE72767|No|-0.783|0.783|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|116|2773
+GSE69573|No|-0.733|0.733|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|46|1720
+GSE68265|No|-0.741|0.741|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|59|2054
+GSE67946|No|-0.818|0.818|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|60|320
+GSE74366|No|-0.620|0.620|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|73|539
+GSE74002|No|-0.680|0.680|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1015
+GSE66243|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|32|538
+GSE53150|No|-0.901|0.901|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|74|778
+GSE47569|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|526
+GSE76265|No|-0.878|0.878|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|46|776
+GSE76253|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|97|966
+GSE70109|No|-0.769|0.769|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|131|1007
+GSE75600|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|1494
+GSE71185|No|-0.883|0.883|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|92|1172
+GSE61879|No|-0.885|0.885|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|709
+GSE74065|No|-0.787|0.787|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|112|1259
+GSE73562|No|-0.787|0.787|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|1306
+GSE42990|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|1433
+GSE75740|No|-0.603|0.603|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|447
+GSE67947|No|-0.843|0.843|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|53|1122
+GSE46882|No|-0.644|0.644|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|131|1000
+GSE75862|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|184|1071
+GSE73631|No|-0.864|0.864|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|84|1252
+GSE72136|No|-0.691|0.691|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|167|864
+GSE53075|Yes|0.567|0.567|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|60|1211
+GSE75378|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|2017
+GSE74966|No|-0.630|0.630|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|1307
+GSE75103|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|111|1233
+GSE68857|No|-0.652|0.652|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|1720
+GSE63526|No|-0.713|0.713|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|80|2127
+GSE70023|Yes|0.521|0.521|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|403
+GSE63627|No|-0.762|0.762|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|134|590
+GSE71926|No|-0.885|0.885|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|813
+GSE70046|No|-0.642|0.642|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|94|1341
+GSE63455|No|-0.911|0.911|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|1546
+GSE74149|No|-0.878|0.878|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|52|2064
+GSE73514|No|-0.768|0.768|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|1083
+GSE65734|No|-0.954|0.954|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|59|480
+GSE71948|No|-0.794|0.794|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|79|233
+GSE65321|No|-0.887|0.887|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|77|296
+GSE68266|No|-0.978|0.978|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|480
+GSE60005|No|-0.655|0.655|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|68|958
+GSE65921|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|111|960
+GSE72988|No|-0.897|0.897|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|196
+GSE70766|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|130|907
+GSE65531|No|-0.942|0.942|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|99|645
+GSE65530|No|-0.916|0.916|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|108|521
+GSE65528|No|-0.940|0.940|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|88|763
+GSE66267|Yes|0.748|0.748|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|91|291
+GSE72651|No|-0.632|0.632|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|590
+GSE69190|No|-0.731|0.731|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|95|1921
+GSE68177|No|-0.670|0.670|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|84|1144
+GSE72552|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|436
+GSE68618|No|-0.632|0.632|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|138|1734
+GSE71705|No|-0.880|0.880|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|103|1266
+GSE72478|No|-0.933|0.933|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|470
+GSE67291|No|-0.850|0.850|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|79|346
+GSE71889|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|58|145
+GSE71176|No|-0.734|0.734|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|115|1498
+GSE58813|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|129|1824
+GSE59870|No|-0.879|0.879|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|507
+GSE60614|Yes|0.513|0.513|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|623
+GSE71826|No|-0.758|0.758|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|306
+GSE69473|Yes|0.526|0.526|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|71|1074
+GSE56612|No|-0.777|0.777|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|150|1201
+GSE50418|No|-0.543|0.543|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|367
+GSE63271|No|-0.629|0.629|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|219
+GSE70481|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|89|1529
+GSE66055|No|-0.838|0.838|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|1361
+GSE70846|No|-0.660|0.660|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|898
+GSE70680|No|-0.718|0.718|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|654
+GSE70593|Yes|0.524|0.524|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|642
+GSE70495|No|-0.928|0.928|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|1987
+GSE46861|No|-0.932|0.932|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|38|714
+GSE43633|No|-0.723|0.723|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|896
+GSE70271|No|-0.574|0.574|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|496
+GSE62151|No|-0.831|0.831|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|86|2443
+GSE63137|No|-0.614|0.614|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|66|899
+GSE67964|Yes|0.516|0.516|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|1126
+GSE45882|No|-0.824|0.824|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|88|481
+GSE38921|No|-0.733|0.733|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|123|481
+GSE61887|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|1124
+GSE55485|No|-0.643|0.643|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|2070
+GSE64524|No|-0.919|0.919|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|518
+GSE58120|No|-0.867|0.867|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|1285
+GSE54242|No|-0.936|0.936|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1331
+GSE68991|No|-0.710|0.710|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|2049
+GSE66978|No|-0.912|0.912|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|89|1350
+GSE68843|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|510
+GSE55424|No|-0.557|0.557|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|1258
+GSE61152|No|-0.785|0.785|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|452
+GSE64411|No|-0.774|0.774|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|74|1854
+GSE57391|No|-0.598|0.598|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|131|727
+GSE28531|No|-0.803|0.803|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|2290
+GSE28523|No|-0.803|0.803|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|2296
+GSE58488|No|-0.821|0.821|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|450
+GSE66068|No|-0.935|0.935|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|125|1115
+GSE65697|No|-0.931|0.931|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|125|971
+GSE67265|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|135|1223
+GSE68381|No|-0.898|0.898|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|126|1104
+GSE66706|No|-0.826|0.826|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|108|460
+GSE64247|No|-0.978|0.978|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|650
+GSE61479|No|-0.879|0.879|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|625
+GSE57472|No|-0.908|0.908|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|369
+GSE46395|Yes|0.517|0.517|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|576
+GSE52667|No|-0.602|0.602|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|3073
+GSE63804|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|88|2483
+GSE61208|No|-0.869|0.869|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|2214
+GSE67696|No|-0.525|0.525|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|784
+GSE67591|No|-0.513|0.513|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|706
+GSE65582|No|-0.596|0.596|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|81|833
+GSE60808|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|94|1084
+GSE61422|No|-0.573|0.573|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|140|2148
+GSE48083|No|-0.852|0.852|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|56|1810
+GSE67408|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|810
+GSE63821|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|1237
+GSE60506|No|-0.880|0.880|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|48|962
+GSE61013|No|-0.960|0.960|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|784
+GSE67358|No|-0.680|0.680|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|669
+GSE53244|No|-0.885|0.885|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|138|1121
+GSE60931|No|-0.649|0.649|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|1713
+GSE57133|No|-0.566|0.566|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|1530
+GSE65000|No|-0.565|0.565|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|93|1122
+GSE56063|No|-0.584|0.584|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|404
+GSE60231|No|-0.901|0.901|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|123|889
+GSE64867|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|94|324
+GSE57718|No|-0.716|0.716|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|1940
+GSE62512|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|123|554
+GSE65935|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|174|1855
+GSE65905|No|-0.861|0.861|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1629
+GSE62129|No|-0.830|0.830|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|98|1138
+GSE46877|No|-0.958|0.958|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|1022
+GSE65494|Yes|0.726|0.726|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|387
+GSE64893|No|-0.865|0.865|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|120|822
+GSE55304|No|-0.623|0.623|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|1312
+GSE54588|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|78|367
+GSE65461|No|-0.664|0.664|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|1881
+GSE65390|No|-0.877|0.877|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|472
+GSE54412|No|-0.784|0.784|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|77|1357
+GSE60450|No|-0.565|0.565|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|110|341
+GSE35175|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|876
+GSE65038|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|1550
+GSE51054|No|-0.883|0.883|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1179
+GSE59661|No|-0.579|0.579|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|34|1907
+GSE57985|No|-0.842|0.842|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|111|698
+GSE60312|No|-0.574|0.574|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|106|1304
+GSE64608|No|-0.723|0.723|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|54|466
+GSE61582|Yes|0.513|0.513|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|888
+GSE62635|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|1128
+GSE42999|No|-0.897|0.897|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|165|1034
+GSE57241|Yes|0.545|0.545|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|50|1049
+GSE64063|No|-0.670|0.670|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|67|912
+GSE46716|No|-0.860|0.860|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|131|1806
+GSE63843|No|-0.850|0.850|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|94|280
+GSE60749|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|77|1804
+GSE63756|No|-0.871|0.871|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|94|2753
+GSE63674|No|-0.673|0.673|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|17|1713
+GSE63551|Yes|0.532|0.532|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|1296
+GSE62424|No|-0.557|0.557|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|37|1853
+GSE61031|No|-0.709|0.709|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|35|1357
+GSE53506|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|90|1813
+GSE49038|No|-0.919|0.919|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|1142
+GSE59972|No|-0.769|0.769|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|653
+GSE54681|No|-0.730|0.730|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|145|1872
+GSE61997|No|-0.834|0.834|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|100|1298
+GSE62884|No|-0.779|0.779|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|161|3325
+GSE58088|No|-0.738|0.738|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|55|332
+GSE55874|No|-0.718|0.718|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|1855
+GSE55117|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|1724
+GSE54374|No|-0.502|0.502|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1575
+GSE62324|No|-0.589|0.589|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|561
+GSE61695|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|110|1428
+GSE51343|No|-0.581|0.581|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|117|1714
+GSE52766|No|-0.678|0.678|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|109|1240
+GSE55602|Yes|0.681|0.681|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|1351
+GSE11858|No|-0.864|0.864|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|1219
+GSE61505|No|-0.761|0.761|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|42|321
+GSE54452|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|1302
+GSE57206|No|-0.712|0.712|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|268
+GSE51719|No|-0.704|0.704|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|418
+GSE37344|No|-0.877|0.877|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|109|952
+GSE61412|No|-0.662|0.662|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|576
+GSE54154|No|-0.841|0.841|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|72|1342
+GSE60599|No|-0.603|0.603|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|88|203
+GSE58822|No|-0.505|0.505|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|1416
+GSE56284|No|-0.757|0.757|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|105|1719
+GSE61056|Yes|0.555|0.555|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|197
+GSE61049|No|-0.708|0.708|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|461
+GSE54073|No|-0.841|0.841|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|668
+GSE58089|No|-0.710|0.710|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|118|1393
+GSE57867|No|-0.590|0.590|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|297
+GSE51297|No|-0.713|0.713|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|692
+GSE59276|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|2331
+GSE58056|No|-0.668|0.668|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|698
+GSE51227|No|-0.643|0.643|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|507
+GSE60654|No|-0.732|0.732|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|1016
+GSE59140|No|-0.964|0.964|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|1246
+GSE60516|No|-0.893|0.893|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|284
+GSE60492|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|130|3325
+GSE58960|No|-0.908|0.908|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|779
+GSE59037|No|-0.712|0.712|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|1102
+GSE47902|Yes|0.584|0.584|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|829
+GSE58746|No|-0.975|0.975|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|107|719
+GSE55554|No|-0.984|0.984|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|475
+GSE31372|No|-0.601|0.601|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|131|1604
+GSE41104|No|-0.607|0.607|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|444
+GSE60101|No|-0.907|0.907|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|57|328
+GSE57292|No|-0.736|0.736|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|34|1091
+GSE49643|No|-0.726|0.726|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|1100
+GSE52502|No|-0.939|0.939|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|98|1321
+GSE53520|No|-0.511|0.511|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|1110
+GSE53139|No|-0.576|0.576|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|521
+GSE56252|No|-0.909|0.909|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|1443
+GSE58982|No|-0.569|0.569|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|437
+GSE58343|No|-0.650|0.650|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|98|1225
+GSE59564|No|-0.942|0.942|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|484
+GSE45155|No|-0.695|0.695|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|819
+GSE59437|No|-0.672|0.672|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1091
+GSE51648|No|-0.696|0.696|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|2275
+GSE58079|No|-0.886|0.886|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|665
+GSE59272|No|-0.876|0.876|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1154
+GSE53971|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|2230
+GSE59204|No|-0.509|0.509|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|54|954
+GSE54549|No|-0.839|0.839|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|81|1394
+GSE54943|No|-0.504|0.504|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|471
+GSE54246|No|-0.909|0.909|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|484
+GSE48969|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|3069
+GSE47846|No|-0.654|0.654|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|941
+GSE45028|No|-0.853|0.853|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|134|2753
+GSE51832|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|209
+GSE58765|No|-0.668|0.668|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|92|1489
+GSE50883|No|-0.889|0.889|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|2153
+GSE58709|No|-0.892|0.892|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|415
+GSE58493|No|-0.810|0.810|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|615
+GSE51190|No|-0.852|0.852|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|146|1346
+GSE55831|No|-0.609|0.609|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|112|2238
+GSE58398|No|-0.875|0.875|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|120|402
+GSE58368|No|-0.706|0.706|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|42|1217
+GSE58275|No|-0.693|0.693|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|765
+GSE57698|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|63|1422
+GSE55489|No|-0.815|0.815|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|728
+GSE47883|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|122|1104
+GSE47698|No|-0.873|0.873|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|780
+GSE54231|No|-0.747|0.747|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|145|1833
+GSE47401|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|965
+GSE49804|No|-0.762|0.762|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|147|435
+GSE53030|No|-0.934|0.934|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|103|756
+GSE47061|No|-0.785|0.785|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|5797
+GSE57425|No|-0.555|0.555|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1032
+GSE29177|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|1298
+GSE52899|No|-0.826|0.826|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|154|1208
+GSE57195|No|-0.514|0.514|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|935
+GSE52134|No|-0.853|0.853|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|2145
+GSE47412|Yes|0.576|0.576|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|211
+GSE47817|No|-0.821|0.821|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|83|1218
+GSE48553|No|-0.848|0.848|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|150|1185
+GSE40714|No|-0.667|0.667|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|136|2083
+GSE35093|No|-0.852|0.852|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|358
+GSE56018|No|-0.856|0.856|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|91|1202
+GSE49906|Yes|0.507|0.507|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|113|1457
+GSE39349|No|-0.900|0.900|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|121|2499
+GSE55574|No|-0.643|0.643|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1643
+GSE46122|No|-0.903|0.903|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1525
+GSE28685|No|-0.777|0.777|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1245
+GSE50041|No|-0.772|0.772|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|640
+GSE56759|No|-0.860|0.860|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|650
+GSE37936|No|-0.821|0.821|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|121|2618
+GSE55504|No|-0.846|0.846|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|78|1703
+GSE54307|No|-0.766|0.766|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|2255
+GSE53444|No|-0.841|0.841|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|2078
+GSE56366|No|-0.659|0.659|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|715
+GSE55247|Yes|0.514|0.514|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|195|639
+GSE44284|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|8063
+GSE56089|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|119|456
+GSE55014|No|-0.749|0.749|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|963
+GSE55090|No|-0.789|0.789|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|68|254
+GSE55733|No|-0.759|0.759|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|359
+GSE55900|No|-0.670|0.670|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|125|1205
+GSE55710|No|-0.976|0.976|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|144|685
+GSE54853|No|-0.637|0.637|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|87|1447
+GSE54787|No|-0.838|0.838|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|560
+GSE54056|No|-0.581|0.581|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|683
+GSE44762|No|-0.505|0.505|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|150
+GSE37927|No|-0.798|0.798|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|87|650
+GSE54838|No|-0.620|0.620|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|1608
+GSE53760|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|707
+GSE55228|No|-0.572|0.572|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|1607
+GSE51892|No|-0.747|0.747|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|135|3484
+GSE51386|No|-0.797|0.797|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|570
+GSE50113|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|92|232
+GSE55094|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|1436
+GSE35899|No|-0.897|0.897|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|33|569
+GSE42805|No|-0.822|0.822|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|54|1718
+GSE53982|No|-0.866|0.866|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|2420
+GSE47735|No|-0.738|0.738|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|138|1456
+GSE44146|No|-0.763|0.763|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|65|296
+GSE51925|No|-0.727|0.727|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|168
+GSE54619|No|-0.738|0.738|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|62|258
+GSE41645|No|-0.979|0.979|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|394
+GSE52594|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|55|1595
+GSE52416|No|-0.945|0.945|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|1360
+GSE26913|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|2306
+GSE54311|No|-0.897|0.897|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1014
+GSE49262|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|102|566
+GSE26894|No|-0.687|0.687|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|860
+GSE54054|No|-0.766|0.766|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|32|1944
+GSE54022|No|-0.911|0.911|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|1894
+GSE52243|No|-0.668|0.668|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|170|1579
+GSE49441|No|-0.776|0.776|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|303
+GSE53894|No|-0.835|0.835|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|48|336
+GSE48387|No|-0.815|0.815|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|58|470
+GSE46879|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|852
+GSE53784|No|-0.734|0.734|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|1554
+GSE46544|No|-0.703|0.703|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|1038
+GSE51104|Yes|0.743|0.743|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|1152
+GSE44232|No|-0.758|0.758|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|114|1790
+GSE37577|No|-0.713|0.713|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1395
+GSE27527|No|-0.753|0.753|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|345
+GSE50600|No|-0.566|0.566|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|1050
+GSE47967|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|362
+GSE45180|No|-0.818|0.818|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|98|517
+GSE23317|No|-0.661|0.661|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|1788
+GSE22994|No|-0.867|0.867|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|923
+GSE53637|No|-0.929|0.929|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|959
+GSE53403|No|-0.762|0.762|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|1096
+GSE50459|No|-0.655|0.655|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|72|1479
+GSE53337|No|-0.949|0.949|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|1137
+GSE53145|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|1588
+GSE53106|No|-0.853|0.853|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|638
+GSE39752|No|-0.667|0.667|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|84|1328
+GSE51283|No|-0.651|0.651|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|198
+GSE43028|No|-0.574|0.574|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|80|613
+GSE36291|No|-0.834|0.834|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|163|1646
+GSE52925|No|-0.775|0.775|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|1992
+GSE52940|No|-0.747|0.747|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|242
+GSE34011|No|-0.588|0.588|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|582
+GSE47794|Yes|0.692|0.692|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|64|1450
+GSE46589|No|-0.678|0.678|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|308
+GSE42927|No|-0.971|0.971|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|853
+GSE48436|No|-0.796|0.796|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|139|1264
+GSE21475|No|-0.674|0.674|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|1541
+GSE21451|No|-0.794|0.794|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|1990
+GSE45156|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|1537
+GSE49386|No|-0.538|0.538|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|729
+GSE52196|No|-0.668|0.668|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|38|1121
+GSE52195|No|-0.674|0.674|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|52|1134
+GSE51768|No|-0.560|0.560|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|1673
+GSE47540|No|-0.821|0.821|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|112|1818
+GSE49457|No|-0.766|0.766|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|148
+GSE46860|No|-0.799|0.799|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|1725
+GSE41207|No|-0.871|0.871|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|80|1143
+GSE47153|No|-0.869|0.869|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|1127
+GSE46495|Yes|0.505|0.505|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|1018
+GSE51927|No|-0.692|0.692|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|1925
+GSE49434|No|-0.890|0.890|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|54|190
+GSE49988|No|-0.914|0.914|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|141|1498
+GSE46287|No|-0.605|0.605|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|661
+GSE49843|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|1031
+GSE50843|No|-0.584|0.584|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|1840
+GSE49535|No|-0.916|0.916|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|335
+GSE50932|No|-0.827|0.827|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|58|942
+GSE45284|No|-0.740|0.740|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|152|1317
+GSE44783|No|-0.709|0.709|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|157|1444
+GSE46981|No|-0.582|0.582|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|201
+GSE44925|No|-0.669|0.669|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|2159
+GSE48932|No|-0.736|0.736|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|1255
+GSE42768|No|-0.730|0.730|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|92|810
+GSE38604|No|-0.716|0.716|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|87|1526
+GSE46244|No|-0.533|0.533|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|832
+GSE40931|No|-0.835|0.835|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|222|626
+GSE34394|No|-0.723|0.723|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|86|1128
+GSE43526|No|-0.898|0.898|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|82|983
+GSE28587|No|-0.837|0.837|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|1224
+GSE50017|No|-0.922|0.922|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|674
+GSE45152|No|-0.528|0.528|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|132|776
+GSE47989|No|-0.859|0.859|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|93|1156
+GSE49929|No|-0.819|0.819|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|144|474
+GSE49864|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|126|1423
+GSE46247|No|-0.870|0.870|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|112|1521
+GSE49467|No|-0.523|0.523|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|1183
+GSE49200|No|-0.592|0.592|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1291
+GSE49145|Yes|0.685|0.685|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|912
+GSE45143|No|-0.698|0.698|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|2127
+GSE39362|No|-0.616|0.616|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|173|1839
+GSE40936|No|-0.614|0.614|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|3000
+GSE48204|No|-0.944|0.944|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|592
+GSE49128|No|-0.835|0.835|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|33|2039
+GSE43366|No|-0.764|0.764|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|86|1354
+GSE41042|No|-0.605|0.605|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|227
+GSE39129|No|-0.748|0.748|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|137|1488
+GSE39724|No|-0.887|0.887|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|412
+GSE42622|No|-0.938|0.938|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|775
+GSE40806|No|-0.576|0.576|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|164|165
+GSE46701|No|-0.714|0.714|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|157|379
+GSE47350|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|558
+GSE43894|No|-0.940|0.940|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|177|306
+GSE40265|No|-0.702|0.702|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|121|1918
+GSE48315|No|-0.878|0.878|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1076
+GSE48306|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|919
+GSE40284|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|2715
+GSE38907|No|-0.910|0.910|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|37|1970
+GSE43663|No|-0.608|0.608|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|114|453
+GSE40456|No|-0.880|0.880|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|104|521
+GSE48092|No|-0.832|0.832|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1301
+GSE48041|No|-0.565|0.565|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|1683
+GSE48020|No|-0.538|0.538|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|153|1459
+GSE47964|No|-0.840|0.840|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|184|1840
+GSE47811|No|-0.767|0.767|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|2856
+GSE40956|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|1646
+GSE34829|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|512
+GSE46349|No|-0.806|0.806|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|537
+GSE47452|No|-0.839|0.839|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|2821
+GSE45499|No|-0.817|0.817|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|122|668
+GSE44945|No|-0.607|0.607|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|61|2352
+GSE21594|No|-0.923|0.923|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|109|1598
+GSE46420|No|-0.617|0.617|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|137|703
+GSE46360|Yes|0.510|0.510|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|357
+GSE46307|No|-0.828|0.828|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|105|1308
+GSE37379|No|-0.622|0.622|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|103|1026
+GSE43753|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|588
+GSE42250|No|-0.866|0.866|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|86|1547
+GSE46092|No|-0.735|0.735|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|187
+GSE46088|No|-0.970|0.970|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|433
+GSE45793|Yes|0.818|0.818|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1154
+GSE45280|No|-0.797|0.797|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|1426
+GSE44331|No|-0.687|0.687|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|123|241
+GSE39275|No|-0.814|0.814|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|57|293
+GSE45508|No|-0.916|0.916|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|138|300
+GSE37173|No|-0.679|0.679|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|172|109
+GSE35269|No|-0.749|0.749|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|831
+GSE45619|No|-0.894|0.894|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|672
+GSE45534|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|640
+GSE45491|No|-0.783|0.783|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|140|632
+GSE45373|No|-0.584|0.584|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|1269
+GSE45135|No|-0.900|0.900|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|114|502
+GSE42852|No|-0.781|0.781|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|91|1510
+GSE42782|No|-0.754|0.754|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1516
+GSE44733|No|-0.771|0.771|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|65|1487
+GSE43420|No|-0.935|0.935|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|114|1534
+GSE27472|No|-0.955|0.955|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|479
+GSE43961|No|-0.809|0.809|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|1885
+GSE34913|No|-0.932|0.932|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|1141
+GSE44337|No|-0.847|0.847|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|488
+GSE44252|No|-0.877|0.877|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|1688
+GSE43729|No|-0.812|0.812|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|390
+GSE39263|No|-0.930|0.930|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|107|538
+GSE44276|No|-0.863|0.863|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|1480
+GSE39994|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|96|1016
+GSE43041|No|-0.701|0.701|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|214|1824
+GSE39140|No|-0.630|0.630|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|2100
+GSE41455|No|-0.737|0.737|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|107|1268
+GSE40577|No|-0.665|0.665|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|1782
+GSE43779|No|-0.805|0.805|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|689
+GSE43425|No|-0.841|0.841|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|126|470
+GSE38371|No|-0.931|0.931|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|107|1287
+GSE39509|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|148|556
+GSE27302|No|-0.707|0.707|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|1012
+GSE39174|No|-0.654|0.654|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|1828
+GSE32060|No|-0.962|0.962|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|72|531
+GSE42103|No|-0.846|0.846|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|1862
+GSE42100|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|34|273
+GSE40959|No|-0.960|0.960|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|719
+GSE39629|Yes|0.715|0.715|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|129|532
+GSE33308|No|-0.919|0.919|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|172|2582
+GSE36384|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|123|1194
+GSE34224|No|-0.858|0.858|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|2022
+GSE25515|No|-0.711|0.711|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|47|539
+GSE7111|No|-0.987|0.987|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|37|302
+GSE25984|Yes|0.743|0.743|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|375
+GSE26231|No|-0.759|0.759|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|952
+GSE39648|No|-0.647|0.647|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|142|542
+GSE39259|No|-0.682|0.682|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|1003
+GSE42398|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|96|1044
+GSE42299|No|-0.896|0.896|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|169|1571
+GSE35164|No|-0.801|0.801|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|1291
+GSE34215|No|-0.586|0.586|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|43|1296
+GSE42727|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|522
+GSE35670|No|-0.714|0.714|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|70|2138
+GSE34474|No|-0.874|0.874|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|3218
+GSE34179|No|-0.834|0.834|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|718
+GSE33486|No|-0.596|0.596|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|73|927
+GSE39441|No|-0.809|0.809|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|1282
+GSE27329|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|2268
+GSE33846|No|-0.614|0.614|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|1219
+GSE40463|No|-0.861|0.861|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|63|1563
+GSE42324|No|-0.532|0.532|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|317
+GSE27116|No|-0.857|0.857|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|132|507
+GSE41285|No|-0.891|0.891|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|106|1492
+GSE37612|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|380
+GSE38513|No|-0.779|0.779|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|1284
+GSE41274|No|-0.944|0.944|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|920
+GSE32059|No|-0.611|0.611|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1653
+GSE40359|No|-0.785|0.785|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|72|497
+GSE40515|No|-0.621|0.621|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|887
+GSE41523|No|-0.869|0.869|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|36|600
+GSE39553|No|-0.757|0.757|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|42|734
+GSE31431|No|-0.607|0.607|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|930
+GSE40192|No|-0.923|0.923|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|80|1138
+GSE41179|No|-0.842|0.842|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|657
+GSE33063|No|-0.875|0.875|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|2660
+GSE28737|No|-0.613|0.613|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|504
+GSE37051|No|-0.712|0.712|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|1391
+GSE23398|No|-0.870|0.870|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|43|2293
+GSE40840|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|75|613
+GSE32077|No|-0.584|0.584|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1854
+GSE36445|No|-0.856|0.856|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|719
+GSE34154|No|-0.674|0.674|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|112|2143
+GSE36717|No|-0.619|0.619|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|141|2776
+GSE15195|No|-0.807|0.807|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|1056
+GSE30488|Yes|0.835|0.835|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|384
+GSE33619|No|-0.895|0.895|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|1793
+GSE39985|No|-0.864|0.864|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|905
+GSE39955|No|-0.758|0.758|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|2079
+GSE39928|No|-0.851|0.851|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1220
+GSE34550|No|-0.894|0.894|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|73|261
+GSE34541|No|-0.943|0.943|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|39|1264
+GSE34060|No|-0.846|0.846|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|1137
+GSE38990|No|-0.929|0.929|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|120|727
+GSE39562|No|-0.800|0.800|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|612
+GSE37055|No|-0.819|0.819|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|1458
+GSE27622|Yes|0.524|0.524|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|126|1156
+GSE37995|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|1796
+GSE33627|No|-0.974|0.974|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|451
+GSE39113|No|-0.911|0.911|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|104|1247
+GSE27575|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|1140
+GSE38988|No|-0.644|0.644|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|61|2252
+GSE30393|No|-0.867|0.867|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|809
+GSE30783|No|-0.565|0.565|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|138|3258
+GSE23116|No|-0.827|0.827|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|249
+GSE38777|No|-0.516|0.516|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|147
+GSE33920|No|-0.844|0.844|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|38|176
+GSE22034|No|-0.803|0.803|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|98|1990
+GSE38560|No|-0.802|0.802|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|126|1488
+GSE38590|No|-0.917|0.917|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|103|1661
+GSE38574|Yes|0.864|0.864|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|126|320
+GSE27334|No|-0.902|0.902|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|157|1748
+GSE30920|No|-0.954|0.954|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|834
+GSE34799|No|-0.691|0.691|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|41|490
+GSE37029|No|-0.984|0.984|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|127|413
+GSE36731|No|-0.918|0.918|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|694
+GSE37832|No|-0.623|0.623|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|536
+GSE28710|No|-0.667|0.667|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|2957
+GSE34232|No|-0.690|0.690|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|2073
+GSE29254|Yes|0.566|0.566|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|1232
+GSE29754|No|-0.860|0.860|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|485
+GSE26561|No|-0.656|0.656|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|104|2450
+GSE35731|No|-0.956|0.956|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|48|784
+GSE31714|No|-0.650|0.650|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|55|399
+GSE36050|No|-0.766|0.766|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|416
+GSE18598|No|-0.921|0.921|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|116|1159
+GSE35110|No|-0.708|0.708|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|464
+GSE34843|No|-0.892|0.892|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|120|1815
+GSE34125|No|-0.508|0.508|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|354
+GSE28086|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|82|1355
+GSE36347|No|-0.803|0.803|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|111|1440
+GSE36633|No|-0.743|0.743|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|233|910
+GSE36618|No|-0.589|0.589|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|78|1546
+GSE36591|No|-0.538|0.538|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|925
+GSE28231|No|-0.926|0.926|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|177|1389
+GSE36525|No|-0.594|0.594|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|580
+GSE27999|No|-0.517|0.517|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|614
+GSE26308|No|-0.867|0.867|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|140|1857
+GSE36209|No|-0.891|0.891|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|49|733
+GSE34581|No|-0.602|0.602|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|592
+GSE30495|No|-0.688|0.688|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|110|2207
+GSE35863|No|-0.878|0.878|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|304
+GSE29373|No|-0.971|0.971|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|541
+GSE35723|No|-0.559|0.559|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|100|5113
+GSE35575|No|-0.884|0.884|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|869
+GSE34761|No|-0.888|0.888|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1604
+GSE27920|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|56|389
+GSE35377|No|-0.925|0.925|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|114|400
+GSE26343|No|-0.820|0.820|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|247
+GSE24575|No|-0.574|0.574|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|81|1392
+GSE32129|No|-0.660|0.660|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|91|634
+GSE31784|No|-0.868|0.868|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|63|268
+GSE32238|No|-0.907|0.907|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|861
+GSE27983|No|-0.918|0.918|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|121|350
+GSE6735|No|-0.602|0.602|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|549
+GSE31385|No|-0.856|0.856|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|100|1478
+GSE28880|No|-0.833|0.833|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|936
+GSE26025|No|-0.547|0.547|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|128|1822
+GSE21636|No|-0.836|0.836|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|1422
+GSE27079|No|-0.646|0.646|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|124|2845
+GSE34078|No|-0.788|0.788|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|153|665
+GSE20064|No|-0.823|0.823|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|890
+GSE25903|Yes|0.625|0.625|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|92|569
+GSE33696|No|-0.980|0.980|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|625
+GSE22903|No|-0.711|0.711|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|147|1646
+GSE25250|No|-0.749|0.749|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|1744
+GSE26766|No|-0.827|0.827|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|943
+GSE25006|No|-0.634|0.634|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|338
+GSE31201|No|-0.669|0.669|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|48|606
+GSE25192|No|-0.803|0.803|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|2331
+GSE29446|No|-0.556|0.556|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|84|2206
+GSE30537|No|-0.932|0.932|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|1782
+GSE32055|Yes|0.513|0.513|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|56|192
+GSE31958|No|-0.759|0.759|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|103|1593
+GSE25587|No|-0.654|0.654|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|2777
+GSE19184|No|-0.865|0.865|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|94|788
+GSE24289|No|-0.928|0.928|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|685
+GSE18587|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|113|2397
+GSE32084|No|-0.711|0.711|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|1036
+GSE32083|No|-0.717|0.717|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|108|1125
+GSE26930|No|-0.670|0.670|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|105|2180
+GSE24083|Yes|0.508|0.508|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|69|2519
+GSE31849|No|-0.731|0.731|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|130|675
+GSE31922|No|-0.673|0.673|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|176|965
+GSE28704|Yes|0.742|0.742|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|461
+GSE25828|No|-0.792|0.792|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|137|1521
+GSE22985|No|-0.764|0.764|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|174|870
+GSE31711|No|-0.984|0.984|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|58|339
+GSE31702|No|-0.747|0.747|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|887
+GSE30245|No|-0.917|0.917|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|1723
+GSE31622|No|-0.819|0.819|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|68|373
+GSE9043|No|-0.652|0.652|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|15|824
+GSE17745|No|-0.868|0.868|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|71|573
+GSE31461|No|-0.860|0.860|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|85|614
+GSE19102|No|-0.688|0.688|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|66|1648
+GSE31082|No|-0.865|0.865|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|45|1363
+GSE30745|No|-0.949|0.949|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|106|1707
+GSE26559|No|-0.903|0.903|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|164|1635
+GSE31148|No|-0.913|0.913|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|1117
+GSE22656|No|-0.767|0.767|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|458
+GSE29572|No|-0.567|0.567|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|1669
+GSE30688|No|-0.730|0.730|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|114|1989
+GSE30642|No|-0.690|0.690|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|76|313
+GSE29962|No|-0.952|0.952|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|64|705
+GSE30428|No|-0.660|0.660|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|1591
+GSE29451|No|-0.599|0.599|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|62|2404
+GSE30349|No|-0.723|0.723|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|993
+GSE29848|No|-0.764|0.764|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|1596
+GSE17759|No|-0.765|0.765|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|79|2504
+GSE26234|No|-0.804|0.804|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|170
+GSE30286|No|-0.530|0.530|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|64|1097
+GSE26616|No|-0.725|0.725|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|2198
+GSE29724|No|-0.866|0.866|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|67|909
+GSE27954|Yes|0.511|0.511|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|1125
+GSE29751|No|-0.663|0.663|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|34|243
+GSE28262|No|-0.861|0.861|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|99|1831
+GSE28091|No|-0.801|0.801|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|53|541
+GSE24705|No|-0.919|0.919|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|56|1462
+GSE21104|Yes|0.531|0.531|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|47|246
+GSE28629|No|-0.930|0.930|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|125|884
+GSE29286|No|-0.793|0.793|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|641
+GSE28106|No|-0.696|0.696|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|97|144
+GSE28935|Yes|0.781|0.781|No|FP|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|824
+GSE28840|No|-0.923|0.923|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|59|1065
+GSE26644|No|-0.778|0.778|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|122|3557
+GSE27396|No|-0.570|0.570|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|50|1990
+GSE17774|No|-0.671|0.671|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|51|1303
+GSE28593|No|-0.675|0.675|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|131|1458
+GSE28447|No|-0.559|0.559|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|101|695
+GSE23793|No|-0.859|0.859|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|95|464
+GSE27373|No|-0.659|0.659|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|77|967
+GSE26830|No|-0.851|0.851|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|1989
+GSE21155|No|-0.769|0.769|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|96|993
+GSE20325|No|-0.650|0.650|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|60|992
+GSE28035|No|-0.780|0.780|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|44|900
+GSE27201|Yes|0.511|0.511|No|FP|Not Applicable|Not Curated|RNA-Seq|2021-09-25|145|1101
+GSE27588|No|-0.585|0.585|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|150|1593
+GSE26506|No|-0.610|0.610|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|112|2057
+GSE27355|No|-0.908|0.908|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|57|822
+GSE27354|No|-0.832|0.832|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|107|1095
+GSE21299|No|-0.864|0.864|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|83|1687
+GSE26624|No|-0.857|0.857|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|410
+GSE26746|No|-0.661|0.661|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|88|634
+GSE26695|No|-0.773|0.773|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|506
+GSE25972|No|-0.818|0.818|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|54|349
+GSE25895|No|-0.624|0.624|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|115|774
+GSE26567|No|-0.904|0.904|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|89|2643
+GSE21568|No|-0.839|0.839|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|128|1808
+GSE26496|No|-0.529|0.529|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|141|1479
+GSE26473|No|-0.814|0.814|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|163|2496
+GSE26456|No|-0.899|0.899|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|136|784
+GSE21409|No|-0.600|0.600|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|74|826
+GSE25409|No|-0.843|0.843|No|TN|Not Applicable|Not Curated|RNA-Seq|2021-09-25|75|1727
+GSE24903|No|-0.914|0.914|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|118|1313
+GSE19836|No|-0.753|0.753|No|TN|Not Applicable|Not Curated|transcription profiling by array|2021-09-25|90|666

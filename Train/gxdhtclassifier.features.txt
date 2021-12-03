@@ -1,0 +1,104 @@
+### Feature weights: highest 50
++0.0562	cell
++0.0501	__treat
++0.0381	__mouse_ag
++0.0315	transcript profil
++0.0299	sort
++0.0293	induc
++0.0255	keyword
++0.0231	cultur
++0.0226	__tumor
++0.0207	__cell_lin
++0.0134	infect
++0.0130	__genotyp
++0.0128	__escel
++0.0128	__knockout
++0.0121	overal design
++0.0118	fac
++0.0114	inject
++0.0110	__mef
++0.0108	experi overal
++0.0102	__genotyp __mice
++0.0093	medium
++0.0092	marrow
++0.0091	__mice __escel
++0.0090	gfp
++0.0087	profil __mice
++0.0082	ml
++0.0076	transgen
++0.0074	stem
++0.0071	stem cell
++0.0069	cd4
++0.0066	embryo
++0.0066	male
++0.0062	hour
++0.0059	__knockout __mice
++0.0059	transgen __mice
++0.0056	bone marrow
++0.0055	bone
++0.0055	tissu
++0.0053	vehicl
++0.0051	testi
++0.0050	cell sort
++0.0048	follow
++0.0047	respons
++0.0044	__cell_lin cell
++0.0041	kg
++0.0039	__mice __treat
++0.0037	design
++0.0037	overal
++0.0036	__mouse_ag __mouse_ag
++0.0036	cell __treat
+
+### Feature weights: lowest 50
++0.0001	phase
++0.0001	appli
++0.0001	compar gene
++0.0001	manner
++0.0001	manufactur instruct
++0.0001	target gene
++0.0001	recent
++0.0001	affymetrix __mice
++0.0001	pcr
++0.0001	gene differenti
++0.0001	bind protein
++0.0001	understand
++0.0001	regul gene
++0.0001	wnt
++0.0001	associ
++0.0001	expans
++0.0001	work
++0.0001	suggest
++0.0001	molecul
++0.0001	recombin
++0.0001	agil
++0.0001	sever
++0.0001	cdna
++0.0001	facilit
++0.0001	epigenet
++0.0001	tempor
++0.0001	express gene
++0.0001	scan
++0.0001	ca
++0.0001	wide
++0.0001	conclus
++0.0001	extract
++0.0001	onli
++0.0001	scale
++0.0001	technolog
++0.0001	screen
++0.0001	occur
++0.0001	critic
++0.0001	therapeut
++0.0001	blood
++0.0001	larg
++0.0001	absenc
++0.0001	previous
++0.0001	core
++0.0000	use __mice
++0.0000	direct
++0.0000	applic
++0.0000	fold
++0.0000	elucid
++0.0000	befor
+
