@@ -260,7 +260,8 @@ def getArgs():
         description='Get raw sample text for a GEO experiment, write to stdout')
 
     parser.add_argument('exp_key', default=None,
-        help='experiment key to get raw sample text for.')
+        help="experiment key to get raw sample text for, or 'report' " +
+            "to see all text transformations on all raw samples")
 
     parser.add_argument('-q', '--quiet', dest='verbose', action='store_false',
         required=False, help="skip helpful messages to stderr")
@@ -299,20 +300,35 @@ def getArgs():
 #-----------------------------------
 
 if __name__ == "__main__":
-    import db as dbModule
+    import db
 
     args = getArgs()
     beVerbose = args.verbose
-    dbModule.set_sqlServer  (args.host)
-    dbModule.set_sqlDatabase(args.db)
-    dbModule.set_sqlUser    ("mgd_public")
-    dbModule.set_sqlPassword("mgdpub")
+    db.set_sqlServer  (args.host)
+    db.set_sqlDatabase(args.db)
+    db.set_sqlUser    ("mgd_public")
+    db.set_sqlPassword("mgdpub")
 
     verbose("%s\nHitting database %s %s as mgd_public\n" % \
                                     (time.ctime(), args.host, args.db,))
 
-    rstm = RawSampleTextManager(dbModule)
-    text = rstm.getRawSampleText(args.exp_key)
-    verbose("Num experiments: %d\n" % rstm.getNumExperiments())
-    verbose("Num field-value pairs: %d\n" % rstm.getNumFieldValuePairs())
-    print(text)
+    # get raw sample text for all experiments
+    rstm = RawSampleTextManager(db, expTbl="gxd_htexperiment")
+
+    if args.exp_key == "report":
+        # iterate through all GEO experiments, getting their text, then report
+        #  the text transformations that were performed.
+        q = """ select e._experiment_key
+                from gxd_htexperiment e join acc_accession a on
+                (a._object_key = e._experiment_key and a._mgitype_key = 42
+                and a._logicaldb_key = 190) -- GEO series
+            """
+        results = db.sql(q, 'auto')
+        for i,r in enumerate(results):
+            text = rstm.getRawSampleText(r['_experiment_key'])
+        print("Num experiments: %d" % rstm.getNumExperiments())
+        print("Num field-value pairs: %d" % rstm.getNumFieldValuePairs())
+        print(rstm.getReport())
+    else:       # get text for one _experiment_key
+        text = rstm.getRawSampleText(args.exp_key)
+        print(text)
