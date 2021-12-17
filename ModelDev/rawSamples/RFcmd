@@ -1,3 +1,4 @@
 model=RF
-mtrun ${model}.py -v --gsverbose --features --predict --testpath ./data/v_untreat/P_all/testSet.txt
-# --rclassifier 939
+mtrun ${model}.py -v --gsverbose --features --predict
+#--testpath ./data/Dec16/fs_nountreat/P_notreat/testSet.txt
+#--rclassifier 265

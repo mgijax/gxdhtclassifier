@@ -187,14 +187,71 @@ class RawSampleTextManager (object):
         """ Return the formated field-value text"""
         # Tried various ideas.
         # See https://mgi-jira.atlassian.net/browse/YAKS-306
-        return self.fieldValue2Text_v_untreat(f,v)      # using this method
-
+        #  and https://mgi-jira.atlassian.net/browse/YAKS-354
+        return self.fieldValue2Text_fs_nountreat(f,v) # using this method
+        #return self.fieldValue2Text_v_untreat(f,v)
         #return self.fieldValue2Text_fv_untreat(f,v)
         #return self.fieldValue2Text_fv_nountreat(f,v)
         #return self.fieldValue2Text_v_nountreat(f,v)
+        #return self.fieldValue2Text_fs_untreat(f,v)
 
     #-----------------------------------
-    # several different ways to format the field:value text to try
+
+    commonFields = ['source',           # these are the most common field names
+                    'taxid',
+                    'title',
+                    'taxidValue',
+                    'sType',
+                    'molecule',
+                    'description',
+                    'treatmentProt',
+                    'tissue',
+                    'strain',
+                    'cell type',
+                    'age',
+                    'genotype',
+                    'treatment',
+                    'genotype/variation',
+                    'gender',
+                    'Sex',
+                    ]
+
+    def fieldValue2Text_fs_nountreat(self, f, v):       # using this method
+        """
+        Return formated field-value text for the given field,value pair
+            Return '' for "Not Applicable" variations for any field.
+            Else return 'field : value;' if a non-common field
+                 return 'value;' if it is a common field
+        """
+        if self.NaTransformer.transformText(v) == '':
+            return ''
+        else:
+            if f in self.commonFields: return '%s;' % (v)
+            else: return '%s : %s;' % (f, v)
+    #-----------------------------------
+    # other different ways to format the field:value that I tried
+
+    def fieldValue2Text_fs_untreat(self, f, v):
+        """
+        Return formated field-value text for the given field,value pair
+            Return '' for "Not Applicable" variations for any field.
+            Return '__untreated;' for 'treatment' and 'treatmentProt' fields
+                whose value means "not treated"
+            Else return 'field : value;' if a non-common field
+                 return 'value;' if it is a common field
+        """
+        if self.NaTransformer.transformText(v) == '':
+            return ''
+        elif (f == 'treatmentProt' and
+                self.treatmentProtFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        elif (f == 'treatment' and
+                self.treatmentFieldTransformer.transformText(v) == ''):
+            return '__untreated;'
+        else:
+            if f in self.commonFields: return '%s;' % (v)
+            else: return '%s : %s;' % (f, v)
+    #-----------------------------------
 
     def fieldValue2Text_fv_untreat(self, f, v):
         """

@@ -380,3 +380,14 @@ Renamed Train directory to ModelDev directory (which is more accurate).
 Added new Train directory where we train the actual classifier, pkl file.
 Updated Install script to install the pkl file in python_anaconda with the rest
 of the python modules.
+
+Dec 17, 2021
+Sharon added description, title, and sType fields for each raw sample (these
+had been left out before). I retried all the above processing flavors plus 
+some more:
+    fs - omit the most common fieldnames, but keep the less common ones 
+        (and keep the value text of course).
+
+    Best results:   fs_nountreat_P_notreat. See
+    https://docs.google.com/spreadsheets/d/1ywi1sUcpzv7J_cA3iHUZs8iJq-hPWeCusWmVSLDaCJ0/edit#gid=2041603829
+    This is the processing that I will go forward with.
