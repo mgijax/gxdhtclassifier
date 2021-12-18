@@ -1,40 +1,40 @@
 ### Metrics: Preds
               precision    recall  f1-score   support
 
-   Preds Yes       0.87      0.90      0.88       426
-    Preds No       0.96      0.95      0.95      1081
+   Preds Yes       0.89      0.89      0.89       427
+    Preds No       0.96      0.96      0.96      1133
 
-    accuracy                           0.93      1507
-   macro avg       0.91      0.92      0.92      1507
-weighted avg       0.93      0.93      0.93      1507
+    accuracy                           0.94      1560
+   macro avg       0.92      0.92      0.92      1560
+weighted avg       0.94      0.94      0.94      1560
 
-Preds (Yes) F2: 0.8947    P: 0.8688    R: 0.9014    NPV: 0.9606
+Preds (Yes) F2: 0.8872    P: 0.8855    R: 0.8876    NPV: 0.9576
 
 ['Yes', 'No']
-[[ 384   42]
- [  58 1023]]
+[[ 379   48]
+ [  49 1084]]
 
-### False positives for Preds: 58
-GSE22879
-GSE23006
-GSE22418
-GSE21137
-GSE21087
-GSE15354
-GSE12707
-GSE10081
-GSE10002
-GSE5077
+### False positives for Preds: 49
+GSE33863
+GSE32187
+GSE24209
+GSE28935
+GSE22322
+GSE15892
+GSE18443
+GSE18604
+GSE16703
+GSE8409
 
-### False negatives for Preds: 42
+### False negatives for Preds: 48
 GSE22608
 GSE24775
 GSE15835
 GSE21523
+GSE12503
 GSE15315
+GSE11998
 GSE11005
-GSE46481
-GSE51144
+GSE52038
 GSE44651
-GSE45494
 

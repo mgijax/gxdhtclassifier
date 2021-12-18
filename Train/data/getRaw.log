@@ -1,171 +1,52 @@
 getting raw data from db: dev
-Mon Nov  8 13:34:05 EST 2021
-Mon Nov  8 13:34:10 2021
+Fri Dec 17 09:55:53 EST 2021
+Fri Dec 17 09:55:55 2021
 Hitting database mgi-testdb4.jax.org jak as mgd_public
 GEO experiments evaluated by Connie
-   2626 (26%) Yes	   7299 (73%) No	   9925 total
-   9924 have raw sample text
+   2631 (25%) Yes	   7596 (74%) No	  10227 total
+  10226 have raw sample text
 Non-GEO, Yes experiments evaluated by Connie
-    569 experiments
+    576 experiments
       0 have raw sample text
 Total experiments
-   3195 (30%) Yes	   7299 (69%) No	  10494 total
-tmp_rawsample_text
-   180190 key/value pairs
-Mon Nov  8 13:34:16 2021
+   3207 (29%) Yes	   7596 (70%) No	  10803 total
+Number of distinct raw sample field value pairs
+   463687 key/value pairs
+Fri Dec 17 09:56:12 2021
 Hitting database mgi-testdb4.jax.org jak as mgd_public
 constructing and writing geo samples:
-wrote 9925 samples:
+wrote 10227 samples:
 
 Text Transformation Report
+na	''	1	'CONTROL'
+na	''	1	'CTL'
+na	''	5	'CTRL'
+na	''	165	'Control'
+na	''	15	'Ctrl'
+na	''	1	'N.A.'
+na	''	126	'N/A'
+na	''	177	'NA'
+na	''	1	'Na'
+na	''	5	'Not Applicable'
+na	''	13	'Not applicable'
+na	''	9	'Not applicable.'
+na	''	1	'Not relevant'
+na	''	3	'Not relevant.'
+na	''	495	'control'
+na	''	8	'ctrl'
+na	''	5	'n.a.'
+na	''	127	'n/a'
+na	''	5	'na'
+na	''	2	'no data'
+na	''	46	'not applicable'
+na	''	1	'not applicable.'
 Text Transformation Report
-treatmentProt	''	1	'NO TREATMENT'
-treatmentProt	''	1	'NONE'
-treatmentProt	''	2	'No Treatment'
-treatmentProt	''	1	'No Treatment was performed on the mice or on the cells'
-treatmentProt	''	1	'No special treatment'
-treatmentProt	''	1	'No special treatment before harvesting.'
-treatmentProt	''	1	'No special treatment of pregnant mice.  Embryos were isolated from timed pregnancies, the salivary glands isolated and embedded in OCT on top of nucleopore filters.  The filters were removed, and the salivary glands sectioned at 10um.  The sections were stained, and specific locations isolated by laser microdissection.'
-treatmentProt	''	1	'No special treatment was applied.'
-treatmentProt	''	1	'No special treatment were applied, cells were growth in appropriate conditions (see growth protocol) and harvested to prepare RNA.'
-treatmentProt	''	1	'No special treatment. After disecting, forebrains were directly subjected to RNA purification.'
-treatmentProt	''	1	'No special treatment. See Cao Q, Chen H, Deng Z, Yue J, Chen Q, Cao Y, Ning L, Lei X, Duan E.Genetic deletion of Cxcl14 in mice alters uterine NK cells.Biochem Biophys Res Commun. 2013 May 18. pii: S0006-291X(13)00823-1. doi: 10.1016/j.bbrc.2013.04.106. [Epub ahead of print]  http://www.sciencedirect.com/science/article/pii/S0006291X13008231'
-treatmentProt	''	1	'No special treatments.'
-treatmentProt	''	58	'No treatment'
-treatmentProt	''	3	'No treatment applied'
-treatmentProt	''	1	'No treatment beyond the normal growth protocol was used.'
-treatmentProt	''	2	'No treatment but different cell types were analysed.'
-treatmentProt	''	1	'No treatment done, but samples were taken in WT and VMH-specific FoxO1 KO mice.'
-treatmentProt	''	1	'No treatment except for serum removal. Duplicate aliquots of cells were analyzed in parallel, numbered "1" and "2".'
-treatmentProt	''	1	'No treatment in DMSO for 8 hr.'
-treatmentProt	''	1	'No treatment involved'
-treatmentProt	''	1	'No treatment involved.Please see Treatment above'
-treatmentProt	''	1	'No treatment of cells; Freshly isolated cells were used'
-treatmentProt	''	1	'No treatment of the tissue. They were directly taken for RNA after dissection'
-treatmentProt	''	1	'No treatment of the tissue. They were directly taken for RNA after dissection.'
-treatmentProt	''	1	'No treatment other than maternal hemiovariectomy prior to pregnancy.'
-treatmentProt	''	1	'No treatment other than routine feeding and cleaning were done when mice were growing up. On the day of experiment, hypothalami were dissected on ice and immediately processed for IP and Input RNA purification'
-treatmentProt	''	1	'No treatment performed'
-treatmentProt	''	1	'No treatment prior to RNA extraction.'
-treatmentProt	''	2	'No treatment prior to experiment was applied.'
-treatmentProt	''	1	'No treatment protocol.'
-treatmentProt	''	1	'No treatment to mice.'
-treatmentProt	''	1	'No treatment was applied prior to RNA extraction.'
-treatmentProt	''	1	'No treatment was applied to the cell lines used to identify candidate lincRNAs.'
-treatmentProt	''	1	'No treatment was done.'
-treatmentProt	''	1	'No treatment was given as the study was an inbred strain comparision.'
-treatmentProt	''	1	'No treatment was perfomed to mice.'
-treatmentProt	''	1	'No treatment was performed'
-treatmentProt	''	1	'No treatment was performed for bulk MEF and iPS cells. Fast and slow GMPs were isolated following 24 hours of CFSE dye dilution. Fast and slow MEFs were isolated after 48 hours of CFSE dye dilution after a total of 6 days of Yamanaka factor induction by doxycycline.'
-treatmentProt	''	6	'No treatment was performed.'
-treatmentProt	''	1	'No treatment were done.'
-treatmentProt	''	2	'No treatment, normal aging mice'
-treatmentProt	''	18	'No treatment.'
-treatmentProt	''	1	'No treatment. LSEC were directly lysed in TRIZOL after isolation.'
-treatmentProt	''	1	'No treatment. Mice were sacrificed by CO2 inhalation followed by decapitation. Brains were removed and hippocampus were dissected.'
-treatmentProt	''	1	'No treatment. Muscle were obtained from un-treated female C57Bl/6J mice.'
-treatmentProt	''	1	'No treatment. Normal embryonic development.'
-treatmentProt	''	1	'No treatment. Samples are from SIRT3 WT or KO littermate mice of approximately 1 year of age on a 129 background.'
-treatmentProt	''	1	'No treatment. Samples are from SIRT4 WT or KO littermate mice on a 129 background.'
-treatmentProt	''	1	'No treatment. Testis from four weeks mice were collected and RNA isolate'
-treatmentProt	''	1	'No treatment. Testis from four weeks mice were collected and RNA isolated'
-treatmentProt	''	1	'No treatment. Testis from four weeks mice were collected and RNA isolated.'
-treatmentProt	''	1	'No treatment/intervention'
-treatmentProt	''	3	'No treatments'
-treatmentProt	''	1	'No treatments other than constitutive genetic modifications'
-treatmentProt	''	1	'No treatments were applied'
-treatmentProt	''	1	'No treatments were applied to the animals or tissue.'
-treatmentProt	''	1	'No treatments were done, except hURI ectopic expression since conception.'
-treatmentProt	''	1	'No treatments were given to the mice.'
-treatmentProt	''	1	'No treatments were performed. mRNA levels under basal conditions were measured.'
-treatmentProt	''	1	'No treatments were used.  The only difference in the animals was their genotype, with the mutants being liver-conditional knockouts for Pdss2.'
-treatmentProt	''	1	'No treatments.  Embryos were harvested from pregnant females; the otic placodes recovered and stored for RNA extraction.'
-treatmentProt	''	66	'None'
-treatmentProt	''	15	'None.'
-treatmentProt	''	1	'Not treated or treated with 1 nM or 500 nM of IL-2 or IL-15 for the indicated times (4hr and 24hr)'
-treatmentProt	''	1	'Not treated or treated with 100 U/ml of IL-2 for 2, 6, or 17 hr'
-treatmentProt	''	1	'Not treated with amylin'
-treatmentProt	''	6	'Untreated'
-treatmentProt	''	1	'Untreated (0h) or 10 ng/ml Lipopolysaccharide for 6h.'
-treatmentProt	''	1	'Untreated (freshly isolated)'
-treatmentProt	''	1	'Untreated 9 month old livers from male mice carrying different genotypes.  P10: Pten deleted in the liver; DM: Pten and Akt2 double deleted livers; WT: controls.'
-treatmentProt	''	1	'Untreated EpiSC or EpiSC treated with 3 uM CHIRON for 48 hrs'
-treatmentProt	''	1	'Untreated cells were incubated in DMEM 0% FCS for 24h and treated cells were incubated in DMEM 0% FCS for 8h followed by a 16h TNF (50ng/ml) treatment.'
-treatmentProt	''	1	'Untreated control'
-treatmentProt	''	3	'Untreated mice'
-treatmentProt	''	1	'Untreated mice were fed a standard LabDiet rodent chow obtained from PMI Nutrition International (Brentwood, MO).  Probucol-treated mice were given the same diet to which 1% (w/w) probucol was added (Animal Specialties and Provisions, Quakertown, PA), which we estimate resulted in a final daily dosage of approximately 95 mg per kg body weight.  The amount of CoQ10 added was 1 mg/ml, which we estimate resulted in a final daily dosage of approximately 400 mg CoQ10 per kg body weight.'
-treatmentProt	''	1	'Untreated normal mice were injected ip with 200?M s4U (bi-distilled water as control) together with 34?Ci 3H-cytidine (20Ci/mmol; ARC) in a total volume of 1ml of 0.9% NaCl solution. At time 0+1h, injection was repeated. At time 0+2h, mice were sacrificed and kidneys removed for histopathologic examination and RNA isolation.'
-treatmentProt	''	2	'Untreated or treated with 0.5 uM Adriamycin for 8 hours.'
-treatmentProt	''	1	'Untreated sample - cells were not activated with any stimuli'
-treatmentProt	''	1	'Untreated sample from naive Nogo-A KO animal'
-treatmentProt	''	1	'Untreated sample from naive animal'
-treatmentProt	''	1	'Untreated, 10ng/ml activin for 2 hrs, or 5uM SB431542 for 24 hrs.'
-treatmentProt	''	1	'Untreated, ambient temperature'
-treatmentProt	''	2	'Untreated.'
-treatmentProt	''	1	'no'
-treatmentProt	''	1	'no special treatment'
-treatmentProt	''	1	'no special treatment applied'
-treatmentProt	''	1	'no special treatment for ESC standard culture'
-treatmentProt	''	1	'no special treatment to the cells before harvest, collected the cells when the confluence 85-90%'
-treatmentProt	''	35	'no treatment'
-treatmentProt	''	1	'no treatment administered, study done to evaluate normal expression profiles of male and female tenocytes'
-treatmentProt	''	2	'no treatment applied'
-treatmentProt	''	2	'no treatment by Doxcycline or any other solutions'
-treatmentProt	''	1	'no treatment of mice'
-treatmentProt	''	1	'no treatment other than cardiac specific expression of transgene (alpha-myosin heavy chain promoter)'
-treatmentProt	''	1	'no treatment protocol'
-treatmentProt	''	1	'no treatment was administered'
-treatmentProt	''	1	'no treatment was applied.'
-treatmentProt	''	2	'no treatment was given to mice'
-treatmentProt	''	1	'no treatment were applied before extraction of RNA'
-treatmentProt	''	1	'no treatment, Heterozygote versus knockout'
-treatmentProt	''	1	'no treatment, comparing wt vs mutant B cells'
-treatmentProt	''	1	'no treatment, comparison of knockout versus control'
-treatmentProt	''	1	'no treatment, the mice were killed by cervical dislocation (adult) or decapitaion (P7)'
-treatmentProt	''	2	'no treatments'
-treatmentProt	''	1	'no treatments performed'
-treatmentProt	''	54	'none'
-treatmentProt	''	1	'not treated (C) or treated (E) with 1/3 volume C26 conditioned medium in differentiation medium'
-treatmentProt	''	1	'not treated (C) or treated (E) with 10 ng/ml mouse LIF'
-treatmentProt	''	1	'not treated or treated by IL-21 (100 ng/ml) for 1 hr'
-treatmentProt	''	1	'not treated or treated with IL-21 (100 ng/ml) for 1 hr'
-treatmentProt	''	1	'nothing'
-treatmentProt	''	11	'untreated'
-treatmentProt	''	1	'untreated (control)'
-treatmentProt	''	2	'untreated control'
-treatmentProt	''	1	'untreated embryosfetal liver dissected and disaggregated in PBS'
-treatmentProt	''	1	'untreated for each sample condition'
-treatmentProt	''	1	'untreated nAChR beta4 subunit deficient mice'
-treatmentProt	''	1	'untreated or 0.2ug/ml doxorubicin for 6h'
-treatmentProt	''	1	'untreated or treated with recombinant human tumor necrosis factor-alpha (10 ng/ml) for 45 minutes'
-treatmentProt	''	1	'untreated wild-type mice'
 Text Transformation Report
-treatment	''	8	'No treatment'
-treatment	''	1	'No treatment involved.'
-treatment	''	1	'No treatment or stimulus'
-treatment	''	14	'None'
-treatment	''	10	'Untreated'
-treatment	''	1	'Untreated KO'
-treatment	''	1	'Untreated WT'
-treatment	''	1	'Untreated cultured in RPMI (day1)'
-treatment	''	1	'Untreated macrophages'
-treatment	''	1	'Untreated macrophages,'
-treatment	''	11	'no treatment'
-treatment	''	129	'none'
-treatment	''	1	'not treated'
-treatment	''	1	'not treated (NT)'
-treatment	''	78	'untreated'
-treatment	''	1	'untreated (day0)'
-treatment	''	1	'untreated (replicate 1)'
-treatment	''	1	'untreated (replicate 2)'
-treatment	''	1	'untreated RAW 264.7'
-treatment	''	2	'untreated control'
-treatment	''	2	'untreated nerve allograft at 7 days'
-   6.019 seconds
+  19.757 seconds
 
-Mon Nov  8 13:34:26 2021
+Fri Dec 17 09:56:34 2021
 Hitting database mgi-testdb4.jax.org jak as mgd_public
 constructing and writing nongeo samples:
-wrote 569 samples:
-   0.429 seconds
+wrote 576 samples:
+   0.441 seconds
 

@@ -1,0 +1,25 @@
+Fri Dec 17 10:03:27 EST 2021
+Preprocessing steps: removeURLs textTransform_allButTreatment stem
+Preprocessing '../trainSet.txt'
+Sample type: ClassifiedHtSample
+...done. 7197 samples, 0 marked as reject
+Wrote preprocessor report to 'matches.trainSet.txt'
+Samples read: 7197 	 Samples written: 7197
+Total time:   56.503 seconds
+
+Preprocessing steps: removeURLs textTransform_allButTreatment stem
+Preprocessing '../valSet.txt'
+Sample type: ClassifiedHtSample
+...done. 2046 samples, 0 marked as reject
+Wrote preprocessor report to 'matches.valSet.txt'
+Samples read: 2046 	 Samples written: 2046
+Total time:   18.077 seconds
+
+Preprocessing steps: removeURLs textTransform_allButTreatment stem
+Preprocessing '../testSet.txt'
+Sample type: ClassifiedHtSample
+...done. 1560 samples, 0 marked as reject
+Wrote preprocessor report to 'matches.testSet.txt'
+Samples read: 1560 	 Samples written: 1560
+Total time:   13.679 seconds
+
