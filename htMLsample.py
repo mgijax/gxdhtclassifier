@@ -73,38 +73,13 @@ class HtSample (BaseSample):
     #  Each preprocessor should modify this sample and return itself
     #----------------------
 
-    def removeURLsCleanStem(self):	# preprocessor
+    def standard(self):	# preprocessor
         '''
-        Remove URLs and punct, lower case everything,
-        Convert '-/-' to 'mut_mut',
-        Keep tokens that start w/ letter or _ and are 2 or more chars.
-        Stem,
-        Replace \n with spaces
+        "Standard" preprocessing steps we are using for production
         '''
-        # NOT IMPLEMENTED
-        # This is currently the only preprocessor that uses a stemmer.
-        # Would be clearer to import and instantiate one stemmer above,
-        # BUT that requires nltk (via anaconda) to be installed on each
-        # server we use. This is currently not installed on our linux servers
-        # By importing here, we can use RefSample in situations where we don't
-        # call this preprocessor, and it will work on our current server setup.
-        #global stemmer
-        #if not stemmer:
-        #    import nltk.stem.snowball as nltk
-        #    stemmer = nltk.EnglishStemmer()
-        #------
-        #def _removeURLsCleanStem(text):
-        #    output = ''
-        #    for s in urls_re.split(text): # split and remove URLs
-        #        s = textTransform.transformText(s).lower()
-        #        for m in token_re.finditer(s):
-        #            output += " " + stemmer.stem(m.group())
-        #    return  output
-        #------
-
-        #self.setTitle( _removeURLsCleanStem( self.getTitle()) )
-        #self.setAbstract( _removeURLsCleanStem( self.getAbstract()) )
-        #self.setExtractedText( _removeURLsCleanStem( self.getExtractedText()) )
+        self.removeURLs()
+        self.textTransform_allButTreatment()
+        self.stem()
         return self
     # ---------------------------
 
