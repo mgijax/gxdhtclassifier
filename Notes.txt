@@ -391,3 +391,51 @@ some more:
     Best results:   fs_nountreat_P_notreat. See
     https://docs.google.com/spreadsheets/d/1ywi1sUcpzv7J_cA3iHUZs8iJq-hPWeCusWmVSLDaCJ0/edit#gid=2041603829
     This is the processing that I will go forward with.
+
+Jan 4, 2022
+Tuned and Evaluated GB classifier on fs_nountreat_P_notreat data set.
+
+My recommendation is to stick with the RF classifier for this problem.
+ 
+The best GB classifier I’ve been able to make (for GXD HT experiments) DOES
+cluster the FN’s better than the RF, but it doesn’t perform any better and I
+fear it has overfit the training set and will not generalize to new experiments
+as well. The RF classifier performs better on the held out test set but, more
+importantly, has less variance between its performance on the training set,
+validation set, and test set than the GB classifier.
+ 
+F2-score for GB:
+    Training set:   .9002
+    Validation set: .8172
+    Test set:       .7650    (this difference from the Validation set is scary)
+    All the scores on the valid set:   
+                    F2: 0.8172    P: 0.8418    R: 0.8113    NPV: 0.9314
+    All the scores on the test set:     
+                    F2: 0.7650    P: 0.8709    R: 0.7424    NPV: 0.9080
+F2-score for RF:
+    Training set:   .8977
+    Validation set: .8140
+    Test set:       .7965
+    All the scores on the valid set:   
+                    F2: 0.8140    P: 0.8105    R: 0.8149    NPV: 0.9316
+    All the scores on the test set:     
+                    F2: 0.7965    P: 0.8071    R: 0.7939    NPV: 0.9228
+    (still more variance between training set and validation set than I would
+     like, but at least the validation and training sets perform similarly)
+ 
+If you care to see the FN clustering by confidence differences,
+GB on validation set:
+https://docs.google.com/spreadsheets/d/106plYtrxA1MPv_Wou3-80W8-uvmrB6vsC1htEg3NLQI/edit#gid=8962133
+GB on test set:
+https://docs.google.com/spreadsheets/d/106plYtrxA1MPv_Wou3-80W8-uvmrB6vsC1htEg3NLQI/edit#gid=2127741664  (this looks quite good)
+RF on the validation set:
+https://docs.google.com/spreadsheets/d/1EKJ8OtOQK37bDOVxH1obbcnybG6dUHOsMxSZPjF-JCg/edit#gid=1391076353
+ 
+Spreadsheet that summarizes my tuning attempts:
+https://docs.google.com/spreadsheets/d/106plYtrxA1MPv_Wou3-80W8-uvmrB6vsC1htEg3NLQI/edit#gid=0
+ 
+This attempt follows the approach outlined here:
+https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python/
+
+Also tried GB on different flavors of adding raw sample text and handling
+__untreated, etc. Didn't help.

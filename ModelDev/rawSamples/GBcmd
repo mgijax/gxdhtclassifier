@@ -1,5 +1,5 @@
 model=GB
-#dataDir=./data/july15
-#baseDir=$dataDir/LegendsWords/Proc1
-#mtrun ${model}.py -d $baseDir/trainSet.txt --valpath $baseDir/valSet.txt --testpath  $baseDir/testSet.txt -v --gsverbose
-mtrun ${model}.py -v  --features --rclassifier 115 --predict
+dataDir=./data/Dec16/fs_nountreat/P_notreat
+#mtrun ${model}.py -d $baseDir/trainSet.txt --valpath $baseDir/valSet.txt
+mtrun ${model}.py -v --gsverbose  --features --testpath  $dataDir/testSet.txt
+#--rclassifier 252 --predict
