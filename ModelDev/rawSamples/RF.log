@@ -10024,3 +10024,136 @@ Test Set            :         1560          427         1133          27%
 ValidationSplit: 0.20
 ### End Time 2021/12/17-11-54-35. Total     14.56 seconds
 
+### Start Time 2022/01/04-19-39-58  RF.py	index file: index.out
+Training data path:   /Users/jak/work/gxdhtclassifier/ModelDev/rawSamples/data/Dec16/fs_nountreat/P_notreat/trainSet.txt	GridSearch Beta: 2
+Validation data path: /Users/jak/work/gxdhtclassifier/ModelDev/rawSamples/data/Dec16/fs_nountreat/P_notreat/valSet.txt
+Test data path:       None
+Random Seeds:	randForClassifier=265   randForSplit=762   
+### Metrics: Training Set
+              precision    recall  f1-score   support
+
+   Train Yes       0.93      0.93      0.93      2229
+    Train No       0.97      0.97      0.97      4968
+
+    accuracy                           0.95      7197
+   macro avg       0.95      0.95      0.95      7197
+weighted avg       0.96      0.95      0.95      7197
+
+Train (Yes) F2: 0.9279    P: 0.9266    R: 0.9282    NPV: 0.9678
+
+['Yes', 'No']
+[[2069  160]
+ [ 164 4804]]
+
+### Metrics: Validation Set
+              precision    recall  f1-score   support
+
+   Valid Yes       0.83      0.81      0.82       551
+    Valid No       0.93      0.94      0.93      1495
+
+    accuracy                           0.90      2046
+   macro avg       0.88      0.87      0.88      2046
+weighted avg       0.90      0.90      0.90      2046
+
+Valid (Yes) F2: 0.8115    P: 0.8271    R: 0.8076    NPV: 0.9297
+
+['Yes', 'No']
+[[ 445  106]
+ [  93 1402]]
+
+### Note: raw sample text, RF, text transforms experiments
+
+### Best Pipeline Parameters:
+classifier__min_samples_split: 100
+classifier__n_estimators: 100
+vectorizer__max_df: 0.75
+vectorizer__min_df: 0.01
+vectorizer__ngram_range: (1, 2)
+
+vectorizer:
+CountVectorizer(binary=True, max_df=0.75, min_df=0.01, ngram_range=(1, 2),
+                stop_words='english', token_pattern='\\b([a-z_]\\w+)\\b')
+params: {'analyzer': 'word', 'binary': True, 'decode_error': 'strict', 'dtype': <class 'numpy.int64'>, 'encoding': 'utf-8', 'input': 'content', 'lowercase': True, 'max_df': 0.75, 'max_features': None, 'min_df': 0.01, 'ngram_range': (1, 2), 'preprocessor': None, 'stop_words': 'english', 'strip_accents': None, 'token_pattern': '\\b([a-z_]\\w+)\\b', 'tokenizer': None, 'vocabulary': None}
+
+featureEvaluator:
+FeatureDocCounter()
+params: {}
+
+classifier:
+RandomForestClassifier(class_weight='balanced', min_samples_split=100,
+                       n_jobs=-1, random_state=265, verbose=1)
+params: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 100, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 265, 'verbose': 1, 'warm_start': False}
+
+
+### Feature weights: highest 20
++0.0408	cell
++0.0372	transcript profil
++0.0252	induc
++0.0238	treat
++0.0237	__mouse_ag
++0.0233	__cell_lin
++0.0222	sort
++0.0219	cultur
++0.0192	keyword
++0.0166	__tumor
++0.0126	experi overal
++0.0121	__escel
++0.0112	rna rna
++0.0111	treatment
++0.0108	overal design
++0.0106	__knockout
++0.0103	fac
++0.0100	ml
++0.0090	gfp
++0.0088	infect
+
+### Feature weights: lowest 20
++0.0000	design truli
++0.0000	dna surfac
++0.0000	ensembl
++0.0000	ensembl riken
++0.0000	express download
++0.0000	featurenum output
++0.0000	file id_ref
++0.0000	gal
++0.0000	goldenpath unigen
++0.0000	homolog
++0.0000	manufactur protocol
++0.0000	mer oligonucleotid
++0.0000	question
++0.0000	rapid
++0.0000	retino
++0.0000	riken
++0.0000	riken nia
++0.0000	surfac scan
++0.0000	truli
++0.0000	varieti
+
+### Vectorizer:   Number of Features: 2236
+First 10 features: ['__cell_lin', '__cell_lin __cell_lin', '__cell_lin __mice', '__cell_lin __tumor', '__cell_lin cell', '__cell_lin mus', '__escel', '__escel __escel', '__escel differenti', '__escel line']
+
+Middle 10 features: ['inhibitori', 'initi', 'inject', 'injuri', 'innat', 'innat immun', 'input', 'insert', 'insight', 'institut']
+
+Last 10 features: ['wks', 'wnt', 'work', 'wt1', 'wt2', 'wt3', 'year', 'yield', 'young', 'zone']
+
+### False positives for Validation set: 93
+GSE29502
+GSE15133
+GSE30762
+GSE29648
+GSE16886
+
+### False negatives for Validation set: 106
+GSE8610
+GSE1635
+GSE19793
+GSE4011
+GSE8641
+
+### Sample set sizes
+                    :      Samples     Positive     Negative   % Positive
+Training Set        :         7197         2229         4968          31%
+Validation Set      :         2046          551         1495          27%
+ValidationSplit: 0.20
+### End Time 2022/01/04-19-40-07. Total      9.74 seconds
+
