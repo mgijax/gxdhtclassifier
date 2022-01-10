@@ -5,8 +5,7 @@ sampleDataLib="--sampledatalib ~/work/gxdhtclassifier/htMLsample.py"
 
 log="preProcessor.log"
 inputFiles="trainSet.txt valSet.txt testSet.txt"
-firstPreProcessor="-p removeURLs"
-lastPreProcessor="-p stem"
+defaultPreprocessors="-p standard"
 
 #######################################
 function Usage() {
@@ -20,7 +19,7 @@ $0 [--datadir dir] [-- -p preprocessor [-p preprocessor] ...]
     --datadir       directory where the input files live. Default is ..
                     (it should not be '.', since we write to '.')
     -p preprocessor a preprocessor option to run (repeat -p ... to do multiple)
-                    Example: -p textTransform_all
+                    Default: "$defaultPreprocessors"
 
     Output files, w/ the same names as the input files are written in the
     current directory.
@@ -30,7 +29,7 @@ ENDTEXT
 #######################################
 # cmdline options - and defaults
 #######################################
-preProcessors=""        # default
+preProcessors=""
 dataDir=".."            # default
 
 while [ $# -gt 0 ]; do
@@ -42,11 +41,13 @@ while [ $# -gt 0 ]; do
     *) break; ;;
     esac
 done
+if [ "$preProcessors" == "" ]; then
+    preProcessors="${defaultPreprocessors}"
+fi
 
 #######################################
 # preprocess the files
 #######################################
-preProcessors="${firstPreProcessor} ${preProcessors} ${lastPreProcessor}"
 echo "Preprocessors: ${preProcessors}"
 date > $log
 for f in $inputFiles; do
