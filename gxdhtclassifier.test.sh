@@ -2,7 +2,7 @@
 # run trained gxdhtclassifier on a test file to verify it runs
 
 data="testSet.txt"              # the default test file
-model="../gxdhtclassifier.pkl"  # the default trained model file
+model="gxdhtclassifier.pkl"  # the default trained model file
 
 preprocessing="-p standard"     # Preprocessing options to run
 

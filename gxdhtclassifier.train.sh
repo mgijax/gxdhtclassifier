@@ -13,7 +13,7 @@ $0 --data name [--model basename]
     Puts all generated files into the current directory.
 
     --data	directory holding the training data sample files
-                We assume these are preprocessed sample files.
+                We assume these are *preprocessed* sample files.
 
     --model     filename of the model source. Default: gxdhtclassifier.py
 ENDTEXT

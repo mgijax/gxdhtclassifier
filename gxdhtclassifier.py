@@ -1,6 +1,8 @@
 #
 # GXD HT relevance classifier for GEO experiments
 # Initial version, Nov 17, 2021
+# Updated March 2024 for https://mgi-jira.atlassian.net/browse/WTS2-1397
+#   Anaconda 0.11.1  Python 3.10.9  Sklearn 1.2.1
 #
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
@@ -20,7 +22,7 @@ pipeline = Pipeline( [
                 decode_error='strict',
                 encoding='utf-8',
                 input='content',
-                lowercase='True',
+                lowercase=True,
                 tokenizer=None,
                 vocabulary=None,
                 ),),
@@ -29,11 +31,11 @@ pipeline = Pipeline( [
                 n_jobs=-1,
                 verbose=1,
                 max_depth=None,
-                max_features='auto',
+                max_features='sqrt',
                 max_leaf_nodes=None,
                 max_samples=None,
                 min_impurity_decrease=0.0,
-                min_impurity_split=None,
+                #min_impurity_split=None,   # removed as of sklearn 0.19
                 min_samples_leaf=1,
                 min_samples_split=100,
                 min_weight_fraction_leaf=0.0,

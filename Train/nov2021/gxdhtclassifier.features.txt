@@ -1,0 +1,104 @@
+### Feature weights: highest 50
++0.0518	cell
++0.0375	treat
++0.0322	induc
++0.0284	__mouse_ag
++0.0238	sort
++0.0235	transcript profil
++0.0235	__tumor
++0.0227	cultur
++0.0184	__knockout
++0.0180	__cell_lin
++0.0177	keyword
++0.0147	treatment
++0.0146	fac
++0.0145	infect
++0.0135	__escel
++0.0116	experi overal
++0.0112	overal design
++0.0112	inject
++0.0110	__genotyp __mice
++0.0110	__genotyp
++0.0103	transgen
++0.0098	hour
++0.0095	__knockout __mice
++0.0092	rna rna
++0.0092	__mef
++0.0088	stem
++0.0086	ml
++0.0080	bone marrow
++0.0076	cd4
++0.0074	__mice __escel
++0.0071	profil __mice
++0.0066	medium
++0.0064	stem cell
++0.0064	gfp
++0.0063	marrow
++0.0062	__cell_lin cell
++0.0055	cell sort
++0.0052	transgen __mice
++0.0051	testi
++0.0050	kg
++0.0050	embryo
++0.0048	overal
++0.0045	bone
++0.0044	__mouse_ag __mouse_ag
++0.0043	__cell_lin __cell_lin
++0.0043	exposur
++0.0042	cell mus
++0.0042	__genotyp __genotyp
++0.0040	male
++0.0037	tissu
+
+### Feature weights: lowest 50
++0.0001	case
++0.0001	column
++0.0001	better
++0.0001	establish
++0.0001	juli
++0.0001	cours
++0.0001	cdna
++0.0001	assign access
++0.0001	bind protein
++0.0001	current
++0.0001	filter
++0.0001	potenti
++0.0001	balb
++0.0001	glass
++0.0001	chang gene
++0.0001	submit geo
++0.0001	impair
++0.0001	agil __mice
++0.0001	assign
++0.0001	glucos
++0.0001	growth factor
++0.0001	extracellular
++0.0001	neural
++0.0001	netaffx build
++0.0001	cell cycl
++0.0001	various
++0.0001	propos
++0.0001	determin
++0.0000	associ
++0.0000	indic
++0.0000	featur extract
++0.0000	scan
++0.0000	june annot
++0.0000	build june
++0.0000	technolog
++0.0000	molecul
++0.0000	raw data
++0.0000	adhes
++0.0000	version platform
++0.0000	recent
++0.0000	describ june
++0.0000	analysi perform
++0.0000	natur
++0.0000	obtain
++0.0000	fate
++0.0000	densiti
++0.0000	updat
++0.0000	insight
++0.0000	use microarray
++0.0000	qiagen
+

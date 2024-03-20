@@ -1,104 +1,104 @@
 ### Feature weights: highest 50
-+0.0518	cell
-+0.0375	treat
-+0.0322	induc
-+0.0284	__mouse_ag
-+0.0238	sort
-+0.0235	transcript profil
-+0.0235	__tumor
-+0.0227	cultur
-+0.0184	__knockout
-+0.0180	__cell_lin
-+0.0177	keyword
-+0.0147	treatment
-+0.0146	fac
-+0.0145	infect
-+0.0135	__escel
-+0.0116	experi overal
-+0.0112	overal design
-+0.0112	inject
-+0.0110	__genotyp __mice
-+0.0110	__genotyp
-+0.0103	transgen
-+0.0098	hour
-+0.0095	__knockout __mice
-+0.0092	rna rna
-+0.0092	__mef
-+0.0088	stem
-+0.0086	ml
-+0.0080	bone marrow
-+0.0076	cd4
-+0.0074	__mice __escel
-+0.0071	profil __mice
-+0.0066	medium
-+0.0064	stem cell
-+0.0064	gfp
-+0.0063	marrow
-+0.0062	__cell_lin cell
-+0.0055	cell sort
-+0.0052	transgen __mice
++0.0665	cell
++0.0377	treat
++0.0333	induc
++0.0307	__mouse_ag
++0.0278	__cell_lin
++0.0268	transcript profil
++0.0245	sort
++0.0240	__tumor
++0.0196	cultur
++0.0170	experi overal
++0.0154	keyword
++0.0143	__knockout
++0.0137	__genotyp
++0.0136	infect
++0.0133	__escel
++0.0117	ml
++0.0110	overal design
++0.0107	treatment
++0.0101	fac
++0.0099	gfp
++0.0098	inject
++0.0093	__mef
++0.0091	transgen
++0.0090	hour
++0.0087	rna rna
++0.0082	medium
++0.0077	__mice __escel
++0.0077	marrow
++0.0076	bone marrow
++0.0074	__genotyp __mice
++0.0072	__knockout __mice
++0.0071	cd4
++0.0065	stem
++0.0060	stem cell
++0.0055	vehicl
++0.0053	embryo
++0.0053	transgen __mice
++0.0053	male
++0.0052	overal
 +0.0051	testi
-+0.0050	kg
-+0.0050	embryo
-+0.0048	overal
-+0.0045	bone
-+0.0044	__mouse_ag __mouse_ag
-+0.0043	__cell_lin __cell_lin
-+0.0043	exposur
-+0.0042	cell mus
-+0.0042	__genotyp __genotyp
-+0.0040	male
-+0.0037	tissu
++0.0050	profil __mice
++0.0050	cell sort
++0.0044	stage
++0.0042	__mouse_ag __mouse_ag
++0.0042	respons
++0.0038	kg
++0.0037	exposur
++0.0037	bone
++0.0037	__genotyp total
++0.0036	passag
 
 ### Feature weights: lowest 50
-+0.0001	case
-+0.0001	column
-+0.0001	better
-+0.0001	establish
-+0.0001	juli
-+0.0001	cours
 +0.0001	cdna
-+0.0001	assign access
-+0.0001	bind protein
-+0.0001	current
-+0.0001	filter
-+0.0001	potenti
-+0.0001	balb
-+0.0001	glass
-+0.0001	chang gene
-+0.0001	submit geo
-+0.0001	impair
-+0.0001	agil __mice
-+0.0001	assign
-+0.0001	glucos
-+0.0001	growth factor
-+0.0001	extracellular
++0.0001	juli annot
++0.0001	downstream
++0.0001	column assign
 +0.0001	neural
-+0.0001	netaffx build
-+0.0001	cell cycl
-+0.0001	various
-+0.0001	propos
-+0.0001	determin
-+0.0000	associ
-+0.0000	indic
-+0.0000	featur extract
-+0.0000	scan
-+0.0000	june annot
-+0.0000	build june
-+0.0000	technolog
-+0.0000	molecul
-+0.0000	raw data
-+0.0000	adhes
-+0.0000	version platform
-+0.0000	recent
-+0.0000	describ june
-+0.0000	analysi perform
-+0.0000	natur
-+0.0000	obtain
++0.0001	throughput
++0.0001	previous
++0.0001	perform use
++0.0001	valid
++0.0001	phase
++0.0001	access number
++0.0001	rna pool
++0.0001	cy3
++0.0001	splice
++0.0001	transcript factor
++0.0001	prepar
++0.0001	expans
++0.0001	unclear
++0.0001	togeth
++0.0001	june annot
++0.0001	accord manufactur
++0.0001	method describ
++0.0001	id column
++0.0001	ca
++0.0001	gene __mice
++0.0001	extracellular
++0.0001	agil __mice
++0.0000	build
 +0.0000	fate
-+0.0000	densiti
++0.0000	assay
++0.0000	geo
++0.0000	scale
++0.0000	glass
++0.0000	intens
++0.0000	molecul
++0.0000	agil probe
++0.0000	extens
++0.0000	juli
++0.0000	qualiti
++0.0000	end
++0.0000	gene st
++0.0000	mirna express
++0.0000	screen
 +0.0000	updat
-+0.0000	insight
-+0.0000	use microarray
-+0.0000	qiagen
++0.0000	stain
++0.0000	buffer
++0.0000	updat netaffx
++0.0000	analysi reveal
++0.0000	technolog
++0.0000	gene involv
 
